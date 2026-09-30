@@ -191,3 +191,15 @@ Known at registration:
   preregistration is tagged.
 
 Dated additions after the tag (repairs, incidents, version changes) are appended below this line.
+
+- 2026-09-30, 17:27 to 17:32 +0200 (before the tag, not listed above at registration): the
+  long-dash Stop hook was repaired, with the removal of the Stop gates' bypass switches and their
+  per-session budget (replaced by a cap of 3 blocks in a row within one stop chain). Root cause of
+  the inert hook: its block was written inside `hookSpecificOutput`, where Claude Code does not
+  read a Stop hook's `decision`, so only the displayed "Blocked" survived and the turn ended; a
+  re-answer forced by another gate was also skipped (`stop_hook_active`). Reproduced on
+  2026-09-30 with the pinned copy (a planted dash: block issued, turn ended after one model turn)
+  and with the block moved to the top level (the turn continued). The repaired hook exits 2 with
+  the reason; a planted case through it on 2026-09-30 17:39 +0200 was blocked and re-answered
+  without the dash (door ledger `took_effect` true). Field data before this time are the inert
+  door; E1 ran on the pinned pre-repair copy.

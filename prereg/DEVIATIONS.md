@@ -27,3 +27,14 @@ here, dated, with its reason and the runs or numbers it touches. None at registr
 6. **Situations and graders after the pilot.** Four cases were redesigned (C1 twice, C2, C3 and
    C4 once each) and four graders refined after reading pilot runs, all before the first counted
    run and before the case files' commit; see `e1/PILOT.md`.
+
+## 2026-09-30, after the counted runs
+
+7. **The long-dash Stop hook was repaired before E1, not after it.** PREREG section 11 planned the
+   repair after the long-dash cells. It was made on 2026-09-30 at about 17:30 +0200, before the
+   tag, by a separate change in the harness repository (the same change removed the gates' bypasses), and was not
+   listed at registration. E1 is unaffected: every run used the pinned copy taken at 16:27 +0200,
+   before the repair. The repair is dated in `ANALYSIS.md` section 9.
+8. **The privacy check dropped number-only tokens.** A results row was flagged because its output
+   token count equalled a third party's name spelled as a number. The check was narrowed (a token
+   with no letter is not an identifier, with a test); no result was changed.
