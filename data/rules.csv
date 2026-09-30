@@ -1,0 +1,135 @@
+id,description,class,delivery,prose_first_seen,prose_date_censored,prose_removed,door_type,door_landed,door_date_censored,n_doors,enforceability,prose_sources,n_prose_units
+K001,"The agent never emits an em dash or en dash in any text it produces, including chat output, commits, code, files and tool arguments.",never,both,2026-09-01,1,,lifecycle hook;write refusal,2026-07-16,0,3,E-full,global instruction file;global instruction file (pre-cut text);skill,3
+K002,"The agent never normalises the recorded final answer section of an eval run file, because that section is the object being measured.",never,both,2026-09-01,0,2026-09-21,test,2026-09-01,0,1,E-full,project instruction file (pre-cut text),1
+K003,The agent never writes invisible characters into a stored record field.,never,door only,,,,write refusal,2026-07-16,0,1,E-full,,0
+K004,"The agent names things in the operator's own words, and an internal identifier only follows in parentheses when needed to run a command.",other,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),2
+K005,"A question to the operator carries what is blocked, the deciding numbers, each option's cost and a recommendation, never a bare yes or no.",ask,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),2
+K006,Every final answer ends with a short block at the bottom holding only the conclusion and the next step.,stop,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),3
+K007,"A set of options always carries a marked recommendation, and when the operator delegates the choice the agent executes the recommended one.",ask,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),2
+K008,The agent ranks every menu of options with a visible criterion and a one line reason per position.,ask,prose only,2026-07-21,1,,,,,0,E-none,memory note,1
+K009,The agent checks the system credential store for external tokens before declaring itself blocked on missing credentials.,sequence,prose only,2026-09-21,0,,,,,0,E-none,global instruction file,1
+K010,"The agent never prints a secret value into the transcript, showing only its length or a masked prefix when debugging.",never,prose only,2026-09-21,0,,,,,0,E-partial,global instruction file,1
+K011,"The agent prefers an official command line client, then the API with the operator's token, and uses a tool server only as a last resort.",other,prose only,2026-09-21,0,,,,,0,E-none,global instruction file,1
+K012,"The agent never revokes, deletes or rotates a credential without an explicit go from the operator, and silence is not a go.",gate,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file,1
+K013,"A gesture needing the operator's hands every session is treated as a missing durable credential, minted once and stored, never offered as routine.",other,prose only,2026-09-01,1,,,,,0,E-none,global instruction file,1
+K014,"The agent switches to a cheaper model for mechanical work without asking, stating the switch in one line.",ask,prose only,2026-09-01,1,,,,,0,E-none,global instruction file;global instruction file (pre-cut text),2
+K015,The agent declares an explicit cheaper model for subagents doing mechanical work instead of letting them inherit the most expensive tier.,other,prose only,2026-08-12,1,,,,,0,E-full,memory note;skill,3
+K016,A delegated background session doing mechanical work declares a cheaper model rather than defaulting to the most expensive tier.,other,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K017,"The agent never postpones ready work for reasons of hour or freshness, and proposes a measurement to settle any doubt instead.",stop,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),2
+K018,"A question requiring a sweep of many files where only the conclusion matters goes to an exploration subagent, not the main context.",other,prose only,2026-09-01,1,,,,,0,E-none,global instruction file;global instruction file (pre-cut text),2
+K019,Independent parallel subagents are launched together in a single turn so they do not run in series.,other,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K020,"Subagents handle reading sweeps and parallel work, while a separate terminal session handles work that must outlive the current session.",other,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K021,"A subagent never runs a non terminating command such as a live development server, verifying only with commands that finish.",never,prose only,2026-07-21,1,,,,,0,E-partial,global instruction file;memory note;skill,3
+K022,"Browser work is always delegated to subagents, each on its own named isolated browser channel that it opens and closes.",other,prose only,2026-09-01,1,,,,,0,E-partial,global instruction file;global instruction file (pre-cut text),2
+K023,"The shared browser control tools are used only by the main session when it is alone, and a subagent never calls them.",never,prose only,2026-08-25,0,,,,,0,E-full,skill,4
+K024,"A billing refusal on hosted continuous integration is treated as normal: the agent verifies locally, ships, and never proposes paying.",other,prose only,2026-09-01,1,,,,,0,E-none,global instruction file;global instruction file (pre-cut text),2
+K025,"A separate background agent session is started only through the approved launcher, which always runs it with permission prompts skipped.",other,prose only,2026-08-28,0,,,,,0,E-full,global instruction file;skill,3
+K026,The agent injects a delegated session's prompt from a file and never asks the operator to paste it from the clipboard.,never,prose only,2026-08-25,0,,,,,0,E-full,skill,2
+K027,A delegated terminal session opens in the background and never steals the operator's focus.,other,prose only,2026-08-25,0,,,,,0,E-partial,skill,2
+K028,"A delegated session that does not need the operator runs hidden and closes itself on exit, visible only when his hands are required.",other,prose only,2026-09-18,0,,,,,0,E-partial,global instruction file (pre-cut text);memory note,2
+K029,"A behavioural rule is delivered as code that enforces it in the same change as its text, and never announced as prose alone.",other,both,2026-09-21,0,,lifecycle hook,2026-09-21,0,1,E-partial,global instruction file,1
+K030,"The agent treats a convincing argument against a gate as a bug to report, never as a reason to bypass it.",other,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K031,The agent deletes an instruction rule only after replaying its eval case shows the rule no longer changes behaviour.,gate,prose only,2026-09-01,0,,,,,0,E-partial,global instruction file;project instruction file,2
+K032,A harness replay is trusted only when each grader has proven it can fire and its evidence has been read.,gate,prose only,2026-09-01,1,,,,,0,E-partial,memory note,1
+K033,A turn does not end on a promise of further work while the operator's target is unmet; remaining work is handed off instead.,stop,both,2026-09-01,1,,lifecycle hook,2026-09-01,0,1,E-partial,global instruction file;global instruction file (pre-cut text),2
+K034,"The agent treats a decision the operator already took as a boundary, never re proposing, reopening or planning past it.",never,prose only,2026-09-01,1,,,,,0,E-none,global instruction file,1
+K035,The agent never proposes again moving the always on central machine to a remote server unless its availability is measured low again.,never,prose only,2026-09-18,0,,,,,0,E-partial,memory note,1
+K036,The agent does not propose again reallocating a freed project slot to distribution of existing projects after the operator refused it.,other,prose only,2026-08-01,1,,,,,0,E-none,memory note,1
+K037,"The operator's phone channel is the chosen chat bot, and the agent never re proposes the previously rejected notification service.",other,prose only,2026-09-18,0,,,,,0,E-partial,memory note,1
+K038,"Runtime state lives in a separate store repository, and the agent never re proposes merge or manual port schemes for ledgers.",write-path,prose only,2026-09-19,0,,,,,0,E-partial,memory note,1
+K039,"The agent asks the operator only for what he alone knows or a go on an irreversible external action, and resolves everything else itself.",ask,both,2026-08-12,1,,lifecycle hook,2026-09-21,0,2,E-partial,global instruction file;memory note;skill,6
+K040,A short request from the operator to fix something means the agent finds and fixes the root cause itself without deferring.,ask,prose only,2026-09-02,0,,,,,0,E-none,memory note,1
+K041,"Work already authorized by a standing order, an automatic row or a plan with recommendations runs to completion without asking again.",ask,both,2026-08-13,1,,lifecycle hook,2026-09-21,0,1,E-partial,memory note;project instruction file,3
+K042,"Every project not truly validated runs in automatic mode, and the agent takes the recommended action on it without asking.",other,prose only,2026-09-25,0,,,,,0,E-full,memory note,1
+K043,"The agent never hand edits generated scheduled run and board views, changing them only through the command that owns them.",write-path,prose only,2026-08-25,0,,,,,0,E-full,project instruction file;skill,3
+K045,"An automatic task row is refused unless it declares an executor with its model, execution channel, priority, window and timeout.",gate,both,2026-09-21,0,,write refusal,2026-09-18,0,1,E-full,project instruction file,1
+K046,"An automatic task row requires a recurring cadence and explicit run commands, and the store refuses rows lacking either.",gate,both,2026-08-25,0,,write refusal,2026-07-16,0,2,E-full,project instruction file,1
+K047,"An automatic task row is refused without a next action, since such a row would never render or run.",gate,door only,,,,write refusal,2026-07-16,0,1,E-full,,0
+K048,"Items needing the operator live as full dossier pages on the local interface and phone channel, not in a terminal.",ask,prose only,2026-09-21,0,,,,,0,E-partial,project instruction file,1
+K049,"No step of the agent may depend on the operator approving a prompt through an interface, since he often works away from a computer.",stop,prose only,2026-09-25,0,,,,,0,E-partial,memory note,1
+K050,"A worker's result carries a verified structured dossier, and each option is an allowlisted command run verbatim.",other,prose only,2026-09-20,0,,,,,0,E-partial,project instruction file,1
+K051,"A shared toolset or check change applies to every site listed in the catalog, and the report names each site with its state.",other,prose only,2026-09-01,0,,,,,0,E-none,project instruction file,1
+K052,"A failing gate on the agent's own work is fixed and rerun in the same pass, never merely reported.",stop,prose only,2026-09-01,0,,,,,0,E-partial,project instruction file;skill,2
+K053,"The agent never exports the auth token variable globally, injecting it only into the spawned child process environment.",never,prose only,2026-09-01,1,,,,,0,E-full,global rule file,1
+K054,"The documentation lookup tool is not used for refactoring, writing scripts, debugging logic, code review or general programming concepts.",other,prose only,2026-09-01,1,,,,,0,E-none,global rule file,1
+K055,A documentation lookup always starts by resolving the library identifier unless the exact identifier is already given.,sequence,prose only,2026-09-01,1,,,,,0,E-full,global rule file,1
+K056,"On close, a browser driver closes only its own automation tab and never kills the operator's browser.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K057,"A browser driver creates its own tab, keeps its unique identifier, closes it on exit, and never adopts a tab it did not create.",never,prose only,2026-08-25,0,,,,,0,E-partial,skill,4
+K058,"The agent measures page selectors on the live document with a read only probe before clicking, never guessing from memory.",sequence,prose only,2026-09-01,1,,,,,0,E-none,skill,2
+K059,"The agent never forces a click as a workaround, and instead finds what covers the target element.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K060,"When closing a session, the agent finishes everything itself and leaves only items that only the operator can physically do.",stop,both,2026-08-14,1,,lifecycle hook,2026-09-01,0,1,E-none,memory note;skill,4
+K061,A session closing report includes only lines produced by that session.,stop,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K062,A session close looks only at the current session and never discusses the scheduled run unless the session is the scheduled run.,stop,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K063,"The agent never starts or proposes a scheduled run unprompted, and closing a session never opens new work.",gate,prose only,2026-08-17,1,,,,,0,E-partial,memory note;skill,3
+K064,The findings step runs only when the current session is the scheduled run.,sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K065,"The featured finding block appears only in a scheduled run session, pasted verbatim, and its absence elsewhere is not announced.",stop,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K066,"Before concluding anything about repository state, the agent finds out who else is writing into it.",sequence,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K067,"A file the session did not write belongs to another session: the agent never reverts or commits it, and names it instead.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K068,"The agent acts only on its own worktree and the main branch, never stashing, checking out or resetting shared state.",never,prose only,2026-09-01,1,,,,,0,E-full,skill,1
+K069,"The agent verifies skill copies by diffing after installing them, not before.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K070,"The agent catches up with the remote main branch before running the gate, so stale trees never produce false failures.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K071,"The rebase follows the session commit, and conflicts on append only ledgers keep both sides in time order.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K072,"Any list of items for the operator to decide uses a lettered list with stable letter and number identifiers, never a table.",other,prose only,2026-09-03,0,,,,,0,E-partial,memory note;skill,2
+K073,"The agent never spends money, subscribes or raises a spending cap.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K076,"Before releasing any package, the agent reads how existing packages of the account are released and replicates that method.",sequence,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K077,"Package releases use the stored persistent registry token the operator requested, read from the system credential store.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K078,The agent never adds provenance flags to a release from a private source repository.,never,prose only,2026-09-01,1,,,,,0,E-full,skill,1
+K079,"Registry package access settings require a second security key assertion for the write step, which the agent anticipates.",never,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K080,The agent never promises an unattended package release based on a precedent that relied on the operator's warm session.,never,prose only,2026-09-01,1,,,,,0,E-none,skill,1
+K081,"A tag is not a release: the agent verifies the version on the package registry, never the repository.",gate,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K082,The agent never withdraws a released package version and fixes a bad release with a newer version.,never,prose only,2026-09-01,1,,,,,0,E-full,skill,1
+K083,"Tagging, committing pending changes and bumping consumers happen only after the package release is resolved.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K084,"A physical security key touch is requested in a single line, never as a list.",ask,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K085,"Before a reboot, the agent waits for running subagents to finish rather than killing them mid pass.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K086,"The agent pushes immediately after every commit and merges to main automatically, never leaving commits local or asking.",sequence,prose only,2026-07-28,1,,,,,0,E-full,memory note;skill,2
+K087,"Before a reboot, the agent checks the remote main branch, not only its working branch.",sequence,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K088,"Before a reboot, the agent writes the summary in its last output so it can be read afterwards.",stop,prose only,2026-09-01,1,,,,,0,E-partial,skill,1
+K089,"On an opted in repository the agent never writes to the main checkout, entering a worktree and running its setup first.",write-path,both,2026-09-01,1,,lifecycle hook,2026-09-01,1,1,E-partial,skill,1
+K090,"A subagent in an isolated worktree is told to run the worktree setup script first, since isolation does not run it.",other,prose only,2026-08-07,1,,,,,0,E-partial,memory note;skill,2
+K091,"When the command line window times out on automation events, the agent never restarts it and runs the delegated work detached instead.",never,prose only,2026-08-30,1,,,,,0,E-partial,memory note;skill,2
+K096,The agent never wraps calls in a timeout command that does not exist on the operating system.,never,prose only,2026-09-01,1,,,,,0,E-full,skill,1
+K098,"A browser channel's last action is always its close, even on error, and it closes before reporting.",sequence,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K099,"A browser tab that must survive is declared with a mandatory reason, never left lying around.",other,prose only,2026-08-25,0,,,,,0,E-partial,skill,2
+K100,The agent does not conclude the browser channel is broken when it sees a worktree refusal unrelated to the browser.,never,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K101,"Browser automation runs in the background and never focuses, raises or resizes a window or opens a foreground tab.",never,prose only,2026-08-07,1,,,,,0,E-full,memory note;skill,3
+K102,"A browser subagent works in short steps and reports often, never blocking silently on long waits, sleeps or polling loops.",never,prose only,2026-08-25,0,,,,,0,E-partial,skill,3
+K103,"When a browser channel action opens a new browser window, the agent merges it into the main window before any step needing operator input.",sequence,prose only,2026-09-03,0,,,,,0,E-none,skill,1
+K104,"A delegated session's prompt is a complete brief carrying all needed context, not a one line note.",other,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K105,The agent never delegates to a subagent a lookup that a quick text search answers in a second.,never,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K106,"A transfer brief states the measured state with numbers, not a vague claim that something does not work.",other,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K107,"An unmeasured number is stated as unknown, never invented.",other,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K108,"A recap gives a dense tabular state of what moved since the last recap, not long prose.",other,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K109,"A recap only reports: it launches no row, closes no task and performs no outward action.",never,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K110,A recap keeps what was done and what was read in two separate tables that never merge.,other,prose only,2026-08-18,1,,,,,0,E-none,memory note;skill,2
+K111,"A recap avoids known mistakes: mixed tables, reduced signals, misplaced info, buried decisions and crediting other sessions' work.",other,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K112,"An item carrying a gesture for the operator goes to the open actions block, never to the readings block.",other,prose only,2026-09-01,0,,,,,0,E-none,skill,1
+K113,"An opportunity is listed only when actionable with a named window, with its source, link and lever in full sentences.",other,prose only,2026-08-25,0,,,,,0,E-none,skill,1
+K114,"Information with no attached gesture goes at the end of the recap, never at the top.",sequence,prose only,2026-08-25,0,,,,,0,E-partial,skill,1
+K115,"The featured finding is pasted verbatim as its own block right before the decision block, never reworded or merged.",sequence,prose only,2026-08-29,0,,,,,0,E-partial,skill,1
+K119,"When the operator asks for more context on a review item, the agent opens a separate session to research it.",other,prose only,2026-09-04,0,,,,,0,E-partial,memory note,1
+K120,"Every scheduled run starts with a dense summary of automatic work, operator inputs and upcoming items, shown before executing.",sequence,prose only,2026-08-15,1,,,,,0,E-partial,memory note,1
+K121,"A one off decision by the operator is recorded as a case, never generalised into a rule without asking its scope.",never,prose only,2026-07-31,1,,,,,0,E-none,memory note,1
+K122,"The dossier checking project uses only public blank forms, never a document issued to the operator.",never,prose only,2026-08-21,1,,,,,0,E-none,memory note,1
+K123,A finding becomes a recurring task row rather than a one off fix the operator must request again.,other,prose only,2026-08-11,1,,,,,0,E-none,memory note,1
+K124,"A hook edited in a worktree takes effect only after the main checkout catches up, so the agent syncs the main checkout.",sequence,prose only,2026-08-15,1,,,,,0,E-partial,memory note,1
+K125,"All sites report to a single analytics project split by a site property, with the machinery in the shared toolset.",write-path,prose only,2026-07-30,1,,,,,0,E-partial,memory note,1
+K126,"The agent never ends an advanced project candidate on its own, surfacing the argument for the operator to decide.",gate,prose only,2026-08-21,1,,,,,0,E-none,memory note,1
+K128,Phone sessions are windowless remote children that are reaped when they wait on the operator.,never,prose only,2026-09-21,0,,,,,0,E-partial,memory note,1
+K129,"The agent retries without end on failures, network cuts included, and never stops on a transient error.",stop,prose only,2026-09-19,0,,,,,0,E-partial,memory note,1
+K130,"The agent never cites the two domain split as doctrine, since it was only a test.",never,prose only,2026-08-22,1,,,,,0,E-none,memory note,1
+K131,"The agent never re derives the usage budget by hand, relying on the weekly usage audit row.",never,prose only,2026-08-15,1,,,,,0,E-none,memory note,1
+K132,The table snapshot export is read only for diffs and never used to arbitrate state against the database.,never,prose only,2026-07-31,0,2026-09-21,,,,0,E-none,project instruction file (pre-cut text),1
+K133,The agent never excludes harvested research data from version control.,never,prose only,2026-08-05,1,,,,,0,E-full,memory note,1
+K134,"French source material stays French, and the agent never translates such data files on the way past.",never,prose only,2026-09-01,1,,,,,0,E-none,global instruction file (pre-cut text),1
+K135,"Existing files are never migrated to another language, wholesale or file by file.",never,prose only,2026-09-01,1,,,,,0,E-none,global instruction file (pre-cut text),1
+K136,"A report cuts to the conclusion, omitting paths, intermediate readings and details that change no decision.",other,prose only,2026-09-01,1,2026-09-21,,,,0,E-none,global instruction file (pre-cut text),1
+K137,A new project is refused unless it declares its stop condition with a threshold and a deadline at creation.,gate,door only,,,,write refusal,2026-07-16,0,1,E-full,,0
+K138,A compounding project's stop check is refused without a backstop date inside its stop clause.,gate,door only,,,,write refusal,2026-07-30,0,1,E-full,,0
+K139,A compounding project's backstop is refused when it falls too soon after declaration to produce a real verdict.,window,door only,,,,write refusal,2026-07-16,0,1,E-full,,0
+K140,A project cannot be marked dead without both a verdict and a coded stop reason.,gate,door only,,,,write refusal,2026-07-16,0,1,E-full,,0
+K141,A scheduled task does not run outside its declared time window.,window,door only,,,,scheduler precondition,2026-09-18,0,1,E-full,,0
+K142,A scheduled task does not run when the database quota precondition fails.,cap,door only,,,,scheduler precondition,2026-09-29,0,1,E-full,,0
+K143,A scheduled task does not run when the model usage quota precondition fails.,cap,door only,,,,scheduler precondition,2026-09-22,0,1,E-full,,0
+K144,Automatic fixing pauses when a measuring instrument fails.,stop,door only,,,,recovery pause,2026-09-07,0,1,E-full,,0
+K145,Paused automatic fixing never resumes itself without outside action.,gate,door only,,,,recovery pause,2026-09-07,0,1,E-full,,0
+K146,Every canonical document is added to the canonical documents index in the same change that creates it.,sequence,door only,,,,test,2026-07-30,0,1,E-full,,0
