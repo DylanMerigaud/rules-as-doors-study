@@ -1,0 +1,10 @@
+group,enforceability,k,n,share,wilson_lo,wilson_hi
+all,E-full,31,134,0.231343,0.168037,0.309624
+all,E-partial,63,134,0.470149,0.387656,0.554306
+all,E-none,40,134,0.298507,0.227525,0.380721
+prose_only,E-full,15,112,0.133929,0.0828714,0.209265
+prose_only,E-partial,58,112,0.517857,0.42627,0.60826
+prose_only,E-none,39,112,0.348214,0.266347,0.440148
+with_door,E-full,16,22,0.727273,0.518483,0.868492
+with_door,E-partial,5,22,0.227273,0.10123,0.4344
+with_door,E-none,1,22,0.0454545,0.00806943,0.21798

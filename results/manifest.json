@@ -1,0 +1,22 @@
+{
+ "notes": [],
+ "ran": [
+  "table 1",
+  "table 2",
+  "table 12 and figure 4"
+ ],
+ "skipped": {
+  "case facts": "data/case_facts.csv not found",
+  "figure 1": "data/corrections_weekly.csv not found",
+  "table 10": "data/transcripts_weekly.csv and data/door_size.csv not found",
+  "table 11": "data/replays_past.csv not found",
+  "table 13": "data/cost_weekly.csv not found",
+  "table 3": "data/corrections_weekly.csv not found",
+  "table 4 and figure 2": "data/transcripts_weekly.csv not found",
+  "table 5": "data/transcripts_weekly.csv not found",
+  "table 6": "data/transcripts_prospective.csv not found",
+  "table 7": "data/ask_audit.csv not found",
+  "table 8 and figure 3": "data/scheduler_weekly.csv and data/scheduler_ontime.csv not found",
+  "table 9": "none of data/door_refusals_weekly.csv, data/door_review.csv, data/door_size.csv found"
+ }
+}

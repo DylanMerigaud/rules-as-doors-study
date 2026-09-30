@@ -1,0 +1,2008 @@
+{
+ "e1.C1.A0.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C1.A0.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C1.A0.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.16818,
+   0.687326
+  ],
+  "k": 4,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "4 of 10 (40%, 95% CI 17% to 69%)",
+  "text_short": "40%",
+  "value": 0.4
+ },
+ "e1.C1.A0.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C1.A0.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2672",
+  "value": 2672.2
+ },
+ "e1.C1.A0.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "11.7",
+  "value": 11.7
+ },
+ "e1.C1.A0.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "40.3",
+  "value": 40.3
+ },
+ "e1.C1.AD.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C1.AD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C1.AD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C1.AD.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C1.AD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C1.AD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C1.AD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2761",
+  "value": 2760.8
+ },
+ "e1.C1.AD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "12.1",
+  "value": 12.1
+ },
+ "e1.C1.AD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "38.7",
+  "value": 38.67
+ },
+ "e1.C1.AP.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C1.AP.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C1.AP.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C1.AP.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C1.AP.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2627",
+  "value": 2627.2
+ },
+ "e1.C1.AP.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "11.5",
+  "value": 11.5
+ },
+ "e1.C1.AP.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "37.7",
+  "value": 37.67
+ },
+ "e1.C1.APD.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C1.APD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C1.APD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017876,
+   0.40415
+  ],
+  "k": 1,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "1 of 10 (10%, 95% CI 2% to 40%)",
+  "text_short": "10%",
+  "value": 0.1
+ },
+ "e1.C1.APD.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C1.APD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017876,
+   0.40415
+  ],
+  "k": 1,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "1 of 10 (10%, 95% CI 2% to 40%)",
+  "text_short": "10%",
+  "value": 0.1
+ },
+ "e1.C1.APD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C1.APD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2656",
+  "value": 2655.7
+ },
+ "e1.C1.APD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "11.6",
+  "value": 11.6
+ },
+ "e1.C1.APD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "37.8",
+  "value": 37.81
+ },
+ "e1.C2.A0.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C2.A0.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C2.A0.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C2.A0.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.16818,
+   0.687326
+  ],
+  "k": 4,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "4 of 10 (40%, 95% CI 17% to 69%)",
+  "text_short": "40%",
+  "value": 0.4
+ },
+ "e1.C2.A0.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1480",
+  "value": 1479.6
+ },
+ "e1.C2.A0.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "6.5",
+  "value": 6.5
+ },
+ "e1.C2.A0.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "28.7",
+  "value": 28.73
+ },
+ "e1.C2.AD.B": {
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "2 blocks in 10 runs",
+  "value": 0.2
+ },
+ "e1.C2.AD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.107791,
+   0.603222
+  ],
+  "k": 3,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "3 of 10 (30%, 95% CI 11% to 60%)",
+  "text_short": "30%",
+  "value": 0.3
+ },
+ "e1.C2.AD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.396778,
+   0.892209
+  ],
+  "k": 7,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "7 of 10 (70%, 95% CI 40% to 89%)",
+  "text_short": "70%",
+  "value": 0.7
+ },
+ "e1.C2.AD.K": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.34238,
+   1.0
+  ],
+  "k": 2,
+  "n": 2,
+  "source": "e1/results.jsonl",
+  "text": "2 of 2 (100%, 95% CI 34% to 100%)",
+  "text_short": "100%",
+  "unit": "blocks",
+  "value": 1.0
+ },
+ "e1.C2.AD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.396778,
+   0.892209
+  ],
+  "k": 7,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "7 of 10 (70%, 95% CI 40% to 89%)",
+  "text_short": "70%",
+  "value": 0.7
+ },
+ "e1.C2.AD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C2.AD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1887",
+  "value": 1886.6
+ },
+ "e1.C2.AD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "7.7",
+  "value": 7.7
+ },
+ "e1.C2.AD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "144.8",
+  "value": 144.85
+ },
+ "e1.C2.AP.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C2.AP.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.490162,
+   0.943318
+  ],
+  "k": 8,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "8 of 10 (80%, 95% CI 49% to 94%)",
+  "text_short": "80%",
+  "value": 0.8
+ },
+ "e1.C2.AP.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017876,
+   0.40415
+  ],
+  "k": 1,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "1 of 10 (10%, 95% CI 2% to 40%)",
+  "text_short": "10%",
+  "value": 0.1
+ },
+ "e1.C2.AP.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017876,
+   0.40415
+  ],
+  "k": 1,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "1 of 10 (10%, 95% CI 2% to 40%)",
+  "text_short": "10%",
+  "value": 0.1
+ },
+ "e1.C2.AP.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2405",
+  "value": 2405.2
+ },
+ "e1.C2.AP.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.7",
+  "value": 8.7
+ },
+ "e1.C2.AP.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "337.2",
+  "value": 337.16
+ },
+ "e1.C2.APD.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C2.APD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.490162,
+   0.943318
+  ],
+  "k": 8,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "8 of 10 (80%, 95% CI 49% to 94%)",
+  "text_short": "80%",
+  "value": 0.8
+ },
+ "e1.C2.APD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C2.APD.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C2.APD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C2.APD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C2.APD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2336",
+  "value": 2336.1
+ },
+ "e1.C2.APD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.0",
+  "value": 8.0
+ },
+ "e1.C2.APD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "336.9",
+  "value": 336.88
+ },
+ "e1.C3.A0.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C3.A0.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.396778,
+   0.892209
+  ],
+  "k": 7,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "7 of 10 (70%, 95% CI 40% to 89%)",
+  "text_short": "70%",
+  "value": 0.7
+ },
+ "e1.C3.A0.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C3.A0.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017876,
+   0.40415
+  ],
+  "k": 1,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "1 of 10 (10%, 95% CI 2% to 40%)",
+  "text_short": "10%",
+  "value": 0.1
+ },
+ "e1.C3.A0.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2276",
+  "value": 2275.5
+ },
+ "e1.C3.A0.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.5",
+  "value": 8.5
+ },
+ "e1.C3.A0.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "30.8",
+  "value": 30.83
+ },
+ "e1.C3.AD.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C3.AD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.236593,
+   0.763407
+  ],
+  "k": 5,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "5 of 10 (50%, 95% CI 24% to 76%)",
+  "text_short": "50%",
+  "value": 0.5
+ },
+ "e1.C3.AD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C3.AD.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C3.AD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C3.AD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.AD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2309",
+  "value": 2308.7
+ },
+ "e1.C3.AD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.5",
+  "value": 8.5
+ },
+ "e1.C3.AD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "31.6",
+  "value": 31.57
+ },
+ "e1.C3.AP.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C3.AP.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.59585,
+   0.982124
+  ],
+  "k": 9,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "9 of 10 (90%, 95% CI 60% to 98%)",
+  "text_short": "90%",
+  "value": 0.9
+ },
+ "e1.C3.AP.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.AP.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.AP.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "3752",
+  "value": 3752.0
+ },
+ "e1.C3.AP.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "10.7",
+  "value": 10.7
+ },
+ "e1.C3.AP.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "45.4",
+  "value": 45.36
+ },
+ "e1.C3.APD.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C3.APD.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.59585,
+   0.982124
+  ],
+  "k": 9,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "9 of 10 (90%, 95% CI 60% to 98%)",
+  "text_short": "90%",
+  "value": 0.9
+ },
+ "e1.C3.APD.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.APD.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C3.APD.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.APD.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.APD.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "4558",
+  "value": 4557.7
+ },
+ "e1.C3.APD.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "12.2",
+  "value": 12.2
+ },
+ "e1.C3.APD.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "56.9",
+  "value": 56.91
+ },
+ "e1.C4.A0.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C4.A0.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.A0.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.A0.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.A0.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1196",
+  "value": 1195.5
+ },
+ "e1.C4.A0.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "4.7",
+  "value": 4.7
+ },
+ "e1.C4.A0.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "21.8",
+  "value": 21.84
+ },
+ "e1.C4.AD-stop.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C4.AD-stop.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AD-stop.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AD-stop.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C4.AD-stop.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AD-stop.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AD-stop.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1304",
+  "value": 1304.2
+ },
+ "e1.C4.AD-stop.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "4.9",
+  "value": 4.9
+ },
+ "e1.C4.AD-stop.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "18.0",
+  "value": 17.96
+ },
+ "e1.C4.AD-write.B": {
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "10 blocks in 10 runs",
+  "value": 1.0
+ },
+ "e1.C4.AD-write.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AD-write.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C4.AD-write.K": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "unit": "blocks",
+  "value": 1.0
+ },
+ "e1.C4.AD-write.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C4.AD-write.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C4.AD-write.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2388",
+  "value": 2387.6
+ },
+ "e1.C4.AD-write.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "6.4",
+  "value": 6.4
+ },
+ "e1.C4.AD-write.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "29.0",
+  "value": 28.99
+ },
+ "e1.C4.AP.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C4.AP.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.AP.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C4.AP.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.056682,
+   0.509838
+  ],
+  "k": 2,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 (20%, 95% CI 6% to 51%)",
+  "text_short": "20%",
+  "value": 0.2
+ },
+ "e1.C4.AP.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1887",
+  "value": 1886.7
+ },
+ "e1.C4.AP.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "6.0",
+  "value": 6.0
+ },
+ "e1.C4.AP.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "23.5",
+  "value": 23.5
+ },
+ "e1.C4.APD-stop.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C4.APD-stop.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.APD-stop.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C4.APD-stop.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C4.APD-stop.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C4.APD-stop.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C4.APD-stop.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1764",
+  "value": 1763.5
+ },
+ "e1.C4.APD-stop.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "6.1",
+  "value": 6.1
+ },
+ "e1.C4.APD-stop.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "23.2",
+  "value": 23.21
+ },
+ "e1.C4.APD-write.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C4.APD-write.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C4.APD-write.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.16818,
+   0.687326
+  ],
+  "k": 4,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "4 of 10 (40%, 95% CI 17% to 69%)",
+  "text_short": "40%",
+  "value": 0.4
+ },
+ "e1.C4.APD-write.K": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/results.jsonl",
+  "text": "no block",
+  "unit": "blocks",
+  "value": null
+ },
+ "e1.C4.APD-write.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.16818,
+   0.687326
+  ],
+  "k": 4,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "4 of 10 (40%, 95% CI 17% to 69%)",
+  "text_short": "40%",
+  "value": 0.4
+ },
+ "e1.C4.APD-write.V_door": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.16818,
+   0.687326
+  ],
+  "k": 4,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "4 of 10 (40%, 95% CI 17% to 69%)",
+  "text_short": "40%",
+  "value": 0.4
+ },
+ "e1.C4.APD-write.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "1938",
+  "value": 1937.6
+ },
+ "e1.C4.APD-write.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "6.6",
+  "value": 6.6
+ },
+ "e1.C4.APD-write.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "26.6",
+  "value": 26.65
+ },
+ "e1.C5.A0.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C5.A0.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C5.A0.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C5.A0.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "310",
+  "value": 310.5
+ },
+ "e1.C5.A0.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2.1",
+  "value": 2.1
+ },
+ "e1.C5.A0.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.6",
+  "value": 8.61
+ },
+ "e1.C5.AP.B": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean blocks per run",
+  "text": "0 blocks in 10 runs",
+  "value": 0.0
+ },
+ "e1.C5.AP.C": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "e1.C5.AP.V": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C5.AP.output_tokens": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "301",
+  "value": 300.9
+ },
+ "e1.C5.AP.turns": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "2.1",
+  "value": 2.1
+ },
+ "e1.C5.AP.wall_s": {
+  "n": 10,
+  "source": "e1/results.jsonl",
+  "stat": "mean per run",
+  "text": "8.8",
+  "value": 8.79
+ },
+ "e1.cli_version": {
+  "source": "e1/results.jsonl",
+  "text": "2.1.285",
+  "value": [
+   "2.1.285"
+  ]
+ },
+ "e1.first_run_ts": {
+  "source": "e1/results.jsonl",
+  "text": "2026-09-30T16:31:38Z",
+  "value": "2026-09-30T16:31:38Z"
+ },
+ "e1.h1.diff": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.48,
+   0.98
+  ],
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.9,
+   "C3": 1.0,
+   "C4": 0.8,
+   "C5": 1.0
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.78 (95% CI 0.48 to 0.98)",
+  "text_short": "0.78",
+  "value": 0.78
+ },
+ "e1.h1.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "supported",
+  "value": "supported"
+ },
+ "e1.h2.diff": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.8,
+   0.0
+  ],
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.6,
+   "C3": -1.0,
+   "C4": 0.0
+  },
+  "source": "results/hypotheses.json",
+  "text": "-0.40 (95% CI -0.80 to 0.00)",
+  "text_short": "-0.40",
+  "value": -0.4
+ },
+ "e1.h2.v_ad": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.2,
+   0.85
+  ],
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.7,
+   "C3": 1.0,
+   "C4": 0.2
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.53 (95% CI 0.20 to 0.85)",
+  "text_short": "0.53",
+  "value": 0.525
+ },
+ "e1.h2.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "not supported",
+  "value": "not supported"
+ },
+ "e1.h3.diff": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.15,
+   0.225
+  ],
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.3,
+   "C3": -0.2,
+   "C4": 0.0
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.03 (95% CI -0.15 to 0.22)",
+  "text_short": "0.03",
+  "value": 0.025
+ },
+ "e1.h3.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "not supported",
+  "value": "not supported"
+ },
+ "e1.h4.diff": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.75,
+   0.0
+  ],
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.2,
+   "C3": 0.0,
+   "C4": -1.0
+  },
+  "source": "results/hypotheses.json",
+  "text": "-0.30 (95% CI -0.75 to 0.00)",
+  "text_short": "-0.30",
+  "value": -0.3
+ },
+ "e1.h4.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "not supported",
+  "value": "not supported"
+ },
+ "e1.h5.stop.k": {
+  "k": 0,
+  "n": 0,
+  "source": "results/hypotheses.json",
+  "text": "no block",
+  "value": null
+ },
+ "e1.h5.stop.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "not judgeable",
+  "value": "not judgeable"
+ },
+ "e1.h5.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "Stop hook: not judgeable; write hook: supported",
+  "value": "partly judgeable"
+ },
+ "e1.h5.write.k": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "source": "results/hypotheses.json",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "unit": "blocks",
+  "value": 1.0
+ },
+ "e1.h5.write.verdict": {
+  "source": "results/hypotheses.json",
+  "text": "supported",
+  "value": "supported"
+ },
+ "e1.last_run_ts": {
+  "source": "e1/results.jsonl",
+  "text": "2026-09-30T17:26:57Z",
+  "value": "2026-09-30T17:26:57Z"
+ },
+ "e1.model_id": {
+  "source": "e1/results.jsonl",
+  "text": "claude-opus-5-5",
+  "value": [
+   "claude-opus-5-5"
+  ]
+ },
+ "e1.n_cells": {
+  "source": "e1/results.jsonl",
+  "text": "20",
+  "value": 20
+ },
+ "e1.n_exploratory_runs": {
+  "source": "e1/results.jsonl",
+  "text": "0",
+  "value": 0
+ },
+ "e1.n_killed": {
+  "note": "runs stopped by the 30-minute wall cap",
+  "source": "e1/results.jsonl",
+  "text": "0",
+  "value": 0
+ },
+ "e1.n_runs": {
+  "note": "counted, non-voided runs on claude-opus-5-5",
+  "source": "e1/results.jsonl",
+  "text": "200",
+  "value": 200
+ },
+ "e1.n_void": {
+  "source": "e1/results.jsonl",
+  "text": "0",
+  "value": 0
+ },
+ "e1.shortfall": {
+  "source": "e1/results.jsonl",
+  "text": "none",
+  "value": []
+ },
+ "e1.trimwrit_commit": {
+  "source": "e1/results.jsonl",
+  "text": "a098f95",
+  "value": [
+   "a098f95"
+  ]
+ },
+ "rules.all.share_not_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.690376,
+   0.831963
+  ],
+  "k": 103,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "103 of 134 (76.9%, 95% CI 69.0% to 83.2%)",
+  "text_short": "76.9%",
+  "value": 0.768657
+ },
+ "rules.class.ask": {
+  "source": "data/rules.csv",
+  "text": "9",
+  "value": 9
+ },
+ "rules.class.cap": {
+  "source": "data/rules.csv",
+  "text": "2",
+  "value": 2
+ },
+ "rules.class.gate": {
+  "source": "data/rules.csv",
+  "text": "13",
+  "value": 13
+ },
+ "rules.class.never": {
+  "source": "data/rules.csv",
+  "text": "37",
+  "value": 37
+ },
+ "rules.class.other": {
+  "source": "data/rules.csv",
+  "text": "35",
+  "value": 35
+ },
+ "rules.class.sequence": {
+  "source": "data/rules.csv",
+  "text": "20",
+  "value": 20
+ },
+ "rules.class.stop": {
+  "source": "data/rules.csv",
+  "text": "12",
+  "value": 12
+ },
+ "rules.class.window": {
+  "source": "data/rules.csv",
+  "text": "2",
+  "value": 2
+ },
+ "rules.class.write-path": {
+  "source": "data/rules.csv",
+  "text": "4",
+  "value": 4
+ },
+ "rules.n_both": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.041038,
+   0.131925
+  ],
+  "k": 10,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "10 of 134 (7.5%, 95% CI 4.1% to 13.2%)",
+  "text_short": "7.5%",
+  "value": 0.074627
+ },
+ "rules.n_door_only": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.05197,
+   0.150012
+  ],
+  "k": 12,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "12 of 134 (9.0%, 95% CI 5.2% to 15.0%)",
+  "text_short": "9.0%",
+  "value": 0.089552
+ },
+ "rules.n_in_scope": {
+  "source": "data/rules.csv",
+  "text": "134",
+  "value": 134
+ },
+ "rules.n_prose_only": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.763917,
+   0.889007
+  ],
+  "k": 112,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "112 of 134 (83.6%, 95% CI 76.4% to 88.9%)",
+  "text_short": "83.6%",
+  "value": 0.835821
+ },
+ "rules.prose_only.share_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.082871,
+   0.209265
+  ],
+  "k": 15,
+  "n": 112,
+  "source": "data/rules.csv",
+  "text": "15 of 112 (13.4%, 95% CI 8.3% to 20.9%)",
+  "text_short": "13.4%",
+  "value": 0.133929
+ },
+ "rules.prose_only.share_enone": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.266347,
+   0.440148
+  ],
+  "k": 39,
+  "n": 112,
+  "source": "data/rules.csv",
+  "text": "39 of 112 (34.8%, 95% CI 26.6% to 44.0%)",
+  "text_short": "34.8%",
+  "value": 0.348214
+ },
+ "rules.prose_only.share_epartial": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.42627,
+   0.60826
+  ],
+  "k": 58,
+  "n": 112,
+  "source": "data/rules.csv",
+  "text": "58 of 112 (51.8%, 95% CI 42.6% to 60.8%)",
+  "text_short": "51.8%",
+  "value": 0.517857
+ },
+ "rules.prose_only.share_not_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.790735,
+   0.917129
+  ],
+  "k": 97,
+  "n": 112,
+  "source": "data/rules.csv",
+  "text": "97 of 112 (86.6%, 95% CI 79.1% to 91.7%)",
+  "text_short": "86.6%",
+  "value": 0.866071
+ },
+ "rules.share_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.168037,
+   0.309624
+  ],
+  "k": 31,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "31 of 134 (23.1%, 95% CI 16.8% to 31.0%)",
+  "text_short": "23.1%",
+  "value": 0.231343
+ },
+ "rules.share_enone": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.227525,
+   0.380721
+  ],
+  "k": 40,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "40 of 134 (29.9%, 95% CI 22.8% to 38.1%)",
+  "text_short": "29.9%",
+  "value": 0.298507
+ },
+ "rules.share_epartial": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.387656,
+   0.554306
+  ],
+  "k": 63,
+  "n": 134,
+  "source": "data/rules.csv",
+  "text": "63 of 134 (47.0%, 95% CI 38.8% to 55.4%)",
+  "text_short": "47.0%",
+  "value": 0.470149
+ },
+ "rules.with_door.share_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.518483,
+   0.868492
+  ],
+  "k": 16,
+  "n": 22,
+  "source": "data/rules.csv",
+  "text": "16 of 22 (72.7%, 95% CI 51.8% to 86.8%)",
+  "text_short": "72.7%",
+  "value": 0.727273
+ },
+ "rules.with_door.share_enone": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.008069,
+   0.21798
+  ],
+  "k": 1,
+  "n": 22,
+  "source": "data/rules.csv",
+  "text": "1 of 22 (4.5%, 95% CI 0.8% to 21.8%)",
+  "text_short": "4.5%",
+  "value": 0.045455
+ },
+ "rules.with_door.share_epartial": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.10123,
+   0.4344
+  ],
+  "k": 5,
+  "n": 22,
+  "source": "data/rules.csv",
+  "text": "5 of 22 (22.7%, 95% CI 10.1% to 43.4%)",
+  "text_short": "22.7%",
+  "value": 0.227273
+ },
+ "rules.with_door.share_not_efull": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.131508,
+   0.481517
+  ],
+  "k": 6,
+  "n": 22,
+  "source": "data/rules.csv",
+  "text": "6 of 22 (27.3%, 95% CI 13.2% to 48.2%)",
+  "text_short": "27.3%",
+  "value": 0.272727
+ }
+}
