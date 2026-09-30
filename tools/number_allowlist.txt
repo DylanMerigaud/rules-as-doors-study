@@ -17,3 +17,8 @@ T-[ABC]
 [0-9a-fA-F]{7,40}
 RQ[1-3]
 v0\.[12]\.0
+# A day of a month written in words ("21 September"): a date, not a measurement. Only the months
+# of the study (July to December) are listed.
+\b[0-3]?\d (?:July|August|September|October|November|December)\b
+# The E1 arm without prose and without door (A0); AP, AD, APD carry no digit.
+\bA0\b

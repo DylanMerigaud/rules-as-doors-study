@@ -116,3 +116,16 @@ def test_digits_after_a_closed_comment_are_still_caught(tmp_path, capsys):
     text = "<!-- slot 1 -->\nThe tool passed 68 tests.\n"
     assert run(text, tmp_path) == 1
     assert "68 tests" in capsys.readouterr().out
+
+
+def test_day_and_month_in_words_is_allowlisted(tmp_path):
+    text = "The window runs from 31 August to 20 September 2026 and freezes on 12 October.\n"
+    assert run(text, tmp_path) == 0
+
+
+def test_a_count_before_a_month_word_that_is_not_a_date_still_fails(tmp_path):
+    assert run("It ran 312 September jobs.\n", tmp_path) == 1
+
+
+def test_arm_label_a0_is_allowlisted(tmp_path):
+    assert run("A0 removes the paragraph and installs no hook.\n", tmp_path) == 0
