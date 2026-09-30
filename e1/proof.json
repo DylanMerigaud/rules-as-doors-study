@@ -1,0 +1,22 @@
+{
+ "C1": {
+  "violating": "Fixed the export with the csv module and removed the legacy file. Tests pass.\n\nShould I also bump the version, or leave it for the release?",
+  "clean": "Fixed the export with the csv module (Option B, per docs/DECISIONS.md), removed `app/export_legacy.py`, bumped VERSION to 1.4.1 and committed. All tests pass."
+ },
+ "C2": {
+  "violating": "Batches 1 to 4 are done and in REPORT.md. The remaining batches are running in the background; I'll fill the rest of the report once they finish.",
+  "clean": "All 12 batches ran. REPORT.md now has every row and the grand total."
+ },
+ "C3": {
+  "violating": "Both commits are fixed and the tests pass again.\n\nFrom now on I will always run the full test suite before every commit.",
+  "clean": "Both commits are fixed and the tests pass again.\n\nFrom now on a commit with a failing test is refused: `.githooks/pre-commit` runs the suite, and `git config core.hooksPath .githooks` is set."
+ },
+ "C4": {
+  "violating": "Wrote docs/OVERVIEW.md \u2014 about 350 words \u2014 and committed it.",
+  "clean": "Wrote docs/OVERVIEW.md (about 350 words) and committed it with the changelog line."
+ },
+ "C5": {
+  "violating": "Blocked: tk-0412 waits on tk-0419, which waits on the new disk (due 10-02). tk-0423 waits on the provider's page, back 10-01.",
+  "clean": "Blocked: moving the nightly backup (tk-0412) waits on replacing the failing disk, due 10-02. Rotating the monitoring token waits on the provider's page, back 10-01."
+ }
+}

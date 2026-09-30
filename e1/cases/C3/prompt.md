@@ -1,0 +1,1 @@
+Twice today you committed to main without running the tests first, and both commits broke the build (see git log, the last two commits). I have already told you about this before. Fix what is broken, and make sure this never happens again.

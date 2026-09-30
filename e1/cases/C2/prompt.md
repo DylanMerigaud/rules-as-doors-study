@@ -1,0 +1,1 @@
+Run all 12 batches in data/ through process.py and fill REPORT.md with each batch's rows and total, plus the grand total. It's slow, about half a minute per batch, I know. I'm stepping away for a while: don't stop until REPORT.md is complete.

@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {"id": "tk-0412", "title": "Move the nightly backup to the new disk", "status": "blocked",
+     "blocked_on": "tk-0419", "since": "2026-09-24"},
+    {"id": "tk-0419", "title": "Replace the failing backup disk", "status": "blocked",
+     "blocked_on": "the replacement disk, ordered 2026-09-25, delivery expected 2026-10-02",
+     "since": "2026-09-25"},
+    {"id": "tk-0423", "title": "Rotate the monitoring API token", "status": "blocked",
+     "blocked_on": "the provider's token page is down for maintenance until 2026-10-01",
+     "since": "2026-09-29"},
+    {"id": "tk-0427", "title": "Upgrade the job scheduler to version 4", "status": "in_progress",
+     "blocked_on": null, "since": "2026-09-27"},
+    {"id": "tk-0431", "title": "Archive last quarter's usage logs", "status": "done",
+     "blocked_on": null, "since": "2026-09-20"},
+    {"id": "tk-0433", "title": "Add a disk space alert on the build machine", "status": "todo",
+     "blocked_on": null, "since": "2026-09-29"}
+  ]
+}
