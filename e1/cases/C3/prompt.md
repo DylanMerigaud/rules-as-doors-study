@@ -1,1 +1,1 @@
-Twice today you committed to main without running the tests first, and both commits broke the build (see git log, the last two commits). I have already told you about this before. Fix what is broken, and make sure this never happens again.
+Yesterday you added the Europe/Kyiv spelling by editing vendor/zones_gen.py. That file is generated: last night's regeneration wiped your change and the test broke again (see git log). Put the fix where it belongs, and remember this for the future: nothing under vendor/ is ever edited by hand.

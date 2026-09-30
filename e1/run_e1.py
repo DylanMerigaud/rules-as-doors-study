@@ -105,6 +105,29 @@ def void_reason(info):
     return None
 
 
+def grade(arms_mod, case, arm, info, state, prompt):
+    """Every outcome of PREREG section 7 for one run, from what the run left."""
+    ctx = env("E1_CONTEXT")
+    _prose, regs = arms_of(case)[arm]
+    v = graders.violation(case, info, state)
+    k_stop = arms_mod.stop_blocks_took_effect(
+        info, lambda t: graders.text_violates(case, t, state))
+    k_deny = arms_mod.denials_took_effect(info, graders.has_dash) if case == "C4" else []
+    return {
+        "V": v,
+        "V_door": graders.door_violation(case, info, state, os.path.join(ctx, "hooks"), prompt),
+        "B": arms_mod.blocks(info),
+        "B_stop": sum(1 for s in info["stops"] for h in s["hooks"] if h["decision"] == "block"),
+        "B_deny": len(info["denials"]),
+        "K_stop": k_stop,
+        "K_deny": k_deny,
+        "E": (v if regs else None),
+        "C": graders.complete(case, info, state),
+        "stop_attempts": len(info["stops"]),
+        "tool_calls": len(info["tools"]),
+    }
+
+
 def one_run(case, arm, run_index, out_dir, counted, order=None):
     arms_mod, tw_commit = trimwrit()
     ctx = env("E1_CONTEXT")
@@ -131,25 +154,7 @@ def one_run(case, arm, run_index, out_dir, counted, order=None):
            "killed": info.get("killed"), "turns": info.get("num_turns"),
            "output_tokens": info.get("output_tokens")}
     if not void:
-        v = graders.violation(case, info, state)
-        has_door = bool(regs)
-        k_stop = arms_mod.stop_blocks_took_effect(
-            info, lambda t: graders.text_violates(case, t, state))
-        k_deny = arms_mod.denials_took_effect(info, graders.has_dash) if case == "C4" else []
-        rec.update({
-            "V": v,
-            "V_door": graders.door_violation(case, info, state, os.path.join(ctx, "hooks"),
-                                             prompt),
-            "B": arms_mod.blocks(info),
-            "B_stop": sum(1 for s in info["stops"] for h in s["hooks"]
-                          if h["decision"] == "block"),
-            "B_deny": len(info["denials"]),
-            "K": k_stop + k_deny,
-            "E": (v if has_door else None),
-            "C": graders.complete(case, info, state),
-            "stop_attempts": len(info["stops"]),
-            "tool_calls": len(info["tools"]),
-        })
+        rec.update(grade(arms_mod, case, arm, info, state, prompt))
     return rec
 
 
@@ -266,6 +271,24 @@ def cmd_batch(a):
             f.result()
 
 
+def cmd_regrade(a):
+    """Grade again, with the current graders, every run.json under a directory of raw runs."""
+    arms_mod, _c = trimwrit()
+    root = a.root
+    for dirpath, _d, files in sorted(os.walk(root)):
+        if "run.json" not in files:
+            continue
+        rel = os.path.relpath(dirpath, root)
+        case = a.case or rel.split("-")[0].split(os.sep)[0]
+        with open(os.path.join(dirpath, "run.json"), encoding="utf-8") as fh:
+            run = json.load(fh)
+        prompt = open(os.path.join(HERE, "cases", case, "prompt.md")).read().strip()
+        out = {"run": rel, "case": case, "void": void_reason(run["info"])}
+        if not out["void"]:
+            out.update(grade(arms_mod, case, a.arm, run["info"], run["state"], prompt))
+        print(json.dumps(out), flush=True)
+
+
 def cmd_status(_a):
     got = {}
     for r in read_jsonl(RESULTS):
@@ -292,8 +315,13 @@ def main():
     bt.add_argument("--jobs", type=int, default=4)
     bt.add_argument("--skip-case", action="append")
     sub.add_parser("status")
+    rg = sub.add_parser("regrade")
+    rg.add_argument("root")
+    rg.add_argument("--case")
+    rg.add_argument("--arm", default="A0")
     a = p.parse_args()
-    {"order": cmd_order, "pilot": cmd_pilot, "batch": cmd_batch, "status": cmd_status}[a.cmd](a)
+    {"order": cmd_order, "pilot": cmd_pilot, "batch": cmd_batch, "status": cmd_status,
+     "regrade": cmd_regrade}[a.cmd](a)
 
 
 if __name__ == "__main__":

@@ -5,24 +5,124 @@
   "seed": 20260930,
   "instruction_sha256": "a71019d6c2dfc7a6b5f3a3da5ff368f6f5f56d68421b26cdf385ef0fe3e2935c",
   "cases": {
-    "C1": {"rule": "K039", "ablate": [[207, 219]],
-           "doors": {"door": [
-             {"event": "Stop", "script": "stop_ask_gate.py"},
-             {"event": "PreToolUse", "matcher": "AskUserQuestion", "script": "ask_question_gate.py"}]},
-           "hook_files": ["stop_ask_gate.py", "ask_question_gate.py", "hook_bounds.py", "rc_activity.py"]},
-    "C2": {"rule": "K033", "ablate": [[166, 173]],
-           "doors": {"door": [
-             {"event": "UserPromptSubmit", "script": "stop_promise_gate.py", "args": ["--prompt"]},
-             {"event": "Stop", "script": "stop_promise_gate.py"}]},
-           "hook_files": ["stop_promise_gate.py", "hook_bounds.py"]},
-    "C3": {"rule": "K029", "ablate": [[146, 159]], "setup": "setup.sh",
-           "doors": {"door": [{"event": "Stop", "script": "stop_rule_gate.py"}]},
-           "hook_files": ["stop_rule_gate.py", "hook_bounds.py"]},
-    "C4": {"rule": "K001", "ablate": [[9, 16]],
-           "doors": {"stop": [{"event": "Stop", "script": "no-em-dash.py"}],
-                     "write": [{"event": "PreToolUse", "matcher": "Write|Edit|NotebookEdit|Bash",
-                                "script": "no-em-dash-write.py"}]},
-           "hook_files": ["no-em-dash.py", "no-em-dash-write.py"]},
-    "C5": {"rule": "K004", "ablate": [[40, 47]], "doors": {}, "hook_files": []}
+    "C1": {
+      "rule": "K039",
+      "ablate": [
+        [
+          207,
+          219
+        ]
+      ],
+      "doors": {
+        "door": [
+          {
+            "event": "Stop",
+            "script": "stop_ask_gate.py"
+          },
+          {
+            "event": "PreToolUse",
+            "matcher": "AskUserQuestion",
+            "script": "ask_question_gate.py"
+          }
+        ]
+      },
+      "hook_files": [
+        "stop_ask_gate.py",
+        "ask_question_gate.py",
+        "hook_bounds.py",
+        "rc_activity.py"
+      ],
+      "setup": "setup.sh"
+    },
+    "C2": {
+      "rule": "K033",
+      "ablate": [
+        [
+          166,
+          173
+        ]
+      ],
+      "doors": {
+        "door": [
+          {
+            "event": "UserPromptSubmit",
+            "script": "stop_promise_gate.py",
+            "args": [
+              "--prompt"
+            ]
+          },
+          {
+            "event": "Stop",
+            "script": "stop_promise_gate.py"
+          }
+        ]
+      },
+      "hook_files": [
+        "stop_promise_gate.py",
+        "hook_bounds.py"
+      ]
+    },
+    "C3": {
+      "rule": "K029",
+      "ablate": [
+        [
+          146,
+          159
+        ]
+      ],
+      "setup": "setup.sh",
+      "doors": {
+        "door": [
+          {
+            "event": "Stop",
+            "script": "stop_rule_gate.py"
+          }
+        ]
+      },
+      "hook_files": [
+        "stop_rule_gate.py",
+        "hook_bounds.py"
+      ]
+    },
+    "C4": {
+      "rule": "K001",
+      "ablate": [
+        [
+          9,
+          16
+        ]
+      ],
+      "doors": {
+        "stop": [
+          {
+            "event": "Stop",
+            "script": "no-em-dash.py"
+          }
+        ],
+        "write": [
+          {
+            "event": "PreToolUse",
+            "matcher": "Write|Edit|NotebookEdit|Bash",
+            "script": "no-em-dash-write.py"
+          }
+        ]
+      },
+      "hook_files": [
+        "no-em-dash.py",
+        "no-em-dash-write.py"
+      ],
+      "setup": "setup.sh"
+    },
+    "C5": {
+      "rule": "K004",
+      "ablate": [
+        [
+          40,
+          47
+        ]
+      ],
+      "doors": {},
+      "hook_files": []
+    }
   }
 }

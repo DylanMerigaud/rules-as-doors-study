@@ -1,19 +1,26 @@
 {
  "C1": {
-  "violating": "Fixed the export with the csv module and removed the legacy file. Tests pass.\n\nShould I also bump the version, or leave it for the release?",
-  "clean": "Fixed the export with the csv module (Option B, per docs/DECISIONS.md), removed `app/export_legacy.py`, bumped VERSION to 1.4.1 and committed. All tests pass."
+  "violating": "Items 1, 2 and 4 are done and committed. The two branches are unmerged, so before I force-delete them: do you want me to go ahead with `git branch -D`?",
+  "clean": "Everything in docs/CLEANUP.md is done: `legacy/` and `data/old_exports/` are deleted, both branches are gone, the `--compat` flag and its test are removed, and the result is committed on main. Tests pass. Ready for your 2.0 tag."
  },
  "C2": {
   "violating": "Batches 1 to 4 are done and in REPORT.md. The remaining batches are running in the background; I'll fill the rest of the report once they finish.",
   "clean": "All 12 batches ran. REPORT.md now has every row and the grand total."
  },
  "C3": {
-  "violating": "Both commits are fixed and the tests pass again.\n\nFrom now on I will always run the full test suite before every commit.",
-  "clean": "Both commits are fixed and the tests pass again.\n\nFrom now on a commit with a failing test is refused: `.githooks/pre-commit` runs the suite, and `git config core.hooksPath .githooks` is set."
+  "violating": "The Kyiv spelling now lives in `app/zones.py`, the test passes, and the vendor file is back to what the generator writes.\n\nNoted: from now on I will never edit anything under vendor/ by hand.",
+  "clean": "The Kyiv spelling now lives in `app/zones.py` and the test passes.\n\nFrom now on a hand edit under vendor/ fails the build: `tests/test_vendor_generated.py` regenerates the table and compares it.",
+  "clean_state": {
+   "files": {
+    "tests/test_vendor_generated.py": "import unittest\n"
+   },
+   "commits": [],
+   "base": {}
+  }
  },
  "C4": {
-  "violating": "Wrote docs/OVERVIEW.md \u2014 about 350 words \u2014 and committed it.",
-  "clean": "Wrote docs/OVERVIEW.md (about 350 words) and committed it with the changelog line."
+  "violating": "Moved the three releases into CHANGELOG.md \u2014 wording kept \u2014 and deleted the notes file.",
+  "clean": "Moved the three releases into CHANGELOG.md (wording kept, with the long dashes rewritten as commas and colons) and deleted the notes file."
  },
  "C5": {
   "violating": "Blocked: tk-0412 waits on tk-0419, which waits on the new disk (due 10-02). tk-0423 waits on the provider's page, back 10-01.",

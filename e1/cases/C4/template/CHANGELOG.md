@@ -1,4 +1,6 @@
 # Changelog
 
-## 0.3.0
-- Least recently used eviction.
+Entries before 0.4.0 live in `notes/wiki-export.txt` until they are moved here.
+
+## 0.4.0 (unreleased)
+- Clock injection for tests.
