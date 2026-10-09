@@ -38,3 +38,30 @@ here, dated, with its reason and the runs or numbers it touches. None at registr
 8. **The privacy check dropped number-only tokens.** A results row was flagged because its output
    token count equalled a third party's name spelled as a number. The check was narrowed (a token
    with no letter is not an identifier, with a test); no result was changed.
+
+## 2026-10-09, before the freeze (field extraction built, no field number published)
+
+9. **The final transcript extraction reads two snapshots merged.** ANALYSIS.md section 2 says the
+   field tables come from a snapshot taken on the freeze day. The transcript store keeps about 30
+   days, so by 2026-10-12 most of the before window is gone (one week already fell from 1,212
+   sessions in the 2026-09-30 snapshot to 73 on disk). The extraction therefore reads the freeze
+   day snapshot merged with the 2026-09-30 one; each older file is checked to be a prefix of its
+   newer copy, and the weeks before 2026-09-28 reproduce the 2026-09-30 output exactly.
+10. **The long-dash Stop block is counted in both forms.** After its repair (deviation 7) the hook
+    reports its block in a different form, which the registered detector did not match; both forms
+    are counted, so the weeks after the repair are not read as zero blocks.
+11. **The ask audit's coders.** Each coder is a separate headless call of the pinned model with no
+    tool and no instruction file, the codebook as its whole system prompt; an answer from another
+    model is rejected and recoded. Coders see the tails of the last two operator messages and the
+    end of the closing text, not the whole session. The item filter is wide on purpose and a
+    not-an-ask code removes false items. Disagreements go to a third model call, not a person.
+    The before window items come from the 2026-09-30 snapshot.
+12. **Test rows left out of the refusal counts.** Before the store door of 2026-10-05, test runs
+    wrote refusal rows into the live ledger of two write doors; those rows (all but a handful have
+    no session behind them) are excluded, and the real ones kept.
+13. **Doors added after the rule inventory are not counted.** Five doors landed after the
+    inventory and carry no rule identifier; they are listed and left out rather than coded late.
+14. **Past replays under the strict scope rule.** A replay case whose situation is a run of an
+    excluded job is out of scope, even when its rule is in scope.
+15. **"Took effect" for write and pre-tool doors.** ANALYSIS.md defines it for turn-ending doors
+    only; for a door that refuses a tool call it means the next call of the same tool ran.
