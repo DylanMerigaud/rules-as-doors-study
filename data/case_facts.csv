@@ -1,0 +1,10 @@
+key,value,text,source,k,n,ci_low,ci_high
+case.commits,4543,"4,543","git history of the harness repository, main branch, commits from 2026-07-16 to 2026-09-30 inclusive",,,,
+case.python_loc,421044,"421,044","git history of the harness repository, main branch, lines of tracked Python files at the last commit of 2026-09-30",,,,
+case.weeks,12,twelve,"git history of the harness repository, main branch, whole weeks from the first commit (2026-07-16) to 2026-10-11 inclusive",,,,
+dig.corr_after,0.0469388,4.7% (23 of 490),"pre-declared correction probe ledger, after figure, reproduced on the transcript snapshot",23,490,0.0314787,0.0694474
+dig.corr_before,0.0462456,"4.6% (93 of 2,011)","pre-declared correction probe ledger, before figure as recorded, no longer recomputable",93,2011,0.0378998,0.0563217
+disclosure.commits_coauthored,3702,"3,702","git history of the harness repository, main branch, commits up to 2026-10-11 with a Claude co-author trailer",3702,5519,,
+disclosure.commits_total,5519,"5,519","git history of the harness repository, main branch, all commits up to 2026-10-11",,,,
+rules.kappa_class,0.906571,0.91 (0.85 to 0.95),"rule inventory coding table, two model coders, units behind public rules, bootstrap over items 10,000 resamples",,174,0.854484,0.950025
+rules.kappa_enforceability,0.877018,0.88 (0.81 to 0.94),"rule inventory coding table, two model coders, units behind public rules, bootstrap over items 10,000 resamples",,174,0.808643,0.935882
