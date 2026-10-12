@@ -1,0 +1,17 @@
+part,session_kind,repo_group,turn_ends,ends_q_trailing,ends_q_trailing_replied,ends_q_last400,ref_stop_promise,ref_stop_promise_continued,dash_stop_detected,dash_stop_continued,dash_stop_still_violating
+retrospective,operator session,control,58,0,0,3,0,0,0,0,0
+retrospective,operator session,door,636,7,7,33,0,0,44,1,1
+retrospective,popped terminal,control,5,0,0,0,0,0,0,0,0
+retrospective,popped terminal,door,514,0,0,1,28,28,22,0,0
+retrospective,scheduler worker,control,14,0,0,0,0,0,0,0,0
+retrospective,scheduler worker,door,555,3,0,12,2,2,1,0,0
+retrospective,subagent,control,0,0,0,0,0,0,0,0,0
+retrospective,subagent,door,0,0,0,0,0,0,0,0,0
+prospective,operator session,control,34,1,1,5,0,0,0,0,0
+prospective,operator session,door,1243,11,6,28,2,2,1,1,0
+prospective,popped terminal,control,47,0,0,0,0,0,0,0,0
+prospective,popped terminal,door,426,0,0,0,17,17,2,2,0
+prospective,scheduler worker,control,0,0,0,0,0,0,0,0,0
+prospective,scheduler worker,door,1198,0,0,48,0,0,0,0,0
+prospective,subagent,control,0,0,0,0,0,0,0,0,0
+prospective,subagent,door,0,0,0,0,0,0,0,0,0
