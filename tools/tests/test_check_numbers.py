@@ -129,3 +129,12 @@ def test_a_count_before_a_month_word_that_is_not_a_date_still_fails(tmp_path):
 
 def test_arm_label_a0_is_allowlisted(tmp_path):
     assert run("A0 removes the paragraph and installs no hook.\n", tmp_path) == 0
+
+
+def test_a_figure_file_of_the_repository_is_allowlisted(tmp_path):
+    line = "![Figure 1](https://example.org/blob/main/results/figures/figure4_e1.svg)\n"
+    assert run(line, tmp_path) == 0
+
+
+def test_a_count_next_to_a_figure_link_still_fails(tmp_path):
+    assert run("We ran 200 cases, see results/figures/figure4_e1.svg\n", tmp_path) == 1

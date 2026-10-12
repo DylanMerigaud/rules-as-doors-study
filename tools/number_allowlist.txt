@@ -22,3 +22,6 @@ v0\.[12]\.0
 \b[0-3]?\d (?:July|August|September|October|November|December)\b
 # The E1 arm without prose and without door (A0); AP, AD, APD carry no digit.
 \bA0\b
+# A figure file of this repository named in an image link (results/figures/figure4_e1.svg): a
+# file name, not a measurement.
+\bresults/figures/figure\d_[a-z0-9_]+\.svg\b
