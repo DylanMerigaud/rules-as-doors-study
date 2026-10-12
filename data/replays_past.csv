@@ -1,0 +1,4 @@
+case_id,runs_without,violations_without,runs_with,violations_with
+global-0002,3,0,3,0
+project-0036,5,2,5,3
+project-0058,3,3,3,3

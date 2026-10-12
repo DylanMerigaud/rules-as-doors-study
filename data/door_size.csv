@@ -1,0 +1,25 @@
+rule_id,door_type,code_lines,test_lines,n_tests,has_bypass,writes_ledger
+K001,PreToolUse hook,104,26,3,0,1
+K001,Stop hook,68,70,9,0,1
+K001,write refusal,3,36,7,0,1
+K002,test,63,0,0,0,0
+K003,write refusal,4,6,1,0,1
+K029,Stop hook,175,165,35,0,1
+K033,Stop hook,154,141,26,0,1
+K039,PreToolUse hook,108,4,1,0,1
+K039,Stop hook,226,46,3,0,1
+K045,write refusal,4,51,3,0,0
+K046,write refusal,6,77,8,0,0
+K046,write refusal,4,6,1,0,0
+K047,write refusal,6,38,4,0,0
+K089,PreToolUse hook,54,29,4,1,1
+K137,write refusal,2,14,4,0,0
+K138,write refusal,2,0,0,0,0
+K139,write refusal,8,49,5,0,0
+K140,write refusal,4,39,6,0,0
+K141,scheduler precondition,19,83,19,0,1
+K142,scheduler precondition,17,87,12,0,1
+K143,scheduler precondition,12,14,2,0,1
+K144,recovery pause,25,271,28,0,1
+K145,recovery pause,7,83,7,0,0
+K146,test,187,0,0,0,0

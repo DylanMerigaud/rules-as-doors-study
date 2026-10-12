@@ -1,0 +1,13 @@
+week,rule_id,door_type,refusals,took_effect,did_not,cannot_judge,recovery_n,recovery_turns,recovery_output_tokens
+2026-09-28,K001,PreToolUse hook,78,72,0,6,72,84,210920
+2026-09-28,K001,Stop hook,3,3,0,0,3,3,1682
+2026-09-28,K001,write refusal,2,2,0,0,2,2,484
+2026-09-28,K029,Stop hook,19,19,0,0,19,51,39157
+2026-09-28,K033,Stop hook,6,4,0,2,4,134,75078
+2026-09-28,K039,Stop hook,10,9,0,1,9,48,40167
+2026-10-05,K001,PreToolUse hook,35,35,0,0,35,72,126260
+2026-10-05,K001,Stop hook,1,1,0,0,1,1,543
+2026-10-05,K001,write refusal,4,4,0,0,4,4,927
+2026-10-05,K029,Stop hook,11,11,0,0,11,22,19183
+2026-10-05,K033,Stop hook,15,15,0,0,15,289,104128
+2026-10-05,K039,Stop hook,8,8,0,0,8,71,72403
