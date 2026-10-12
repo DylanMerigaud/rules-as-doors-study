@@ -147,12 +147,13 @@ def judge(cells, cases_ok, vkey="V_k", vn="n"):
     out["H1"] = _pooled_verdict(per, lambda lo, hi, pt: lo > 0)
 
     # H2
-    per_diff, per_vad = OrderedDict(), OrderedDict()
+    per_diff, per_vad, per_vap = OrderedDict(), OrderedDict(), OrderedDict()
     for c in H_CASES:
         ad, ap = v(c, AD_ARM[c]), v(c, "AP")
         if c in cases_ok and ad is not None and ap is not None:
             per_diff[c] = ap - ad
             per_vad[c] = ad
+            per_vap[c] = ap
     h2 = _pooled_verdict(per_diff, lambda lo, hi, pt: lo > 0)
     h2["statistic"] = "V(AP) minus V(AD)"
     if len(per_vad) >= MIN_CASES:
@@ -164,6 +165,9 @@ def judge(cells, cases_ok, vkey="V_k", vn="n"):
             h2["verdict"] = "supported" if both else "not supported"
             h2["parts"] = {"v_ad_at_most_0.05": pt <= H2_MAX_V,
                            "diff_interval_above_0": h2["interval"][0] > 0}
+        # The prose-alone level over the same cases, descriptive: it decides nothing.
+        pt, ci = pooled(per_vap, list(per_vap))
+        h2["v_ap"] = {"point": pt, "interval": list(ci), "per_case": dict(per_vap)}
     else:
         h2["v_ad"] = {"per_case": dict(per_vad)}
     out["H2"] = h2
@@ -358,12 +362,13 @@ def run(ctx):
                     ci=d["interval"], ci_method="cluster bootstrap over cases, 95% percentile",
                     per_case=d["per_case"], text_short=fmt_num(d["point"]))
         reg.add("e1.%s.verdict" % h.lower(), d["verdict"], d["verdict"], "results/hypotheses.json")
-    vad = hyp["H2"].get("v_ad", {})
-    if "point" in vad:
-        reg.add("e1.h2.v_ad", vad["point"], fmt_diff(vad["point"], vad["interval"]),
-                "results/hypotheses.json", ci=vad["interval"],
-                ci_method="cluster bootstrap over cases, 95% percentile",
-                per_case=vad["per_case"], text_short=fmt_num(vad["point"]))
+    for part in ("v_ad", "v_ap"):
+        pv = hyp["H2"].get(part, {})
+        if "point" in pv:
+            reg.add("e1.h2.%s" % part, pv["point"], fmt_diff(pv["point"], pv["interval"]),
+                    "results/hypotheses.json", ci=pv["interval"],
+                    ci_method="cluster bootstrap over cases, 95% percentile",
+                    per_case=pv["per_case"], text_short=fmt_num(pv["point"]))
     for door in ("stop", "write"):
         p = hyp["H5"][door]
         if p["blocks"]:

@@ -34,6 +34,10 @@ def test_rules_tables(ctx):
     assert r["rules.share_efull"]["k"] == 2
     assert (r["rules.prose_only.share_enone"]["k"], r["rules.prose_only.share_enone"]["n"]) == (1, 2)
     assert (r["rules.with_door.share_efull"]["k"], r["rules.with_door.share_efull"]["n"]) == (2, 2)
+    # Every rule with a door carries its label as a key; a prose-only rule does not.
+    assert r["rules.K001.enforceability"]["value"] == "E-full"
+    assert r["rules.K004.enforceability"]["value"] == "E-full"
+    assert "rules.K002.enforceability" not in r
 
 
 def test_per_rule_rates_listing_and_window(ctx):

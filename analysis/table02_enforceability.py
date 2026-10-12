@@ -38,6 +38,9 @@ def run(ctx):
         # E-partial and E-none together: where a door can see at most a proxy.
         k = sum(1 for r in sub if r["enforceability"] in ("E-partial", "E-none"))
         add_prop(reg, "rules.%s.share_not_efull" % g, k, n, SRC)
+    # The label of each rule that has a door, so a sentence naming one door's class is a key.
+    for r in groups[2][1]:
+        reg.add("rules.%s.enforceability" % r["id"], r["enforceability"], r["enforceability"], SRC)
     ctx.write_table("table02_enforceability.csv",
                     ["group", "enforceability", "k", "n", "share", "wilson_lo", "wilson_hi"], rows)
 

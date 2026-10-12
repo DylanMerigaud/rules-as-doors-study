@@ -2617,6 +2617,23 @@
   "text_short": "0.53",
   "value": 0.525
  },
+ "e1.h2.v_ap": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.05,
+   0.2
+  ],
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.1,
+   "C3": 0.0,
+   "C4": 0.2
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.12 (95% CI 0.05 to 0.20)",
+  "text_short": "0.12",
+  "value": 0.125
+ },
  "e1.h2.verdict": {
   "source": "results/hypotheses.json",
   "text": "not supported",
@@ -3471,6 +3488,116 @@
   "source": "data/replays_past.csv",
   "text": "2",
   "value": 2
+ },
+ "rules.K001.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K002.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K003.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K029.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-partial",
+  "value": "E-partial"
+ },
+ "rules.K033.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-partial",
+  "value": "E-partial"
+ },
+ "rules.K039.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-partial",
+  "value": "E-partial"
+ },
+ "rules.K041.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-partial",
+  "value": "E-partial"
+ },
+ "rules.K045.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K046.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K047.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K060.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-none",
+  "value": "E-none"
+ },
+ "rules.K089.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-partial",
+  "value": "E-partial"
+ },
+ "rules.K137.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K138.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K139.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K140.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K141.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K142.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K143.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K144.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K145.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
+ },
+ "rules.K146.enforceability": {
+  "source": "data/rules.csv",
+  "text": "E-full",
+  "value": "E-full"
  },
  "rules.all.share_not_efull": {
   "ci_method": "Wilson 95%",

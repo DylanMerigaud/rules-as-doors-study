@@ -92,6 +92,11 @@ def test_a_leaky_door_fails_h2_and_a_door_that_does_not_hold_fails_h5(tmp_path):
     doc = e1.run(ctx)
     assert doc["H2"]["verdict"] == "not supported"
     assert doc["H2"]["parts"]["v_ad_at_most_0.05"] is False
+    # The prose-alone level is reported beside the door-alone one over the same cases.
+    vap = doc["H2"]["v_ap"]
+    assert set(vap["per_case"]) == set(doc["H2"]["v_ad"]["per_case"])
+    assert vap["point"] == pytest.approx(sum(vap["per_case"].values()) / len(vap["per_case"]))
+    assert ctx.registry.entries["e1.h2.v_ap"]["value"] == pytest.approx(vap["point"])
     assert doc["H5"]["write"]["verdict"] == "not supported"
     assert doc["H5"]["verdict"] == "not supported"
 

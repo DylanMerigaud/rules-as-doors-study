@@ -100,6 +100,19 @@
    "v_ad_at_most_0.05": false,
    "diff_interval_above_0": false
   },
+  "v_ap": {
+   "point": 0.125,
+   "interval": [
+    0.05,
+    0.2
+   ],
+   "per_case": {
+    "C1": 0.2,
+    "C2": 0.1,
+    "C3": 0.0,
+    "C4": 0.2
+   }
+  },
   "secondary_door_detector": {
    "cases": [
     "C1",
