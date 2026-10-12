@@ -1,0 +1,5 @@
+rule_id,sampled,right,wrong,unclear
+K001,30,30,0,0
+K029,20,2,18,0
+K033,19,18,0,1
+K039,17,8,9,0

@@ -1,0 +1,7 @@
+row_set,era,first_day,last_day,days,rows,due_row_days,logged_same_day,share,days_with_no_log
+all_open_rows,before,2026-08-31,2026-09-19,20,23,300,92,0.306667,7
+all_open_rows,cutover_day,2026-09-20,2026-09-20,1,23,13,9,0.692308,0
+all_open_rows,after,2026-09-21,2026-10-11,21,23,318,281,0.883648,0
+rows_with_logs_in_both_eras,before,2026-08-31,2026-09-19,20,16,200,92,0.46,7
+rows_with_logs_in_both_eras,cutover_day,2026-09-20,2026-09-20,1,16,8,8,1,0
+rows_with_logs_in_both_eras,after,2026-09-21,2026-10-11,21,16,193,171,0.88601,0

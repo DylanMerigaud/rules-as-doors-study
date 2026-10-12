@@ -1,0 +1,4 @@
+prediction,k,n,share,wilson_lo,wilson_hi,verdict
+door,6,1669,0.00359497,0.00164862,0.00782118,met
+control,1,81,0.0123457,0.00218265,0.0666688,insufficient
+promise,19,19,1,0.831821,1,met

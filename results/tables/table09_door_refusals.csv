@@ -1,0 +1,5 @@
+rule_id,refusals,took_effect,did_not,cannot_judge,recovery_n,recovery_turns,recovery_output_tokens
+K001,123,117,0,6,117,166,340816
+K029,30,30,0,0,30,73,58340
+K033,21,19,0,2,19,423,179206
+K039,18,17,0,1,17,119,112570

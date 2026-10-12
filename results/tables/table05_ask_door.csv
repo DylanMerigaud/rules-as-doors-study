@@ -1,0 +1,13 @@
+group,measure,window,k,turn_ends,share,lo,hi,label
+door,answered_q,before,66,1738,0.0379747,0.02996,0.0480273,
+door,answered_q,after,13,2819,0.00461156,0.00269705,0.00787438,
+door,answered_q,after minus before,,,-0.0333631,-0.0435964,-0.0247097,
+door,qmark400,before,108,1738,0.0621404,0.051728,0.0744841,
+door,qmark400,after,62,2819,0.0219936,0.0171948,0.0280934,
+door,qmark400,after minus before,,,-0.0401468,-0.0533905,-0.0280792,
+control,answered_q,before,0,220,0,0,0.0171615,
+control,answered_q,after,1,144,0.00694444,0.00122692,0.0382847,
+control,answered_q,after minus before,,,0.00694444,-0.0111444,0.0382847,
+control,qmark400,before,11,220,0.05,0.0281455,0.0872999,
+control,qmark400,after,8,144,0.0555556,0.0284166,0.105791,
+control,qmark400,after minus before,,,0.00555556,-0.0405726,0.060339,

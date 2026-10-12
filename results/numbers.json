@@ -1,4 +1,997 @@
 {
+ "ask.control.after.answered_q": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.001227,
+   0.038285
+  ],
+  "k": 1,
+  "n": 144,
+  "source": "data/transcripts_weekly.csv",
+  "text": "1 of 144 (0.7%, 95% CI 0.1% to 3.8%)",
+  "text_short": "0.7%",
+  "value": 0.006944
+ },
+ "ask.control.after.qmark400": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.028417,
+   0.105791
+  ],
+  "k": 8,
+  "n": 144,
+  "source": "data/transcripts_weekly.csv",
+  "text": "8 of 144 (5.6%, 95% CI 2.8% to 10.6%)",
+  "text_short": "5.6%",
+  "value": 0.055556
+ },
+ "ask.control.before.answered_q": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.0,
+   0.017162
+  ],
+  "k": 0,
+  "n": 220,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 220 (0.0%, 95% CI 0.0% to 1.7%)",
+  "text_short": "0.0%",
+  "value": 0.0
+ },
+ "ask.control.before.qmark400": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.028145,
+   0.0873
+  ],
+  "k": 11,
+  "n": 220,
+  "source": "data/transcripts_weekly.csv",
+  "text": "11 of 220 (5.0%, 95% CI 2.8% to 8.7%)",
+  "text_short": "5.0%",
+  "value": 0.05
+ },
+ "ask.control.diff": {
+  "ci_method": "Newcombe hybrid score 95%, after minus before",
+  "interval": [
+   -0.011144,
+   0.038285
+  ],
+  "source": "data/transcripts_weekly.csv",
+  "text": "0.7 points (95% CI -1.1 to 3.8)",
+  "text_short": "0.7 points",
+  "value": 0.006944
+ },
+ "ask.control.diff.qmark400": {
+  "ci_method": "Newcombe hybrid score 95%, after minus before",
+  "interval": [
+   -0.040573,
+   0.060339
+  ],
+  "source": "data/transcripts_weekly.csv",
+  "text": "0.6 points (95% CI -4.1 to 6.0)",
+  "text_short": "0.6 points",
+  "value": 0.005556
+ },
+ "ask.criterion.control_drops": {
+  "insufficient": false,
+  "k": 1,
+  "n": 144,
+  "source": "data/transcripts_weekly.csv",
+  "text": "the control group's share over the after window is below 2 percent: the ask door's effect is not claimed",
+  "value": true
+ },
+ "ask.door.after.answered_q": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.002697,
+   0.007874
+  ],
+  "k": 13,
+  "n": 2819,
+  "source": "data/transcripts_weekly.csv",
+  "text": "13 of 2,819 (0.5%, 95% CI 0.3% to 0.8%)",
+  "text_short": "0.5%",
+  "value": 0.004612
+ },
+ "ask.door.after.qmark400": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.017195,
+   0.028093
+  ],
+  "k": 62,
+  "n": 2819,
+  "source": "data/transcripts_weekly.csv",
+  "text": "62 of 2,819 (2.2%, 95% CI 1.7% to 2.8%)",
+  "text_short": "2.2%",
+  "value": 0.021994
+ },
+ "ask.door.before.answered_q": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.02996,
+   0.048027
+  ],
+  "k": 66,
+  "n": 1738,
+  "source": "data/transcripts_weekly.csv",
+  "text": "66 of 1,738 (3.8%, 95% CI 3.0% to 4.8%)",
+  "text_short": "3.8%",
+  "value": 0.037975
+ },
+ "ask.door.before.qmark400": {
+  "ci_method": "Wilson 95%",
+  "insufficient": false,
+  "interval": [
+   0.051728,
+   0.074484
+  ],
+  "k": 108,
+  "n": 1738,
+  "source": "data/transcripts_weekly.csv",
+  "text": "108 of 1,738 (6.2%, 95% CI 5.2% to 7.4%)",
+  "text_short": "6.2%",
+  "value": 0.06214
+ },
+ "ask.door.diff": {
+  "ci_method": "Newcombe hybrid score 95%, after minus before",
+  "interval": [
+   -0.043596,
+   -0.02471
+  ],
+  "source": "data/transcripts_weekly.csv",
+  "text": "-3.3 points (95% CI -4.4 to -2.5)",
+  "text_short": "-3.3 points",
+  "value": -0.033363
+ },
+ "ask.door.diff.qmark400": {
+  "ci_method": "Newcombe hybrid score 95%, after minus before",
+  "interval": [
+   -0.053391,
+   -0.028079
+  ],
+  "source": "data/transcripts_weekly.csv",
+  "text": "-4.0 points (95% CI -5.3 to -2.8)",
+  "text_short": "-4.0 points",
+  "value": -0.040147
+ },
+ "audit.after.avoidable": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.224766,
+   0.350652
+  ],
+  "k": 55,
+  "label": "model-coded",
+  "n": 194,
+  "source": "data/ask_audit.csv",
+  "text": "55 of 194 (28.4%, 95% CI 22.5% to 35.1%)",
+  "text_short": "28.4%",
+  "value": 0.283505
+ },
+ "audit.after.n_asks": {
+  "source": "data/ask_audit.csv",
+  "text": "260",
+  "value": 260
+ },
+ "audit.after.n_avoidable": {
+  "source": "data/ask_audit.csv",
+  "text": "55",
+  "value": 55
+ },
+ "audit.after.n_not_an_ask": {
+  "source": "data/ask_audit.csv",
+  "text": "66",
+  "value": 66
+ },
+ "audit.after.n_only_him": {
+  "source": "data/ask_audit.csv",
+  "text": "139",
+  "value": 139
+ },
+ "audit.before.avoidable": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.360232,
+   0.478624
+  ],
+  "k": 110,
+  "label": "model-coded",
+  "n": 263,
+  "source": "data/ask_audit.csv",
+  "text": "110 of 263 (41.8%, 95% CI 36.0% to 47.9%)",
+  "text_short": "41.8%",
+  "value": 0.418251
+ },
+ "audit.before.n_asks": {
+  "source": "data/ask_audit.csv",
+  "text": "299",
+  "value": 299
+ },
+ "audit.before.n_avoidable": {
+  "source": "data/ask_audit.csv",
+  "text": "110",
+  "value": 110
+ },
+ "audit.before.n_not_an_ask": {
+  "source": "data/ask_audit.csv",
+  "text": "36",
+  "value": 36
+ },
+ "audit.before.n_only_him": {
+  "source": "data/ask_audit.csv",
+  "text": "153",
+  "value": 153
+ },
+ "audit.kappa": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.795897,
+   0.876586
+  ],
+  "label": "model-coded",
+  "n": 559,
+  "source": "data/ask_audit.csv",
+  "text": "0.84 (0.80 to 0.88)",
+  "text_short": "0.84",
+  "value": 0.837836
+ },
+ "case.commits": {
+  "source": "data/case_facts.csv (git history of the harness repository, main branch, commits from 2026-07-16 to 2026-09-30 inclusive)",
+  "text": "4,543",
+  "value": 4543
+ },
+ "case.python_loc": {
+  "source": "data/case_facts.csv (git history of the harness repository, main branch, lines of tracked Python files at the last commit of 2026-09-30)",
+  "text": "421,044",
+  "value": 421044
+ },
+ "case.weeks": {
+  "source": "data/case_facts.csv (git history of the harness repository, main branch, whole weeks from the first commit (2026-07-16) to 2026-10-11 inclusive)",
+  "text": "twelve",
+  "value": 12
+ },
+ "cost.api_equiv.2026-09-14": {
+  "source": "data/cost_weekly.csv",
+  "text": "0.60 USD",
+  "value": 0.6
+ },
+ "cost.api_equiv.2026-09-21": {
+  "source": "data/cost_weekly.csv",
+  "text": "14.68 USD",
+  "value": 14.68
+ },
+ "cost.api_equiv.2026-09-28": {
+  "source": "data/cost_weekly.csv",
+  "text": "5.98 USD",
+  "value": 5.98
+ },
+ "cost.api_equiv.2026-10-05": {
+  "source": "data/cost_weekly.csv",
+  "text": "7.87 USD",
+  "value": 7.87
+ },
+ "cost.api_equiv_total": {
+  "attempts": 530,
+  "no_estimate": 273,
+  "note": "API-equivalent estimate printed by the tool on a subscription, never money spent; a lower bound, attempts without an estimate add nothing",
+  "source": "data/cost_weekly.csv",
+  "text": "29.13 USD",
+  "value": 29.13
+ },
+ "cost.api_equiv_weekly_median": {
+  "n": 4,
+  "source": "data/cost_weekly.csv",
+  "text": "6.93 USD",
+  "value": 6.925
+ },
+ "cost.envelope_attempts": {
+  "source": "data/cost_weekly.csv",
+  "text": "530",
+  "value": 530
+ },
+ "cost.envelope_no_estimate": {
+  "source": "data/cost_weekly.csv",
+  "text": "273",
+  "value": 273
+ },
+ "cost.output_tokens.interactive": {
+  "share": 0.379128,
+  "source": "data/cost_weekly.csv",
+  "text": "103,868,404",
+  "value": 103868404
+ },
+ "cost.output_tokens.replay_tool": {
+  "share": 0.01271,
+  "source": "data/cost_weekly.csv",
+  "text": "3,482,200",
+  "value": 3482200
+ },
+ "cost.output_tokens.scheduler_worker": {
+  "share": 0.251242,
+  "source": "data/cost_weekly.csv",
+  "text": "68,831,857",
+  "value": 68831857
+ },
+ "cost.output_tokens.subagent": {
+  "share": 0.356234,
+  "source": "data/cost_weekly.csv",
+  "text": "97,596,053",
+  "value": 97596053
+ },
+ "cost.output_tokens.unknown": {
+  "share": 0.000686,
+  "source": "data/cost_weekly.csv",
+  "text": "187,932",
+  "value": 187932
+ },
+ "dashstop.blocks": {
+  "note": "detections the hook reported as a block, main sessions",
+  "source": "data/transcripts_weekly.csv",
+  "text": "288",
+  "value": 288
+ },
+ "dashstop.followed": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.062352,
+   0.128989
+  ],
+  "k": 26,
+  "n": 288,
+  "note": "followed by a new closing text before the next operator turn",
+  "source": "data/transcripts_weekly.csv",
+  "text": "26 of 288 (9.0%, 95% CI 6.2% to 12.9%)",
+  "text_short": "9.0%",
+  "value": 0.090278
+ },
+ "dashstop.repair_week_and_after.blocks": {
+  "note": "detections the hook reported as a block, main sessions",
+  "source": "data/transcripts_weekly.csv",
+  "text": "4",
+  "value": 4
+ },
+ "dashstop.repair_week_and_after.followed": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.300642,
+   0.954413
+  ],
+  "k": 3,
+  "n": 4,
+  "note": "followed by a new closing text before the next operator turn",
+  "source": "data/transcripts_weekly.csv",
+  "text": "3 of 4 (75.0%, 95% CI 30.1% to 95.4%)",
+  "text_short": "75.0%",
+  "value": 0.75
+ },
+ "dashstop.repair_week_and_after.still_violating": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.561497
+  ],
+  "k": 0,
+  "n": 3,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 3 (0.0%, 95% CI 0.0% to 56.1%)",
+  "text_short": "0.0%",
+  "value": 0.0
+ },
+ "dashstop.still_violating": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.53917,
+   0.862956
+  ],
+  "k": 19,
+  "n": 26,
+  "source": "data/transcripts_weekly.csv",
+  "text": "19 of 26 (73.1%, 95% CI 53.9% to 86.3%)",
+  "text_short": "73.1%",
+  "value": 0.730769
+ },
+ "dashwrite.denials": {
+  "note": "all session kinds",
+  "source": "data/transcripts_weekly.csv",
+  "text": "345",
+  "value": 345
+ },
+ "dashwrite.rate": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.002335,
+   0.002882
+  ],
+  "k": 345,
+  "n": 132988,
+  "source": "data/transcripts_weekly.csv",
+  "text": "345 of 132,988 (0.26%, 95% CI 0.23% to 0.29%)",
+  "text_short": "0.26%",
+  "value": 0.002594
+ },
+ "dashwrite.write_calls": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "132,988",
+  "value": 132988
+ },
+ "dig.corr_after": {
+  "interval": [
+   0.031479,
+   0.069447
+  ],
+  "k": 23,
+  "n": 490,
+  "source": "data/case_facts.csv (pre-declared correction probe ledger, after figure, reproduced on the transcript snapshot)",
+  "text": "4.7% (23 of 490)",
+  "value": 0.046939
+ },
+ "dig.corr_before": {
+  "interval": [
+   0.0379,
+   0.056322
+  ],
+  "k": 93,
+  "n": 2011,
+  "source": "data/case_facts.csv (pre-declared correction probe ledger, before figure as recorded, no longer recomputable)",
+  "text": "4.6% (93 of 2,011)",
+  "value": 0.046246
+ },
+ "disclosure.commits_coauthored": {
+  "k": 3702,
+  "n": 5519,
+  "source": "data/case_facts.csv (git history of the harness repository, main branch, commits up to 2026-10-11 with a Claude co-author trailer)",
+  "text": "3,702",
+  "value": 3702
+ },
+ "disclosure.commits_total": {
+  "source": "data/case_facts.csv (git history of the harness repository, main branch, all commits up to 2026-10-11)",
+  "text": "5,519",
+  "value": 5519
+ },
+ "door.K001.loc": {
+  "source": "data/door_size.csv",
+  "text": "175",
+  "value": 175
+ },
+ "door.K001.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "19",
+  "value": 19
+ },
+ "door.K001.recovery_output_tokens": {
+  "n": 117,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "2913 output tokens per refusal",
+  "value": 2912.957265
+ },
+ "door.K001.recovery_turns": {
+  "n": 117,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "1.4 turns per refusal (117 refusals)",
+  "value": 1.418803
+ },
+ "door.K001.refusals": {
+  "source": "data/door_refusals_weekly.csv",
+  "text": "123",
+  "value": 123
+ },
+ "door.K001.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "132",
+  "value": 132
+ },
+ "door.K001.took_effect": {
+  "cannot_judge": 6,
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.968211,
+   1.0
+  ],
+  "k": 117,
+  "n": 117,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "117 of 117 (100.0%, 95% CI 96.8% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K001.wrong_share": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.113513
+  ],
+  "k": 0,
+  "label": "model-coded",
+  "n": 30,
+  "source": "data/door_review.csv",
+  "text": "0 of 30 (0.0%, 95% CI 0.0% to 11.4%)",
+  "text_short": "0.0%",
+  "unclear": 0,
+  "value": 0.0
+ },
+ "door.K002.loc": {
+  "source": "data/door_size.csv",
+  "text": "63",
+  "value": 63
+ },
+ "door.K002.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.K002.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.K003.loc": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K003.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "1",
+  "value": 1
+ },
+ "door.K003.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "6",
+  "value": 6
+ },
+ "door.K029.loc": {
+  "source": "data/door_size.csv",
+  "text": "175",
+  "value": 175
+ },
+ "door.K029.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "35",
+  "value": 35
+ },
+ "door.K029.recovery_output_tokens": {
+  "n": 30,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "1945 output tokens per refusal",
+  "value": 1944.666667
+ },
+ "door.K029.recovery_turns": {
+  "n": 30,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "2.4 turns per refusal (30 refusals)",
+  "value": 2.433333
+ },
+ "door.K029.refusals": {
+  "source": "data/door_refusals_weekly.csv",
+  "text": "30",
+  "value": 30
+ },
+ "door.K029.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "165",
+  "value": 165
+ },
+ "door.K029.took_effect": {
+  "cannot_judge": 0,
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.886487,
+   1.0
+  ],
+  "k": 30,
+  "n": 30,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "30 of 30 (100.0%, 95% CI 88.6% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K029.wrong_share": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.698966,
+   0.972134
+  ],
+  "k": 18,
+  "label": "model-coded",
+  "n": 20,
+  "source": "data/door_review.csv",
+  "text": "18 of 20 (90.0%, 95% CI 69.9% to 97.2%)",
+  "text_short": "90.0%",
+  "unclear": 0,
+  "value": 0.9
+ },
+ "door.K033.loc": {
+  "source": "data/door_size.csv",
+  "text": "154",
+  "value": 154
+ },
+ "door.K033.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "26",
+  "value": 26
+ },
+ "door.K033.recovery_output_tokens": {
+  "n": 19,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "9432 output tokens per refusal",
+  "value": 9431.894737
+ },
+ "door.K033.recovery_turns": {
+  "n": 19,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "22.3 turns per refusal (19 refusals)",
+  "value": 22.263158
+ },
+ "door.K033.refusals": {
+  "source": "data/door_refusals_weekly.csv",
+  "text": "21",
+  "value": 21
+ },
+ "door.K033.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "141",
+  "value": 141
+ },
+ "door.K033.took_effect": {
+  "cannot_judge": 2,
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.831821,
+   1.0
+  ],
+  "k": 19,
+  "n": 19,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "19 of 19 (100.0%, 95% CI 83.2% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K033.wrong_share": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.175879
+  ],
+  "k": 0,
+  "label": "model-coded",
+  "n": 18,
+  "source": "data/door_review.csv",
+  "text": "0 of 18 (0.0%, 95% CI 0.0% to 17.6%)",
+  "text_short": "0.0%",
+  "unclear": 1,
+  "value": 0.0
+ },
+ "door.K039.loc": {
+  "source": "data/door_size.csv",
+  "text": "334",
+  "value": 334
+ },
+ "door.K039.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K039.recovery_output_tokens": {
+  "n": 17,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "6622 output tokens per refusal",
+  "value": 6621.764706
+ },
+ "door.K039.recovery_turns": {
+  "n": 17,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "7.0 turns per refusal (17 refusals)",
+  "value": 7.0
+ },
+ "door.K039.refusals": {
+  "source": "data/door_refusals_weekly.csv",
+  "text": "18",
+  "value": 18
+ },
+ "door.K039.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "50",
+  "value": 50
+ },
+ "door.K039.took_effect": {
+  "cannot_judge": 1,
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.815682,
+   1.0
+  ],
+  "k": 17,
+  "n": 17,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "17 of 17 (100.0%, 95% CI 81.6% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K039.wrong_share": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.309632,
+   0.738349
+  ],
+  "k": 9,
+  "label": "model-coded",
+  "n": 17,
+  "source": "data/door_review.csv",
+  "text": "9 of 17 (52.9%, 95% CI 31.0% to 73.8%)",
+  "text_short": "52.9%",
+  "unclear": 0,
+  "value": 0.529412
+ },
+ "door.K045.loc": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K045.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "3",
+  "value": 3
+ },
+ "door.K045.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "51",
+  "value": 51
+ },
+ "door.K046.loc": {
+  "source": "data/door_size.csv",
+  "text": "10",
+  "value": 10
+ },
+ "door.K046.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "9",
+  "value": 9
+ },
+ "door.K046.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "83",
+  "value": 83
+ },
+ "door.K047.loc": {
+  "source": "data/door_size.csv",
+  "text": "6",
+  "value": 6
+ },
+ "door.K047.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K047.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "38",
+  "value": 38
+ },
+ "door.K089.loc": {
+  "source": "data/door_size.csv",
+  "text": "54",
+  "value": 54
+ },
+ "door.K089.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K089.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "29",
+  "value": 29
+ },
+ "door.K137.loc": {
+  "source": "data/door_size.csv",
+  "text": "2",
+  "value": 2
+ },
+ "door.K137.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K137.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "14",
+  "value": 14
+ },
+ "door.K138.loc": {
+  "source": "data/door_size.csv",
+  "text": "2",
+  "value": 2
+ },
+ "door.K138.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.K138.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.K139.loc": {
+  "source": "data/door_size.csv",
+  "text": "8",
+  "value": 8
+ },
+ "door.K139.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "5",
+  "value": 5
+ },
+ "door.K139.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "49",
+  "value": 49
+ },
+ "door.K140.loc": {
+  "source": "data/door_size.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K140.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "6",
+  "value": 6
+ },
+ "door.K140.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "39",
+  "value": 39
+ },
+ "door.K141.loc": {
+  "source": "data/door_size.csv",
+  "text": "19",
+  "value": 19
+ },
+ "door.K141.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "19",
+  "value": 19
+ },
+ "door.K141.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "83",
+  "value": 83
+ },
+ "door.K142.loc": {
+  "source": "data/door_size.csv",
+  "text": "17",
+  "value": 17
+ },
+ "door.K142.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "12",
+  "value": 12
+ },
+ "door.K142.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "87",
+  "value": 87
+ },
+ "door.K143.loc": {
+  "source": "data/door_size.csv",
+  "text": "12",
+  "value": 12
+ },
+ "door.K143.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "2",
+  "value": 2
+ },
+ "door.K143.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "14",
+  "value": 14
+ },
+ "door.K144.loc": {
+  "source": "data/door_size.csv",
+  "text": "25",
+  "value": 25
+ },
+ "door.K144.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "28",
+  "value": 28
+ },
+ "door.K144.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "271",
+  "value": 271
+ },
+ "door.K145.loc": {
+  "source": "data/door_size.csv",
+  "text": "7",
+  "value": 7
+ },
+ "door.K145.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "7",
+  "value": 7
+ },
+ "door.K145.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "83",
+  "value": 83
+ },
+ "door.K146.loc": {
+  "source": "data/door_size.csv",
+  "text": "187",
+  "value": 187
+ },
+ "door.K146.n_tests": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.K146.test_loc": {
+  "source": "data/door_size.csv",
+  "text": "0",
+  "value": 0
+ },
+ "door.review.kappa": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.822409,
+   1.0
+  ],
+  "label": "model-coded",
+  "n": 86,
+  "source": "data/door_review.csv",
+  "text": "0.92 (0.82 to 1.00)",
+  "text_short": "0.92",
+  "value": 0.920493
+ },
+ "doors.n_no_ledger": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.278913,
+   0.649251
+  ],
+  "k": 11,
+  "n": 24,
+  "source": "data/door_size.csv",
+  "text": "11 of 24 (45.8%, 95% CI 27.9% to 64.9%)",
+  "text_short": "45.8%",
+  "unit": "doors",
+  "value": 0.458333
+ },
+ "doors.n_with_bypass": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.007393,
+   0.202418
+  ],
+  "k": 1,
+  "n": 24,
+  "source": "data/door_size.csv",
+  "text": "1 of 24 (4.2%, 95% CI 0.7% to 20.2%)",
+  "text_short": "4.2%",
+  "unit": "doors",
+  "value": 0.041667
+ },
  "e1.C1.A0.B": {
   "k": 0,
   "n": 10,
@@ -1760,6 +2753,725 @@
    "a098f95"
   ]
  },
+ "perrule.K004.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.072337,
+   15.918981
+  ],
+  "k": 1,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.857143
+ },
+ "perrule.K004.unknown.listed": {
+  "k": 1,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "1 in 2 days (not rated)",
+  "value": 1
+ },
+ "perrule.K011.none.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.133252,
+   29.324439
+  ],
+  "k": 1,
+  "n": 19,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
+  "text_short": "5.3",
+  "unit": "per 100 exposure days",
+  "value": 5.263158
+ },
+ "perrule.K011.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   20.493775
+  ],
+  "k": 0,
+  "n": 18,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 18 days; 95% CI 0.0 to 20.5)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K013.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.539656
+  ],
+  "k": 0,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 35 days; 95% CI 0.0 to 10.5)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K013.unknown.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K017.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.767635,
+   25.049352
+  ],
+  "k": 3,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "8.6 per 100 operator-active days (3 in 35 days; 95% CI 1.8 to 25.0)",
+  "text_short": "8.6",
+  "unit": "per 100 exposure days",
+  "value": 8.571429
+ },
+ "perrule.K017.unknown.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K020.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K020.unknown.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K022.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.072337,
+   15.918981
+  ],
+  "k": 1,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.857143
+ },
+ "perrule.K022.unknown.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K029.door.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.140654,
+   30.953574
+  ],
+  "k": 1,
+  "n": 18,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.6 per 100 operator-active days (1 in 18 days; 95% CI 0.1 to 31.0)",
+  "text_short": "5.6",
+  "unit": "per 100 exposure days",
+  "value": 5.555556
+ },
+ "perrule.K029.none.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.133252,
+   29.324439
+  ],
+  "k": 1,
+  "n": 19,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
+  "text_short": "5.3",
+  "unit": "per 100 exposure days",
+  "value": 5.263158
+ },
+ "perrule.K033.door.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.692027,
+   20.641965
+  ],
+  "k": 2,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.7 per 100 operator-active days (2 in 35 days; 95% CI 0.7 to 20.6)",
+  "text_short": "5.7",
+  "unit": "per 100 exposure days",
+  "value": 5.714286
+ },
+ "perrule.K033.unknown.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K034.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.767635,
+   25.049352
+  ],
+  "k": 3,
+  "n": 35,
+  "source": "data/corrections_weekly.csv",
+  "text": "8.6 per 100 operator-active days (3 in 35 days; 95% CI 1.8 to 25.0)",
+  "text_short": "8.6",
+  "unit": "per 100 exposure days",
+  "value": 8.571429
+ },
+ "perrule.K034.unknown.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K039.door.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   34.447639,
+   116.45325
+  ],
+  "k": 12,
+  "n": 18,
+  "source": "data/corrections_weekly.csv",
+  "text": "66.7 per 100 operator-active days (12 in 18 days; 95% CI 34.4 to 116.5)",
+  "text_short": "66.7",
+  "unit": "per 100 exposure days",
+  "value": 66.666667
+ },
+ "perrule.K039.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   3.256169,
+   46.143542
+  ],
+  "k": 3,
+  "n": 19,
+  "source": "data/corrections_weekly.csv",
+  "text": "15.8 per 100 operator-active days (3 in 19 days; 95% CI 3.3 to 46.1)",
+  "text_short": "15.8",
+  "unit": "per 100 exposure days",
+  "value": 15.789474
+ },
+ "perrule.K040.none.listed": {
+  "k": 0,
+  "n": 2,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 2 days (not rated)",
+  "value": 0
+ },
+ "perrule.K040.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.756904,
+   22.577149
+  ],
+  "k": 2,
+  "n": 32,
+  "source": "data/corrections_weekly.csv",
+  "text": "6.2 per 100 operator-active days (2 in 32 days; 95% CI 0.8 to 22.6)",
+  "text_short": "6.2",
+  "unit": "per 100 exposure days",
+  "value": 6.25
+ },
+ "perrule.K041.door.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.148928,
+   32.774373
+  ],
+  "k": 1,
+  "n": 17,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.9 per 100 operator-active days (1 in 17 days; 95% CI 0.1 to 32.8)",
+  "text_short": "5.9",
+  "unit": "per 100 exposure days",
+  "value": 5.882353
+ },
+ "perrule.K041.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   21.699291
+  ],
+  "k": 0,
+  "n": 17,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 17 days; 95% CI 0.0 to 21.7)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K042.none.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   18.444397
+  ],
+  "k": 0,
+  "n": 20,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 20 days; 95% CI 0.0 to 18.4)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K042.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.730066,
+   51.604912
+  ],
+  "k": 2,
+  "n": 14,
+  "source": "data/corrections_weekly.csv",
+  "text": "14.3 per 100 operator-active days (2 in 14 days; 95% CI 1.7 to 51.6)",
+  "text_short": "14.3",
+  "unit": "per 100 exposure days",
+  "value": 14.285714
+ },
+ "perrule.K049.none.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   18.444397
+  ],
+  "k": 0,
+  "n": 20,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 20 days; 95% CI 0.0 to 18.4)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K049.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.730066,
+   51.604912
+  ],
+  "k": 2,
+  "n": 14,
+  "source": "data/corrections_weekly.csv",
+  "text": "14.3 per 100 operator-active days (2 in 14 days; 95% CI 1.7 to 51.6)",
+  "text_short": "14.3",
+  "unit": "per 100 exposure days",
+  "value": 14.285714
+ },
+ "perrule.K051.none.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K051.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   11.178423
+  ],
+  "k": 0,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 33 days; 95% CI 0.0 to 11.2)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K052.none.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K052.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K057.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.074464,
+   16.387186
+  ],
+  "k": 1,
+  "n": 34,
+  "source": "data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 34 days; 95% CI 0.1 to 16.4)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.941176
+ },
+ "perrule.K063.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.849645
+  ],
+  "k": 0,
+  "n": 34,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 34 days; 95% CI 0.0 to 10.8)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K064.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K064.unknown.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K067.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.874764,
+   26.567494
+  ],
+  "k": 3,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "9.1 per 100 operator-active days (3 in 33 days; 95% CI 1.9 to 26.6)",
+  "text_short": "9.1",
+  "unit": "per 100 exposure days",
+  "value": 9.090909
+ },
+ "perrule.K067.unknown.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K073.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K073.unknown.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K086.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.71238,
+   21.249081
+  ],
+  "k": 2,
+  "n": 34,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.9 per 100 operator-active days (2 in 34 days; 95% CI 0.7 to 21.2)",
+  "text_short": "5.9",
+  "unit": "per 100 exposure days",
+  "value": 5.882353
+ },
+ "perrule.K089.door.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K089.unknown.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K103.none.listed": {
+  "k": 0,
+  "n": 3,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 3 days (not rated)",
+  "value": 0
+ },
+ "perrule.K103.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.08167,
+   17.973043
+  ],
+  "k": 1,
+  "n": 31,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.2 per 100 operator-active days (1 in 31 days; 95% CI 0.1 to 18.0)",
+  "text_short": "3.2",
+  "unit": "per 100 exposure days",
+  "value": 3.225806
+ },
+ "perrule.K112.none.listed": {
+  "k": 0,
+  "n": 1,
+  "source": "data/corrections_weekly.csv",
+  "text": "0 in 1 days (not rated)",
+  "value": 0
+ },
+ "perrule.K112.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K120.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.849645
+  ],
+  "k": 0,
+  "n": 34,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 34 days; 95% CI 0.0 to 10.8)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K129.none.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.158236,
+   34.822771
+  ],
+  "k": 1,
+  "n": 16,
+  "source": "data/corrections_weekly.csv",
+  "text": "6.2 per 100 operator-active days (1 in 16 days; 95% CI 0.2 to 34.8)",
+  "text_short": "6.2",
+  "unit": "per 100 exposure days",
+  "value": 6.25
+ },
+ "perrule.K129.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   20.493775
+  ],
+  "k": 0,
+  "n": 18,
+  "source": "data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 18 days; 95% CI 0.0 to 20.5)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K136.prose.rate": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.148928,
+   32.774373
+  ],
+  "k": 1,
+  "n": 17,
+  "source": "data/corrections_weekly.csv",
+  "text": "5.9 per 100 operator-active days (1 in 17 days; 95% CI 0.1 to 32.8)",
+  "text_short": "5.9",
+  "unit": "per 100 exposure days",
+  "value": 5.882353
+ },
+ "perrule.K136.unknown.listed": {
+  "k": 1,
+  "n": 20,
+  "source": "data/corrections_weekly.csv",
+  "text": "1 in 20 days (not rated)",
+  "value": 1
+ },
+ "perrule.n_corrections_dated": {
+  "source": "data/corrections_weekly.csv",
+  "text": "52",
+  "value": 52
+ },
+ "perrule.n_listed_not_rated": {
+  "note": "rule and state cells listed, fewer than 5 exposure days or state unknown",
+  "source": "data/corrections_weekly.csv",
+  "text": "17",
+  "value": 17
+ },
+ "perrule.n_rated": {
+  "note": "rule and state cells rated",
+  "source": "data/corrections_weekly.csv",
+  "text": "35",
+  "value": 35
+ },
+ "perrule.n_rules": {
+  "note": "rules with at least one correction",
+  "source": "data/corrections_weekly.csv",
+  "text": "28",
+  "value": 28
+ },
+ "perrule.n_undated_corrections": {
+  "source": "data/corrections_weekly.csv",
+  "text": "22",
+  "value": 22
+ },
+ "prosp.control.answered_q": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.002183,
+   0.066669
+  ],
+  "k": 1,
+  "n": 81,
+  "source": "data/transcripts_prospective.csv",
+  "text": "1 of 81 (1.2%, 95% CI 0.2% to 6.7%)",
+  "text_short": "1.2%",
+  "value": 0.012346
+ },
+ "prosp.control.verdict": {
+  "source": "data/transcripts_prospective.csv",
+  "text": "insufficient",
+  "value": "insufficient"
+ },
+ "prosp.criterion.door_drifts_back": {
+  "k": 6,
+  "n": 1669,
+  "source": "data/transcripts_prospective.csv",
+  "text": "the door repository's share stayed at or below 2 percent in the prospective part",
+  "value": false
+ },
+ "prosp.door.answered_q": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.001649,
+   0.007821
+  ],
+  "k": 6,
+  "n": 1669,
+  "source": "data/transcripts_prospective.csv",
+  "text": "6 of 1,669 (0.4%, 95% CI 0.2% to 0.8%)",
+  "text_short": "0.4%",
+  "value": 0.003595
+ },
+ "prosp.door.verdict": {
+  "source": "data/transcripts_prospective.csv",
+  "text": "met",
+  "value": "met"
+ },
+ "prosp.promise.continued": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.831821,
+   1.0
+  ],
+  "k": 19,
+  "n": 19,
+  "source": "data/transcripts_prospective.csv",
+  "text": "19 of 19 (100.0%, 95% CI 83.2% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "prosp.promise.verdict": {
+  "source": "data/transcripts_prospective.csv",
+  "text": "met",
+  "value": "met"
+ },
+ "replays.n_cases": {
+  "note": "model of the runs not recorded",
+  "source": "data/replays_past.csv",
+  "text": "3",
+  "value": 3
+ },
+ "replays.n_negative": {
+  "source": "data/replays_past.csv",
+  "text": "1",
+  "value": 1
+ },
+ "replays.n_positive": {
+  "source": "data/replays_past.csv",
+  "text": "0",
+  "value": 0
+ },
+ "replays.n_zero": {
+  "source": "data/replays_past.csv",
+  "text": "2",
+  "value": 2
+ },
  "rules.all.share_not_efull": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1817,6 +3529,26 @@
   "source": "data/rules.csv",
   "text": "4",
   "value": 4
+ },
+ "rules.kappa_class": {
+  "interval": [
+   0.854484,
+   0.950025
+  ],
+  "n": 174,
+  "source": "data/case_facts.csv (rule inventory coding table, two model coders, units behind public rules, bootstrap over items 10,000 resamples)",
+  "text": "0.91 (0.85 to 0.95)",
+  "value": 0.906571
+ },
+ "rules.kappa_enforceability": {
+  "interval": [
+   0.808643,
+   0.935882
+  ],
+  "n": 174,
+  "source": "data/case_facts.csv (rule inventory coding table, two model coders, units behind public rules, bootstrap over items 10,000 resamples)",
+  "text": "0.88 (0.81 to 0.94)",
+  "value": 0.877018
  },
  "rules.n_both": {
   "ci_method": "Wilson 95%",
@@ -2004,5 +3736,943 @@
   "text": "6 of 22 (27.3%, 95% CI 13.2% to 48.2%)",
   "text_short": "27.3%",
   "value": 0.272727
+ },
+ "sched.days_no_log.all_open_rows.after": {
+  "k": 0,
+  "n": 21,
+  "source": "data/scheduler_ontime.csv",
+  "text": "0 of 21 days",
+  "value": 0
+ },
+ "sched.days_no_log.all_open_rows.before": {
+  "k": 7,
+  "n": 20,
+  "source": "data/scheduler_ontime.csv",
+  "text": "7 of 20 days",
+  "value": 7
+ },
+ "sched.days_no_log.all_open_rows.cutover_day": {
+  "k": 0,
+  "n": 1,
+  "source": "data/scheduler_ontime.csv",
+  "text": "0 of 1 days",
+  "value": 0
+ },
+ "sched.days_no_log.rows_with_logs_in_both_eras.after": {
+  "k": 0,
+  "n": 21,
+  "source": "data/scheduler_ontime.csv",
+  "text": "0 of 21 days",
+  "value": 0
+ },
+ "sched.days_no_log.rows_with_logs_in_both_eras.before": {
+  "k": 7,
+  "n": 20,
+  "source": "data/scheduler_ontime.csv",
+  "text": "7 of 20 days",
+  "value": 7
+ },
+ "sched.days_no_log.rows_with_logs_in_both_eras.cutover_day": {
+  "k": 0,
+  "n": 1,
+  "source": "data/scheduler_ontime.csv",
+  "text": "0 of 1 days",
+  "value": 0
+ },
+ "sched.held_done_in_period.autofix_pause": {
+  "k": 0,
+  "n": 0,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "no data (0 of 0)",
+  "value": null
+ },
+ "sched.held_done_in_period.cap": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.872307,
+   0.938298
+  ],
+  "k": 265,
+  "n": 291,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "265 of 291 (91.1%, 95% CI 87.2% to 93.8%)",
+  "text_short": "91.1%",
+  "value": 0.910653
+ },
+ "sched.held_done_in_period.model_quota": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.348404,
+   0.680297
+  ],
+  "k": 16,
+  "n": 31,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "16 of 31 (51.6%, 95% CI 34.8% to 68.0%)",
+  "text_short": "51.6%",
+  "value": 0.516129
+ },
+ "sched.held_done_in_period.network": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.573632,
+   0.788276
+  ],
+  "k": 47,
+  "n": 68,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "47 of 68 (69.1%, 95% CI 57.4% to 78.8%)",
+  "text_short": "69.1%",
+  "value": 0.691176
+ },
+ "sched.held_done_in_period.other_resource": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.094531,
+   0.905469
+  ],
+  "k": 1,
+  "n": 2,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "1 of 2 (50.0%, 95% CI 9.5% to 90.5%)",
+  "text_short": "50.0%",
+  "value": 0.5
+ },
+ "sched.held_done_in_period.precondition": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.063225,
+   0.547411
+  ],
+  "k": 2,
+  "n": 9,
+  "note": "held jobs with a period, done inside it; held jobs, not violations",
+  "source": "data/scheduler_weekly.csv",
+  "text": "2 of 9 (22.2%, 95% CI 6.3% to 54.7%)",
+  "text_short": "22.2%",
+  "value": 0.222222
+ },
+ "sched.jobs_created": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "311",
+  "value": 311
+ },
+ "sched.launches": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "530",
+  "value": 530
+ },
+ "sched.launches.2026-09-14": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "14",
+  "value": 14
+ },
+ "sched.launches.2026-09-21": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "151",
+  "value": 151
+ },
+ "sched.launches.2026-09-28": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "177",
+  "value": 177
+ },
+ "sched.launches.2026-10-05": {
+  "source": "data/scheduler_weekly.csv",
+  "text": "188",
+  "value": 188
+ },
+ "sched.on_time.all_open_rows.after": {
+  "ci_method": "Wilson 95%",
+  "days": 21,
+  "first_day": "2026-09-21",
+  "interval": [
+   0.843739,
+   0.914398
+  ],
+  "k": 281,
+  "last_day": "2026-10-11",
+  "n": 318,
+  "rows": 23,
+  "source": "data/scheduler_ontime.csv",
+  "text": "281 of 318 (88.4%, 95% CI 84.4% to 91.4%)",
+  "text_short": "88.4%",
+  "value": 0.883648
+ },
+ "sched.on_time.all_open_rows.before": {
+  "ci_method": "Wilson 95%",
+  "days": 20,
+  "first_day": "2026-08-31",
+  "interval": [
+   0.257206,
+   0.361016
+  ],
+  "k": 92,
+  "last_day": "2026-09-19",
+  "n": 300,
+  "rows": 23,
+  "source": "data/scheduler_ontime.csv",
+  "text": "92 of 300 (30.7%, 95% CI 25.7% to 36.1%)",
+  "text_short": "30.7%",
+  "value": 0.306667
+ },
+ "sched.on_time.all_open_rows.cutover_day": {
+  "ci_method": "Wilson 95%",
+  "days": 1,
+  "first_day": "2026-09-20",
+  "interval": [
+   0.423693,
+   0.873193
+  ],
+  "k": 9,
+  "last_day": "2026-09-20",
+  "n": 13,
+  "rows": 23,
+  "source": "data/scheduler_ontime.csv",
+  "text": "9 of 13 (69.2%, 95% CI 42.4% to 87.3%)",
+  "text_short": "69.2%",
+  "value": 0.692308
+ },
+ "sched.on_time.rows_with_logs_in_both_eras.after": {
+  "ci_method": "Wilson 95%",
+  "days": 21,
+  "first_day": "2026-09-21",
+  "interval": [
+   0.833447,
+   0.923508
+  ],
+  "k": 171,
+  "last_day": "2026-10-11",
+  "n": 193,
+  "rows": 16,
+  "source": "data/scheduler_ontime.csv",
+  "text": "171 of 193 (88.6%, 95% CI 83.3% to 92.4%)",
+  "text_short": "88.6%",
+  "value": 0.88601
+ },
+ "sched.on_time.rows_with_logs_in_both_eras.before": {
+  "ci_method": "Wilson 95%",
+  "days": 20,
+  "first_day": "2026-08-31",
+  "interval": [
+   0.392331,
+   0.529177
+  ],
+  "k": 92,
+  "last_day": "2026-09-19",
+  "n": 200,
+  "rows": 16,
+  "source": "data/scheduler_ontime.csv",
+  "text": "92 of 200 (46.0%, 95% CI 39.2% to 52.9%)",
+  "text_short": "46.0%",
+  "value": 0.46
+ },
+ "sched.on_time.rows_with_logs_in_both_eras.cutover_day": {
+  "ci_method": "Wilson 95%",
+  "days": 1,
+  "first_day": "2026-09-20",
+  "interval": [
+   0.675592,
+   1.0
+  ],
+  "k": 8,
+  "last_day": "2026-09-20",
+  "n": 8,
+  "rows": 16,
+  "source": "data/scheduler_ontime.csv",
+  "text": "8 of 8 (100.0%, 95% CI 67.6% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "sched.on_time_share": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.843739,
+   0.914398
+  ],
+  "k": 281,
+  "n": 318,
+  "note": "due obligations logged the same day after the cut-over",
+  "source": "data/scheduler_ontime.csv",
+  "text": "281 of 318 (88.4%, 95% CI 84.4% to 91.4%)",
+  "text_short": "88.4%",
+  "value": 0.883648
+ },
+ "sched.outcome_blocked": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.005198,
+   0.024476
+  ],
+  "k": 6,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "6 of 530 (1.1%, 95% CI 0.5% to 2.4%)",
+  "text_short": "1.1%",
+  "value": 0.011321
+ },
+ "sched.outcome_closed_by_ledger": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017225,
+   0.046167
+  ],
+  "k": 15,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "15 of 530 (2.8%, 95% CI 1.7% to 4.6%)",
+  "text_short": "2.8%",
+  "value": 0.028302
+ },
+ "sched.outcome_done": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.461333,
+   0.546159
+  ],
+  "k": 267,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "267 of 530 (50.4%, 95% CI 46.1% to 54.6%)",
+  "text_short": "50.4%",
+  "value": 0.503774
+ },
+ "sched.outcome_error": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.080598,
+   0.132651
+  ],
+  "k": 55,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "55 of 530 (10.4%, 95% CI 8.1% to 13.3%)",
+  "text_short": "10.4%",
+  "value": 0.103774
+ },
+ "sched.outcome_retry": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.073948,
+   0.124316
+  ],
+  "k": 51,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "51 of 530 (9.6%, 95% CI 7.4% to 12.4%)",
+  "text_short": "9.6%",
+  "value": 0.096226
+ },
+ "sched.outcome_superseded": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.021589,
+   0.053043
+  ],
+  "k": 18,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "18 of 530 (3.4%, 95% CI 2.2% to 5.3%)",
+  "text_short": "3.4%",
+  "value": 0.033962
+ },
+ "sched.outcome_to_operator": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.012998,
+   0.039155
+  ],
+  "k": 12,
+  "n": 530,
+  "note": "share of launches over the weeks shown",
+  "source": "data/scheduler_weekly.csv",
+  "text": "12 of 530 (2.3%, 95% CI 1.3% to 3.9%)",
+  "text_short": "2.3%",
+  "value": 0.022642
+ },
+ "sched.refusals.autofix_pause": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 0,
+  "source": "data/scheduler_weekly.csv",
+  "text": "1 episodes (0 deferral rows)",
+  "value": 1
+ },
+ "sched.refusals.cap": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 721,
+  "source": "data/scheduler_weekly.csv",
+  "text": "647 episodes (721 deferral rows)",
+  "value": 647
+ },
+ "sched.refusals.model_quota": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 175,
+  "source": "data/scheduler_weekly.csv",
+  "text": "175 episodes (175 deferral rows)",
+  "value": 175
+ },
+ "sched.refusals.network": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 383,
+  "source": "data/scheduler_weekly.csv",
+  "text": "383 episodes (383 deferral rows)",
+  "value": 383
+ },
+ "sched.refusals.other_resource": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 2,
+  "source": "data/scheduler_weekly.csv",
+  "text": "2 episodes (2 deferral rows)",
+  "value": 2
+ },
+ "sched.refusals.precondition": {
+  "note": "an episode is consecutive deferrals of one job by one door class",
+  "rows": 10543,
+  "source": "data/scheduler_weekly.csv",
+  "text": "59 episodes (10,543 deferral rows)",
+  "value": 59
+ },
+ "weekly.2026-08-24.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.251",
+  "value": "2.1.251"
+ },
+ "weekly.2026-08-24.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5",
+  "value": "claude-opus-5"
+ },
+ "weekly.2026-08-24.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.242494
+  ],
+  "k": 0,
+  "n": 12,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 12 (0.0%, 95% CI 0.0% to 24.2%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-08-24.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.071348
+  ],
+  "k": 0,
+  "n": 50,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 50 (0.0%, 95% CI 0.0% to 7.1%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-08-24.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.561497
+  ],
+  "k": 0,
+  "n": 3,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 3 (0.0%, 95% CI 0.0% to 56.1%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-08-31.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.258",
+  "value": "2.1.258"
+ },
+ "weekly.2026-08-31.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5",
+  "value": "claude-sonnet-5"
+ },
+ "weekly.2026-08-31.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.040561,
+   0.07501
+  ],
+  "k": 38,
+  "n": 687,
+  "source": "data/transcripts_weekly.csv",
+  "text": "38 of 687 (5.5%, 95% CI 4.1% to 7.5%)",
+  "text_short": "5.5%",
+  "unit": "per 100 operator turns",
+  "value": 0.055313
+ },
+ "weekly.2026-08-31.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.029176,
+   0.052287
+  ],
+  "k": 43,
+  "n": 1099,
+  "source": "data/transcripts_weekly.csv",
+  "text": "43 of 1,099 (3.9%, 95% CI 2.9% to 5.2%)",
+  "text_short": "3.9%",
+  "unit": "per 100 turn ends",
+  "value": 0.039126
+ },
+ "weekly.2026-08-31.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.027689,
+   0.141436
+  ],
+  "k": 5,
+  "n": 78,
+  "source": "data/transcripts_weekly.csv",
+  "text": "5 of 78 (6.4%, 95% CI 2.8% to 14.1%)",
+  "text_short": "6.4%",
+  "unit": "per 100 operator turns",
+  "value": 0.064103
+ },
+ "weekly.2026-08-31.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.024596,
+   0.085803
+  ],
+  "k": 9,
+  "n": 194,
+  "source": "data/transcripts_weekly.csv",
+  "text": "9 of 194 (4.6%, 95% CI 2.5% to 8.6%)",
+  "text_short": "4.6%",
+  "unit": "per 100 turn ends",
+  "value": 0.046392
+ },
+ "weekly.2026-08-31.worker.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.65762
+  ],
+  "k": 0,
+  "n": 2,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 2 (0.0%, 95% CI 0.0% to 65.8%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-08-31.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.023304
+  ],
+  "k": 0,
+  "n": 161,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 161 (0.0%, 95% CI 0.0% to 2.3%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-07.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.263",
+  "value": "2.1.263"
+ },
+ "weekly.2026-09-07.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5",
+  "value": "claude-sonnet-5"
+ },
+ "weekly.2026-09-07.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.012718,
+   0.080639
+  ],
+  "k": 4,
+  "n": 123,
+  "source": "data/transcripts_weekly.csv",
+  "text": "4 of 123 (3.3%, 95% CI 1.3% to 8.1%)",
+  "text_short": "3.3%",
+  "unit": "per 100 operator turns",
+  "value": 0.03252
+ },
+ "weekly.2026-09-07.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.040318,
+   0.109284
+  ],
+  "k": 14,
+  "n": 209,
+  "source": "data/transcripts_weekly.csv",
+  "text": "14 of 209 (6.7%, 95% CI 4.0% to 10.9%)",
+  "text_short": "6.7%",
+  "unit": "per 100 turn ends",
+  "value": 0.066986
+ },
+ "weekly.2026-09-07.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 10 (0.0%, 95% CI 0.0% to 27.8%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-09-07.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.006113,
+   0.171755
+  ],
+  "k": 1,
+  "n": 29,
+  "source": "data/transcripts_weekly.csv",
+  "text": "1 of 29 (3.4%, 95% CI 0.6% to 17.2%)",
+  "text_short": "3.4%",
+  "unit": "per 100 turn ends",
+  "value": 0.034483
+ },
+ "weekly.2026-09-07.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.489891
+  ],
+  "k": 0,
+  "n": 4,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 4 (0.0%, 95% CI 0.0% to 49.0%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-14.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.278",
+  "value": "2.1.278"
+ },
+ "weekly.2026-09-14.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5",
+  "value": "claude-sonnet-5"
+ },
+ "weekly.2026-09-14.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.011232,
+   0.059807
+  ],
+  "k": 5,
+  "n": 191,
+  "source": "data/transcripts_weekly.csv",
+  "text": "5 of 191 (2.6%, 95% CI 1.1% to 6.0%)",
+  "text_short": "2.6%",
+  "unit": "per 100 operator turns",
+  "value": 0.026178
+ },
+ "weekly.2026-09-14.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.009718,
+   0.045318
+  ],
+  "k": 6,
+  "n": 284,
+  "source": "data/transcripts_weekly.csv",
+  "text": "6 of 284 (2.1%, 95% CI 1.0% to 4.5%)",
+  "text_short": "2.1%",
+  "unit": "per 100 turn ends",
+  "value": 0.021127
+ },
+ "weekly.2026-09-14.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.113513
+  ],
+  "k": 0,
+  "n": 30,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 30 (0.0%, 95% CI 0.0% to 11.4%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-09-14.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.026161
+  ],
+  "k": 0,
+  "n": 143,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 143 (0.0%, 95% CI 0.0% to 2.6%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-14.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.068792
+  ],
+  "k": 0,
+  "n": 52,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 52 (0.0%, 95% CI 0.0% to 6.9%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-21.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.278",
+  "value": "2.1.278"
+ },
+ "weekly.2026-09-21.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5-5",
+  "value": "claude-opus-5-5"
+ },
+ "weekly.2026-09-21.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.017278,
+   0.057263
+  ],
+  "k": 10,
+  "n": 316,
+  "source": "data/transcripts_weekly.csv",
+  "text": "10 of 316 (3.2%, 95% CI 1.7% to 5.7%)",
+  "text_short": "3.2%",
+  "unit": "per 100 operator turns",
+  "value": 0.031646
+ },
+ "weekly.2026-09-21.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.000976,
+   0.012882
+  ],
+  "k": 2,
+  "n": 562,
+  "source": "data/transcripts_weekly.csv",
+  "text": "2 of 562 (0.4%, 95% CI 0.1% to 1.3%)",
+  "text_short": "0.4%",
+  "unit": "per 100 turn ends",
+  "value": 0.003559
+ },
+ "weekly.2026-09-21.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.561497
+  ],
+  "k": 0,
+  "n": 3,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 3 (0.0%, 95% CI 0.0% to 56.1%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-09-21.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.007763
+  ],
+  "k": 0,
+  "n": 491,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 491 (0.0%, 95% CI 0.0% to 0.8%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-21.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.002255,
+   0.019288
+  ],
+  "k": 3,
+  "n": 453,
+  "source": "data/transcripts_weekly.csv",
+  "text": "3 of 453 (0.7%, 95% CI 0.2% to 1.9%)",
+  "text_short": "0.7%",
+  "unit": "per 100 turn ends",
+  "value": 0.006623
+ },
+ "weekly.2026-09-28.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.287",
+  "value": "2.1.287"
+ },
+ "weekly.2026-09-28.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5-5",
+  "value": "claude-opus-5-5"
+ },
+ "weekly.2026-09-28.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.025668,
+   0.064464
+  ],
+  "k": 17,
+  "n": 416,
+  "source": "data/transcripts_weekly.csv",
+  "text": "17 of 416 (4.1%, 95% CI 2.6% to 6.4%)",
+  "text_short": "4.1%",
+  "unit": "per 100 operator turns",
+  "value": 0.040865
+ },
+ "weekly.2026-09-28.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.013634,
+   0.034581
+  ],
+  "k": 17,
+  "n": 781,
+  "source": "data/transcripts_weekly.csv",
+  "text": "17 of 781 (2.2%, 95% CI 1.4% to 3.5%)",
+  "text_short": "2.2%",
+  "unit": "per 100 turn ends",
+  "value": 0.021767
+ },
+ "weekly.2026-09-28.popped.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.489891
+  ],
+  "k": 0,
+  "n": 4,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 4 (0.0%, 95% CI 0.0% to 49.0%)",
+  "text_short": "0.0%",
+  "unit": "per 100 operator turns",
+  "value": 0.0
+ },
+ "weekly.2026-09-28.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.019417
+  ],
+  "k": 0,
+  "n": 194,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 194 (0.0%, 95% CI 0.0% to 1.9%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-09-28.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.006258
+  ],
+  "k": 0,
+  "n": 610,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 610 (0.0%, 95% CI 0.0% to 0.6%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-10-05.cli_version": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.296",
+  "value": "2.1.296"
+ },
+ "weekly.2026-10-05.model": {
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5-5",
+  "value": "claude-opus-5-5"
+ },
+ "weekly.2026-10-05.operator.corr_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.022787,
+   0.093186
+  ],
+  "k": 7,
+  "n": 150,
+  "source": "data/transcripts_weekly.csv",
+  "text": "7 of 150 (4.7%, 95% CI 2.3% to 9.3%)",
+  "text_short": "4.7%",
+  "unit": "per 100 operator turns",
+  "value": 0.046667
+ },
+ "weekly.2026-10-05.operator.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.00608
+  ],
+  "k": 0,
+  "n": 628,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 628 (0.0%, 95% CI 0.0% to 0.6%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-10-05.popped.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.012358
+  ],
+  "k": 0,
+  "n": 307,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 307 (0.0%, 95% CI 0.0% to 1.2%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
+ },
+ "weekly.2026-10-05.worker.q_end_per100": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.005427
+  ],
+  "k": 0,
+  "n": 704,
+  "source": "data/transcripts_weekly.csv",
+  "text": "0 of 704 (0.0%, 95% CI 0.0% to 0.5%)",
+  "text_short": "0.0%",
+  "unit": "per 100 turn ends",
+  "value": 0.0
  }
 }
