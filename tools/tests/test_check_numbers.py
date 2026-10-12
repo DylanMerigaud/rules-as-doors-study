@@ -136,5 +136,13 @@ def test_a_figure_file_of_the_repository_is_allowlisted(tmp_path):
     assert run(line, tmp_path) == 0
 
 
+def test_a_date_split_by_a_soft_line_break_is_allowlisted(tmp_path):
+    assert run("The window ran from 31 August to 21\nSeptember, three weeks.\n", tmp_path) == 0
+
+
+def test_a_paragraph_break_does_not_join_a_count_to_a_month(tmp_path):
+    assert run("We counted 21\n\nSeptember was the start.\n", tmp_path) == 1
+
+
 def test_a_count_next_to_a_figure_link_still_fails(tmp_path):
     assert run("We ran 200 cases, see results/figures/figure4_e1.svg\n", tmp_path) == 1

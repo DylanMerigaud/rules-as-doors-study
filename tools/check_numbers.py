@@ -31,6 +31,7 @@ FENCED_CODE_RE = re.compile(r"```.*?```", re.DOTALL)
 INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
 EXEMPT_SECTIONS = ("References", "About the author")
 ALLOWLIST_PATH = Path(__file__).resolve().parent / "number_allowlist.txt"
+SOFT_SPACE = r"(?:[ \t]+|[ \t]*\n[ \t]*)"
 
 
 def load_allowlist(path=None):
@@ -41,7 +42,9 @@ def load_allowlist(path=None):
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            patterns.append(re.compile(line))
+            # A space in a pattern also matches a soft line break: a rewrapped paragraph may put
+            # "21" at the end of one line and "September" at the start of the next.
+            patterns.append(re.compile(line.replace(" ", SOFT_SPACE)))
     return patterns
 
 
