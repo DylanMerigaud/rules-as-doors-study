@@ -18,7 +18,7 @@ unredacted lines and their word count, so a holder of the pinned file can check 
 | R03 | C4-K001.md | the path of a private replay case |
 | R04 | none | not used |
 | R05 | C1-K039.md | a verbatim quote of the operator in French, two sentences (its gist is given) |
-| R06 | C1-K039.md | two examples that name an outbound activity |
+| R06 | C1-K039.md | two examples outside the study's domain sentence |
 | R07 | C2-K033.md | an HTML marker naming a private replay case |
 | R08 | C2-K033.md | one example in French |
 | R09 | C2-K033.md | one example that names an activity outside the domain sentence |
