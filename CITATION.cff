@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite it as below."
+title: "Replication package for: When Is a Rule a Door? Prose Instructions and Enforced Code in a Long-Running Coding Agent Harness"
+type: dataset
+authors:
+  - family-names: Merigaud
+    given-names: Dylan
+doi: 10.5281/zenodo.23347509
+version: package-v1
+license: MIT
+repository-code: "https://github.com/DylanMerigaud/rules-as-doors-study"
+keywords:
+  - coding agents
+  - agent harness
+  - behavioural rules
+  - enforcement hooks
+  - preregistered replay
+  - industrial case study
