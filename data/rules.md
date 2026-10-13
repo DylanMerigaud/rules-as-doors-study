@@ -30,4 +30,19 @@ Columns:
 
 Coding: two independent coders (both the same large language model, run separately without
 access to each other's output) coded every unit; a third pass of the same model resolved each
-disagreement and both original codes are kept in the private table. The labels are model-coded.
+disagreement. The labels are model-coded. The coders were not blind to the doors: the codebook
+gave them the list of doors and asked which door, if any, enforces each unit (its field 5), so a
+unit's class and enforceability were coded knowing whether a door existed.
+
+`data/rules_coding.csv` publishes both coders' labels for the 177 text units behind the public
+rules (a unit id, the rule it belongs to, and per coder: is it a rule, its class, its
+enforceability); the unit texts stay private. The class and enforceability kappas are computed on
+the 174 units both coders called a rule, and `analysis/field_supplement.py` recomputes them from
+this file (`rules.kappa_class.recomputed`, `rules.kappa_enforceability.recomputed`, equal to the
+recorded `rules.kappa_class` and `rules.kappa_enforceability`).
+
+Descriptions: on 2026-10-13, after review, every row was checked against the domain sentence at
+the top of `README.md`, and the 26 descriptions that named an activity beyond it were rewritten in
+generic terms (K035, K036, K037, K042, K048, K050, K051,
+K076 to K083, K113, K122, K125, K126, K128, K130, K133, K137 to K140). Only the `description`
+column changed; no analysis reads it, and every number is unchanged.

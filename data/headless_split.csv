@@ -1,0 +1,10 @@
+window,headless_kind,repo_group,sessions_with_stop_firing,stop_firings,ref_stop_promise,ref_stop_ask,ref_stop_rule,ref_stop_retired,dash_stop_detected,ref_ptu_dash_write,write_calls
+before,scheduler worker prompt,control,0,0,0,0,0,0,0,0,0
+before,scheduler worker prompt,door,0,0,0,0,0,0,0,0,1218
+before,other headless,control,0,0,0,0,0,0,0,0,0
+before,other headless,door,53,96,0,0,0,6,3,4,1262
+after,scheduler worker prompt,control,0,0,0,0,0,0,0,0,0
+after,scheduler worker prompt,door,0,0,0,0,0,0,0,0,15934
+after,other headless,control,0,0,0,0,0,0,0,0,6
+after,other headless,door,597,974,2,5,15,0,1,16,4410
+partial week 2026-08-24,other headless,door,1,3,0,0,0,0,0,1,44

@@ -1,0 +1,7 @@
+rule_id,door_type,refusals_in_ledger,located_in_a_transcript,sampled
+K001,PreToolUse hook,113,107,20
+K001,Stop hook,4,4,4
+K001,write refusal,6,6,6
+K029,Stop hook,30,30,20
+K033,Stop hook,21,19,19
+K039,Stop hook,18,17,17
