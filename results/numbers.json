@@ -187,6 +187,12 @@
   "text": "55",
   "value": 55
  },
+ "audit.after.n_disagreements": {
+  "note": "settled by a third model pass",
+  "source": "data/ask_audit.csv",
+  "text": "27",
+  "value": 27
+ },
  "audit.after.n_not_an_ask": {
   "source": "data/ask_audit.csv",
   "text": "66",
@@ -221,6 +227,12 @@
   "text": "110",
   "value": 110
  },
+ "audit.before.n_disagreements": {
+  "note": "settled by a third model pass",
+  "source": "data/ask_audit.csv",
+  "text": "28",
+  "value": 28
+ },
  "audit.before.n_not_an_ask": {
   "source": "data/ask_audit.csv",
   "text": "36",
@@ -244,6 +256,40 @@
   "text": "0.84 (0.80 to 0.88)",
   "text_short": "0.84",
   "value": 0.837836
+ },
+ "audit.kappa.after": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.766465,
+   0.887211
+  ],
+  "label": "model-coded",
+  "n": 260,
+  "source": "data/ask_audit.csv",
+  "text": "0.83 (0.77 to 0.89)",
+  "text_short": "0.83",
+  "value": 0.830414
+ },
+ "audit.kappa.before": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.78237,
+   0.894693
+  ],
+  "label": "model-coded",
+  "n": 299,
+  "source": "data/ask_audit.csv",
+  "text": "0.84 (0.78 to 0.89)",
+  "text_short": "0.84",
+  "value": 0.840445
+ },
+ "audit.kappa.n_items": {
+  "note": "items behind audit.kappa, both windows",
+  "source": "data/ask_audit.csv",
+  "text": "559",
+  "value": 559
  },
  "case.commits": {
   "source": "data/case_facts.csv (git history of the harness repository, main branch, commits from 2026-07-16 to 2026-09-30 inclusive)",
@@ -406,6 +452,87 @@
   "text": "345",
   "value": 345
  },
+ "dashwrite.denials.after": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "198",
+  "value": 198
+ },
+ "dashwrite.denials.before": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "140",
+  "value": 140
+ },
+ "dashwrite.denials.ledger_weeks": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named); the weeks of 2026-09-28 and 2026-10-05, which hold the refusal ledger's window (2026-09-30 to 2026-10-11) and two days before it",
+  "source": "data/transcripts_weekly.csv",
+  "text": "126",
+  "value": 126
+ },
+ "dashwrite.denials.ledger_weeks.operator": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "18",
+  "value": 18
+ },
+ "dashwrite.denials.ledger_weeks.popped": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "6",
+  "value": 6
+ },
+ "dashwrite.denials.ledger_weeks.subagent": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "101",
+  "value": 101
+ },
+ "dashwrite.denials.ledger_weeks.worker": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "1",
+  "value": 1
+ },
+ "dashwrite.denials.outside_windows": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named); the partial week before the windows",
+  "source": "data/transcripts_weekly.csv",
+  "text": "7",
+  "value": 7,
+  "weeks": [
+   "2026-08-24"
+  ]
+ },
+ "dashwrite.denials.registered_windows": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named); weeks of both windows",
+  "source": "data/transcripts_weekly.csv",
+  "text": "338",
+  "value": 338
+ },
+ "dashwrite.denials.registered_windows.operator": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "65",
+  "value": 65
+ },
+ "dashwrite.denials.registered_windows.popped": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "24",
+  "value": 24
+ },
+ "dashwrite.denials.registered_windows.subagent": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "229",
+  "value": 229
+ },
+ "dashwrite.denials.registered_windows.worker": {
+  "note": "transcript count of long-dash write refusals (all session kinds unless named)",
+  "source": "data/transcripts_weekly.csv",
+  "text": "20",
+  "value": 20
+ },
  "dashwrite.rate": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -419,10 +546,43 @@
   "text_short": "0.26%",
   "value": 0.002594
  },
+ "dashwrite.rate.hook_loaded": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.002681,
+   0.003309
+  ],
+  "k": 345,
+  "n": 115836,
+  "note": "all weeks; denominator: the write calls the write hook inspects, in sessions that load it (every session but the scheduler's bare workers)",
+  "source": "data/transcripts_weekly.csv, data/headless_split.csv",
+  "text": "345 of 115,836 (0.30%, 95% CI 0.27% to 0.33%)",
+  "text_short": "0.30%",
+  "value": 0.002978
+ },
+ "dashwrite.rate.registered_windows": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.002305,
+   0.002852
+  ],
+  "k": 338,
+  "n": 131826,
+  "source": "data/transcripts_weekly.csv",
+  "text": "338 of 131,826 (0.26%, 95% CI 0.23% to 0.29%)",
+  "text_short": "0.26%",
+  "value": 0.002564
+ },
  "dashwrite.write_calls": {
   "source": "data/transcripts_weekly.csv",
   "text": "132,988",
   "value": 132988
+ },
+ "dashwrite.write_calls.bare_workers": {
+  "note": "write calls of the scheduler's bare workers, which load no hook (all weeks)",
+  "source": "data/headless_split.csv",
+  "text": "17,152",
+  "value": 17152
  },
  "dig.corr_after": {
   "interval": [
@@ -486,6 +646,112 @@
   "source": "data/door_refusals_weekly.csv",
   "text": "123",
   "value": 123
+ },
+ "door.K001.refusals.pretooluse_hook": {
+  "door_type": "PreToolUse hook",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "113",
+  "value": 113
+ },
+ "door.K001.refusals.pretooluse_hook.took_effect": {
+  "cannot_judge": 6,
+  "ci_method": "Wilson 95%",
+  "door_type": "PreToolUse hook",
+  "interval": [
+   0.965343,
+   1.0
+  ],
+  "k": 107,
+  "n": 107,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "107 of 107 (100.0%, 95% CI 96.5% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K001.refusals.stop_hook": {
+  "door_type": "Stop hook",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "4",
+  "value": 4
+ },
+ "door.K001.refusals.stop_hook.took_effect": {
+  "cannot_judge": 0,
+  "ci_method": "Wilson 95%",
+  "door_type": "Stop hook",
+  "interval": [
+   0.510109,
+   1.0
+  ],
+  "k": 4,
+  "n": 4,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "4 of 4 (100.0%, 95% CI 51.0% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K001.refusals.write_refusal": {
+  "door_type": "write refusal",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "6",
+  "value": 6
+ },
+ "door.K001.refusals.write_refusal.took_effect": {
+  "cannot_judge": 0,
+  "ci_method": "Wilson 95%",
+  "door_type": "write refusal",
+  "interval": [
+   0.609666,
+   1.0
+  ],
+  "k": 6,
+  "n": 6,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "6 of 6 (100.0%, 95% CI 61.0% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K001.review.frame.pretooluse_hook": {
+  "located": 107,
+  "refusals": 113,
+  "source": "data/door_review_frame.csv",
+  "text": "20 sampled of 107 located in a transcript (113 refusals in the ledger)",
+  "value": 20
+ },
+ "door.K001.review.frame.stop_hook": {
+  "located": 4,
+  "refusals": 4,
+  "source": "data/door_review_frame.csv",
+  "text": "4 sampled of 4 located in a transcript (4 refusals in the ledger)",
+  "value": 4
+ },
+ "door.K001.review.frame.write_refusal": {
+  "located": 6,
+  "refusals": 6,
+  "source": "data/door_review_frame.csv",
+  "text": "6 sampled of 6 located in a transcript (6 refusals in the ledger)",
+  "value": 6
+ },
+ "door.K001.review.kappa": {
+  "agree": 30,
+  "n": 30,
+  "source": "data/door_review.csv",
+  "text": "undefined (one label on both sides; 30 of 30 agree)",
+  "value": null
+ },
+ "door.K001.review.n_items": {
+  "source": "data/door_review.csv",
+  "strata": {
+   "PreToolUse hook": 20,
+   "Stop hook": 4,
+   "write refusal": 6
+  },
+  "text": "30",
+  "value": 30
+ },
+ "door.K001.review.n_unclear": {
+  "source": "data/door_review.csv",
+  "text": "0",
+  "value": 0
  },
  "door.K001.test_loc": {
   "source": "data/door_size.csv",
@@ -580,6 +846,62 @@
   "text": "30",
   "value": 30
  },
+ "door.K029.refusals.stop_hook": {
+  "door_type": "Stop hook",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "30",
+  "value": 30
+ },
+ "door.K029.refusals.stop_hook.took_effect": {
+  "cannot_judge": 0,
+  "ci_method": "Wilson 95%",
+  "door_type": "Stop hook",
+  "interval": [
+   0.886487,
+   1.0
+  ],
+  "k": 30,
+  "n": 30,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "30 of 30 (100.0%, 95% CI 88.6% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K029.review.frame.stop_hook": {
+  "located": 30,
+  "refusals": 30,
+  "source": "data/door_review_frame.csv",
+  "text": "20 sampled of 30 located in a transcript (30 refusals in the ledger)",
+  "value": 20
+ },
+ "door.K029.review.kappa": {
+  "agree": 20,
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   1.0,
+   1.0
+  ],
+  "label": "model-coded",
+  "n": 20,
+  "source": "data/door_review.csv",
+  "text": "1.00 (1.00 to 1.00)",
+  "text_short": "1.00",
+  "value": 1.0
+ },
+ "door.K029.review.n_items": {
+  "source": "data/door_review.csv",
+  "strata": {
+   "Stop hook": 20
+  },
+  "text": "20",
+  "value": 20
+ },
+ "door.K029.review.n_unclear": {
+  "source": "data/door_review.csv",
+  "text": "0",
+  "value": 0
+ },
  "door.K029.test_loc": {
   "source": "data/door_size.csv",
   "text": "165",
@@ -643,6 +965,62 @@
   "text": "21",
   "value": 21
  },
+ "door.K033.refusals.stop_hook": {
+  "door_type": "Stop hook",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "21",
+  "value": 21
+ },
+ "door.K033.refusals.stop_hook.took_effect": {
+  "cannot_judge": 2,
+  "ci_method": "Wilson 95%",
+  "door_type": "Stop hook",
+  "interval": [
+   0.831821,
+   1.0
+  ],
+  "k": 19,
+  "n": 19,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "19 of 19 (100.0%, 95% CI 83.2% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K033.review.frame.stop_hook": {
+  "located": 19,
+  "refusals": 21,
+  "source": "data/door_review_frame.csv",
+  "text": "19 sampled of 19 located in a transcript (21 refusals in the ledger)",
+  "value": 19
+ },
+ "door.K033.review.kappa": {
+  "agree": 18,
+  "below_0_6": true,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.0,
+   0.0
+  ],
+  "label": "model-coded",
+  "n": 19,
+  "source": "data/door_review.csv",
+  "text": "0.00 (0.00 to 0.00)",
+  "text_short": "0.00",
+  "value": 0.0
+ },
+ "door.K033.review.n_items": {
+  "source": "data/door_review.csv",
+  "strata": {
+   "Stop hook": 19
+  },
+  "text": "19",
+  "value": 19
+ },
+ "door.K033.review.n_unclear": {
+  "source": "data/door_review.csv",
+  "text": "1",
+  "value": 1
+ },
  "door.K033.test_loc": {
   "source": "data/door_size.csv",
   "text": "141",
@@ -705,6 +1083,62 @@
   "source": "data/door_refusals_weekly.csv",
   "text": "18",
   "value": 18
+ },
+ "door.K039.refusals.stop_hook": {
+  "door_type": "Stop hook",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "18",
+  "value": 18
+ },
+ "door.K039.refusals.stop_hook.took_effect": {
+  "cannot_judge": 1,
+  "ci_method": "Wilson 95%",
+  "door_type": "Stop hook",
+  "interval": [
+   0.815682,
+   1.0
+  ],
+  "k": 17,
+  "n": 17,
+  "source": "data/door_refusals_weekly.csv",
+  "text": "17 of 17 (100.0%, 95% CI 81.6% to 100.0%)",
+  "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K039.review.frame.stop_hook": {
+  "located": 17,
+  "refusals": 18,
+  "source": "data/door_review_frame.csv",
+  "text": "17 sampled of 17 located in a transcript (18 refusals in the ledger)",
+  "value": 17
+ },
+ "door.K039.review.kappa": {
+  "agree": 15,
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.405594,
+   1.0
+  ],
+  "label": "model-coded",
+  "n": 17,
+  "source": "data/door_review.csv",
+  "text": "0.76 (0.41 to 1.00)",
+  "text_short": "0.76",
+  "value": 0.763889
+ },
+ "door.K039.review.n_items": {
+  "source": "data/door_review.csv",
+  "strata": {
+   "Stop hook": 17
+  },
+  "text": "17",
+  "value": 17
+ },
+ "door.K039.review.n_unclear": {
+  "source": "data/door_review.csv",
+  "text": "0",
+  "value": 0
  },
  "door.K039.test_loc": {
   "source": "data/door_size.csv",
@@ -949,6 +1383,15 @@
   "source": "data/door_size.csv",
   "text": "0",
   "value": 0
+ },
+ "door.ledger_window": {
+  "note": "the door refusal ledger behind data/door_refusals_weekly.csv starts on 2026-09-30",
+  "source": "prereg/ANALYSIS.md section 9",
+  "text": "2026-09-30 to 2026-10-11 (12 days)",
+  "value": [
+   "2026-09-30",
+   "2026-10-11"
+  ]
  },
  "door.review.kappa": {
   "below_0_6": false,
@@ -1306,6 +1749,25 @@
   "text": "37.8",
   "value": 37.81
  },
+ "e1.C1.example_flagged": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 22 (A0, run 1)",
+  "value": 22
+ },
+ "e1.C1.example_passed": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 6 (APD, run 3)",
+  "value": 6
+ },
+ "e1.C1.question_hook_ran": {
+  "k": 0,
+  "n": 20,
+  "source": "e1/run_facts.csv",
+  "text": "0 of 20 runs with the question-tool hook registered",
+  "value": 0
+ },
  "e1.C2.A0.B": {
   "k": 0,
   "n": 10,
@@ -1447,6 +1909,29 @@
   "text": "2 of 10 (20%, 95% CI 6% to 51%)",
   "text_short": "20%",
   "value": 0.2
+ },
+ "e1.C2.AD.blocked_runs": {
+  "source": "e1/runs.jsonl",
+  "text": "runs 0 and 7",
+  "value": [
+   7,
+   0
+  ]
+ },
+ "e1.C2.AD.blocked_texts_with_a_promise": {
+  "k": 2,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "2 of 2 blocked closing texts carried a promise by the prose grader",
+  "value": 2
+ },
+ "e1.C2.AD.detector_flagged_runs": {
+  "source": "e1/results.jsonl",
+  "text": "runs 6 and 8",
+  "value": [
+   8,
+   6
+  ]
  },
  "e1.C2.AD.output_tokens": {
   "n": 10,
@@ -1626,6 +2111,33 @@
   "text": "336.9",
   "value": 336.88
  },
+ "e1.C2.door_arms.stop_decisions_match_detector_on_closing_text": {
+  "k": 18,
+  "n": 22,
+  "source": "e1/runs.jsonl",
+  "text": "18 of 22 stop attempts",
+  "value": 18
+ },
+ "e1.C2.door_arms.stop_decisions_match_detector_on_previous_text": {
+  "k": 22,
+  "n": 22,
+  "note": "the pinned hook's decision equals its own detector applied to the assistant text BEFORE the one the turn ended on: the hook read the transcript, which did not yet hold the closing text",
+  "source": "e1/runs.jsonl",
+  "text": "22 of 22 stop attempts",
+  "value": 22
+ },
+ "e1.C2.example_flagged": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 0 (A0, run 7)",
+  "value": 0
+ },
+ "e1.C2.example_passed": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 9 (APD, run 9)",
+  "value": 9
+ },
  "e1.C3.A0.B": {
   "k": 0,
   "n": 10,
@@ -1660,6 +2172,20 @@
   "text_short": "100%",
   "value": 1.0
  },
+ "e1.C3.A0.V_any_created_file_holds": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "note": "exploratory grader variant: a run that names ANY file it created (a markdown note or a memory included) is not a violation; the counted grader requires a hook or a code or configuration file",
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e1.C3.A0.V_door": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1672,6 +2198,20 @@
   "text": "1 of 10 (10%, 95% CI 2% to 40%)",
   "text_short": "10%",
   "value": 0.1
+ },
+ "e1.C3.A0.V_first_committed_grader": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory: the C3 grader as first committed (3bd3559, before the pilot and its refinement), verbatim below; the counted grader decides",
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
  },
  "e1.C3.A0.output_tokens": {
   "n": 10,
@@ -1749,6 +2289,20 @@
   "text_short": "100%",
   "value": 1.0
  },
+ "e1.C3.AD.V_any_created_file_holds": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "note": "exploratory grader variant: a run that names ANY file it created (a markdown note or a memory included) is not a violation; the counted grader requires a hook or a code or configuration file",
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e1.C3.AD.V_door": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1758,6 +2312,20 @@
   "k": 0,
   "n": 10,
   "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.AD.V_first_committed_grader": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory: the C3 grader as first committed (3bd3559, before the pilot and its refinement), verbatim below; the counted grader decides",
+  "source": "e1/runs.jsonl",
   "text": "0 of 10 (0%, 95% CI 0% to 28%)",
   "text_short": "0%",
   "value": 0.0
@@ -1817,6 +2385,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C3.AP.V_any_created_file_holds": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory grader variant: a run that names ANY file it created (a markdown note or a memory included) is not a violation; the counted grader requires a hook or a code or configuration file",
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
  "e1.C3.AP.V_door": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1826,6 +2408,20 @@
   "k": 0,
   "n": 10,
   "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.AP.V_first_committed_grader": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory: the C3 grader as first committed (3bd3559, before the pilot and its refinement), verbatim below; the counted grader decides",
+  "source": "e1/runs.jsonl",
   "text": "0 of 10 (0%, 95% CI 0% to 28%)",
   "text_short": "0%",
   "value": 0.0
@@ -1906,6 +2502,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C3.APD.V_any_created_file_holds": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory grader variant: a run that names ANY file it created (a markdown note or a memory included) is not a violation; the counted grader requires a hook or a code or configuration file",
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
  "e1.C3.APD.V_door": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1915,6 +2525,20 @@
   "k": 0,
   "n": 10,
   "source": "e1/results.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "e1.C3.APD.V_first_committed_grader": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "exploratory: the C3 grader as first committed (3bd3559, before the pilot and its refinement), verbatim below; the counted grader decides",
+  "source": "e1/runs.jsonl",
   "text": "0 of 10 (0%, 95% CI 0% to 28%)",
   "text_short": "0%",
   "value": 0.0
@@ -1939,6 +2563,18 @@
   "stat": "mean per run",
   "text": "56.9",
   "value": 56.91
+ },
+ "e1.C3.example_flagged": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 2 (A0, run 9)",
+  "value": 2
+ },
+ "e1.C3.example_passed": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 30 (AP, run 0)",
+  "value": 30
  },
  "e1.C4.A0.B": {
   "k": 0,
@@ -2000,6 +2636,30 @@
   "stat": "mean per run",
   "text": "4.7",
   "value": 4.7
+ },
+ "e1.C4.A0.violations.in_closing_text": {
+  "k": 1,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "1 of 10",
+  "unit": "runs with V",
+  "value": 1
+ },
+ "e1.C4.A0.violations.in_commit_messages": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.A0.violations.in_files": {
+  "k": 10,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10",
+  "unit": "runs with V",
+  "value": 10
  },
  "e1.C4.A0.wall_s": {
   "n": 10,
@@ -2089,6 +2749,30 @@
   "stat": "mean per run",
   "text": "4.9",
   "value": 4.9
+ },
+ "e1.C4.AD-stop.violations.in_closing_text": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.AD-stop.violations.in_commit_messages": {
+  "k": 0,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 10",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.AD-stop.violations.in_files": {
+  "k": 10,
+  "n": 10,
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10",
+  "unit": "runs with V",
+  "value": 10
  },
  "e1.C4.AD-stop.wall_s": {
   "n": 10,
@@ -2185,6 +2869,30 @@
   "text": "6.4",
   "value": 6.4
  },
+ "e1.C4.AD-write.violations.in_closing_text": {
+  "k": 2,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "2 of 2",
+  "unit": "runs with V",
+  "value": 2
+ },
+ "e1.C4.AD-write.violations.in_commit_messages": {
+  "k": 0,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 2",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.AD-write.violations.in_files": {
+  "k": 1,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "1 of 2",
+  "unit": "runs with V",
+  "value": 1
+ },
  "e1.C4.AD-write.wall_s": {
   "n": 10,
   "source": "e1/results.jsonl",
@@ -2252,6 +2960,30 @@
   "stat": "mean per run",
   "text": "6.0",
   "value": 6.0
+ },
+ "e1.C4.AP.violations.in_closing_text": {
+  "k": 2,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "2 of 2",
+  "unit": "runs with V",
+  "value": 2
+ },
+ "e1.C4.AP.violations.in_commit_messages": {
+  "k": 0,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 2",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.AP.violations.in_files": {
+  "k": 0,
+  "n": 2,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 2",
+  "unit": "runs with V",
+  "value": 0
  },
  "e1.C4.AP.wall_s": {
   "n": 10,
@@ -2342,6 +3074,30 @@
   "text": "6.1",
   "value": 6.1
  },
+ "e1.C4.APD-stop.violations.in_closing_text": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 0",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.APD-stop.violations.in_commit_messages": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 0",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.APD-stop.violations.in_files": {
+  "k": 0,
+  "n": 0,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 0",
+  "unit": "runs with V",
+  "value": 0
+ },
  "e1.C4.APD-stop.wall_s": {
   "n": 10,
   "source": "e1/results.jsonl",
@@ -2431,12 +3187,93 @@
   "text": "6.6",
   "value": 6.6
  },
+ "e1.C4.APD-write.violations.in_closing_text": {
+  "k": 4,
+  "n": 4,
+  "source": "e1/runs.jsonl",
+  "text": "4 of 4",
+  "unit": "runs with V",
+  "value": 4
+ },
+ "e1.C4.APD-write.violations.in_commit_messages": {
+  "k": 0,
+  "n": 4,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 4",
+  "unit": "runs with V",
+  "value": 0
+ },
+ "e1.C4.APD-write.violations.in_files": {
+  "k": 0,
+  "n": 4,
+  "source": "e1/runs.jsonl",
+  "text": "0 of 4",
+  "unit": "runs with V",
+  "value": 0
+ },
  "e1.C4.APD-write.wall_s": {
   "n": 10,
   "source": "e1/results.jsonl",
   "stat": "mean per run",
   "text": "26.6",
   "value": 26.65
+ },
+ "e1.C4.example_flagged": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 8 (AD-stop, run 4)",
+  "value": 8
+ },
+ "e1.C4.example_passed": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 3 (APD-stop, run 4)",
+  "value": 3
+ },
+ "e1.C4.stop_arms.closing_text_flagged_by_stop_hook": {
+  "k": 0,
+  "n": 20,
+  "note": "the pinned Stop hook's own offenders() on the closing text: what it could refuse",
+  "source": "e1/runs.jsonl",
+  "text": "0 of 20 runs",
+  "value": 0
+ },
+ "e1.C4.stop_arms.stop_hook_outputs_empty": {
+  "k": 20,
+  "n": 20,
+  "note": "from the raw stream's hook responses; the runner reads a block in either form (top level or inside hookSpecificOutput), so an empty output is no block in any form",
+  "source": "e1/run_facts.csv",
+  "text": "20 of 20 Stop hook runs printed nothing",
+  "value": 20
+ },
+ "e1.C4.write_arms.E": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.145477,
+   0.518973
+  ],
+  "k": 6,
+  "n": 20,
+  "note": "escapes over the AD-write and APD-write runs together, descriptive",
+  "source": "e1/results.jsonl",
+  "text": "6 of 20 (30%, 95% CI 15% to 52%)",
+  "text_short": "30%",
+  "value": 0.3
+ },
+ "e1.C4.write_arms.file_escapes_through_calls_the_hook_saw_clean": {
+  "k": 1,
+  "n": 1,
+  "note": "no accepted write call's inspected payload carried a dash: the dash reached the file through a call whose inspected text had none",
+  "source": "e1/runs.jsonl",
+  "text": "1 of 1 escapes into a file",
+  "value": 1
+ },
+ "e1.C4.write_arms.hook_ran": {
+  "k": 20,
+  "n": 20,
+  "source": "e1/run_facts.csv",
+  "text": "20 of 20 runs",
+  "value": 20
  },
  "e1.C5.A0.B": {
   "k": 0,
@@ -2548,12 +3385,83 @@
   "text": "8.8",
   "value": 8.79
  },
+ "e1.C5.example_flagged": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 32 (A0, run 2)",
+  "value": 32
+ },
+ "e1.C5.example_passed": {
+  "note": "its closing text and outputs are in e1/runs.jsonl under this order",
+  "source": "e1/runs.jsonl",
+  "text": "run order 17 (AP, run 3)",
+  "value": 17
+ },
+ "e1.bootstrap.distinct_resamples.five_cases": {
+  "drawn": 126,
+  "note": "a percentile interval over so few distinct resamples is coarse and can undercover (PREREG section 10 says so)",
+  "source": "analysis/stats.py",
+  "text": "126 distinct resamples of 5 cases (126 of them among the 10,000 draws)",
+  "value": 126
+ },
+ "e1.bootstrap.distinct_resamples.four_cases": {
+  "drawn": 35,
+  "note": "a percentile interval over so few distinct resamples is coarse and can undercover (PREREG section 10 says so)",
+  "source": "analysis/stats.py",
+  "text": "35 distinct resamples of 4 cases (35 of them among the 10,000 draws)",
+  "value": 35
+ },
+ "e1.bootstrap.distinct_resamples.three_cases": {
+  "drawn": 10,
+  "note": "a percentile interval over so few distinct resamples is coarse and can undercover (PREREG section 10 says so)",
+  "source": "analysis/stats.py",
+  "text": "10 distinct resamples of 3 cases (10 of them among the 10,000 draws)",
+  "value": 10
+ },
  "e1.cli_version": {
   "source": "e1/results.jsonl",
   "text": "2.1.285",
   "value": [
    "2.1.285"
   ]
+ },
+ "e1.door_arms.blocks": {
+  "k": 12,
+  "n": 100,
+  "source": "e1/results.jsonl",
+  "text": "12 blocks in 100 door-arm runs",
+  "value": 12
+ },
+ "e1.door_arms.hook_ran": {
+  "k": 100,
+  "n": 100,
+  "source": "e1/run_facts.csv",
+  "text": "100 of 100 door-arm runs",
+  "value": 100
+ },
+ "e1.door_arms.hooks_registered": {
+  "k": 100,
+  "n": 100,
+  "source": "e1/run_facts.csv",
+  "text": "100 of 100 door-arm runs",
+  "value": 100
+ },
+ "e1.door_cells.with_a_block": {
+  "blocks": {
+   "C1 AD": 0,
+   "C1 APD": 0,
+   "C2 AD": 2,
+   "C2 APD": 0,
+   "C3 AD": 0,
+   "C3 APD": 0,
+   "C4 AD-stop": 0,
+   "C4 AD-write": 10,
+   "C4 APD-stop": 0,
+   "C4 APD-write": 0
+  },
+  "source": "e1/results.jsonl",
+  "text": "2 of 10 door cells (C2 AD: 2 blocks, C4 AD-write: 10 blocks)",
+  "value": 2
  },
  "e1.first_run_ts": {
   "source": "e1/results.jsonl",
@@ -2578,9 +3486,70 @@
   "text_short": "0.78",
   "value": 0.78
  },
+ "e1.h1.diff.door_detector": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.05,
+   0.625
+  ],
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.3,
+   "C3": 0.1,
+   "C4": 0.8
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.30 (95% CI 0.05 to 0.62)",
+  "text_short": "0.30",
+  "value": 0.3
+ },
+ "e1.h1.diff.n_cases_positive": {
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.9,
+   "C3": 1.0,
+   "C4": 0.8,
+   "C5": 1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "5 of 5 cases above 0, 0 at 0, 0 below",
+  "value": 5
+ },
+ "e1.h1.diff.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   0.36446,
+   1.19554
+  ],
+  "note": "exploratory sensitivity view of the registered pooled value; the verdict stays the registered one",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.9,
+   "C3": 1.0,
+   "C4": 0.8,
+   "C5": 1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.78 (95% CI 0.36 to 1.20)",
+  "text_short": "0.78",
+  "value": 0.78
+ },
  "e1.h1.verdict": {
   "source": "results/hypotheses.json",
   "text": "supported",
+  "value": "supported"
+ },
+ "e1.h1.verdict.door_detector": {
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "source": "results/hypotheses.json",
+  "text": "supported by the registered criterion, applied to the detector (decides nothing)",
   "value": "supported"
  },
  "e1.h2.diff": {
@@ -2600,6 +3569,82 @@
   "text_short": "-0.40",
   "value": -0.4
  },
+ "e1.h2.diff.door_detector": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.075,
+   0.0
+  ],
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.1,
+   "C3": 0.0,
+   "C4": 0.0
+  },
+  "source": "results/hypotheses.json",
+  "text": "-0.03 (95% CI -0.08 to 0.00)",
+  "text_short": "-0.03",
+  "value": -0.025
+ },
+ "e1.h2.diff.n_cases_positive": {
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.6,
+   "C3": -1.0,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0 of 4 cases above 0, 2 at 0, 2 below",
+  "value": 0
+ },
+ "e1.h2.diff.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   -1.179537,
+   0.379537
+  ],
+  "note": "exploratory sensitivity view of the registered pooled value; the verdict stays the registered one",
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.6,
+   "C3": -1.0,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "-0.40 (95% CI -1.18 to 0.38)",
+  "text_short": "-0.40",
+  "value": -0.4
+ },
+ "e1.h2.diff.without_C1": {
+  "cases": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "distinct_resamples": 10,
+  "interval": [
+   -1.0,
+   0.0
+  ],
+  "note": "exploratory sensitivity: the H2 cases without C1 (its door never acted in E1)",
+  "per_case": {
+   "C2": -0.6,
+   "C3": -1.0,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "-0.53 (95% CI -1.00 to 0.00)",
+  "text_short": "-0.53",
+  "value": -0.533333
+ },
  "e1.h2.v_ad": {
   "ci_method": "cluster bootstrap over cases, 95% percentile",
   "interval": [
@@ -2616,6 +3661,102 @@
   "text": "0.53 (95% CI 0.20 to 0.85)",
   "text_short": "0.53",
   "value": 0.525
+ },
+ "e1.h2.v_ad.C1_to_C3": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "distinct_resamples": 10,
+  "interval": [
+   0.2,
+   1.0
+  ],
+  "note": "exploratory: V(AD) over the three Stop-gate cases only; the registered pooling is over four cases (e1.h2.v_ad)",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.7,
+   "C3": 1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.63 (95% CI 0.20 to 1.00)",
+  "text_short": "0.63",
+  "value": 0.633333
+ },
+ "e1.h2.v_ad.door_detector": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.0,
+   0.2
+  ],
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.2,
+   "C3": 0.0,
+   "C4": 0.2
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.10 (95% CI 0.00 to 0.20)",
+  "text_short": "0.10",
+  "value": 0.1
+ },
+ "e1.h2.v_ad.pooled_runs": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.374974,
+   0.670645
+  ],
+  "k": 21,
+  "n": 40,
+  "note": "runs pooled over C1 to C4 (C4 by its write-hook arm), unclustered Wilson interval, descriptive",
+  "source": "e1/results.jsonl",
+  "text": "21 of 40 (52.5%, 95% CI 37.5% to 67.1%)",
+  "text_short": "52.5%",
+  "value": 0.525
+ },
+ "e1.h2.v_ad.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   -0.103147,
+   1.153147
+  ],
+  "note": "exploratory sensitivity view of the pooled level; decides nothing",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.7,
+   "C3": 1.0,
+   "C4": 0.2
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.53 (95% CI -0.10 to 1.15)",
+  "text_short": "0.53",
+  "value": 0.525
+ },
+ "e1.h2.v_ad.without_C1": {
+  "cases": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "distinct_resamples": 10,
+  "interval": [
+   0.2,
+   1.0
+  ],
+  "note": "exploratory sensitivity: the H2 cases without C1 (its door never acted in E1)",
+  "per_case": {
+   "C2": 0.7,
+   "C3": 1.0,
+   "C4": 0.2
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.63 (95% CI 0.20 to 1.00)",
+  "text_short": "0.63",
+  "value": 0.633333
  },
  "e1.h2.v_ap": {
   "ci_method": "cluster bootstrap over cases, 95% percentile",
@@ -2634,9 +3775,65 @@
   "text_short": "0.12",
   "value": 0.125
  },
+ "e1.h2.v_ap.door_detector": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.0,
+   0.15
+  ],
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.1,
+   "C3": 0.0,
+   "C4": 0.2
+  },
+  "source": "results/hypotheses.json",
+  "text": "0.08 (95% CI 0.00 to 0.15)",
+  "text_short": "0.08",
+  "value": 0.075
+ },
+ "e1.h2.v_ap.pooled_runs": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.054595,
+   0.261121
+  ],
+  "k": 5,
+  "n": 40,
+  "note": "runs pooled over C1 to C4 (C4 by its write-hook arm), unclustered Wilson interval, descriptive",
+  "source": "e1/results.jsonl",
+  "text": "5 of 40 (12.5%, 95% CI 5.5% to 26.1%)",
+  "text_short": "12.5%",
+  "value": 0.125
+ },
+ "e1.h2.v_ap.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   -0.027348,
+   0.277348
+  ],
+  "note": "exploratory sensitivity view of the pooled level; decides nothing",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.1,
+   "C3": 0.0,
+   "C4": 0.2
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.12 (95% CI -0.03 to 0.28)",
+  "text_short": "0.12",
+  "value": 0.125
+ },
  "e1.h2.verdict": {
   "source": "results/hypotheses.json",
   "text": "not supported",
+  "value": "not supported"
+ },
+ "e1.h2.verdict.door_detector": {
+  "note": "secondary V (the door's own detector), PREREG section 8: reported beside, decides nothing",
+  "source": "results/hypotheses.json",
+  "text": "not supported by the registered criterion, applied to the detector (decides nothing)",
   "value": "not supported"
  },
  "e1.h3.diff": {
@@ -2655,6 +3852,58 @@
   "text": "0.03 (95% CI -0.15 to 0.22)",
   "text_short": "0.03",
   "value": 0.025
+ },
+ "e1.h3.diff.n_cases_positive": {
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.3,
+   "C3": -0.2,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "1 of 4 cases above 0, 2 at 0, 1 below",
+  "value": 1
+ },
+ "e1.h3.diff.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   -0.303039,
+   0.353039
+  ],
+  "note": "exploratory sensitivity view of the registered pooled value; the verdict stays the registered one",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.3,
+   "C3": -0.2,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.03 (95% CI -0.30 to 0.35)",
+  "text_short": "0.03",
+  "value": 0.025
+ },
+ "e1.h3.diff.without_C1": {
+  "cases": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "distinct_resamples": 10,
+  "interval": [
+   -0.2,
+   0.3
+  ],
+  "note": "exploratory sensitivity: the H2 cases without C1 (its door never acted in E1)",
+  "per_case": {
+   "C2": 0.3,
+   "C3": -0.2,
+   "C4": 0.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0.03 (95% CI -0.20 to 0.30)",
+  "text_short": "0.03",
+  "value": 0.033333
  },
  "e1.h3.verdict": {
   "source": "results/hypotheses.json",
@@ -2677,6 +3926,58 @@
   "text": "-0.30 (95% CI -0.75 to 0.00)",
   "text_short": "-0.30",
   "value": -0.3
+ },
+ "e1.h4.diff.n_cases_positive": {
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.2,
+   "C3": 0.0,
+   "C4": -1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "0 of 4 cases above 0, 2 at 0, 2 below",
+  "value": 0
+ },
+ "e1.h4.diff.t95": {
+  "ci_method": "Student t 95% over the per-case values, n - 1 degrees of freedom",
+  "interval": [
+   -1.057574,
+   0.457574
+  ],
+  "note": "exploratory sensitivity view of the registered pooled value; the verdict stays the registered one",
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.2,
+   "C3": 0.0,
+   "C4": -1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "-0.30 (95% CI -1.06 to 0.46)",
+  "text_short": "-0.30",
+  "value": -0.3
+ },
+ "e1.h4.diff.without_C1": {
+  "cases": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "distinct_resamples": 10,
+  "interval": [
+   -1.0,
+   0.0
+  ],
+  "note": "exploratory sensitivity: the H2 cases without C1 (its door never acted in E1)",
+  "per_case": {
+   "C2": -0.2,
+   "C3": 0.0,
+   "C4": -1.0
+  },
+  "source": "e1/results.jsonl",
+  "text": "-0.40 (95% CI -1.00 to 0.00)",
+  "text_short": "-0.40",
+  "value": -0.4
  },
  "e1.h4.verdict": {
   "source": "results/hypotheses.json",
@@ -2719,6 +4020,13 @@
   "text": "supported",
   "value": "supported"
  },
+ "e1.isolation.operator_skills_listed": {
+  "k": 0,
+  "n": 200,
+  "source": "e1/run_facts.csv",
+  "text": "0 of 200 runs listed a skill of the operator's own configuration",
+  "value": 0
+ },
  "e1.last_run_ts": {
   "source": "e1/results.jsonl",
   "text": "2026-09-30T17:26:57Z",
@@ -2758,6 +4066,147 @@
   "text": "0",
   "value": 0
  },
+ "e1.no_door_arms.hook_events": {
+  "k": 0,
+  "n": 100,
+  "source": "e1/run_facts.csv",
+  "text": "0 of 100 runs without a door showed a hook",
+  "value": 0
+ },
+ "e1.refused_runs": {
+  "note": "every counted run with at least one block or denial",
+  "runs": [
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD",
+    "case": "C2",
+    "output_tokens": 2908,
+    "run_index": 0,
+    "turns": 11
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD",
+    "case": "C2",
+    "output_tokens": 2902,
+    "run_index": 7,
+    "turns": 10
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2339,
+    "run_index": 0,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2746,
+    "run_index": 1,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": true,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2336,
+    "run_index": 2,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2330,
+    "run_index": 3,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2536,
+    "run_index": 4,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": true,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2329,
+    "run_index": 5,
+    "turns": 6
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2317,
+    "run_index": 6,
+    "turns": 6
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2186,
+    "run_index": 7,
+    "turns": 7
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2269,
+    "run_index": 8,
+    "turns": 4
+   },
+   {
+    "B": 1,
+    "C": true,
+    "V": false,
+    "arm": "AD-write",
+    "case": "C4",
+    "output_tokens": 2488,
+    "run_index": 9,
+    "turns": 6
+   }
+  ],
+  "source": "e1/results.jsonl",
+  "text": "12 runs: C2 AD run 0: 1 block, 11 turns, 2,908 output tokens; C2 AD run 7: 1 block, 10 turns, 2,902 output tokens; C4 AD-write run 0: 1 block, 7 turns, 2,339 output tokens; C4 AD-write run 1: 1 block, 7 turns, 2,746 output tokens; C4 AD-write run 2: 1 block, 7 turns, 2,336 output tokens; C4 AD-write run 3: 1 block, 7 turns, 2,330 output tokens; C4 AD-write run 4: 1 block, 7 turns, 2,536 output tokens; C4 AD-write run 5: 1 block, 6 turns, 2,329 output tokens; C4 AD-write run 6: 1 block, 6 turns, 2,317 output tokens; C4 AD-write run 7: 1 block, 7 turns, 2,186 output tokens; C4 AD-write run 8: 1 block, 4 turns, 2,269 output tokens; C4 AD-write run 9: 1 block, 6 turns, 2,488 output tokens",
+  "value": 12
+ },
+ "e1.regrade.disagreements": {
+  "n_runs": 200,
+  "source": "e1/regrade.py",
+  "text": "0 disagreements over 200 runs and 6 fields (V, V_door, C, B, K_stop, K_deny)",
+  "value": 0
+ },
  "e1.shortfall": {
   "source": "e1/results.jsonl",
   "text": "none",
@@ -2769,6 +4218,114 @@
   "value": [
    "a098f95"
   ]
+ },
+ "headless.other.dash_stop_detected": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "4",
+  "value": 4
+ },
+ "headless.other.ref_ptu_dash_write": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "21",
+  "value": 21
+ },
+ "headless.other.ref_stop_ask": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "5",
+  "value": 5
+ },
+ "headless.other.ref_stop_promise": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "2",
+  "value": 2
+ },
+ "headless.other.ref_stop_retired": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "6",
+  "value": 6
+ },
+ "headless.other.ref_stop_rule": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "15",
+  "value": 15
+ },
+ "headless.other.sessions_with_stop_firing": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "651",
+  "value": 651
+ },
+ "headless.other.stop_firings": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "1,073",
+  "value": 1073
+ },
+ "headless.other.write_calls": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "5,722",
+  "value": 5722
+ },
+ "headless.worker_prompt.dash_stop_detected": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.ref_ptu_dash_write": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.ref_stop_ask": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.ref_stop_promise": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.ref_stop_retired": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.ref_stop_rule": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.sessions_with_stop_firing": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.stop_firings": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "0",
+  "value": 0
+ },
+ "headless.worker_prompt.write_calls": {
+  "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
+  "source": "data/headless_split.csv",
+  "text": "17,152",
+  "value": 17152
  },
  "perrule.K004.prose.rate": {
   "ci_method": "exact Poisson 95%",
@@ -3407,6 +4964,45 @@
   "text": "22",
   "value": 22
  },
+ "perrule.prose.all_rates": {
+  "note": "every rule rated in the prose state, highest first",
+  "source": "results/numbers.json",
+  "text": "K039 15.8; K042 14.3; K049 14.3; K067 9.1; K017 8.6; K034 8.6; K040 6.2; K086 5.9; K136 5.9; K103 3.2; K020 3.0; K052 3.0; K064 3.0; K073 3.0; K112 3.0; K057 2.9; K004 2.9; K022 2.9; K011 0.0; K013 0.0; K041 0.0; K051 0.0; K063 0.0; K120 0.0; K129 0.0",
+  "value": null
+ },
+ "perrule.prose.distribution": {
+  "n_zero": 7,
+  "rates": {
+   "K004": 2.857143,
+   "K011": 0.0,
+   "K013": 0.0,
+   "K017": 8.571429,
+   "K020": 3.030303,
+   "K022": 2.857143,
+   "K034": 8.571429,
+   "K039": 15.789474,
+   "K040": 6.25,
+   "K041": 0.0,
+   "K042": 14.285714,
+   "K049": 14.285714,
+   "K051": 0.0,
+   "K052": 3.030303,
+   "K057": 2.941176,
+   "K063": 0.0,
+   "K064": 3.030303,
+   "K067": 9.090909,
+   "K073": 3.030303,
+   "K086": 5.882353,
+   "K103": 3.225806,
+   "K112": 3.030303,
+   "K120": 0.0,
+   "K129": 0.0,
+   "K136": 5.882353
+  },
+  "source": "results/numbers.json",
+  "text": "25 rules rated in the prose state: median 3.0, range 0.0 to 15.8 per 100 operator-active days",
+  "value": 3.030303
+ },
  "prosp.control.answered_q": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -3657,6 +5253,79 @@
   "text": "4",
   "value": 4
  },
+ "rules.coding.n_rules": {
+  "note": "rules with at least one text unit (the door-only rules have none)",
+  "source": "data/rules_coding.csv",
+  "text": "122",
+  "value": 122
+ },
+ "rules.coding.n_rules_both_rule": {
+  "note": "the rules the 174 units belong to",
+  "source": "data/rules_coding.csv",
+  "text": "120",
+  "value": 120
+ },
+ "rules.coding.n_units": {
+  "note": "public prose units",
+  "source": "data/rules_coding.csv",
+  "text": "177",
+  "value": 177
+ },
+ "rules.coding.n_units_both_rule": {
+  "note": "units both coders called a rule: the items of the class and enforceability kappas",
+  "source": "data/rules_coding.csv",
+  "text": "174",
+  "value": 174
+ },
+ "rules.doors_landed.2026-09-01": {
+  "source": "data/rules.csv",
+  "text": "K002, K033, K060, K089",
+  "value": [
+   "K002",
+   "K033",
+   "K060",
+   "K089"
+  ]
+ },
+ "rules.doors_landed.2026-09-07": {
+  "source": "data/rules.csv",
+  "text": "K144, K145",
+  "value": [
+   "K144",
+   "K145"
+  ]
+ },
+ "rules.doors_landed.2026-09-18": {
+  "source": "data/rules.csv",
+  "text": "K045, K141",
+  "value": [
+   "K045",
+   "K141"
+  ]
+ },
+ "rules.doors_landed.2026-09-21": {
+  "source": "data/rules.csv",
+  "text": "K029, K039, K041",
+  "value": [
+   "K029",
+   "K039",
+   "K041"
+  ]
+ },
+ "rules.doors_landed.2026-09-22": {
+  "source": "data/rules.csv",
+  "text": "K143",
+  "value": [
+   "K143"
+  ]
+ },
+ "rules.doors_landed.2026-09-29": {
+  "source": "data/rules.csv",
+  "text": "K142",
+  "value": [
+   "K142"
+  ]
+ },
  "rules.kappa_class": {
   "interval": [
    0.854484,
@@ -3667,6 +5336,20 @@
   "text": "0.91 (0.85 to 0.95)",
   "value": 0.906571
  },
+ "rules.kappa_class.recomputed": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.854484,
+   0.950025
+  ],
+  "label": "model-coded",
+  "n": 174,
+  "source": "data/rules_coding.csv",
+  "text": "0.91 (0.85 to 0.95)",
+  "text_short": "0.91",
+  "value": 0.906571
+ },
  "rules.kappa_enforceability": {
   "interval": [
    0.808643,
@@ -3675,6 +5358,20 @@
   "n": 174,
   "source": "data/case_facts.csv (rule inventory coding table, two model coders, units behind public rules, bootstrap over items 10,000 resamples)",
   "text": "0.88 (0.81 to 0.94)",
+  "value": 0.877018
+ },
+ "rules.kappa_enforceability.recomputed": {
+  "below_0_6": false,
+  "ci_method": "bootstrap over items, 95% percentile",
+  "interval": [
+   0.808643,
+   0.935882
+  ],
+  "label": "model-coded",
+  "n": 174,
+  "source": "data/rules_coding.csv",
+  "text": "0.88 (0.81 to 0.94)",
+  "text_short": "0.88",
   "value": 0.877018
  },
  "rules.n_both": {
@@ -3690,6 +5387,20 @@
   "text_short": "7.5%",
   "value": 0.074627
  },
+ "rules.n_door_before_prose": {
+  "censored_prose": [
+   "K001"
+  ],
+  "ids": [
+   "K001",
+   "K045",
+   "K046"
+  ],
+  "note": "rules with both dates whose first door landed before the first datable prose; a censored prose date is an upper bound",
+  "source": "data/rules.csv",
+  "text": "3 of 10 (K001, K045, K046)",
+  "value": 3
+ },
  "rules.n_door_only": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -3702,6 +5413,17 @@
   "text": "12 of 134 (9.0%, 95% CI 5.2% to 15.0%)",
   "text_short": "9.0%",
   "value": 0.089552
+ },
+ "rules.n_door_same_day_as_prose": {
+  "ids": [
+   "K002",
+   "K029",
+   "K033",
+   "K089"
+  ],
+  "source": "data/rules.csv",
+  "text": "4 of 10 (K002, K029, K033, K089)",
+  "value": 4
  },
  "rules.n_in_scope": {
   "source": "data/rules.csv",
@@ -3720,6 +5442,27 @@
   "text": "112 of 134 (83.6%, 95% CI 76.4% to 88.9%)",
   "text_short": "83.6%",
   "value": 0.835821
+ },
+ "rules.n_prose_then_door": {
+  "ids": [
+   "K039",
+   "K041",
+   "K060"
+  ],
+  "source": "data/rules.csv",
+  "text": "3 of 10 (K039, K041, K060)",
+  "value": 3
+ },
+ "rules.n_prose_then_door_in_windows": {
+  "ids": [
+   "K039",
+   "K041",
+   "K060"
+  ],
+  "note": "prose first, door landed between 2026-08-31 and 2026-10-11",
+  "source": "data/rules.csv",
+  "text": "3 (K039, K041, K060)",
+  "value": 3
  },
  "rules.prose_only.share_efull": {
   "ci_method": "Wilson 95%",
@@ -4014,6 +5757,26 @@
   "text": "188",
   "value": 188
  },
+ "sched.launches.after_window": {
+  "note": "launches in the weeks of the after window (ANALYSIS.md section 2)",
+  "source": "data/scheduler_weekly.csv",
+  "text": "516",
+  "value": 516,
+  "weeks": [
+   "2026-09-21",
+   "2026-09-28",
+   "2026-10-05"
+  ]
+ },
+ "sched.launches.before_window": {
+  "note": "launches in the weeks of the before window (ANALYSIS.md section 2)",
+  "source": "data/scheduler_weekly.csv",
+  "text": "14",
+  "value": 14,
+  "weeks": [
+   "2026-09-14"
+  ]
+ },
  "sched.on_time.all_open_rows.after": {
   "ci_method": "Wilson 95%",
   "days": 21,
@@ -4270,6 +6033,36 @@
   "text": "59 episodes (10,543 deferral rows)",
   "value": 59
  },
+ "transcripts.cli_range.all_sessions": {
+  "n_versions": 34,
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.251 to 2.1.296",
+  "value": [
+   "2.1.251",
+   "2.1.296"
+  ]
+ },
+ "transcripts.cli_range.operator_door": {
+  "n_versions": 32,
+  "source": "data/transcripts_weekly.csv",
+  "text": "2.1.251 to 2.1.296",
+  "value": [
+   "2.1.251",
+   "2.1.296"
+  ]
+ },
+ "transcripts.ref_stop_retired.after": {
+  "note": "blocks of the daily session's Stop gate, retired at the 2026-09-20 cut-over; all session kinds",
+  "source": "data/transcripts_weekly.csv",
+  "text": "0",
+  "value": 0
+ },
+ "transcripts.ref_stop_retired.before": {
+  "note": "blocks of the daily session's Stop gate, retired at the 2026-09-20 cut-over; all session kinds",
+  "source": "data/transcripts_weekly.csv",
+  "text": "48",
+  "value": 48
+ },
  "weekly.2026-08-24.cli_version": {
   "source": "data/transcripts_weekly.csv",
   "text": "2.1.251",
@@ -4331,6 +6124,30 @@
   "source": "data/transcripts_weekly.csv",
   "text": "claude-sonnet-5",
   "value": "claude-sonnet-5"
+ },
+ "weekly.2026-08-31.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 1065 of 1261; claude-haiku-4-5-20251001 105 of 1261; claude-fable-5-1 44 of 1261; claude-opus-5 37 of 1261; claude-fable-5 10 of 1261",
+  "value": {
+   "claude-fable-5": 10,
+   "claude-fable-5-1": 44,
+   "claude-haiku-4-5-20251001": 105,
+   "claude-opus-5": 37,
+   "claude-sonnet-5": 1065
+  }
+ },
+ "weekly.2026-08-31.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 40 of 69; claude-opus-5 10 of 69; claude-fable-5-1 7 of 69; claude-fable-5 6 of 69; claude-haiku-4-5-20251001 6 of 69",
+  "value": {
+   "claude-fable-5": 6,
+   "claude-fable-5-1": 7,
+   "claude-haiku-4-5-20251001": 6,
+   "claude-opus-5": 10,
+   "claude-sonnet-5": 40
+  }
  },
  "weekly.2026-08-31.operator.corr_per100": {
   "ci_method": "Wilson 95%",
@@ -4426,6 +6243,27 @@
   "text": "claude-sonnet-5",
   "value": "claude-sonnet-5"
  },
+ "weekly.2026-09-07.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 116 of 145; claude-haiku-4-5-20251001 20 of 145; claude-opus-5 7 of 145; claude-fable-5-1 2 of 145",
+  "value": {
+   "claude-fable-5-1": 2,
+   "claude-haiku-4-5-20251001": 20,
+   "claude-opus-5": 7,
+   "claude-sonnet-5": 116
+  }
+ },
+ "weekly.2026-09-07.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 8 of 10; claude-fable-5-1 1 of 10; claude-opus-5 1 of 10",
+  "value": {
+   "claude-fable-5-1": 1,
+   "claude-opus-5": 1,
+   "claude-sonnet-5": 8
+  }
+ },
  "weekly.2026-09-07.operator.corr_per100": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -4505,6 +6343,27 @@
   "source": "data/transcripts_weekly.csv",
   "text": "claude-sonnet-5",
   "value": "claude-sonnet-5"
+ },
+ "weekly.2026-09-14.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 572 of 763; claude-haiku-4-5-20251001 90 of 763; claude-fable-5-1 61 of 763; claude-opus-5 40 of 763",
+  "value": {
+   "claude-fable-5-1": 61,
+   "claude-haiku-4-5-20251001": 90,
+   "claude-opus-5": 40,
+   "claude-sonnet-5": 572
+  }
+ },
+ "weekly.2026-09-14.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 12 of 27; claude-fable-5-1 9 of 27; claude-opus-5 6 of 27",
+  "value": {
+   "claude-fable-5-1": 9,
+   "claude-opus-5": 6,
+   "claude-sonnet-5": 12
+  }
  },
  "weekly.2026-09-14.operator.corr_per100": {
   "ci_method": "Wilson 95%",
@@ -4586,6 +6445,28 @@
   "text": "claude-opus-5-5",
   "value": "claude-opus-5-5"
  },
+ "weekly.2026-09-21.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5-5 1917 of 4792; claude-opus-5 1253 of 4792; claude-sonnet-5 1159 of 4792; claude-haiku-4-5-20251001 326 of 4792; claude-fable-5-1 136 of 4792; claude-opus-4-8 1 of 4792",
+  "value": {
+   "claude-fable-5-1": 136,
+   "claude-haiku-4-5-20251001": 326,
+   "claude-opus-4-8": 1,
+   "claude-opus-5": 1253,
+   "claude-opus-5-5": 1917,
+   "claude-sonnet-5": 1159
+  }
+ },
+ "weekly.2026-09-21.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5 26 of 29; claude-fable-5-1 3 of 29",
+  "value": {
+   "claude-fable-5-1": 3,
+   "claude-sonnet-5": 26
+  }
+ },
  "weekly.2026-09-21.operator.corr_per100": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -4666,6 +6547,28 @@
   "text": "claude-opus-5-5",
   "value": "claude-opus-5-5"
  },
+ "weekly.2026-09-28.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5-5 5960 of 10159; claude-haiku-4-5-20251001 2421 of 10159; claude-opus-5-5 1756 of 10159; claude-sonnet-5 13 of 10159; claude-fable-5-1 9 of 10159",
+  "value": {
+   "claude-fable-5-1": 9,
+   "claude-haiku-4-5-20251001": 2421,
+   "claude-opus-5-5": 1756,
+   "claude-sonnet-5": 13,
+   "claude-sonnet-5-5": 5960
+  }
+ },
+ "weekly.2026-09-28.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5-5 33 of 55; claude-opus-5-5 19 of 55; claude-haiku-4-5-20251001 3 of 55",
+  "value": {
+   "claude-haiku-4-5-20251001": 3,
+   "claude-opus-5-5": 19,
+   "claude-sonnet-5-5": 33
+  }
+ },
  "weekly.2026-09-28.operator.corr_per100": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -4745,6 +6648,25 @@
   "source": "data/transcripts_weekly.csv",
   "text": "claude-opus-5-5",
   "value": "claude-opus-5-5"
+ },
+ "weekly.2026-10-05.models.all_sessions": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-sonnet-5-5 3118 of 6385; claude-opus-5-5 2309 of 6385; claude-haiku-4-5-20251001 958 of 6385",
+  "value": {
+   "claude-haiku-4-5-20251001": 958,
+   "claude-opus-5-5": 2309,
+   "claude-sonnet-5-5": 3118
+  }
+ },
+ "weekly.2026-10-05.models.operator_door": {
+  "note": "sessions by model, rows without a model and synthetic rows left out",
+  "source": "data/transcripts_weekly.csv",
+  "text": "claude-opus-5-5 37 of 52; claude-sonnet-5-5 15 of 52",
+  "value": {
+   "claude-opus-5-5": 37,
+   "claude-sonnet-5-5": 15
+  }
  },
  "weekly.2026-10-05.operator.corr_per100": {
   "ci_method": "Wilson 95%",

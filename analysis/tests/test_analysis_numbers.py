@@ -28,7 +28,9 @@ def test_twice_gives_byte_identical_outputs(tmp_path):
     assert {"numbers.json", "hypotheses.json", "manifest.json",
             "figures/figure4_e1.svg", "figures/figure2_weekly.svg"} <= names
     manifest = json.loads((out / "manifest.json").read_text())
-    assert manifest["skipped"] == {}
+    # The fixture E1 folder holds no per-run records (e1/runs.jsonl), which only the review-round
+    # supplement reads; test_supplements_on_the_published_files runs it on the real ones.
+    assert set(manifest["skipped"]) <= {"E1 supplement (review round 1)"}
 
 
 def test_every_entry_has_text_and_source(tmp_path):

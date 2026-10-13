@@ -27,6 +27,8 @@ import numbers  # noqa: E402,F401
 if _HERE not in sys.path:
     sys.path.append(_HERE)
 import case_facts  # noqa: E402
+import e1_supplement  # noqa: E402
+import field_supplement  # noqa: E402
 import figure1_timelines  # noqa: E402
 import table01_rules  # noqa: E402
 import table02_enforceability  # noqa: E402
@@ -59,6 +61,8 @@ SCRIPTS = (
     ("table 11", table11_replays),
     ("table 12 and figure 4", table12_e1),
     ("table 13", table13_cost),
+    ("E1 supplement (review round 1)", e1_supplement),
+    ("field supplement (review round 1)", field_supplement),
 )
 
 
