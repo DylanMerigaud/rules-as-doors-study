@@ -6,7 +6,7 @@ authors:
   - family-names: Merigaud
     given-names: Dylan
 doi: 10.5281/zenodo.23347509
-version: package-v1
+version: package-v2
 license: MIT
 repository-code: "https://github.com/DylanMerigaud/rules-as-doors-study"
 keywords:
