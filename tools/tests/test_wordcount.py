@@ -196,3 +196,12 @@ def test_html_comments_are_not_counted(tmp_path):
     assert (body_words, captions) == (expected, 0)
     assert wordcount.abstract_word_count(text) == 4
     assert wordcount.reference_count(text) == 1
+
+
+def test_an_author_year_reference_list_is_counted_by_its_lines(tmp_path, capsys):
+    text = ("# T\n\n## Abstract\n\nA short abstract.\n\n## Body\n\nWords here (Smith 2020).\n\n"
+            "## References\n\nA. Adams, \"One,\" V, 2019.\n\nB. Smith, \"Two,\" V, 2020.\n")
+    src = tmp_path / "m.md"
+    src.write_text(text, encoding="utf-8")
+    assert wordcount.reference_count(text) == 2
+    assert wordcount.main(["wordcount.py", str(src), "--max-refs", "1"]) == 1

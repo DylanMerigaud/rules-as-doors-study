@@ -146,3 +146,16 @@ def test_a_paragraph_break_does_not_join_a_count_to_a_month(tmp_path):
 
 def test_a_count_next_to_a_figure_link_still_fails(tmp_path):
     assert run("We ran 200 cases, see results/figures/figure4_e1.svg\n", tmp_path) == 1
+
+
+def test_a_section_cross_reference_is_allowlisted(tmp_path):
+    assert run("Section 4.2 gives the protocol; Sections 5 and 6.1 use it.\n", tmp_path) == 0
+
+
+def test_online_resource_label_and_a_doi_are_allowlisted(tmp_path):
+    line = "Online Resource 1 ties each number to its file (10.5281/zenodo.23347509).\n"
+    assert run(line, tmp_path) == 0
+
+
+def test_a_count_after_a_section_reference_still_fails(tmp_path):
+    assert run("Section 4 lists 12 rules.\n", tmp_path) == 1

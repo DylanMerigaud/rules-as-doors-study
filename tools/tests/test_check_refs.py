@@ -356,3 +356,58 @@ def test_citation_inside_an_html_comment_is_ignored():
     )
     errors = check_refs.check(manuscript, make_refs_entries(), opener=default_opener())
     assert errors == []
+
+
+# ---------------------------------------------------------------- name and year form (venue_form)
+import venue_form  # noqa: E402
+
+AY_REFS = [
+    {"citation": 'F. B. Schneider, "Enforceable security policies," J, 2000.',
+     "doi": "10.1145/1", "supports": "q", "read_by": "r"},
+    {"citation": 'W. Chat et al., "First study," arXiv:2509.1, 2025.', "arxiv": "2509.1",
+     "supports": "q", "read_by": "r"},
+    {"citation": 'W. Chat et al., "Second study," arXiv:2511.2, 2025.', "arxiv": "2511.2",
+     "supports": "q", "read_by": "r"},
+    {"citation": 'P. Runeson, M. Host, "Guidelines," Empir. Softw. Eng., 2009.', "doi": "10.1007/2",
+     "supports": "q", "read_by": "r"},
+]
+AY_SRC = ("# T\n\n## Abstract\n\nA.\n\n## Introduction\n\nSchneider [1] defined it. Files were "
+          "studied [2], [3], following Runeson and Host [4] (Section 1).\n\n## References\n\n"
+          "[1] x\n[2] y\n[3] z\n[4] w\n")
+
+
+def ay_opener():
+    return make_opener({
+        "10.1145/1": crossref_response("Enforceable security policies", 2000, "Schneider"),
+        "10.1007/2": crossref_response("Guidelines", 2009, "Runeson"),
+        "2509.1": arxiv_response("First study"),
+        "2511.2": arxiv_response("Second study"),
+    })
+
+
+def test_venue_form_output_passes_check_refs_in_name_and_year_form():
+    out, errors = venue_form.form(AY_SRC, AY_REFS)
+    assert errors == []
+    assert "Schneider (2000) defined it." in out
+    assert "studied (Chat et al. 2025a, 2025b), following Runeson and Host (2009)" in out
+    assert "## 1 Introduction" in out
+    assert check_refs.check(out, AY_REFS, opener=ay_opener()) == []
+
+
+def test_name_and_year_form_catches_an_uncited_work_and_a_wrong_order():
+    out, _ = venue_form.form(AY_SRC, AY_REFS)
+    dropped = out.replace("Schneider (2000) defined it.", "It was defined.")
+    errs = check_refs.check(dropped, AY_REFS, opener=ay_opener())
+    assert any("Schneider 2000 is never cited" in e for e in errs)
+    head, tail = dropped.split("## References\n\n")
+    entries = tail.strip().split("\n\n")
+    swapped = head + "## References\n\n" + "\n\n".join(reversed(entries)) + "\n"
+    errs = check_refs.check(swapped, AY_REFS, opener=ay_opener())
+    assert any("alphabetical order" in e for e in errs)
+
+
+def test_name_and_year_form_catches_a_citation_with_no_entry():
+    out, _ = venue_form.form(AY_SRC, AY_REFS)
+    bad = out.replace("defined it.", "defined it (Nobody et al. 2021).")
+    errs = check_refs.check(bad, AY_REFS, opener=ay_opener())
+    assert any("Nobody et al. 2021" in e for e in errs)

@@ -25,3 +25,10 @@ v0\.[12]\.0
 # A figure file of this repository named in an image link (results/figures/figure4_e1.svg): a
 # file name, not a measurement.
 \bresults/figures/figure\d_[a-z0-9_]+\.svg\b
+# A cross-reference to a section of the manuscript ("Section 4.2"), whose number the render's
+# decimal headings give (venue_form.py checks that the heading exists): a label, not a measurement.
+\bSections? \d+(?:\.\d+)?(?: and \d+(?:\.\d+)?)?\b
+# The venue's name for a supplementary file ("Online Resource 1").
+\bOnline Resource \d\b
+# A DOI (the archive's "10.5281/zenodo.23347509"): an identifier, not a measurement.
+\b10\.\d{4,9}/[^\s)\]]+

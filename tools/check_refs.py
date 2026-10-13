@@ -32,6 +32,13 @@ Checked with a network call, one per identifier type:
 All network access goes through urllib and through a single injectable `opener` argument on
 every lookup function, so tests can substitute a fake opener and never touch the network.
 
+A manuscript put into a name-and-year venue's form by venue_form.py (its References section
+holds no "[n]" entry) is checked in that form instead: every work of refs.jsonl is printed once in
+the References section (found by its DOI link, arXiv id or url), in venue_form's alphabetical
+order; every citation in the body, "(Surname et al. 2025a; Other 2020)" or "Surname (2000)",
+names a work of refs.jsonl, and every work is cited. The per-entry checks above run on each
+printed reference with its links removed.
+
 Exits 1 and prints every problem found (never just the first) if any check fails. Exits 0
 otherwise.
 """
@@ -48,6 +55,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _mdutil  # noqa: E402
+import venue_form  # noqa: E402
 
 CITATION_MARKER_RE = re.compile(r"\[(\d+)\]")
 REFERENCE_ENTRY_RE = re.compile(r"^\[(\d+)\]\s*(.*)$")
@@ -249,11 +257,94 @@ def check_entry(number, manuscript_citation, entry, opener=None):
     return errors
 
 
+PAREN_RE = re.compile(r"\(([^()]*)\)")
+CITE_ITEM_RE = re.compile(r"^([A-Z][^\d;()]*?) ((?:19|20)\d\d[a-z]?(?:, (?:19|20)\d\d[a-z]?)*)$")
+YEARS_ONLY_RE = re.compile(r"^(?:19|20)\d\d[a-z]?(?:, (?:19|20)\d\d[a-z]?)*$")
+URL_RE = re.compile(r"\s*https?://\S+")
+
+
+def author_year_citations(body, known_authors):
+    """[(author, label)] for every name-and-year citation in the body: the items of a
+    parenthesis that read "Author 2025a" (several labels after one author split), and a
+    parenthesis of years alone right after an author key the references know (narrative)."""
+    found = []
+    for m in PAREN_RE.finditer(body):
+        inner = m.group(1).strip()
+        if YEARS_ONLY_RE.match(inner):
+            before = body[:m.start()].rstrip()
+            for author in known_authors:
+                if before.endswith(author):
+                    found.extend((author, y) for y in inner.split(", "))
+                    break
+            continue
+        items = [it.strip() for it in inner.split(";")]
+        parsed = [CITE_ITEM_RE.match(it) for it in items]
+        if not all(parsed):
+            continue
+        for p in parsed:
+            found.extend((p.group(1), y) for y in p.group(2).split(", "))
+    return found
+
+
+def check_author_year(manuscript_text, refs_entries, opener=None):
+    errors = []
+    ks = venue_form.keys(refs_entries)
+    refs = _mdutil.find_section(manuscript_text, "References")
+    body = manuscript_text[: refs[0]] if refs is not None else manuscript_text
+    refs_body = _mdutil.section_body(manuscript_text, "References") or ""
+    printed = [ln.strip() for ln in refs_body.splitlines() if ln.strip()]
+
+    if len(printed) != len(refs_entries):
+        errors.append("refs.jsonl has %d entries but the manuscript lists %d references"
+                      % (len(refs_entries), len(printed)))
+
+    def ident(entry):
+        for field in ("doi", "arxiv", "url", "isbn"):
+            if entry.get(field):
+                return entry[field]
+        return None
+
+    position = {}
+    for k in ks:
+        entry = refs_entries[k["n"] - 1]
+        mark = ident(entry)
+        hits = [i for i, ln in enumerate(printed) if mark and mark in ln]
+        if len(hits) != 1:
+            errors.append("reference %s %s: printed %d times in the References section"
+                          % (k["author"], k["label"], len(hits)))
+            continue
+        position[k["n"]] = hits[0]
+        errors.extend(check_entry(k["n"], URL_RE.sub("", printed[hits[0]]), entry,
+                                  opener=opener))
+    expected = [k["n"] for k in sorted(ks, key=lambda k: k["sort"])]
+    actual = sorted(position, key=lambda n: position[n])
+    if len(position) == len(ks) and actual != expected:
+        errors.append("References section is not in alphabetical order of first author")
+
+    known = {(k["author"], k["label"]): k["n"] for k in ks}
+    cited = set()
+    for author, label in author_year_citations(body, {k["author"] for k in ks}):
+        n = known.get((author, label))
+        if n is None:
+            errors.append("citation (%s %s) has no entry in the References section"
+                          % (author, label))
+        else:
+            cited.add(n)
+    for k in ks:
+        if k["n"] not in cited:
+            errors.append("References entry %s %s is never cited in the text"
+                          % (k["author"], k["label"]))
+    return errors
+
+
 def check(manuscript_text, refs_entries, opener=None):
     opener = opener or _default_opener
     errors = []
     # HTML comments are not shown in the rendered page: a citation inside one is not a citation.
     manuscript_text = _mdutil.strip_comments(manuscript_text)
+    refs_body = _mdutil.section_body(manuscript_text, "References")
+    if refs_body is not None and refs_body.strip() and not references_list(manuscript_text):
+        return check_author_year(manuscript_text, refs_entries, opener=opener)
 
     cited_order = body_citation_order(manuscript_text)
     expected_order = list(range(1, len(cited_order) + 1))

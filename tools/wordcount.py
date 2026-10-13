@@ -13,7 +13,8 @@ of counting the caption's or the table's or the figure's own words.
 Abstract count: whitespace tokens of the "## Abstract" section if the manuscript has one,
 otherwise of the first paragraph following the document's title (its first "# " heading).
 
-Reference count: the number of "[n]" entries in the "## References" section.
+Reference count: the number of "[n]" entries in the "## References" section; in a manuscript put
+into name-and-year form by venue_form.py (no "[n]" entry), the number of its non-empty lines.
 
 HTML comments (<!-- ... -->) are removed before any count: the rendered page does not show them.
 
@@ -87,7 +88,9 @@ def reference_count(text):
     refs_body = _mdutil.section_body(text, "References")
     if refs_body is None:
         return 0
-    return sum(1 for line in refs_body.splitlines() if REFERENCE_ENTRY_RE.match(line.strip()))
+    lines = [line.strip() for line in refs_body.splitlines() if line.strip()]
+    numbered = sum(1 for line in lines if REFERENCE_ENTRY_RE.match(line))
+    return numbered if numbered else len(lines)
 
 
 def main(argv):
