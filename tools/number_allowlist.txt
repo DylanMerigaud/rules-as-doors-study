@@ -32,3 +32,8 @@ v0\.[12]\.0
 \bOnline Resource \d\b
 # A DOI (the archive's "10.5281/zenodo.23347509"): an identifier, not a measurement.
 \b10\.\d{4,9}/[^\s)\]]+
+# A deviation's number in prereg/DEVIATIONS.md ("deviation 15", "deviations 9 to 15"): a label,
+# not a measurement.
+\b[Dd]eviations? \d{1,2}(?: (?:to|and) \d{1,2})?\b
+# The number of a row in a table's first column ("| 7 |"), such as a deviation's number: a label.
+(?m)^\| ?\d{1,2} ?\|

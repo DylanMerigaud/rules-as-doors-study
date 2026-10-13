@@ -159,3 +159,14 @@ def test_online_resource_label_and_a_doi_are_allowlisted(tmp_path):
 
 def test_a_count_after_a_section_reference_still_fails(tmp_path):
     assert run("Section 4 lists 12 rules.\n", tmp_path) == 1
+
+
+def test_deviation_labels_and_table_row_numbers_are_allowlisted(tmp_path):
+    text = ("Deviations 9 to 15 touch the field; deviation 18 was found in review.\n\n"
+            "| No. | Deviation |\n|---|---|\n| 7 | the repair came first |\n| 12 | test rows |\n")
+    assert run(text, tmp_path) == 0
+
+
+def test_a_count_after_a_table_row_number_still_fails(tmp_path):
+    text = "| 7 | the hook blocked 12 runs |\n"
+    assert run(text, tmp_path) == 1

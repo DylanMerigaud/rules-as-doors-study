@@ -40,7 +40,7 @@ def run(ctx):
     done = []
     for fn in (scheduler, dash_write, door_split, review, audit, coding, headless, hook_loaded_rate,
                retired, rules_dates,
-               prose_rates, versions, ledger_window):
+               prose_rates, versions, ledger_window, probe_intervals):
         if fn(ctx, reg) is not False:
             done.append(fn.__name__)
     if not done:
@@ -318,6 +318,23 @@ def ledger_window(ctx, reg):
     reg.add("door.ledger_window", ["2026-09-30", "2026-10-11"], "2026-09-30 to 2026-10-11 (12 days)",
             "prereg/ANALYSIS.md section 9",
             note="the door refusal ledger behind data/door_refusals_weekly.csv starts on 2026-09-30")
+
+
+def probe_intervals(ctx, reg):
+    """The correction probe's two shares with their Wilson intervals, for the text (review round
+    1). The probe is the harness's own, declared in its ledger on 2026-09-01 and not in the
+    preregistration: exploratory."""
+    ent = ctx.registry.entries
+    done = False
+    for side in ("before", "after"):
+        e = ent.get("dig.corr_%s" % side)
+        if not e or e.get("k") is None or not e.get("n"):
+            continue
+        add_prop(reg, "dig.corr_%s.wilson" % side, e["k"], e["n"], "data/case_facts.csv",
+                 note="the probe's %s share with its Wilson interval; exploratory, not preregistered"
+                 % side)
+        done = True
+    return done or False
 
 
 if __name__ == "__main__":

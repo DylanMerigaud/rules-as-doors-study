@@ -27,6 +27,10 @@ def test_supplements_on_the_published_files(tmp_path):
                for t in ("pretooluse_hook", "stop_hook", "write_refusal"))
     assert k001 == n["door.K001.refusals"]["value"]
     assert n["e1.regrade.disagreements"]["value"] == 0
+    for side in ("before", "after"):
+        w, d = n["dig.corr_%s.wilson" % side], n["dig.corr_%s" % side]
+        assert (w["k"], w["n"]) == (d["k"], d["n"])
+        assert w["interval"][0] < w["value"] < w["interval"][1]
     assert n["e1.C2.door_arms.stop_decisions_match_detector_on_previous_text"]["value"] == 22
     assert round(n["rules.kappa_class.recomputed"]["value"], 6) == round(n["rules.kappa_class"]["value"], 6)
     assert round(n["rules.kappa_enforceability.recomputed"]["value"], 6) == \
