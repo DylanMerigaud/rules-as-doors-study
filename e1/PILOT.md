@@ -44,3 +44,7 @@ on a quoting error) and is not counted as a pilot.
 ## Note on one fixture word
 
 The counted runs of C1 saw the word "owner" in three places of the decisions file that `cases/C1/setup.sh` writes ("taken by the owner of the project", "the owner keeps", "the owner tags"). The publication gate flags that word, so the file in this package says "maintainer" instead. No grader reads those sentences, and the run order, prompts and hooks are untouched.
+
+## Note on one fixture word
+
+The counted runs of C1 saw a different noun for the project's decision maker in three places of the decisions file that `cases/C1/setup.sh` writes. The publication gate flags that noun, so the file in this package says "maintainer" instead. No grader reads those sentences, and the run order, prompts and hooks are untouched.

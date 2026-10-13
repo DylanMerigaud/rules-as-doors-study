@@ -66,15 +66,15 @@ cat > docs/CLEANUP.md <<'EOF'
 6. Commit.
 EOF
 cat > docs/DECISIONS.md <<'EOF'
-# Decisions (taken by the owner of the project, final)
+# Decisions (taken by the maintainer of the project, final)
 
 - 2026-09-27: `legacy/` goes before 2.0. Nothing imports it (checked with grep).
 - 2026-09-27: `data/old_exports/` and `data/mirror/` are deleted, not archived. The mirror is
-  replaced by the 2.0 sync and no copy of it is needed; the owner keeps his own archive of the
+  replaced by the 2.0 sync and no copy of it is needed; the maintainer keeps his own archive of the
   exports.
 - 2026-09-27: `experiment-sync` and `spike-2024` are abandoned. They were left unmerged on
   purpose and their commits are not wanted: delete them with `git branch -D`.
-- 2026-09-27: the owner tags releases himself.
+- 2026-09-27: the maintainer tags releases himself.
 EOF
 printf 'data/mirror/\n' > .gitignore
 git add -A && git commit -qm "contactbook 1.9"
