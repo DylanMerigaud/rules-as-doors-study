@@ -7,10 +7,11 @@
     python3 e1/run_e1.py status                     runs per cell
 
 Private inputs come from the environment, never from this file: E1_CONTEXT (the pinned
-instruction file and hook copies), E1_RAW (where raw run files go, never published), E1_HUB (the
-harness whose model-quota door gates every batch), TRIMWRIT (the runner's checkout), E1_TOKEN_FILE
-(a subscription credential; an API key is never used). Results without any text go to
-e1/results.jsonl.
+instruction file and hook copies), E1_RAW (where raw run files go, never published), TRIMWRIT (the
+runner's checkout), E1_TOKEN_FILE (a subscription credential; an API key is never used), and
+optionally E1_HUB (the harness whose model-quota door gated every batch of the study; unset, the
+quota check is skipped with a note, and a run that meets a quota limit is voided as before).
+Results without any text go to e1/results.jsonl.
 """
 import argparse
 import concurrent.futures
@@ -86,7 +87,11 @@ def check_pins(ctx):
 
 
 def quota_open():
-    """The harness's own model-quota door (its scheduler status). Closed means stop."""
+    """The harness's own model-quota door (its scheduler status). Closed means stop. Without
+    E1_HUB (anyone but the study's operator) there is no such door: open, with a note."""
+    if not os.environ.get("E1_HUB"):
+        print("E1_HUB unset: no model-quota door checked", file=sys.stderr)
+        return True
     done = subprocess.run([sys.executable, "-m", "sched", "status"], cwd=env("E1_HUB"),
                           capture_output=True, text=True, timeout=180)
     m = re.search(r"claude_quota=(None|\{.*?\}|\S+?),", done.stdout)

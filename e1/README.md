@@ -1,0 +1,93 @@
+# Experiment E1: the replay
+
+The design is `prereg/PREREG.md` (sections 4 to 8); deviations are in `prereg/DEVIATIONS.md`, the
+pilot in `PILOT.md`. This page lists what the folder holds and what a reader can check with it.
+
+## What is here
+
+- `cases/C1` to `cases/C5`: each case's prompt, its scratch repository (`template/`) and, where
+  there is one, the setup script that gives the repository its history.
+- `design.json`: models, arms, the pinned line range each arm removes, hook registration per arm.
+- `treatment/`: the five ablated paragraphs of the pinned instruction file, one per case, redacted
+  with visible markers (`REDACTIONS.md`), with their line range, arms, sha256 and word count.
+- `hooks/`: public copies of the hooks pinned for E1 (the ask, promise and rule-announcement Stop
+  gates, their shared `hook_bounds.py`, the two long-dash hooks, and the detector of the
+  question-tool hook), redacted with visible markers (`REDACTIONS.md`).
+- `graders.py`, `proof.json`, `tests/`: the graders of `PREREG.md` section 7 and their proofs.
+  `tests/test_completion_can_fail.py` shows that each completion grader can fail.
+- `run_order.csv`, `run_e1.py`: the drawn run order and the driver.
+- `results.jsonl`: one row per run with the measures of `PREREG.md` section 7, no text.
+- `runs.jsonl`: per counted run, what the run left (review round 1): every closing text the run
+  produced (`texts`, with `closing_text` and its index), each stop attempt with the Stop hooks'
+  decisions (`stops`), the PreToolUse denials (`n_denials`), the files it wrote (`output_files`,
+  full content), the paths it created and deleted, its commits (text, paths, whether it touched
+  the situation files), its branches, and for C4 every write call (tool, target, the text the
+  write hook inspects, denied or not).
+- `run_facts.csv`: per run, the hook events of its raw stream: hooks registered, Stop and
+  PreToolUse hook runs, empty Stop outputs, blocks and denials, prompt hook runs, operator skills
+  listed (0 everywhere: isolation held), the model reported.
+- `regrade.py`: rebuilds each run's final state from `runs.jsonl` and the case's setup, grades it
+  with `graders.py` and the public hooks, and compares V, V_door, C, B, K_stop and K_deny with
+  `results.jsonl`. `python3 e1/regrade.py` prints `200 runs regraded, 0 field disagreements`.
+  `stop_blocks_took_effect` and `denials_took_effect` are copied from trimwrit (MIT) at the commit
+  the runs used (a098f95).
+
+## What the run records show (keys in `results/numbers.json`, from `analysis/e1_supplement.py`)
+
+- **The pinned Stop gates of C1 to C3 judged the text before the closing one.** They read the
+  session transcript, which at Stop time does not yet hold the closing text. In C2's door arms the
+  gate's decision equals its detector on the previous text at 22 of 22 stop attempts, and on the
+  closing text at 18 of 22 (`e1.C2.door_arms.stop_decisions_match_detector_on_*`). So C2 AD's
+  blocked runs (0 and 7, blocked because the text before held a promise by the gate's detector) are not the runs
+  whose closing text the detector flags (6 and 8). The harness's live gates read the closing text
+  from the Stop payload since 2026-09-30 17:27 +0200 (`prereg/ANALYSIS.md` section 9;
+  `DEVIATIONS.md`, deviation 18). The long-dash Stop hook always read the payload.
+- **C4's Stop door had nothing to refuse.** No closing text of the two Stop arms held a long dash
+  (`e1.C4.stop_arms.closing_text_flagged_by_stop_hook`, 0 of 20), and every Stop hook run printed
+  nothing (20 of 20). The runner reads a block in both of its forms, so these zeros are not a
+  reading failure. AD-stop's 10 violations are all in files the run wrote, which a Stop hook does
+  not read (`e1.C4.AD-stop.violations.in_files`, 10 of 10).
+- **C4's write door: escapes in closing texts.** 6 of the 20 write-arm runs violate
+  (`e1.C4.write_arms.E`); all 6 hold the dash in their closing text, which the write hook does not
+  see, and the one that also reached a file did so through write calls whose inspected text was
+  clean (`e1.C4.write_arms.file_escapes_through_calls_the_hook_saw_clean`, 1 of 1).
+- **C3 depends on the refined grader.** The C3 grader as first committed (3bd3559, before the
+  pilot) flags 0 of 10 runs in every arm (`e1.C3.<arm>.V_first_committed_grader`); the counted
+  grader, refined after the pilot (`DEVIATIONS.md`, deviation 6), flags 10 of 10 in A0 and AD.
+- Every door arm registered and ran its hooks (100 of 100), no arm without a door had a hook event
+  (0 of 100), and the question-tool hook never ran (0 of 20, deviation 1).
+- Doors refused in 12 of the 100 door-arm runs, all in C2 AD (2) and C4 AD-write (10); each such
+  run, with its turns and output tokens, is listed under `e1.refused_runs`.
+- For each case, one counted run the grader flags and one it passes, to read in `runs.jsonl`:
+  `e1.<case>.example_flagged` and `e1.<case>.example_passed` (run orders).
+
+## What is not published
+
+The raw run streams (`E1_RAW`, never published by design; `runs.jsonl` and `run_facts.csv` are
+what is derived from them), the pinned
+instruction file beyond the five paragraphs, the module `rc_activity.py`, and the pilot runs. The
+pilot runs were made on situations later redesigned, before the counted runs; their texts would
+need the same redaction, and `PILOT.md` gives each pilot's outcome under the graders as committed
+before the first counted run.
+
+## The rest of the instruction file
+
+The arms remove only the paragraph of their case; the rest of the pinned file stays in every
+arm and is not published. For C1 it still holds passages near the asking rule: lines 48 to 58
+(the shape of an answer, ask with context), 99 to 100 (ask only when unsure whether a step is
+mechanical), 175 to 179 (a decision already taken is not proposed again) and 181 to 185 (never
+ask for an input the machine can produce). No other line of the pinned file names any of the five
+doors.
+
+## Running it again
+
+The numbers need none of this: `python3 analysis/numbers.py` reads the published files. A new run
+needs Claude Code 2.1.285, access to `claude-opus-5-5`, trimwrit at a098f95 (`TRIMWRIT`), a
+subscription credential (`E1_TOKEN_FILE`), a directory for raw runs (`E1_RAW`) and a context
+directory (`E1_CONTEXT`) with the instruction file and hooks. The driver refuses any instruction
+file or hook whose sha256 differs from the pins (`design.json`, the context's `SHA256SUMS`), and
+the pinned instruction file is private. An outside replication therefore builds its own context
+(an instruction file holding the five published paragraphs at their line ranges, and the public
+hooks), records its sha256 in `design.json` and `SHA256SUMS`, and is a new experiment rather than a
+re-run. `E1_HUB` is optional: it pointed at the harness whose model-quota check gated each batch;
+unset, the check is skipped with a note.
