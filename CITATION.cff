@@ -5,6 +5,7 @@ type: dataset
 authors:
   - family-names: Merigaud
     given-names: Dylan
+    affiliation: "Independent software engineer"
 doi: 10.5281/zenodo.23347509
 version: package-v2
 license: MIT

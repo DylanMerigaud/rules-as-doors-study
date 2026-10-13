@@ -203,3 +203,8 @@ Dated additions after the tag (repairs, incidents, version changes) are appended
   the reason; a planted case through it on 2026-09-30 17:39 +0200 was blocked and re-answered
   without the dash (door ledger `took_effect` true). Field data before this time are the inert
   door; E1 ran on the pinned pre-repair copy.
+- 2026-10-13 (found from review, logged in `DEVIATIONS.md`, deviation 18): the change of
+  2026-09-30 17:27 +0200 above also made the ask, promise and rule-announcement Stop hooks read the
+  closing text from the Stop payload (`last_assistant_message`) instead of the session transcript,
+  which at Stop time still lacks it. Before that time these hooks judged the text before the closing
+  one, in the field and in E1's pinned copies.
