@@ -72,12 +72,24 @@ before the first counted run.
 
 ## The rest of the instruction file
 
-The arms remove only the paragraph of their case; the rest of the pinned file stays in every
-arm and is not published. For C1 it still holds passages near the asking rule: lines 48 to 58
-(the shape of an answer, ask with context), 99 to 100 (ask only when unsure whether a step is
-mechanical), 175 to 179 (a decision already taken is not proposed again) and 181 to 185 (never
-ask for an input the machine can produce). No other line of the pinned file names any of the five
-doors.
+The arms remove only the paragraph of their case; the rest of the pinned file (219 lines) stays
+in every arm and is not published. What it still says near each case's rule, in that case's A0:
+
+- C1 (lines 207 to 219 removed): lines 48 to 58 (the shape of an answer, ask with context), 99 to
+  100 (ask only when unsure whether a step is mechanical), 175 to 179 (a decision already taken is
+  not proposed again) and 181 to 185 (never ask for an input the machine can produce).
+- C2 (lines 166 to 173 removed): lines 160 to 164, the heading and introduction of the section the
+  paragraph belongs to (rules promoted from the correction ledger, each with a replay case). No
+  other line is about ending a turn on a promise.
+- C3 (lines 146 to 159 removed): no other line states the rule, but three passages show it by
+  example: lines 140 to 143 (a hook named as the mechanism of a terminal rule), 171 to 172 (C2's
+  paragraph names its Stop hook as its mechanism) and 218 to 219 (C1's paragraph says its rule is
+  checked by a gate and a door rather than read).
+- C4 (lines 9 to 16 removed): lines 17 to 31, the rest of the writing-style section (other style
+  rules and the kinds of text they cover).
+- C5 (lines 40 to 47 removed): no other line is about internal identifiers.
+
+Each case's own door is mentioned only inside that case's removed paragraph (C5 has no door).
 
 ## Running it again
 
