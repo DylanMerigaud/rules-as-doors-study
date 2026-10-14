@@ -6,9 +6,11 @@ Usage: wordcount.py OUT [--limit N] [--abstract N] [--max-refs N]
 Body count: whitespace-separated tokens of everything before the "## References" heading,
 excluding the "About the author" section, excluding markdown pipe table rows (lines that start
 and end with "|") and figure image lines (a line that is only a markdown image), excluding table
-and figure caption lines (a line starting with "**Table n." or "**Figure n."), then adding a flat
-250 words for every such caption found: the venue's own per-exhibit word charge, applied instead
-of counting the caption's or the table's or the figure's own words.
+and figure captions (the paragraph that starts with "**Table n." or "**Figure n.", through its
+last line before a blank line, a table row or an image, so a caption wrapped over several lines
+counts the same as one written on a single line), then adding a flat 250 words for every such
+caption found: the venue's own per-exhibit word charge, applied instead of counting the
+caption's or the table's or the figure's own words.
 
 Abstract count: whitespace tokens of the "## Abstract" section if the manuscript has one,
 otherwise of the first paragraph following the document's title (its first "# " heading).
@@ -48,11 +50,16 @@ def body_word_count(text):
     body = _body_text(_mdutil.strip_comments(text))
     words = 0
     captions = 0
+    in_caption = False
     for line in body.splitlines():
-        if TABLE_LINE_RE.match(line) or IMAGE_LINE_RE.match(line):
+        if not line.strip() or TABLE_LINE_RE.match(line) or IMAGE_LINE_RE.match(line):
+            in_caption = False
             continue
         if CAPTION_RE.match(line.strip()):
             captions += 1
+            in_caption = True
+            continue
+        if in_caption:
             continue
         words += len(line.split())
     return words + captions * TABLE_FIGURE_WORD_CHARGE, captions

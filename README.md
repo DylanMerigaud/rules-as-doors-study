@@ -16,7 +16,7 @@ Archive: DOI 10.5281/zenodo.23347509 (Zenodo, reserved; the record becomes publi
 Python 3.12; `pip install -r env/requirements.txt`. From the repository root:
 
 ```
-python3 -m pytest -q                                   # 165 tests, all green
+python3 -m pytest -q                                   # 166 tests, all green
 python3 analysis/numbers.py                            # rebuilds every table, figure and results/numbers.json
 git diff --exit-code results/numbers.json              # exit 0: the committed numbers are what the code produces
 python3 e1/run_e1.py status                            # the E1 replay: runs present per case and arm (10 of 10 each)

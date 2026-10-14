@@ -205,3 +205,17 @@ def test_an_author_year_reference_list_is_counted_by_its_lines(tmp_path, capsys)
     src.write_text(text, encoding="utf-8")
     assert wordcount.reference_count(text) == 2
     assert wordcount.main(["wordcount.py", str(src), "--max-refs", "1"]) == 1
+
+
+def test_a_wrapped_caption_counts_like_a_one_line_caption(tmp_path):
+    caption = ("**Table 1.** A caption long enough to be wrapped by a text tool, with its sources "
+               "and its keys named in the last sentence.")
+    words = caption.split()
+    wrapped = " ".join(words[:8]) + "\n" + " ".join(words[8:])
+    prose = "Prose after the table."
+    one_line = "# Title\n\n%s\n\n| a |\n|---|\n\n%s\n\n## References\n\n[1] X.\n" % (caption, prose)
+    two_lines = one_line.replace(caption, wrapped)
+    assert wrapped in two_lines
+    expected = (len("# Title".split()) + len(prose.split()) + 250, 1)
+    assert wordcount.body_word_count(one_line) == expected
+    assert wordcount.body_word_count(two_lines) == expected
