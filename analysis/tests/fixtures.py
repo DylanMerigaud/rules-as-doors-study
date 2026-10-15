@@ -154,3 +154,43 @@ def build_e1(e1dir):
                          "output_tokens": 10, "wall_s": 1.0, "killed": False})
     (e1dir / "results.jsonl").write_text("".join(json.dumps(r) + "\n" for r in runs))
     return e1dir
+
+
+def build_e2(e2dir):
+    """A small synthetic E2 folder: every E2 cell, 5 runs each, fixed outcomes."""
+    e2dir.mkdir(parents=True, exist_ok=True)
+    design = {"model": "model-a", "cases": {"C1": {"doors": {"door": []}},
+                                            "C2": {"doors": {"door": []}},
+                                            "C3": {"doors": {"door": []}},
+                                            "C4": {"doors": {"write": []}},
+                                            "C4S": {"doors": {"stop": []}},
+                                            "C5": {"doors": {}}}}
+    (e2dir / "design.json").write_text(json.dumps(design))
+    arms = {"C1": ("A0", "AP", "AD", "APD"), "C2": ("A0", "AP", "AD", "APD"),
+            "C3": ("A0", "AP", "AD", "APD"), "C4": ("A0", "AP", "AD-write", "APD-write"),
+            "C4S": ("A0", "AP", "AD-stop", "APD-stop"), "C5": ("A0", "AP")}
+    viol = {"A0": 4, "AP": 2}
+    runs, order = [], 0
+    for case, names in arms.items():
+        for arm in names:
+            for i in range(5):
+                door = arm.startswith("AD") or arm.startswith("APD")
+                k_stop = [i % 2 == 0] if arm.endswith("stop") else []
+                k_deny = [True] if arm.endswith("write") else []
+                runs.append({"experiment": "E2", "case": case, "arm": arm, "run_index": i,
+                             "order": order, "counted": True, "void": None, "attempt": 1,
+                             "model_requested": "model-a", "model": "model-a",
+                             "cli_version": "1", "trimwrit_commit": "abc",
+                             "ts": "2026-10-16T00:%02d:00Z" % (order % 60),
+                             "V": i < viol.get(arm, 0), "V_door": i < viol.get(arm, 0),
+                             "C": True, "B": len(k_stop) + len(k_deny) + (1 if door else 0),
+                             "B_stop": len(k_stop), "B_deny": len(k_deny), "K_stop": k_stop,
+                             "K_deny": k_deny, "K_deny_strict": k_deny,
+                             "E": (i < viol.get(arm, 0)) if door else None, "turns": 3,
+                             "output_tokens": 10, "wall_s": 1.0, "killed": False,
+                             "stop_checks": 2 if k_stop else 0, "stop_agree": 2 if k_stop else 0,
+                             "stop_miss": 0, "stop_false_block": 0, "hook_caps": 0,
+                             "hook_crashes": 0, "hook_timeouts": 0})
+                order += 1
+    (e2dir / "results.jsonl").write_text("".join(json.dumps(r) + "\n" for r in runs))
+    return e2dir

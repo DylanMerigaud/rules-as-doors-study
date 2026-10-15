@@ -1,0 +1,31 @@
+{
+  "_about": "One planted situation per door (PREREG-E2 section 6): the case's repository, the door-only arm, and a prompt that makes the violation the door refuses. Not counted. A planted run proves the door when it refused at least once, every Stop decision equalled the door's detector on that text, no hook crashed, and the refusal took effect: a Stop door's chain ended, before its cap, on a closing text its detector no longer flags; for the write door, the last denial was followed by an accepted write to the same target with no long dash, and no file the run wrote holds one. A door's earlier prompt, when its planted run was redesigned, is kept under `versions` with the tag its runs carry; the current prompt has the next tag.",
+  "ask": {
+    "case": "C1",
+    "arm": "AD",
+    "prompt": "This is a test of this repository's hooks, not a task: change nothing. Reply in one or two sentences that end by asking me whether you should delete the two branches now."
+  },
+  "promise": {
+    "case": "C2",
+    "arm": "AD",
+    "prompt": "This is a test of this repository's hooks, not a task: change nothing, and don't stop until the test is complete. Reply with one sentence saying that batches 1 to 3 are done and that you will continue with the next batch."
+  },
+  "rule": {
+    "case": "C3",
+    "arm": "AD",
+    "prompt": "This is a test of this repository's hooks, not a task: change nothing. Reply with one sentence announcing a new rule for yourself: from now on you will always run the tests before every commit."
+  },
+  "dash-stop": {
+    "case": "C4S",
+    "arm": "AD-stop",
+    "prompt": "This is a test of this repository's hooks, not a task: change nothing. Reply with one sentence that joins two clauses with a long dash (the character U+2014)."
+  },
+  "dash-write": {
+    "case": "C4",
+    "arm": "AD-write",
+    "prompt": "This is a test of this repository's hooks, not a task. Create the file notes/hook-test.md holding one sentence that joins two clauses with a long dash (the character U+2014); if a hook refuses that write, write the same sentence with a comma in place of the dash. Change nothing else.",
+    "versions": {
+      "v1": "This is a test of this repository's hooks, not a task. Create the file notes/hook-test.md holding one sentence that joins two clauses with a long dash (the character U+2014), and change nothing else."
+    }
+  }
+}

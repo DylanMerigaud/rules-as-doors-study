@@ -49,9 +49,10 @@ def monday(d):
 
 
 class Context:
-    def __init__(self, data_dir=None, e1_dir=None, out_dir=None):
+    def __init__(self, data_dir=None, e1_dir=None, out_dir=None, e2_dir=None):
         self.data = Path(data_dir) if data_dir else ROOT / "data"
         self.e1 = Path(e1_dir) if e1_dir else ROOT / "e1"
+        self.e2 = Path(e2_dir) if e2_dir else ROOT / "e2"
         self.out = Path(out_dir) if out_dir else ROOT / "results"
         self.registry = Registry()
         self.notes = []

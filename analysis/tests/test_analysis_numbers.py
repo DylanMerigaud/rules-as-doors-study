@@ -4,7 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from fixtures import build, build_e1
+from fixtures import build, build_e1, build_e2
 
 NUMBERS = Path(__file__).resolve().parents[1] / "numbers.py"
 
@@ -16,11 +16,12 @@ def run(*args):
 
 def test_twice_gives_byte_identical_outputs(tmp_path):
     data, e1 = build(tmp_path / "data"), build_e1(tmp_path / "e1")
+    e2 = build_e2(tmp_path / "e2")
     out = tmp_path / "out"
-    p = run("--data", data, "--e1", e1, "--out", out)
+    p = run("--data", data, "--e1", e1, "--e2", e2, "--out", out)
     assert p.returncode == 0, p.stderr
     first = {f.relative_to(out): f.read_bytes() for f in sorted(out.rglob("*")) if f.is_file()}
-    p = run("--data", data, "--e1", e1, "--out", out)
+    p = run("--data", data, "--e1", e1, "--e2", e2, "--out", out)
     assert p.returncode == 0, p.stderr
     second = {f.relative_to(out): f.read_bytes() for f in sorted(out.rglob("*")) if f.is_file()}
     assert first == second
@@ -31,12 +32,16 @@ def test_twice_gives_byte_identical_outputs(tmp_path):
     # The fixture E1 folder holds no per-run records (e1/runs.jsonl), which only the review-round
     # supplement reads; test_supplements_on_the_published_files runs it on the real ones.
     assert set(manifest["skipped"]) <= {"E1 supplement (review round 1)"}
+    assert "table 14 (E2)" in manifest["ran"]
+    hyp = json.loads((out / "hypotheses.json").read_text())
+    assert "H1" in hyp and "e2" in hyp
 
 
 def test_every_entry_has_text_and_source(tmp_path):
     data, e1 = build(tmp_path / "data"), build_e1(tmp_path / "e1")
+    e2 = build_e2(tmp_path / "e2")
     out = tmp_path / "out"
-    assert run("--data", data, "--e1", e1, "--out", out).returncode == 0
+    assert run("--data", data, "--e1", e1, "--e2", e2, "--out", out).returncode == 0
     numbers = json.loads((out / "numbers.json").read_text())
     for key, e in numbers.items():
         assert isinstance(e.get("text"), str) and e["text"], key
@@ -49,7 +54,7 @@ def test_missing_field_inputs_are_skipped_not_fatal(tmp_path):
     e1 = build_e1(tmp_path / "e1")
     out = tmp_path / "out"
     (tmp_path / "empty").mkdir()
-    p = run("--data", tmp_path / "empty", "--e1", e1, "--out", out)
+    p = run("--data", tmp_path / "empty", "--e1", e1, "--e2", tmp_path / "no-e2", "--out", out)
     assert p.returncode == 0, p.stderr
     assert "skip table 5: data/transcripts_weekly.csv not found" in p.stderr
     numbers = json.loads((out / "numbers.json").read_text())

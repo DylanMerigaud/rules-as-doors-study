@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Produce every number of the paper into results/numbers.json, every table under
-results/tables/, every figure under results/figures/ and the E1 judgment in
+results/tables/, every figure under results/figures/ and the E1 and E2 judgments in
 results/hypotheses.json.
 
-Usage: python3 analysis/numbers.py [--data DIR] [--e1 DIR] [--out DIR]
+Usage: python3 analysis/numbers.py [--data DIR] [--e1 DIR] [--e2 DIR] [--out DIR]
 
 Each entry of numbers.json is keyed by a stable name and carries: value, text (the exact string the
 manuscript prints), source (the file it comes from), and where they apply k, n, interval and the
@@ -43,6 +43,7 @@ import table10_doors_failed  # noqa: E402
 import table11_replays  # noqa: E402
 import table12_e1  # noqa: E402
 import table13_cost  # noqa: E402
+import table14_e2  # noqa: E402
 from common import Context, Missing  # noqa: E402
 
 SCRIPTS = (
@@ -63,6 +64,7 @@ SCRIPTS = (
     ("table 13", table13_cost),
     ("E1 supplement (review round 1)", e1_supplement),
     ("field supplement (review round 1)", field_supplement),
+    ("table 14 (E2)", table14_e2),
 )
 
 
@@ -70,9 +72,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--data")
     ap.add_argument("--e1")
+    ap.add_argument("--e2")
     ap.add_argument("--out")
     args = ap.parse_args(argv)
-    ctx = Context(args.data, args.e1, args.out)
+    ctx = Context(args.data, args.e1, args.out, e2_dir=args.e2)
     manifest = {"ran": [], "skipped": {}, "notes": []}
     for name, mod in SCRIPTS:
         before = len(ctx.notes)

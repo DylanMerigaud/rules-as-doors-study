@@ -31,6 +31,7 @@ section 10 (`stats.py`).
 | `table11_replays.py` | Table 11 | `data/replays_past.csv` |
 | `table12_e1.py` | Table 12, Figure 4, H1 to H5 | `e1/results.jsonl`, `e1/design.json`, `e1/run_order.csv` |
 | `table13_cost.py` | Table 13 | `data/cost_weekly.csv` |
+| `table14_e2.py` | Table 14, E2's H1 to H5 (the `e2` entry of `hypotheses.json`) | `e2/results.jsonl`, `e2/design.json`, `e2/run_order.csv`; `e1/runs.jsonl` for the exploratory C1 regrade |
 | `case_facts.py` | facts of the case measured elsewhere | `data/case_facts.csv` |
 
 ## Input schemas the scripts read

@@ -1,0 +1,94 @@
+{
+  "experiment": "E2",
+  "model": "claude-opus-5-5",
+  "wall_seconds": 1800,
+  "runs_per_cell": 10,
+  "seed": 20261015,
+  "instruction_sha256": "a71019d6c2dfc7a6b5f3a3da5ff368f6f5f56d68421b26cdf385ef0fe3e2935c",
+  "hooks_pin": {
+    "repository": "the harness repository (private), project hooks under .claude/",
+    "commit": "7af9779e",
+    "live_from": "2026-09-30T17:32:00+02:00",
+    "sha256": {
+      "hook_bounds.py": "104596746e1565f11edaf1821e82cd30fb433241aae5a747b62e5991a91cc3a9",
+      "hook_trace.py": "57409175ba41b9a2695e532918a406cbfb22eeaf599cf2816ef6bc6b5aaf73b8",
+      "no-em-dash-write.py": "70e1d9844c06351c63a6e98455ba05b9e10f9fd80b7bb61596610d4c6371f0ae",
+      "no-em-dash.py": "92e49b601cc6373ccb673b6a20037d68b02ad719d0a2a0cfbc51a0b295106419",
+      "stop_ask_gate.py": "92ed9ba653a24e3f2a72ba8c3a763eba89a4f31634ea44f8b09743b58e572986",
+      "stop_promise_gate.py": "5b351f3d1d4f59aca9c2e66b8b3ada545bee5252ec16acf6c61c3b0eaa5d83be",
+      "stop_rule_gate.py": "f89ac2f297375f69b5403b90947eaedb6eb597e56b26f13634df3a3668299378"
+    }
+  },
+  "home_args": ["--home", "\"$CLAUDE_PROJECT_DIR/../hook-home\""],
+  "cases": {
+    "C1": {
+      "rule": "K039",
+      "dir": "e1/cases/C1",
+      "ablate": [[207, 219]],
+      "doors": {
+        "door": [
+          {"event": "Stop", "script": "stop_ask_gate.py"}
+        ]
+      },
+      "hook_files": ["stop_ask_gate.py", "hook_bounds.py", "hook_trace.py"],
+      "setup": "setup.sh"
+    },
+    "C2": {
+      "rule": "K033",
+      "dir": "e1/cases/C2",
+      "ablate": [[166, 173]],
+      "doors": {
+        "door": [
+          {"event": "UserPromptSubmit", "script": "stop_promise_gate.py", "args": ["--prompt"]},
+          {"event": "Stop", "script": "stop_promise_gate.py"}
+        ]
+      },
+      "hook_files": ["stop_promise_gate.py", "hook_bounds.py", "hook_trace.py"]
+    },
+    "C3": {
+      "rule": "K029",
+      "dir": "e1/cases/C3",
+      "ablate": [[146, 159]],
+      "doors": {
+        "door": [
+          {"event": "Stop", "script": "stop_rule_gate.py"}
+        ]
+      },
+      "hook_files": ["stop_rule_gate.py", "hook_bounds.py", "hook_trace.py"],
+      "setup": "setup.sh"
+    },
+    "C4": {
+      "rule": "K001",
+      "dir": "e1/cases/C4",
+      "ablate": [[9, 16]],
+      "doors": {
+        "write": [
+          {"event": "PreToolUse", "matcher": "Write|Edit|NotebookEdit|Bash",
+           "script": "no-em-dash-write.py"}
+        ]
+      },
+      "hook_files": ["no-em-dash-write.py", "hook_trace.py"],
+      "setup": "setup.sh"
+    },
+    "C4S": {
+      "rule": "K001",
+      "dir": "e2/cases/C4S",
+      "template": "e1/cases/C4/template",
+      "setup_from": "e1/cases/C4/setup.sh",
+      "ablate": [[9, 16]],
+      "doors": {
+        "stop": [
+          {"event": "Stop", "script": "no-em-dash.py"}
+        ]
+      },
+      "hook_files": ["no-em-dash.py", "hook_trace.py"]
+    },
+    "C5": {
+      "rule": "K004",
+      "dir": "e1/cases/C5",
+      "ablate": [[40, 47]],
+      "doors": {},
+      "hook_files": []
+    }
+  }
+}
