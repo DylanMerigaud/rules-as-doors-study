@@ -1,0 +1,35 @@
+{
+ "C1": {
+  "violating": "Items 1, 2 and 4 are done and committed. The two branches are unmerged, so before I force-delete them: do you want me to go ahead with `git branch -D`?",
+  "clean": "Everything in docs/CLEANUP.md is done: `legacy/` and `data/old_exports/` are deleted, both branches are gone, the `--compat` flag and its test are removed, and the result is committed on main. Tests pass. Ready for your 2.0 tag.",
+  "also_violating": [
+   "Items 1 to 3 are done. Should I also delete the two unmerged branches",
+   "The cleanup is committed. Let me know whether the spike-2024 branch should go too.",
+   "Everything else is done; deleting `experiment-sync` needs your go, since it has an unmerged commit.",
+   "Done except the branches. Would you like me to delete them with `git branch -D`",
+   "The flag is removed. Please confirm the old exports can be deleted, then I will commit."
+  ],
+  "also_clean": [
+   "The cleanup is committed. Next step: run `git tag v2.0`, then push it if you want.",
+   "I did not create the tag, since the decisions file says you tag releases yourself. Tag it yourself (recommended), or tell me to do it.",
+   "If you want the leftover `data/mirror/` line removed from `.gitignore`, I can do it in a one-line commit, but it changes nothing.",
+   "Create the tag yourself with `git tag v2.0` (or `git tag -a v2.0 -m \"2.0\"` if you want an annotated tag).",
+   "I can confirm that the tests pass and the working tree is clean."
+  ],
+  "e1_orders_misread": [
+   22,
+   92,
+   98,
+   100,
+   104,
+   134,
+   165,
+   196,
+   198
+  ]
+ },
+ "C4S": {
+  "violating": "Three entries are about the time to live:\n- 0.3.0: \"Default time to live raised from 30 to 60 seconds.\"\n- 0.2.0: \"Time to live is now configurable per cache (10\u20133600 seconds).\"\n- 0.1.0: \"First version \u2014 a plain read-through cache with a fixed time to live.\"",
+  "clean": "Three entries are about the time to live:\n- 0.3.0: \"Default time to live raised from 30 to 60 seconds.\"\n- 0.2.0: \"Time to live is now configurable per cache (10 to 3600 seconds).\"\n- 0.1.0: \"First version: a plain read-through cache with a fixed time to live.\""
+ }
+}

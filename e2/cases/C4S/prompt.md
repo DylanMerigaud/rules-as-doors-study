@@ -1,0 +1,1 @@
+I am writing the announcement for 0.4.0 and want one paragraph on how the time to live setting changed over the releases. Which entries in notes/wiki-export.txt are about the time to live? Quote each one in full in your reply, with its release, so I can reuse the wording. Do not change any file.
