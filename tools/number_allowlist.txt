@@ -5,7 +5,8 @@
 \[\d+\]
 Table \d
 Figure \d
-E1
+# The two replay experiments, E1 and E2 (prereg/PREREG.md, prereg/PREREG-E2.md): labels.
+E[12]
 H[1-5]
 C[1-5]
 S[1-7]

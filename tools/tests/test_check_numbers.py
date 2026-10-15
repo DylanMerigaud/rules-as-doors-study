@@ -80,6 +80,14 @@ def test_hypothesis_and_protocol_labels_are_allowlisted(tmp_path):
     assert run(text, tmp_path) == 0
 
 
+def test_both_replay_labels_are_allowlisted(tmp_path):
+    assert run("E1 and E2 ran the same four cases.\n", tmp_path) == 0
+
+
+def test_a_third_replay_label_still_fails(tmp_path):
+    assert run("E3 ran the same cases.\n", tmp_path) == 1
+
+
 def test_commit_sha_is_allowlisted(tmp_path):
     text = "The domain rule changed at commit 42732f04021ad899ab83cd760d30c54f8a1cd851.\n"
     assert run(text, tmp_path) == 0
