@@ -26,6 +26,13 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
 - `run_facts.csv`: per run, the hook events of its raw stream: hooks registered, Stop and
   PreToolUse hook runs, empty Stop outputs, blocks and denials, prompt hook runs, operator skills
   listed (0 everywhere: isolation held), the model reported.
+- `graders_first_committed.py`: the graders as first committed (3bd3559, 2026-09-30 18:24 +0200),
+  byte for byte, before the refinements of deviation 6 (`prereg/DEVIATIONS.md`).
+  `analysis/round2_supplement.py` grades the 200 counted runs with it (`e1.first_graders.*`) and
+  `analysis/tests/test_round2.py` checks it against the commit.
+- `pilot_runs.csv`: the 30 pilot runs, one row each: case, situation, run index, batch start
+  (UTC), trimwrit commit, and V as recorded at the end of the run, under the first committed
+  graders and under the counted graders. No text (`PILOT.md`, keys `e1.pilot.*`).
 - `regrade.py`: rebuilds each run's final state from `runs.jsonl` and the case's setup, grades it
   with `graders.py` and the public hooks, and compares V, V_door, C, B, K_stop and K_deny with
   `results.jsonl`. `python3 e1/regrade.py` prints `200 runs regraded, 0 field disagreements`.
@@ -65,10 +72,10 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
 
 The raw run streams (`E1_RAW`, never published by design; `runs.jsonl` and `run_facts.csv` are
 what is derived from them), the pinned
-instruction file beyond the five paragraphs, the module `rc_activity.py`, and the pilot runs. The
-pilot runs were made on situations later redesigned, before the counted runs; their texts would
-need the same redaction, and `PILOT.md` gives each pilot's outcome under the graders as committed
-before the first counted run.
+instruction file beyond the five paragraphs, the module `rc_activity.py`, and the pilot runs'
+texts and outputs. The pilot runs were made on situations later redesigned, before the counted
+runs; their texts would need the same redaction. `pilot_runs.csv` gives each pilot run's flags
+and times, and `PILOT.md` each pilot's outcome.
 
 ## The rest of the instruction file
 
@@ -93,13 +100,28 @@ Each case's own door is mentioned only inside that case's removed paragraph (C5 
 
 ## Running it again
 
-The numbers need none of this: `python3 analysis/numbers.py` reads the published files. A new run
-needs Claude Code 2.1.285, access to `claude-opus-5-5`, trimwrit at a098f95 (`TRIMWRIT`), a
-subscription credential (`E1_TOKEN_FILE`), a directory for raw runs (`E1_RAW`) and a context
-directory (`E1_CONTEXT`) with the instruction file and hooks. The driver refuses any instruction
-file or hook whose sha256 differs from the pins (`design.json`, the context's `SHA256SUMS`), and
-the pinned instruction file is private. An outside replication therefore builds its own context
-(an instruction file holding the five published paragraphs at their line ranges, and the public
-hooks), records its sha256 in `design.json` and `SHA256SUMS`, and is a new experiment rather than a
-re-run. `E1_HUB` is optional: it pointed at the harness whose model-quota check gated each batch;
-unset, the check is skipped with a note.
+The numbers need none of this: `python3 analysis/numbers.py` reads the published files, and
+`python3 e1/regrade.py` regrades the 200 counted runs from `runs.jsonl`.
+
+A new run of the replay needs, besides this folder: Claude Code 2.1.285, access to
+`claude-opus-5-5`, trimwrit at a098f95 (`TRIMWRIT`, public, MIT), a subscription credential
+(`E1_TOKEN_FILE`), a directory for raw runs (`E1_RAW`) and a context directory (`E1_CONTEXT`) that
+holds the instruction file and the hooks, with their sha256 in `SHA256SUMS`. The driver refuses
+any instruction file or hook whose sha256 differs from the pins (`design.json`, `SHA256SUMS`).
+
+What is public and what is not, exactly:
+
+- Public: the five ablated paragraphs (`treatment/`, redacted with visible markers), the hooks
+  (`hooks/`, redacted with visible markers), the cases, the graders, the driver and the drawn run
+  order.
+- Not public: the pinned instruction file beyond the five paragraphs (219 lines, summarised in
+  "The rest of the instruction file" above), the hooks' unredacted bytes, the module
+  `rc_activity.py` that one hook imports (deviation 2), the raw run streams and the credential.
+
+So the pins cannot be met from the public files, and the published runs cannot be repeated byte
+for byte. An outside replication builds its own context (an instruction file holding the five
+published paragraphs at their line ranges, with or without text of its own around them, and the
+public hooks with the redacted parts filled), records its sha256 in `design.json` and
+`SHA256SUMS`, and is a new experiment on the same design rather than a re-run. `E1_HUB` is
+optional: it pointed at the harness whose model-quota check gated each batch; unset, the check is
+skipped with a note.

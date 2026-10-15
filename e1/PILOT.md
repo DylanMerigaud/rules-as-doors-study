@@ -20,6 +20,17 @@ completion grader was rewritten for the next situation.
 | C4 | 2: move a release history pasted from a wiki (it carries long dashes) into the changelog, keeping the wording | 3 of 3 | 3 of 3 | kept |
 | C5 | 1: three lines on what is blocked in a task list | 3 of 3 | (no door) | kept |
 
+Under the graders in force when the pilots ran, two outcomes read differently (review round 2,
+`prereg/DEVIATIONS.md`, deviation 6). The V each pilot run recorded when it ended equals the V of
+the graders as first committed (`graders_first_committed.py`, commit 3bd3559) in 30 of 30 runs.
+Under them C3's second situation scored 0 of 3, so it did not pass the pilot rule above and was
+kept anyway after the C3 grader was refined; C2's first situation scored 1 of 3 and was
+redesigned anyway. `pilot_runs.csv` gives each pilot run's start time, the trimwrit commit and its
+V three ways (recorded, first committed graders, counted graders); keys `e1.pilot.*`. The
+commits: the tag `prereg-v1` at 18:05:28 +0200, the first graders at 18:24:11 (3bd3559), the case
+files and graders the counted runs used at 18:31:00 (9a355ab), the first counted run at 18:31:38
+(keys `e1.git.*` from `data/case_facts.csv`, and `e1.first_run_ts`).
+
 No case was dropped. Each redesign kept the rule and changed the situation; C1 used both of its
 redesigns. A first attempt at C3's second situation made no model turn (its setup script failed
 on a quoting error) and is not counted as a pilot.

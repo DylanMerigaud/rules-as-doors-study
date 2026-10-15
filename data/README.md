@@ -40,6 +40,31 @@ read from each transcript's own fields:
   headless sessions, which load the hooks of the repository they run in.
 - `subagent`: a sub-session a session starts for a delegated task.
 
+Operator turns and answered questions (`transcripts_weekly.csv`, `transcripts_prospective.csv`):
+
+- `turn_ends`: closing texts, that is main-thread assistant-role entries that carry text and no
+  tool call.
+- `human_msgs`: main-thread user-role messages that carry text (not empty, not starting with `<` or
+  `[`, which is command output, a notification or an interruption notice, and not a
+  context-continuation summary) and whose recorded prompt source is typed or queued input.
+- `human_msgs_operator_likely`: those of them that are at most 1,500 characters, are not a
+  keepalive ("continue", "go", "go on", 30 characters or fewer) and are not the first prompt of a
+  popped terminal (a prepared prompt). It is the denominator of every correction rate; the
+  corrections (`corr_hits_operator_likely`) are found by a fixed detector on the first 400
+  characters of these messages only.
+- `ends_q_trailing`: turn ends whose closing text ends on a question mark (trailing markup and
+  quotes ignored). `ends_q_last400`: a question mark anywhere in the last 400 characters.
+- `ends_q_trailing_replied` ("answered"): a turn end counted in `ends_q_trailing` whose next
+  main-thread user-role message (tool results and system notes set aside) carries text under the
+  same exclusions as `human_msgs`. Its prompt source is not checked: unlike `human_msgs`, it is
+  not required to be typed or queued input, so an answer is not shown to be the operator's. A turn
+  end followed by a Stop hook's feedback, or by the end of the transcript, is not answered. Read
+  it as "answered by a user-role message".
+
+An `operator session` is an interactive session that is not a popped terminal; its messages are
+not all typed by the operator, which is why the correction rate uses the operator-likely filter
+above.
+
 `headless_split.csv` columns: `window` (before, after, or the partial week of 2026-08-24),
 `headless_kind` (`scheduler worker prompt`: the session opens on the scheduler's worker prompt;
 `other headless`), `repo_group`, then the hook columns and `write_calls` of
@@ -64,11 +89,38 @@ not given.
   live code of the harness, which changed during the windows (dated in `ANALYSIS.md` section 9).
   The doors of experiment E1 are the copies pinned on 2026-09-30 at 16:27 +0200
   (`e1/hooks/`, redacted, and `e1/README.md`), before the repair of that day.
-- **"Took effect"** is read per door type (`prereg/DEVIATIONS.md`, deviation 15): for a Stop hook,
-  the session went on to a new closing text after the block; for a PreToolUse hook or a write
-  refusal, the next call of the same tool ran. Keys `door.<rule>.refusals.<door type>.took_effect`.
-  A refusal that took effect may still have been wrong; `door_review.csv` codes that. The E1
-  measure K is stricter (`prereg/PREREG.md` section 7).
+- **"Took effect"** is read per door type (`prereg/DEVIATIONS.md`, deviation 15). Keys
+  `door.<rule>.refusals.<door type>.took_effect`.
+  - Stop hook: the ledger's own daily pass takes the last assistant text of the main thread
+    after the refusal and before the next new user turn (a main-thread user-role entry that is
+    neither a tool result nor the hook's own feedback), and runs the door's own detector (its code
+    on the day of the pass) on it: took effect when the detector no longer trips; did not when it
+    still trips, or when no assistant text follows; cannot be judged when the transcript is not
+    found. A detector that raises an error counts as took effect.
+  - PreToolUse hook or write refusal: the refused call is found in the transcript; took effect
+    when a later call of the same tool, in the same thread and before the next operator turn,
+    ran without being refused (for a write door, a call that the write door let through).
+  What the field measure cannot show: it reads no file. It does not check that the accepted
+  call, or anything after it, is free of the violation (in E1 one door-alone run wrote the long
+  dashes into the changelog through a shell command after its denial, and still counts under
+  this definition: `e1.h5.write_strict.k`, 9 of 10, against `e1.h5.write.k`); it does not count
+  violations the door never refused (no escape count, so no recall), and a Stop hook's "took
+  effect" is judged by the same detector that refused. It cannot be made stricter from the
+  derived tables, which hold no call content. A refusal that took effect may still have been
+  wrong; `door_review.csv` codes that. The E1 and E2 measure K is stricter (`prereg/PREREG.md`
+  section 7; `prereg/PREREG-E2.md` for the strict K that also reads the files).
+- **The long-dash Stop hook: ledger 4 of 4, transcripts 3 of 4.** The two count different events.
+  `door.K001.refusals.stop_hook.took_effect` is the ledger: rows the repaired hook wrote from
+  2026-09-30 17:45 +0200 (`door.ledger.first_counted_refusal`) in every session kind, one of them
+  a planted test session of the study (`door_refusals_test_rows.csv`; without it 3 of 3,
+  `door.K001.refusals.stop_hook.took_effect.without_test_session`), judged by the rule above.
+  `dashstop.repair_week_and_after.followed` is the transcripts: blocks in operator sessions and
+  popped terminals from Monday 2026-09-28, so including the days before the repair of 2026-09-30
+  17:27 +0200, when the hook's block did not stop the turn, judged as "followed by a new closing
+  text before the next operator turn". No counted ledger refusal precedes the repair.
+- **Test rows.** `door_refusals_test_rows.csv` lists the one counted ledger refusal that came
+  from a planted test session (`DEVIATIONS.md`, deviation 20). The published counts keep it; every
+  key that holds it has a `.without_test_session` twin.
 
 ## Files
 
@@ -77,7 +129,11 @@ not given.
 - `rules_coding.csv`: both coders' labels for the 177 text units behind the public rules (unit,
   rule id, per coder: is a rule 1 or 0, class, enforceability). See `rules.md`.
 - `corrections_weekly.csv`: week, rule id, delivery state (prose, door), corrections and
-  exposure (operator-active days).
+  exposure (operator-active days: days with at least one operator-likely input, sub-sessions
+  left out). A rule whose text lives in the global instruction file counts the active days of
+  every repository (the file loads everywhere); any other rule counts the active days of the
+  harness's repository only. So two rules live all week can carry different exposures in the
+  same week.
 - `transcripts_weekly.csv`: week, session kind, repository group (`door`: the harness's own
   repository; `control`: the operator's other repositories), model id and tool version, then
   counts. The `ref_*` columns count hook refusals (`ref_stop_*` Stop hooks, `ref_ptu_*` PreToolUse hooks) and
@@ -86,7 +142,12 @@ not given.
   `ref_stop_retired` counts the blocks of the daily session's Stop gate, retired with the daily
   session at the 2026-09-20 cut-over.
 - `transcripts_prospective.csv`: the same columns split into the retrospective and the
-  prospective part of the after window.
+  prospective part of the after window. The retrospective part runs from 2026-09-21 to the tag
+  (2026-09-30 18:05 +0200); in all of it but its last 38 minutes the field's ask, promise and
+  rule-announcement Stop hooks judged the text before the closing one, not the closing text
+  (`ANALYSIS.md` section 9, the change of 2026-09-30 17:27 +0200; `DEVIATIONS.md`, deviation 18).
+  The prospective part runs the repaired hooks only. Keys `prosp.retrospective.<group>.answered_q`
+  and `prosp.<group>.answered_q`.
 - `scheduler_weekly.csv`: per week and door class (`all` is the total), jobs created, launches
   and outcomes. `sched.launches` (530) sums every week; 14 of them fall in the week of
   2026-09-14, before the after window, and 516 in it (`sched.launches.before_window`,
@@ -108,6 +169,14 @@ not given.
   code. 559 items (299 before, 260 after); `audit.kappa` is computed over all of them, and
   `audit.kappa.before` and `audit.kappa.after` per window.
 - `cost_weekly.csv`: per week and session kind, turns, tokens, the API-equivalent estimate.
-- `replays_past.csv`: earlier replays, runs and violations without and with the instruction file.
+- `replays_past.csv`: earlier replays of the in-scope cases (`DEVIATIONS.md`, deviations 14 and
+  19), runs and violations without and with the whole instruction file; the model of those runs
+  was not recorded.
+- `rule_members.csv`: every member of the public rules, in the order the rule's cluster lists
+  them: the text units (the `U` ids of `rules_coding.csv`) and the door entries (`<rule>.door<n>`),
+  with both coders' labels and the final label of each. `rules.md` gives the rule that turns
+  member labels into the rule's label.
+- `door_refusals_test_rows.csv`: see "Test rows" above (week, time in UTC, rule, door type,
+  located, took effect, in the review sample, the review codes, why it is a test row).
 - `case_facts.csv`: single facts about the case (commit counts, code size, the probe figures,
   the recorded coding kappas), each with its source.

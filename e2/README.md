@@ -36,3 +36,30 @@ are judged by E1's own code with E1's criteria; H5's Stop half reads C4S's Stop 
 The raw runs (streams, transcripts, the scratch repository after each run, each run's hook health
 ledger) and the unredacted pinned hooks stay private, as E1's did. With them, `run_e2.py
 planted-report` regrades every planted run from its raw files.
+
+## Running it again
+
+The numbers need none of this: `python3 analysis/numbers.py` reads the published files.
+
+A new run needs, besides this folder and `e1/` (whose case files, graders and driver E2 imports):
+Claude Code 2.1.300 (recorded on every run; E1 ran on 2.1.285), access to `claude-opus-5-5`,
+trimwrit at 0ab0b33 (`TRIMWRIT`, public, MIT), a directory for raw runs (`E2_RAW`), a context
+directory (`E2_CONTEXT`) that holds the instruction file and the pinned E2 hook copies with their
+`SHA256SUMS`, and `E2_HUB`, the harness whose model-quota check gates every batch and whose
+credential resolver gives each run a subscription login. The driver refuses an instruction file
+or a hook whose sha256 differs from `design.json`.
+
+What is public and what is not, exactly:
+
+- Public: the treatment, which is E1's: the five ablated paragraphs in `e1/treatment/` (the same
+  pinned instruction file, sha256 `a71019d6...`, and the same line ranges), redacted with visible
+  markers; the hooks as repaired (`hooks/`, redacted with visible markers, `REDACTIONS.md`); C4S;
+  the graders, the planted situations, the driver and the drawn run order.
+- Not public: the pinned instruction file beyond the five paragraphs (the same 219 lines as E1's,
+  summarised in `e1/README.md`), the hooks' unredacted bytes, the raw runs and the harness that
+  `E2_HUB` points to (its quota check and its credential resolver).
+
+So, as for E1, the pins cannot be met from the public files: an outside replication builds its
+own context from the published paragraphs and hooks, records its sha256, supplies its own
+credential in place of `E2_HUB`'s resolver, and is a new experiment on the same design rather
+than a re-run.

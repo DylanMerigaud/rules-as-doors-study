@@ -7,7 +7,8 @@ python3 analysis/numbers.py            # all tables, figures, results/numbers.js
 python3 -m pytest analysis/tests -q    # tests on synthetic inputs only
 ```
 
-`numbers.py` is byte-deterministic (two runs give identical files). A script whose input file is
+`numbers.py` is byte-deterministic (two runs give identical files, figures included: `common.save_svg`
+renames matplotlib's clip-path ids in order of appearance). A script whose input file is
 absent is skipped with a message and its keys are not written; `results/manifest.json` lists what
 ran and what was skipped. `--data`, `--e1` and `--out` point it at other folders.
 
@@ -33,6 +34,9 @@ section 10 (`stats.py`).
 | `table13_cost.py` | Table 13 | `data/cost_weekly.csv` |
 | `table14_e2.py` | Table 14, E2's H1 to H5 (the `e2` entry of `hypotheses.json`) | `e2/results.jsonl`, `e2/design.json`, `e2/run_order.csv`; `e1/runs.jsonl` for the exploratory C1 regrade |
 | `case_facts.py` | facts of the case measured elsewhere | `data/case_facts.csv` |
+| `e1_supplement.py` | E1 facts asked in review round 1 (`e1.*` beyond Table 12) | `e1/results.jsonl`, `e1/runs.jsonl`, `e1/run_facts.csv`, `e1/design.json`, `e1/graders.py`, `e1/hooks/`, `e1/cases/` |
+| `field_supplement.py` | field facts asked in review round 1 | `data/rules.csv`, `data/rules_coding.csv`, `data/transcripts_weekly.csv`, `data/headless_split.csv`, `data/ask_audit.csv`, `data/scheduler_weekly.csv`, `data/door_refusals_weekly.csv`, `data/door_review.csv`, `data/door_review_frame.csv` |
+| `round2_supplement.py` | facts asked in review round 2: E1 under the first committed graders, the pilot table, E1's strict K, two-stage bootstrap intervals, Table 11 per case, RQ3 without the door-only rules, the rule labels from their members, per-model ask cells, weekly correction shares, door counts without the test session, detector against grader | `e1/` (results, runs, graders, `graders_first_committed.py`, `pilot_runs.csv`), `e2/results.jsonl`, `e2/graders.py`, and `data/` (`rules.csv`, `rules_coding.csv`, `rule_members.csv`, `transcripts_weekly.csv`, `transcripts_prospective.csv`, `corrections_weekly.csv`, `replays_past.csv`, `door_refusals_weekly.csv`, `door_refusals_test_rows.csv`, `door_review.csv`, `door_review_frame.csv`) |
 
 ## Input schemas the scripts read
 
@@ -66,3 +70,10 @@ weeks after the after window (2026-10-05) are left out of every table.
   writes_ledger (0 or 1).
 - `replays_past.csv`: case_id, runs_without, violations_without, runs_with, violations_with.
 - `case_facts.csv`: key, value, text, source, k, n, ci_low, ci_high.
+- `rule_members.csv`: rule_id, member_order, member, kind (text unit, door entry),
+  coder1_is_rule, coder2_is_rule, coder1_class, coder2_class, coder1_enforceability,
+  coder2_enforceability, final_is_rule, final_class, final_enforceability.
+- `door_refusals_test_rows.csv`: week, at_utc, rule_id, door_type, located, took_effect,
+  in_review_sample, coder1, coder2, final, why.
+- `e1/pilot_runs.csv`: case, situation, run_index, batch_started_utc, trimwrit_commit,
+  V_recorded_at_run_time, V_first_committed_graders, V_counted_graders.
