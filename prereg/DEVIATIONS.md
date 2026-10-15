@@ -185,8 +185,11 @@ earlier replays and the field record, not E2.
     Touches: `door.K001.refusals`, `door.K001.refusals.stop_hook`, `door.K001.took_effect`,
     `door.K001.refusals.stop_hook.took_effect`, `door.K001.review.frame.stop_hook`,
     `door.K001.review.n_items`, `door.K001.wrong_share` and `door.review.kappa` (each has a
-    `.without_test_session` twin), and the ledger side of the comparison with
-    `dashstop.repair_week_and_after.*` (`data/README.md`).
+    `.without_test_session` twin, as have `door.K001.recovery_turns`,
+    `door.K001.recovery_output_tokens` and the new per-coder keys
+    `door.K001.review.raw_agreement`, `door.K001.wrong_share.coder1` and `.coder2`); kept with no
+    twin: `door.refusals.not_located` and `door.K001.review.kappa` (`data/README.md`, "Test
+    rows"); and the ledger side of the comparison with `dashstop.repair_week_and_after.*`.
 21. **The control criterion of the ask door was applied as "is below 2 percent".** `ANALYSIS.md`
     section 6 says the control's share "falls below 2 percent over the full after window".
     `analysis/table05_ask_door.py` applied it as "is below 2 percent" and the change was not

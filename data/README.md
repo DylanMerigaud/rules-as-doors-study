@@ -119,8 +119,13 @@ not given.
   17:27 +0200, when the hook's block did not stop the turn, judged as "followed by a new closing
   text before the next operator turn". No counted ledger refusal precedes the repair.
 - **Test rows.** `door_refusals_test_rows.csv` lists the one counted ledger refusal that came
-  from a planted test session (`DEVIATIONS.md`, deviation 20). The published counts keep it; every
-  key that holds it has a `.without_test_session` twin.
+  from a planted test session (`DEVIATIONS.md`, deviation 20), with its recovery turns and
+  output tokens. The published counts keep it. The K001 counts, took-effect shares, recovery
+  means, review frame, review items, wrong shares (pooled and per coder), raw agreement and the
+  pooled review kappa each have a `.without_test_session` twin. Kept with no twin: the total over
+  every door in `door.refusals.not_located` (9 of 192), and `door.K001.review.kappa` and
+  `.n_unclear`, whose values do not change without it (the item was coded right by both
+  coders).
 
 ## Files
 
@@ -177,6 +182,7 @@ not given.
   with both coders' labels and the final label of each. `rules.md` gives the rule that turns
   member labels into the rule's label.
 - `door_refusals_test_rows.csv`: see "Test rows" above (week, time in UTC, rule, door type,
-  located, took effect, in the review sample, the review codes, why it is a test row).
+  located, took effect, in the review sample, the review codes, recovery turns and output tokens,
+  why it is a test row).
 - `case_facts.csv`: single facts about the case (commit counts, code size, the probe figures,
   the recorded coding kappas), each with its source.

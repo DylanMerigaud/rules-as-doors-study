@@ -702,10 +702,14 @@ def weekly_section(ctx, reg):
 
 # ---------------------------------------------------------------- 9. the door ledger and review
 
+def _slug(door_type):
+    return door_type.lower().replace(" ", "_")
+
+
 def doors_section(ctx, reg):
     ent = reg.entries
-    if ctx.has_data("door_refusals_test_rows.csv") and ctx.has_data("door_refusals_weekly.csv"):
-        test = ctx.read_csv("door_refusals_test_rows.csv")
+    test = ctx.read_csv("door_refusals_test_rows.csv") if ctx.has_data("door_refusals_test_rows.csv") else []
+    if test and ctx.has_data("door_refusals_weekly.csv"):
         weekly = ctx.read_csv("door_refusals_weekly.csv")
         tsrc = "data/door_refusals_test_rows.csv"
         add_count(reg, "door.test_rows.n", len(test), tsrc,
@@ -720,8 +724,21 @@ def doors_section(ctx, reg):
                 sum(1 for t in mine if t["took_effect"] in ("0", "1"))
             add_prop(reg, "door.%s.took_effect.without_test_session" % rid, te, judged,
                      "data/door_refusals_weekly.csv")
+            if rs and "recovery_n" in rs[0] and mine and "recovery_turns" in mine[0]:
+                rec = [t for t in mine if t["took_effect"] == "1" and t["recovery_turns"] != ""]
+                rn = sum(num(r["recovery_n"]) for r in rs) - len(rec)
+                rt = sum(num(r["recovery_turns"]) for r in rs) - sum(num(t["recovery_turns"]) for t in rec)
+                ro = sum(num(r["recovery_output_tokens"]) for r in rs) - \
+                    sum(num(t["recovery_output_tokens"]) for t in rec)
+                if rn:
+                    reg.add("door.%s.recovery_turns.without_test_session" % rid, rt / rn,
+                            "%.1f turns per refusal (%d refusals)" % (rt / rn, rn),
+                            "data/door_refusals_weekly.csv", n=rn, stat="mean")
+                    reg.add("door.%s.recovery_output_tokens.without_test_session" % rid, ro / rn,
+                            "%.0f output tokens per refusal" % (ro / rn),
+                            "data/door_refusals_weekly.csv", n=rn, stat="mean")
             for dt in sorted({t["door_type"] for t in mine}):
-                slug = dt.lower().replace(" ", "_")
+                slug = _slug(dt)
                 sub = [r for r in rs if r["door_type"] == dt]
                 drop = [t for t in mine if t["door_type"] == dt]
                 n = sum(num(r["refusals"]) for r in sub) - len(drop)
@@ -770,19 +787,42 @@ def doors_section(ctx, reg):
             for r in frame if num(r["refusals_in_ledger"]) != num(r["located_in_a_transcript"]))),
             "data/door_review_frame.csv", k=unloc, n=tot,
             note="ledger rows whose session transcript holds no matching refusal: took effect cannot be judged")
+        for t in test:
+            r = next((x for x in frame if x["rule_id"] == t["rule_id"] and x["door_type"] == t["door_type"]), None)
+            if r is None:
+                continue
+            ref = num(r["refusals_in_ledger"]) - 1
+            loc = num(r["located_in_a_transcript"]) - (1 if t["located"] == "1" else 0)
+            smp = num(r["sampled"]) - (1 if t["in_review_sample"] == "1" else 0)
+            reg.add("door.%s.review.frame.%s.without_test_session" % (t["rule_id"], _slug(t["door_type"])), smp,
+                    "%d sampled of %d located in a transcript (%d refusals in the ledger)" % (smp, loc, ref),
+                    "data/door_review_frame.csv", located=loc, refusals=ref)
     if ctx.has_data("door_review.csv"):
         rev = ctx.read_csv("door_review.csv")
         by = OrderedDict()
         for r in rev:
             by.setdefault(r["rule_id"], []).append(r)
         for rid, rs in by.items():
-            agree = sum(1 for r in rs if r["coder1"] == r["coder2"])
-            add_prop(reg, "door.%s.review.raw_agreement" % rid, agree, len(rs), "data/door_review.csv", digits=0)
-            for c in ("coder1", "coder2"):
-                coded = [r for r in rs if r[c] in ("right", "wrong")]
-                add_prop(reg, "door.%s.wrong_share.%s" % (rid, c), sum(1 for r in coded if r[c] == "wrong"),
-                         len(coded), "data/door_review.csv", digits=0,
-                         note="the wrong share under one coder's codes alone, unclear left out")
+            variants = [("", rs)]
+            drop = [t for t in test if t["rule_id"] == rid and t["in_review_sample"] == "1"]
+            if drop:
+                keep = list(rs)
+                for t in drop:
+                    for i, r in enumerate(keep):
+                        if (r["stratum"], r["coder1"], r["coder2"], r["final"]) == \
+                                (t["door_type"], t["coder1"], t["coder2"], t["final"]):
+                            del keep[i]
+                            break
+                variants.append((".without_test_session", keep))
+            for tail, sel in variants:
+                agree = sum(1 for r in sel if r["coder1"] == r["coder2"])
+                add_prop(reg, "door.%s.review.raw_agreement%s" % (rid, tail), agree, len(sel),
+                         "data/door_review.csv", digits=0)
+                for c in ("coder1", "coder2"):
+                    coded = [r for r in sel if r[c] in ("right", "wrong")]
+                    add_prop(reg, "door.%s.wrong_share.%s%s" % (rid, c, tail),
+                             sum(1 for r in coded if r[c] == "wrong"), len(coded), "data/door_review.csv",
+                             digits=0, note="the wrong share under one coder's codes alone, unclear left out")
     if ctx.has_data("transcripts_weekly.csv"):
         rows = ctx.read_csv("transcripts_weekly.csv")
         tot = sum(num(r["dash_stop_detected"]) for r in rows)

@@ -1008,12 +1008,26 @@
   "text": "2913 output tokens per refusal",
   "value": 2912.957265
  },
+ "door.K001.recovery_output_tokens.without_test_session": {
+  "n": 116,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "2933 output tokens per refusal",
+  "value": 2932.534483
+ },
  "door.K001.recovery_turns": {
   "n": 117,
   "source": "data/door_refusals_weekly.csv",
   "stat": "mean",
   "text": "1.4 turns per refusal (117 refusals)",
   "value": 1.418803
+ },
+ "door.K001.recovery_turns.without_test_session": {
+  "n": 116,
+  "source": "data/door_refusals_weekly.csv",
+  "stat": "mean",
+  "text": "1.4 turns per refusal (116 refusals)",
+  "value": 1.422414
  },
  "door.K001.refusals": {
   "source": "data/door_refusals_weekly.csv",
@@ -1120,6 +1134,13 @@
   "text": "4 sampled of 4 located in a transcript (4 refusals in the ledger)",
   "value": 4
  },
+ "door.K001.review.frame.stop_hook.without_test_session": {
+  "located": 3,
+  "refusals": 3,
+  "source": "data/door_review_frame.csv",
+  "text": "3 sampled of 3 located in a transcript (3 refusals in the ledger)",
+  "value": 3
+ },
  "door.K001.review.frame.write_refusal": {
   "located": 6,
   "refusals": 6,
@@ -1164,6 +1185,19 @@
   "n": 30,
   "source": "data/door_review.csv",
   "text": "30 of 30 (100%, 95% CI 89% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
+ "door.K001.review.raw_agreement.without_test_session": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.88303,
+   1.0
+  ],
+  "k": 29,
+  "n": 29,
+  "source": "data/door_review.csv",
+  "text": "29 of 29 (100%, 95% CI 88% to 100%)",
   "text_short": "100%",
   "value": 1.0
  },
@@ -1228,6 +1262,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "door.K001.wrong_share.coder1.without_test_session": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.11697
+  ],
+  "k": 0,
+  "n": 29,
+  "note": "the wrong share under one coder's codes alone, unclear left out",
+  "source": "data/door_review.csv",
+  "text": "0 of 29 (0%, 95% CI 0% to 12%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
  "door.K001.wrong_share.coder2": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -1239,6 +1287,20 @@
   "note": "the wrong share under one coder's codes alone, unclear left out",
   "source": "data/door_review.csv",
   "text": "0 of 30 (0%, 95% CI 0% to 11%)",
+  "text_short": "0%",
+  "value": 0.0
+ },
+ "door.K001.wrong_share.coder2.without_test_session": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.11697
+  ],
+  "k": 0,
+  "n": 29,
+  "note": "the wrong share under one coder's codes alone, unclear left out",
+  "source": "data/door_review.csv",
+  "text": "0 of 29 (0%, 95% CI 0% to 12%)",
   "text_short": "0%",
   "value": 0.0
  },

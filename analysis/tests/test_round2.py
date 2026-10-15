@@ -97,6 +97,9 @@ def test_round2_values_on_the_published_files(tmp_path):
     assert n["rules.labels.recomputed_agree.class"]["value"] == 134
     assert n["rules.labels.recomputed_agree.enforceability"]["value"] == 134
     assert n["door.K001.refusals.without_test_session"]["value"] == n["door.K001.refusals"]["value"] - 1
+    assert n["door.K001.recovery_turns.without_test_session"]["n"] == n["door.K001.recovery_turns"]["n"] - 1
+    assert n["door.K001.review.frame.stop_hook.without_test_session"]["refusals"] == \
+        n["door.K001.review.frame.stop_hook"]["refusals"] - 1
     assert n["dashstop.blocks.all_weeks_all_kinds"]["value"] >= n["dashstop.blocks"]["value"]
     for key in ("e1.h1.diff", "e1.h2.v_ap", "e2.h1.diff", "e2.h2.diff"):
         assert n[key + ".two_stage"]["value"] == n[key]["value"]

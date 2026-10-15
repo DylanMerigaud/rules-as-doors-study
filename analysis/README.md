@@ -74,6 +74,6 @@ weeks after the after window (2026-10-05) are left out of every table.
   coder1_is_rule, coder2_is_rule, coder1_class, coder2_class, coder1_enforceability,
   coder2_enforceability, final_is_rule, final_class, final_enforceability.
 - `door_refusals_test_rows.csv`: week, at_utc, rule_id, door_type, located, took_effect,
-  in_review_sample, coder1, coder2, final, why.
+  in_review_sample, coder1, coder2, final, recovery_turns, recovery_output_tokens, why.
 - `e1/pilot_runs.csv`: case, situation, run_index, batch_started_utc, trimwrit_commit,
   V_recorded_at_run_time, V_first_committed_graders, V_counted_graders.

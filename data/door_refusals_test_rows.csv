@@ -1,2 +1,2 @@
-week,at_utc,rule_id,door_type,located,took_effect,in_review_sample,coder1,coder2,final,why
-2026-09-28,2026-09-30 17:39Z,K001,Stop hook,1,1,1,right,right,right,"a planted session of the study's own check of the repaired hook (T13), run in a scratch repository after the tag"
+week,at_utc,rule_id,door_type,located,took_effect,in_review_sample,coder1,coder2,final,recovery_turns,recovery_output_tokens,why
+2026-09-28,2026-09-30 17:39Z,K001,Stop hook,1,1,1,right,right,right,1,642,"a planted session of the study's own check of the repaired hook (ANALYSIS.md section 9), run in a scratch repository after the tag"
