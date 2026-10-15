@@ -8,10 +8,10 @@ concern other people or their data are left out and are not counted here.
 
 Columns:
 
-- `id`: the rule's id in this study. Ids are not contiguous: they were given to the candidate
-  rules after the first scope screening, a later review moved whole rules out of scope, and their
-  ids were not reused. The gaps therefore do not measure how much was left out, and no count of
-  the rules left out is given.
+- `id`: the rule's id in this study. Ids are not contiguous: they were given before the
+  inventory's last review, and an id that left the inventory then was not reused. The gaps are not
+  a count of the rules left out of scope (a rule left out before ids were given never had one),
+  and the study gives no such count.
 - `description`: a generic English description written for publication; the rule texts
   themselves are not public.
 - `class`: cap, pace, window, never, gate, sequence, ask, stop, write-path or other.
