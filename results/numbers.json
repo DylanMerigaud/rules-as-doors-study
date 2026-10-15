@@ -2047,6 +2047,20 @@
   "text": "2026-10-11 21:44:19 +0200",
   "value": "2026-10-11T19:44:19Z"
  },
+ "door.ledger_doors.n": {
+  "note": "the scheduler preconditions and the recovery pause write the scheduler's own ledgers (Table 8), not this one",
+  "source": "data/door_size.csv",
+  "text": "9 doors (hooks and write refusals) write the door refusal ledger",
+  "value": 9
+ },
+ "door.ledger_doors.without_counted_refusal": {
+  "k": 3,
+  "n": 9,
+  "note": "doors that write the door refusal ledger with no counted refusal in its window (2026-09-30 to 2026-10-11); a write door's row counts only when a session transcript shows it (DEVIATIONS.md, deviation 12). Every door with a counted refusal is in data/door_refusals_weekly.csv.",
+  "source": "data/door_size.csv, data/door_refusals_weekly.csv",
+  "text": "3 of 9 (K003 write refusal, K039 PreToolUse hook, K089 PreToolUse hook)",
+  "value": 3
+ },
  "door.ledger_window": {
   "note": "the door refusal ledger behind data/door_refusals_weekly.csv starts on 2026-09-30",
   "source": "prereg/ANALYSIS.md section 9",

@@ -823,6 +823,28 @@ def doors_section(ctx, reg):
                     add_prop(reg, "door.%s.wrong_share.%s%s" % (rid, c, tail),
                              sum(1 for r in coded if r[c] == "wrong"), len(coded), "data/door_review.csv",
                              digits=0, note="the wrong share under one coder's codes alone, unclear left out")
+    if ctx.has_data("door_size.csv") and ctx.has_data("door_refusals_weekly.csv"):
+        size = ctx.read_csv("door_size.csv")
+        weekly = ctx.read_csv("door_refusals_weekly.csv")
+        if size and "writes_ledger" in size[0]:
+            hook_types = ("Stop hook", "PreToolUse hook", "write refusal")
+            ledger_doors = sorted({(r["rule_id"], r["door_type"]) for r in size
+                                   if num(r["writes_ledger"]) == 1 and r["door_type"] in hook_types})
+            counted = {(r["rule_id"], r["door_type"]) for r in weekly if num(r["refusals"]) > 0}
+            none = [d for d in ledger_doors if d not in counted]
+            reg.add("door.ledger_doors.n", len(ledger_doors),
+                    "%d doors (hooks and write refusals) write the door refusal ledger" % len(ledger_doors),
+                    "data/door_size.csv",
+                    note="the scheduler preconditions and the recovery pause write the scheduler's own "
+                         "ledgers (Table 8), not this one")
+            reg.add("door.ledger_doors.without_counted_refusal", len(none),
+                    "%d of %d (%s)" % (len(none), len(ledger_doors),
+                                       ", ".join("%s %s" % d for d in none) or "none"),
+                    "data/door_size.csv, data/door_refusals_weekly.csv", k=len(none), n=len(ledger_doors),
+                    note="doors that write the door refusal ledger with no counted refusal in its window "
+                         "(2026-09-30 to 2026-10-11); a write door's row counts only when a session "
+                         "transcript shows it (DEVIATIONS.md, deviation 12). Every door with a counted "
+                         "refusal is in data/door_refusals_weekly.csv.")
     if ctx.has_data("transcripts_weekly.csv"):
         rows = ctx.read_csv("transcripts_weekly.csv")
         tot = sum(num(r["dash_stop_detected"]) for r in rows)

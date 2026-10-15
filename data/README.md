@@ -162,7 +162,12 @@ not given.
   as on time when the log holds an entry for that obligation dated that day. `rows_with_logs_in_both_eras`
   keeps the obligations logged at least once before and after the cut-over.
 - `door_refusals_weekly.csv`: the door refusal ledger by week, rule id and door type: refusals,
-  took effect, did not, cannot be judged, and the recovery measures.
+  took effect, did not, cannot be judged, and the recovery measures. Every in-scope door with a
+  counted refusal has its rows here. Of the 9 doors that write this ledger (`door_size.csv`,
+  `writes_ledger`), three have none: K003's write refusal (its rows of the window are write-door
+  rows that no session transcript shows, which deviation 12 leaves out), and the PreToolUse hooks
+  of K039 and K089, which wrote no row in the window (`door.ledger_doors.without_counted_refusal`).
+  The scheduler preconditions and the recovery pause write the scheduler's own ledgers (Table 8).
 - `door_review.csv`: the two codes (right, wrong, unclear) and the final code of each sampled
   refusal, by rule id and stratum (the door type).
 - `door_review_frame.csv`: the sampling frame of the review. The draw took up to 20 refusals per
