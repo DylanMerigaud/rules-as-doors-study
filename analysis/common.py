@@ -243,7 +243,21 @@ def save_svg(plt, fig, path):
     fig.savefig(buf, format="svg", metadata={"Date": None, "Creator": None}, bbox_inches="tight")
     plt.close(fig)
     text = re.sub(r"\s*<metadata>.*?</metadata>", "", buf.getvalue(), flags=re.DOTALL)
-    Path(path).write_text(text, encoding="utf-8")
+    Path(path).write_text(stable_clip_ids(text), encoding="utf-8")
+
+
+def stable_clip_ids(text):
+    """matplotlib names each clip path after the id() of a Python object, which changes from run
+    to run even with svg.hashsalt set; rename them clip1, clip2, ... in order of appearance so the
+    SVG is byte-identical from run to run (review round 2, R4-m16)."""
+    import re
+
+    names = {}
+    for m in re.finditer(r'id="(p[0-9a-f]{10})"', text):
+        names.setdefault(m.group(1), "clip%d" % (len(names) + 1))
+    if not names:
+        return text
+    return re.sub(r"\b(p[0-9a-f]{10})\b", lambda m: names.get(m.group(1), m.group(1)), text)
 
 
 def standalone(run):
