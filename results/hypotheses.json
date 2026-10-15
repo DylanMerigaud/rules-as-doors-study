@@ -325,5 +325,615 @@
    "turns_mean": 6.6,
    "output_tokens_mean": 1937.6
   }
+ },
+ "e2": {
+  "registered": "prereg/PREREG-E2.md section 8, tag prereg-e2",
+  "bootstrap": {
+   "resamples": 10000,
+   "seed": 20260930,
+   "generator": "numpy default_rng",
+   "interval": "percentile 2.5 and 97.5 (numpy quantile, linear)",
+   "unit": "cases, with replacement; a fresh generator per statistic"
+  },
+  "model": "claude-opus-5-5",
+  "n_runs": 220,
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C4S",
+   "C5"
+  ],
+  "shortfall": [],
+  "H1": {
+   "criterion": "Pooled over C1 to C5, V(A0) minus V(AP): supported when the 95% cluster bootstrap interval lies above 0.",
+   "cases": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5"
+   ],
+   "per_case": {
+    "C1": 0.0,
+    "C2": 0.0,
+    "C3": 1.0,
+    "C4": 0.7,
+    "C5": 1.0
+   },
+   "point": 0.54,
+   "interval": [
+    0.14,
+    0.94
+   ],
+   "verdict": "supported",
+   "secondary_door_detector": {
+    "cases": [
+     "C1",
+     "C2",
+     "C3",
+     "C4"
+    ],
+    "per_case": {
+     "C1": 0.0,
+     "C2": 0.0,
+     "C3": 0.2,
+     "C4": 0.7
+    },
+    "point": 0.225,
+    "interval": [
+     0.0,
+     0.525
+    ],
+    "verdict": "not supported"
+   },
+   "secondary_note": "reported beside the primary, decides nothing"
+  },
+  "H2": {
+   "criterion": "Pooled over C1, C2, C3 and C4's write-hook arm: supported when the pooled V(AD) is at most 0.05 and the interval of V(AP) minus V(AD) lies above 0 (both must hold).",
+   "cases": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "per_case": {
+    "C1": 0.0,
+    "C2": 0.0,
+    "C3": -0.9,
+    "C4": 0.1
+   },
+   "point": -0.2,
+   "interval": [
+    -0.675,
+    0.075
+   ],
+   "verdict": "not supported",
+   "statistic": "V(AP) minus V(AD)",
+   "v_ad": {
+    "point": 0.275,
+    "interval": [
+     0.0,
+     0.675
+    ],
+    "per_case": {
+     "C1": 0.0,
+     "C2": 0.0,
+     "C3": 0.9,
+     "C4": 0.2
+    },
+    "upper_bound": 0.675
+   },
+   "parts": {
+    "v_ad_at_most_0.05": false,
+    "diff_interval_above_0": false
+   },
+   "v_ap": {
+    "point": 0.075,
+    "interval": [
+     0.0,
+     0.225
+    ],
+    "per_case": {
+     "C1": 0.0,
+     "C2": 0.0,
+     "C3": 0.0,
+     "C4": 0.3
+    }
+   },
+   "secondary_door_detector": {
+    "cases": [
+     "C1",
+     "C2",
+     "C3",
+     "C4"
+    ],
+    "per_case": {
+     "C1": 0.0,
+     "C2": 0.0,
+     "C3": 0.0,
+     "C4": 0.2
+    },
+    "point": 0.05,
+    "interval": [
+     0.0,
+     0.15
+    ],
+    "verdict": "not supported",
+    "v_ad": {
+     "point": 0.025,
+     "interval": [
+      0.0,
+      0.075
+     ],
+     "per_case": {
+      "C1": 0.0,
+      "C2": 0.0,
+      "C3": 0.0,
+      "C4": 0.1
+     },
+     "upper_bound": 0.075
+    }
+   },
+   "secondary_note": "reported beside the primary, decides nothing"
+  },
+  "H3": {
+   "criterion": "Pooled over the H2 cases, C(AD) minus C(A0): supported when the lower bound of its interval is above minus 0.10.",
+   "cases": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "per_case": {
+    "C1": 0.0,
+    "C2": 0.0,
+    "C3": -0.2,
+    "C4": 0.0
+   },
+   "point": -0.05,
+   "interval": [
+    -0.15,
+    0.0
+   ],
+   "verdict": "not supported",
+   "statistic": "C(AD) minus C(A0)"
+  },
+  "H4": {
+   "criterion": "Pooled over the H2 cases, mean B(APD) minus mean B(AD): supported when its interval lies below 0.",
+   "cases": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "per_case": {
+    "C1": 0.0,
+    "C2": 0.0,
+    "C3": 0.0,
+    "C4": -1.0
+   },
+   "point": -0.25,
+   "interval": [
+    -0.75,
+    0.0
+   ],
+   "verdict": "not supported",
+   "statistic": "mean B(APD) minus mean B(AD)"
+  },
+  "H5": {
+   "criterion": "Per long-dash door, K over blocks pooled over the AD and APD runs of that door: the Stop hook (in C4S) is supported below 0.5, the write hook (in C4) at 0.9 or above, judged on the point value; a door with fewer than 5 blocks makes its half not judgeable.",
+   "stop": {
+    "k": 3,
+    "blocks": 13,
+    "point": 0.230769,
+    "wilson": [
+     0.081795,
+     0.502564
+    ],
+    "verdict": "supported"
+   },
+   "write": {
+    "k": 10,
+    "blocks": 10,
+    "point": 1.0,
+    "wilson": [
+     0.722467,
+     1.0
+    ],
+    "verdict": "supported"
+   },
+   "verdict": "supported",
+   "verdict_text": "Stop hook: supported; write hook: supported",
+   "write_strict": {
+    "k": 10,
+    "blocks": 10,
+    "point": 1.0,
+    "wilson": [
+     0.722467,
+     1.0
+    ],
+    "verdict_by_the_write_criterion": "supported",
+    "note": "secondary: K that also reads the files at the end of the run; decides nothing"
+   },
+   "stop_door_detector": {
+    "k": 13,
+    "blocks": 13,
+    "point": 1.0,
+    "wilson": [
+     0.771905,
+     1.0
+    ],
+    "verdict_by_the_stop_criterion": "not supported",
+    "note": "secondary: K by the hook's own detector, which exempts code spans; decides nothing"
+   }
+  },
+  "exploratory": {
+   "without_C1": {
+    "H1": {
+     "cases": [
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+     ],
+     "per_case": {
+      "C2": 0.0,
+      "C3": 1.0,
+      "C4": 0.7,
+      "C5": 1.0
+     },
+     "point": 0.675,
+     "interval": [
+      0.25,
+      1.0
+     ],
+     "verdict": "supported"
+    },
+    "H2": {
+     "cases": [
+      "C2",
+      "C3",
+      "C4"
+     ],
+     "per_case": {
+      "C2": 0.0,
+      "C3": -0.9,
+      "C4": 0.1
+     },
+     "point": -0.266667,
+     "interval": [
+      -0.9,
+      0.1
+     ],
+     "verdict": "not supported",
+     "statistic": "V(AP) minus V(AD)",
+     "v_ad": {
+      "point": 0.366667,
+      "interval": [
+       0.0,
+       0.9
+      ],
+      "per_case": {
+       "C2": 0.0,
+       "C3": 0.9,
+       "C4": 0.2
+      },
+      "upper_bound": 0.9
+     },
+     "parts": {
+      "v_ad_at_most_0.05": false,
+      "diff_interval_above_0": false
+     },
+     "v_ap": {
+      "point": 0.1,
+      "interval": [
+       0.0,
+       0.3
+      ],
+      "per_case": {
+       "C2": 0.0,
+       "C3": 0.0,
+       "C4": 0.3
+      }
+     }
+    }
+   },
+   "H2_with_C4S_stop": {
+    "cases": [
+     "C1",
+     "C2",
+     "C3",
+     "C4",
+     "C4S"
+    ],
+    "diff": {
+     "point": -0.3,
+     "interval": [
+      -0.68,
+      0.04
+     ],
+     "per_case": {
+      "C1": 0.0,
+      "C2": 0.0,
+      "C3": -0.9,
+      "C4": 0.1,
+      "C4S": -0.7
+     }
+    },
+    "v_ad": {
+     "point": 0.42,
+     "interval": [
+      0.04,
+      0.8
+     ],
+     "per_case": {
+      "C1": 0.0,
+      "C2": 0.0,
+      "C3": 0.9,
+      "C4": 0.2,
+      "C4S": 1.0
+     }
+    }
+   },
+   "delivery": {
+    "C1": {
+     "checks": 20,
+     "agree": 20,
+     "miss": 0,
+     "false_block": 0,
+     "caps": 0,
+     "crashes": 0,
+     "timeouts": 0
+    },
+    "C2": {
+     "checks": 40,
+     "agree": 40,
+     "miss": 0,
+     "false_block": 0,
+     "caps": 0,
+     "crashes": 0,
+     "timeouts": 0
+    },
+    "C3": {
+     "checks": 20,
+     "agree": 20,
+     "miss": 0,
+     "false_block": 0,
+     "caps": 0,
+     "crashes": 0,
+     "timeouts": 0
+    },
+    "C4": {
+     "checks": 0,
+     "agree": 0,
+     "miss": 0,
+     "false_block": 0,
+     "caps": 0,
+     "crashes": 0,
+     "timeouts": 0
+    },
+    "C4S": {
+     "checks": 33,
+     "agree": 33,
+     "miss": 0,
+     "false_block": 0,
+     "caps": 0,
+     "crashes": 0,
+     "timeouts": 0
+    }
+   },
+   "escapes": {
+    "C1 AD": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 0,
+     "turns_mean": 10.2,
+     "output_tokens_mean": 2780.7
+    },
+    "C1 APD": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 0,
+     "turns_mean": 10.3,
+     "output_tokens_mean": 2493.9
+    },
+    "C2 AD": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 3,
+     "turns_mean": 7.5,
+     "output_tokens_mean": 2191.6
+    },
+    "C2 APD": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 3,
+     "turns_mean": 6.0,
+     "output_tokens_mean": 1959.0
+    },
+    "C3 AD": {
+     "escapes": "9 of 10",
+     "escape_wilson": [
+      0.59585,
+      0.982124
+     ],
+     "violations_the_door_detector_did_not_see": 9,
+     "blocks": 0,
+     "turns_mean": 8.3,
+     "output_tokens_mean": 2415.1
+    },
+    "C3 APD": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 0,
+     "turns_mean": 12.9,
+     "output_tokens_mean": 4759.4
+    },
+    "C4 AD-write": {
+     "escapes": "2 of 10",
+     "escape_wilson": [
+      0.056682,
+      0.509838
+     ],
+     "violations_the_door_detector_did_not_see": 1,
+     "blocks": 10,
+     "turns_mean": 6.1,
+     "output_tokens_mean": 2412.0
+    },
+    "C4 APD-write": {
+     "escapes": "1 of 10",
+     "escape_wilson": [
+      0.017876,
+      0.40415
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 0,
+     "turns_mean": 6.0,
+     "output_tokens_mean": 2134.2
+    },
+    "C4S AD-stop": {
+     "escapes": "10 of 10",
+     "escape_wilson": [
+      0.722467,
+      1.0
+     ],
+     "violations_the_door_detector_did_not_see": 10,
+     "blocks": 10,
+     "turns_mean": 3.3,
+     "output_tokens_mean": 1185.0
+    },
+    "C4S APD-stop": {
+     "escapes": "0 of 10",
+     "escape_wilson": [
+      0.0,
+      0.277533
+     ],
+     "violations_the_door_detector_did_not_see": 0,
+     "blocks": 3,
+     "turns_mean": 2.6,
+     "output_tokens_mean": 1165.6
+    }
+   },
+   "e1_c1_regraded": {
+    "per_arm": {
+     "APD": {
+      "n": 10,
+      "old": 1,
+      "new": 0
+     },
+     "A0": {
+      "n": 10,
+      "old": 4,
+      "new": 0
+     },
+     "AP": {
+      "n": 10,
+      "old": 2,
+      "new": 0
+     },
+     "AD": {
+      "n": 10,
+      "old": 2,
+      "new": 0
+     }
+    },
+    "H1": {
+     "cases": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+     ],
+     "per_case": {
+      "C1": 0.0,
+      "C2": 0.9,
+      "C3": 1.0,
+      "C4": 0.8,
+      "C5": 1.0
+     },
+     "point": 0.74,
+     "interval": [
+      0.36,
+      0.98
+     ],
+     "verdict": "supported"
+    },
+    "H2": {
+     "cases": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+     ],
+     "per_case": {
+      "C1": 0.0,
+      "C2": -0.6,
+      "C3": -1.0,
+      "C4": 0.0
+     },
+     "point": -0.4,
+     "interval": [
+      -0.8,
+      0.0
+     ],
+     "verdict": "not supported",
+     "statistic": "V(AP) minus V(AD)",
+     "v_ad": {
+      "point": 0.475,
+      "interval": [
+       0.1,
+       0.85
+      ],
+      "per_case": {
+       "C1": 0.0,
+       "C2": 0.7,
+       "C3": 1.0,
+       "C4": 0.2
+      },
+      "upper_bound": 0.85
+     },
+     "parts": {
+      "v_ad_at_most_0.05": false,
+      "diff_interval_above_0": false
+     },
+     "v_ap": {
+      "point": 0.075,
+      "interval": [
+       0.0,
+       0.15
+      ],
+      "per_case": {
+       "C1": 0.0,
+       "C2": 0.1,
+       "C3": 0.0,
+       "C4": 0.2
+      }
+     }
+    }
+   }
+  }
  }
 }

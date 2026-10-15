@@ -112,3 +112,11 @@ here, dated, with its reason and the runs or numbers it touches. None at registr
     counted result changes, the facts are new keys.
     Touches: `e1.C1.*`, `e1.C2.*`, `e1.C3.*` of the door arms (V, B, K, E), H2, H3 and H4 through
     them, and the new `e1.C2.door_arms.stop_decisions_match_detector_on_*` keys.
+
+## E2 (tag `prereg-e2`), after its counted runs: none
+
+E2's 220 counted runs ran on 2026-10-15 from 17:08:48 to 18:47:09 +0200, in the registered order,
+4 at a time, all on Claude Code 2.1.300 with `claude-opus-5-5` reported by every run, trimwrit
+`0ab0b33` and the pinned hooks; none was voided, none hit the wall cap, and the model-quota door
+stayed open throughout. The analysis is the registered one (`analysis/table14_e2.py`). No E2
+deviation to declare; one that appears later is numbered from 19 under this heading.
