@@ -156,8 +156,8 @@ not given.
   (`<key>.draws_from_zero_cases`). Exploratory checks that do not use the bootstrap: the Student t
   interval over the per-case values (`.t95`, and `.t95.clipped` cut at the statistic's range), the
   sign count over cases (`.n_cases_positive`), the smallest level an exact sign test over 4 or 5
-  cases can reach (`small_sample.exact_sign_test.<n>_cases`: 1 of 16 and 1 of 32, so with 4 cases
-  no exact test over cases reaches the 2.5 percent of one tail), and the Wilson bound of a zero
+  cases can reach (`small_sample.exact_sign_test.<n>_cases`: 1 of 16 and 1 of 32, so with 4 or 5
+  cases no exact test over cases reaches the 2.5 percent of one tail), and the Wilson bound of a zero
   (`small_sample.wilson.*`). They decide nothing; the registered criteria do.
 
 ## Who produced each label and each grader
