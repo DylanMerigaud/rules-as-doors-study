@@ -16,6 +16,7 @@ def test_supplements_on_the_published_files(tmp_path):
     manifest = json.loads((out / "manifest.json").read_text())
     assert "E1 supplement (review round 1)" in manifest["ran"]
     assert "field supplement (review round 1)" in manifest["ran"]
+    assert "round 3 supplement (review round 3)" in manifest["ran"]
     n = json.loads((out / "numbers.json").read_text())
     published = json.loads((ROOT / "results" / "numbers.json").read_text())
     assert n == published

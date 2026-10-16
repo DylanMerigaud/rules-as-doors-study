@@ -4,7 +4,8 @@ readings; none decides a hypothesis and no earlier key changes. Every value come
 files.
 
 1. E1 under its graders as first committed (`e1/graders_first_committed.py`, verbatim from commit
-   3bd3559, before the pilot): every counted run graded again from `e1/runs.jsonl`, the cells and
+   3bd3559, committed 18:24 +0200, after the first pilot batches started at 18:19 and before the
+   redesigned situations ran from 18:26): every counted run graded again from `e1/runs.jsonl`, the cells and
    H1 to H5 judged by the registered code (`table12_e1.judge`).
 2. The 30 E1 pilot runs (`e1/pilot_runs.csv`): per situation, V as recorded at run time, under the
    first committed graders and under the counted graders.
@@ -53,6 +54,10 @@ TWO_STAGE = ("two-stage bootstrap, 95% percentile: cases resampled with replacem
              "10,000 resamples")
 BOOT = "cluster bootstrap over cases, 95% percentile"
 EXPLO = "exploratory, decides nothing"
+
+
+FIRST_COMMIT_WHEN = ("committed 18:24 +0200, after the first pilot batches started at 18:19 "
+                     "and before the redesigned situations ran from 18:26")
 
 
 def _load_module(path, name):
@@ -323,7 +328,7 @@ def first_graders_section(ctx, reg, design, e1_rows):
     ok = list(cases)
     hyp = t12.judge(cells, ok)
     note = ("exploratory: E1's counted runs graded with the graders as first committed (3bd3559, "
-            "before the pilot; e1/graders_first_committed.py); the counted graders decide")
+            "%s; e1/graders_first_committed.py); the counted graders decide" % FIRST_COMMIT_WHEN)
     for (c, a), s in cells.items():
         if not s["n"]:
             continue

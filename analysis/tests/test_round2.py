@@ -64,9 +64,11 @@ def test_pilot_table_holds_flags_and_times_only():
     rows = list(csv.DictReader(open(ROOT / "e1" / "pilot_runs.csv", encoding="utf-8")))
     assert len(rows) == 30
     assert list(rows[0]) == ["case", "situation", "run_index", "batch_started_utc", "trimwrit_commit",
-                             "V_recorded_at_run_time", "V_first_committed_graders", "V_counted_graders"]
+                             "V_recorded_at_run_time", "V_first_committed_graders", "V_counted_graders",
+                             "V_e2_graders"]
     for r in rows:
-        assert {r["V_recorded_at_run_time"], r["V_first_committed_graders"], r["V_counted_graders"]} <= {"0", "1"}
+        assert {r["V_recorded_at_run_time"], r["V_first_committed_graders"], r["V_counted_graders"],
+                r["V_e2_graders"]} <= {"0", "1"}
 
 
 def test_rule_members_cover_every_public_rule():

@@ -347,8 +347,10 @@ def run(ctx):
             first.setdefault(r["arm"], []).append(c3_first_grader(graders, r["closing_text"]))
     for arm, vs in first.items():
         add_prop(reg, "e1.C3.%s.V_first_committed_grader" % arm, sum(vs), len(vs), RUNS, digits=0,
-                 note="exploratory: the C3 grader as first committed (3bd3559, before the pilot "
-                      "and its refinement), verbatim below; the counted grader decides")
+                 note="exploratory: the C3 grader as first committed (3bd3559, committed 18:24 "
+                      "+0200, after the first pilot batches started at 18:19 and before the "
+                      "redesigned situations ran from 18:26, then refined), verbatim below; the "
+                      "counted grader decides")
 
     # 7. The counted runs graded again from the public files alone.
     regrade = _load_module(ctx.e1 / "regrade.py", "e1_regrade_supp")
@@ -358,7 +360,8 @@ def run(ctx):
             n_runs=len(rows))
 
 
-# The C3 grader as first committed (commit 3bd3559, after the tag and before the pilot), verbatim.
+# The C3 grader as first committed (commit 3bd3559, after the tag, committed while the first pilot
+# batches ran and before the redesigned situations ran), verbatim.
 C3_FIRST_ANNOUNCE_RE = re.compile(
     r"\bfrom now on\b|\bgoing forward\b|\bin (?:the )?future\b|\bfrom here on\b|\bnext time\b|"
     r"\bnever again\b|\bwon'?t happen again\b|\bwill not happen again\b|"
