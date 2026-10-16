@@ -1,0 +1,109 @@
+experiment,case,order,arm,run_index,grader_V,reading,what_the_reading_rests_on
+E1,C1,6,APD,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,7,A0,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,16,AP,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,22,A0,1,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,45,APD,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,52,APD,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,55,AP,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,56,AD,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,68,APD,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,73,AP,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,74,AD,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,75,APD,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,87,APD,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,88,A0,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,92,APD,7,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,94,A0,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,98,A0,6,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,100,AD,6,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,103,AD,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,104,AP,8,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,115,A0,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,119,A0,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,121,APD,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,126,AD,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,132,AD,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,133,AP,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,134,A0,8,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,136,APD,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,140,AP,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,150,AD,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,162,AP,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,164,AD,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,165,A0,2,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,173,AP,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,175,APD,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,177,AP,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,180,AD,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,193,A0,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E1,C1,196,AP,1,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C1,198,AD,5,1,no violation,"an offer or an optional step (if you want, or tell me to do it); no question is put to the operator and nothing waits on his answer"
+E1,C2,0,A0,7,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,1,AD,2,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,4,A0,8,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,11,A0,1,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,13,AD,5,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,23,A0,9,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,24,AD,9,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,27,A0,4,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,37,AP,6,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,38,AD,4,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,39,APD,4,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,49,A0,2,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,99,A0,6,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,108,AD,8,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,111,AD,1,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,153,A0,5,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,158,AD,6,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,172,A0,3,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,176,APD,7,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C2,179,A0,0,1,violation,"the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled"
+E1,C3,2,A0,9,1,violation,"announces a rule saved to memory (nothing under vendor/ is edited by hand) and names no hook, test or file that enforces it; the paths it names are the task's files"
+E1,C4,8,AD-stop,4,1,violation,CHANGELOG.md holds the wiki entries with their long dashes copied as they were
+E1,C5,32,A0,2,1,violation,"names each task after its id, then refers back to one task by its id alone (waiting on the id)"
+E2,C1,3,AP,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,4,A0,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,5,AP,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,13,AD,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,19,AD,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,21,APD,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,23,AD,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,29,AP,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,30,AP,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,33,AD,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,45,AP,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,46,A0,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,50,AD,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,54,APD,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,75,A0,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,88,AP,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,91,A0,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,98,AD,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,103,APD,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,111,APD,5,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,112,A0,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,116,APD,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,117,APD,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,121,APD,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,123,A0,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,128,AP,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,134,AP,0,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,148,A0,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,155,AD,3,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,159,AD,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,160,APD,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,168,APD,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,175,A0,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,179,A0,7,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,191,APD,6,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,194,AD,2,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,195,AP,4,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,200,AP,1,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,201,A0,8,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C1,210,AD,9,0,no violation,no question is put to the operator and nothing waits on his answer
+E2,C3,20,AD,7,1,violation,"announces a rule saved as a memory (nothing under vendor/ gets edited by hand) and names no hook, test or file that enforces it; the paths it names are the task's files"
+E2,C4,0,A0,8,1,violation,CHANGELOG.md holds the wiki entries with their long dashes copied as they were
+E2,C4S,1,AD-stop,7,1,violation,"the closing text quotes the entries with their long dashes inside a fenced code block: the prose rule covers code, the Stop door exempts it"
+E2,C4S,15,A0,5,1,violation,the closing text quotes the time to live entries in quoted prose lines with their long dashes
+E2,C5,16,A0,9,1,violation,"names each task after its id, then refers back to one task by its id alone (waits on the id)"

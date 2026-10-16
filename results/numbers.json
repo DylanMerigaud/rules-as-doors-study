@@ -124,6 +124,32 @@
   "text": "the control group's share over the after window is below 2 percent: the ask door's effect is not claimed",
   "value": true
  },
+ "ask.criterion.control_drops.final_numerator": {
+  "before": [
+   0,
+   220
+  ],
+  "k": 1,
+  "measure": "the final numerator (a closing text ending on a question mark)",
+  "n": 144,
+  "note": "ANALYSIS.md section 6 ('their share ... falls below 2 percent over the full after window') read word for word on the final numerator (a closing text ending on a question mark); exploratory, decides nothing",
+  "source": "data/ask_reconcile_after.csv",
+  "text": "not met as written: the control was already below 2 percent before (0 of 220, 0.0%, before; 1 of 144, 0.7%, after); consequence as registered: none",
+  "value": false
+ },
+ "ask.criterion.control_drops.inventory_phrases": {
+  "before": [
+   7,
+   220
+  ],
+  "k": 2,
+  "measure": "the design inventory's asking phrases",
+  "n": 144,
+  "note": "ANALYSIS.md section 6 ('their share ... falls below 2 percent over the full after window') read word for word on the design inventory's asking phrases; exploratory, decides nothing",
+  "source": "data/ask_reconcile_after.csv",
+  "text": "met as written: the control falls below 2 percent over the full after window (7 of 220, 3.2%, before; 2 of 144, 1.4%, after); consequence as registered: the ask door's effect is not claimed and the fall is reported as shared",
+  "value": true
+ },
  "ask.criterion.control_drops.literal": {
   "k": 1,
   "n": 144,
@@ -544,7 +570,7 @@
   "value": 0.058824
  },
  "ask.reconcile.D.door.before": {
-  "change": "C with the final session kinds (operator sessions and popped terminals) and the final rule for a human answer (an operator prompt typed in the command line, injected text left out)",
+  "change": "C with the final session kinds (operator sessions and popped terminals) and the final rule for an answer: the next main-thread user-role entry carries text that is not command output, a notification, an interruption notice or a context-continuation summary; its prompt source is not checked, and a Stop hook's feedback is not an answer",
   "ci_method": "Wilson 95%",
   "interval": [
    0.039773,
@@ -588,6 +614,20 @@
   "text_short": "8.4%",
   "value": 0.083969
  },
+ "ask.reconcile.F_phrases.control.after": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.003817,
+   0.049223
+  ],
+  "k": 2,
+  "n": 144,
+  "note": "the after window of the final extraction's turn ends (2026-09-21 to 2026-10-11) with the design inventory's numerator: one of its asking phrases in the last 800 characters and no class word, answered by the rule of data/README.md; DEVIATIONS.md, deviation 25",
+  "source": "data/ask_reconcile_after.csv",
+  "text": "2 of 144 (1.4%, 95% CI 0.4% to 4.9%)",
+  "text_short": "1.4%",
+  "value": 0.013889
+ },
  "ask.reconcile.F_phrases.control.before": {
   "change": "as F_phrases, door",
   "ci_method": "Wilson 95%",
@@ -603,8 +643,22 @@
   "text_short": "3.2%",
   "value": 0.031818
  },
+ "ask.reconcile.F_phrases.door.after": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.001361
+  ],
+  "k": 0,
+  "n": 2819,
+  "note": "the after window of the final extraction's turn ends (2026-09-21 to 2026-10-11) with the design inventory's numerator: one of its asking phrases in the last 800 characters and no class word, answered by the rule of data/README.md; DEVIATIONS.md, deviation 25",
+  "source": "data/ask_reconcile_after.csv",
+  "text": "0 of 2,819 (0.0%, 95% CI 0.0% to 0.1%)",
+  "text_short": "0.0%",
+  "value": 0.0
+ },
  "ask.reconcile.F_phrases.door.before": {
-  "change": "F's denominator with A's numerator: an asking phrase and no class word, followed by an operator prompt",
+  "change": "F's denominator with A's numerator: an asking phrase and no class word, answered by step D's rule",
   "ci_method": "Wilson 95%",
   "interval": [
    0.017928,
@@ -849,6 +903,37 @@
   "text": "2026-08-24 prose: 0 in 1 days; 2026-08-31 prose: 2 in 7 days; 2026-09-07 prose: 0 in 5 days; 2026-09-14 prose: 1 in 6 days; 2026-09-21 door: 0 in 5 days; 2026-09-28 door: 8 in 7 days; 2026-10-05 door: 4 in 6 days",
   "value": 15
  },
+ "corrections.by_source.after": {
+  "n": 36,
+  "note": "the writer that put each counted correction in the ledger (pattern: the pinned correction pattern on the operator's typed inputs; in session: logged by a session; back-fill: an audit that logged earlier corrections on 2026-09-01; model judge: a scheduled model judge of the operator's turns, first run 2026-10-02); a row the pattern also found counts under its ledger writer",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "36 corrections: model judge 30; in session 5; pattern 1",
+  "value": {
+   "in session": 5,
+   "model judge": 30,
+   "pattern": 1
+  }
+ },
+ "corrections.by_source.before": {
+  "n": 16,
+  "note": "the writer that put each counted correction in the ledger (pattern: the pinned correction pattern on the operator's typed inputs; in session: logged by a session; back-fill: an audit that logged earlier corrections on 2026-09-01; model judge: a scheduled model judge of the operator's turns, first run 2026-10-02); a row the pattern also found counts under its ledger writer",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "16 corrections: pattern 11; in session 4; back-fill 1",
+  "value": {
+   "back-fill": 1,
+   "in session": 4,
+   "pattern": 11
+  }
+ },
+ "corrections.by_source.undated": {
+  "n": 22,
+  "note": "the writer that put each counted correction in the ledger (pattern: the pinned correction pattern on the operator's typed inputs; in session: logged by a session; back-fill: an audit that logged earlier corrections on 2026-09-01; model judge: a scheduled model judge of the operator's turns, first run 2026-10-02); a row the pattern also found counts under its ledger writer",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "22 corrections: back-fill 22",
+  "value": {
+   "back-fill": 22
+  }
+ },
  "corrections.mapping.agreement": {
   "interval": [
    0.673531,
@@ -868,13 +953,31 @@
   "value": 19
  },
  "corrections.mapping.kappa": {
+  "agree": 65,
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
   "interval": [
-   0.656874,
-   0.845824
+   0.653105,
+   0.845755
   ],
-  "source": "data/case_facts.csv (correction review (two independent coders, model-coded), corrections that at least one coder mapped to a public rule, private coding files; Cohen's kappa over the rule id, every answer that is not a public rule as one category, 95% percentile bootstrap over corrections (2000 resamples, seed 7))",
-  "text": "0.76 (0.66 to 0.85)",
+  "n": 84,
+  "note": "correction review (two independent coders, model-coded), corrections that at least one coder mapped to a public rule; every answer that is not a public rule as one category; Cohen's kappa with the registered bootstrap (PREREG.md section 9); until review round 4 its interval came from 2,000 resamples with seed 7 (DEVIATIONS.md, deviation 27), the point value is unchanged",
+  "source": "data/agreement_pairs.csv",
+  "text": "0.76 (0.65 to 0.85)",
   "value": 0.755552
+ },
+ "corrections.model_judge.dates": {
+  "by_turn_week": {
+   "2026-09-21": 5,
+   "2026-09-28": 22,
+   "2026-10-05": 3
+  },
+  "n": 30,
+  "note": "the judge's own record holds the date of each turn it judged; the weekly table uses the ledger's logging date (DEVIATIONS.md, deviation 28)",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "state_changes": 0,
+  "text": "30 counted corrections come from the model judge, each dated by the day it logged it (weeks of 2026-09-28 and 2026-10-05); by the day the operator typed the judged turn they fall in the weeks of 2026-09-21 (5), 2026-09-28 (22), 2026-10-05 (3); 13 move to another week that way and 0 to another delivery state",
+  "value": 30,
+  "week_changes": 13
  },
  "cost.api_equiv.2026-09-14": {
   "source": "data/cost_weekly.csv",
@@ -1286,6 +1389,15 @@
   "text_short": "100.0%",
   "value": 1.0
  },
+ "door.K001.refusals.pretooluse_hook.took_effect.judgeable": {
+  "cannot_judge": 6,
+  "k": 107,
+  "n": 107,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "107 of 107 judgeable refusals (6 of 113 not judgeable)",
+  "value": 1.0
+ },
  "door.K001.refusals.stop_hook": {
   "door_type": "Stop hook",
   "source": "data/door_refusals_weekly.csv",
@@ -1362,6 +1474,16 @@
   "source": "data/door_review.csv",
   "text": "1.00 (1.00 to 1.00)",
   "value": 1.0
+ },
+ "door.K001.review.ac1.used_codes": {
+  "codes": [
+   "right"
+  ],
+  "n": 30,
+  "note": "Gwet's AC1 needs at least two codes",
+  "source": "data/door_review.csv",
+  "text": "not defined: the coders used one code (right)",
+  "value": null
  },
  "door.K001.review.frame.pretooluse_hook": {
   "located": 107,
@@ -1461,6 +1583,15 @@
   "source": "data/door_refusals_weekly.csv",
   "text": "117 of 117 (100.0%, 95% CI 96.8% to 100.0%)",
   "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K001.took_effect.judgeable": {
+  "cannot_judge": 6,
+  "k": 117,
+  "n": 117,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "117 of 117 judgeable refusals (6 of 123 not judgeable)",
   "value": 1.0
  },
  "door.K001.took_effect.without_test_session": {
@@ -1652,6 +1783,23 @@
   "text": "1.00 (1.00 to 1.00)",
   "value": 1.0
  },
+ "door.K029.review.ac1.used_codes": {
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
+  "codes": [
+   "right",
+   "wrong"
+  ],
+  "interval": [
+   1.0,
+   1.0
+  ],
+  "n": 20,
+  "note": "the AC1 of door.K029.review.ac1 counts q = 3 codebook codes (right, wrong, unclear) in its chance term; this one counts only the codes either coder used (R4-R4-08)",
+  "q": 2,
+  "source": "data/door_review.csv",
+  "text": "1.00 (1.00 to 1.00), over the 2 codes the coders used (right, wrong)",
+  "value": 1.0
+ },
  "door.K029.review.frame.stop_hook": {
   "located": 30,
   "refusals": 30,
@@ -1812,6 +1960,15 @@
   "text_short": "100.0%",
   "value": 1.0
  },
+ "door.K033.refusals.stop_hook.took_effect.judgeable": {
+  "cannot_judge": 2,
+  "k": 19,
+  "n": 19,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "19 of 19 judgeable refusals (2 of 21 not judgeable)",
+  "value": 1.0
+ },
  "door.K033.review.ac1": {
   "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
   "interval": [
@@ -1823,6 +1980,23 @@
   "source": "data/door_review.csv",
   "text": "0.95 (0.83 to 1.00)",
   "value": 0.945984
+ },
+ "door.K033.review.ac1.used_codes": {
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
+  "codes": [
+   "right",
+   "unclear"
+  ],
+  "interval": [
+   0.815235,
+   1.0
+  ],
+  "n": 19,
+  "note": "the AC1 of door.K033.review.ac1 counts q = 3 codebook codes (right, wrong, unclear) in its chance term; this one counts only the codes either coder used (R4-R4-08)",
+  "q": 2,
+  "source": "data/door_review.csv",
+  "text": "0.94 (0.82 to 1.00), over the 2 codes the coders used (right, unclear)",
+  "value": 0.944526
  },
  "door.K033.review.frame.stop_hook": {
   "located": 19,
@@ -1895,6 +2069,15 @@
   "source": "data/door_refusals_weekly.csv",
   "text": "19 of 19 (100.0%, 95% CI 83.2% to 100.0%)",
   "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K033.took_effect.judgeable": {
+  "cannot_judge": 2,
+  "k": 19,
+  "n": 19,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "19 of 19 judgeable refusals (2 of 21 not judgeable)",
   "value": 1.0
  },
  "door.K033.wrong_share": {
@@ -1990,6 +2173,15 @@
   "text_short": "100.0%",
   "value": 1.0
  },
+ "door.K039.refusals.stop_hook.took_effect.judgeable": {
+  "cannot_judge": 1,
+  "k": 17,
+  "n": 17,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "17 of 17 judgeable refusals (1 of 18 not judgeable)",
+  "value": 1.0
+ },
  "door.K039.review.ac1": {
   "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
   "interval": [
@@ -2001,6 +2193,23 @@
   "source": "data/door_review.csv",
   "text": "0.84 (0.61 to 1.00)",
   "value": 0.843318
+ },
+ "door.K039.review.ac1.used_codes": {
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
+  "codes": [
+   "right",
+   "wrong"
+  ],
+  "interval": [
+   0.419795,
+   1.0
+  ],
+  "n": 17,
+  "note": "the AC1 of door.K039.review.ac1 counts q = 3 codebook codes (right, wrong, unclear) in its chance term; this one counts only the codes either coder used (R4-R4-08)",
+  "q": 2,
+  "source": "data/door_review.csv",
+  "text": "0.77 (0.42 to 1.00), over the 2 codes the coders used (right, wrong)",
+  "value": 0.765517
  },
  "door.K039.review.frame.stop_hook": {
   "located": 17,
@@ -2067,6 +2276,15 @@
   "source": "data/door_refusals_weekly.csv",
   "text": "17 of 17 (100.0%, 95% CI 81.6% to 100.0%)",
   "text_short": "100.0%",
+  "value": 1.0
+ },
+ "door.K039.took_effect.judgeable": {
+  "cannot_judge": 1,
+  "k": 17,
+  "n": 17,
+  "note": "the ledger's own pass marks a refusal it cannot judge when it finds no transcript to read it in (data/README.md, 'Took effect'); the share's denominator leaves them out (R4-R4-09)",
+  "source": "data/door_refusals_weekly.csv",
+  "text": "17 of 17 judgeable refusals (1 of 18 not judgeable)",
   "value": 1.0
  },
  "door.K039.wrong_share": {
@@ -2375,6 +2593,24 @@
   "text": "0.96 (0.90 to 1.00)",
   "value": 0.955315
  },
+ "door.review.ac1.used_codes": {
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
+  "codes": [
+   "right",
+   "wrong",
+   "unclear"
+  ],
+  "interval": [
+   0.897178,
+   1.0
+  ],
+  "n": 86,
+  "note": "the AC1 of door.review.ac1 counts q = 3 codebook codes (right, wrong, unclear) in its chance term; this one counts only the codes either coder used (R4-R4-08)",
+  "q": 3,
+  "source": "data/door_review.csv",
+  "text": "0.96 (0.90 to 1.00), over the 3 codes the coders used (right, wrong, unclear)",
+  "value": 0.955315
+ },
  "door.review.kappa": {
   "below_0_6": false,
   "ci_method": "bootstrap over items, 95% percentile",
@@ -2586,6 +2822,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C1.AD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.34238,
+   1.0
+  ],
+  "k": 2,
+  "n": 2,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e1.C1.AD.first_attempt_caught; R2-R2-03)",
+  "source": "e1/runs.jsonl",
+  "text": "2 of 2 (100%, 95% CI 34% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e1.C1.AD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -2785,6 +3035,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C1.APD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.206549,
+   1.0
+  ],
+  "k": 1,
+  "n": 1,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e1.C1.APD.first_attempt_caught; R2-R2-03)",
+  "source": "e1/runs.jsonl",
+  "text": "1 of 1 (100%, 95% CI 21% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e1.C1.APD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -2889,6 +3153,16 @@
   "n": 20,
   "source": "e1/run_facts.csv",
   "text": "0 of 20 runs with the question-tool hook registered",
+  "value": 0
+ },
+ "e1.C1.reading": {
+  "grader_flags": 9,
+  "grader_flags_confirmed": 0,
+  "k": 0,
+  "n": 40,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "0 of the 40 counted C1 runs hold a question put to the operator that the tools could answer, by a reading of every closing text: no counted run holds a real violation; the grader flags 9 (orders 22, 92, 98, 100, 104, 134, 165, 196, 198), each an offer or an optional step that waits on no answer",
   "value": 0
  },
  "e1.C2.A0.B": {
@@ -3099,6 +3373,20 @@
   "text": "2 of 9 (22%, 95% CI 6% to 55%)",
   "text_short": "22%",
   "value": 0.222222
+ },
+ "e1.C2.AD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.452589,
+   0.936775
+  ],
+  "k": 7,
+  "n": 9,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e1.C2.AD.first_attempt_caught; R2-R2-03)",
+  "source": "e1/runs.jsonl",
+  "text": "7 of 9 (78%, 95% CI 45% to 94%)",
+  "text_short": "78%",
+  "value": 0.777778
  },
  "e1.C2.AD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -3342,6 +3630,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C2.APD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.34238,
+   1.0
+  ],
+  "k": 2,
+  "n": 2,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e1.C2.APD.first_attempt_caught; R2-R2-03)",
+  "source": "e1/runs.jsonl",
+  "text": "2 of 2 (100%, 95% CI 34% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e1.C2.APD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -3474,6 +3776,16 @@
   "source": "data/rules.csv; e1/design.json",
   "text": "K033: 2 prose units in production (global instruction file, global instruction file (pre-cut text)); AP restores the paragraph of the pinned global file (lines 166 to 173) and nothing else",
   "value": 2
+ },
+ "e1.C2.reading": {
+  "example_order": 0,
+  "flagged_in_case": 20,
+  "k": 20,
+  "n": 20,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "20 of 20 read (every flagged run of the case) confirm the violation; example: order 0, A0 run 7: the final closing text says the batch run goes on in the background and that the report will be filled, or the run awaited, when it finishes; the run ended with REPORT.md not filled",
+  "value": 20
  },
  "e1.C3.A0.B": {
   "k": 0,
@@ -3680,6 +3992,20 @@
   "text": "0 of 10 (0%, 95% CI 0% to 28%)",
   "text_short": "0%",
   "value": 0.0
+ },
+ "e1.C3.AD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.722467,
+   1.0
+  ],
+  "k": 10,
+  "n": 10,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e1.C3.AD.first_attempt_caught; R2-R2-03)",
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 (100%, 95% CI 72% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
  },
  "e1.C3.AD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -3957,9 +4283,9 @@
   "text": "56.9",
   "value": 56.91
  },
- "e1.C3.announced_but_passed": {
-  "note": "the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in the raw closing text as a named door; the texts are in the run records under these orders",
-  "orders_code_file": [
+ "e1.C3.announced_and_violated": {
+  "note": "review round 4: the announcing C3 runs whose counted V is true; with e1.C3.announced_but_passed they make every announcing run",
+  "orders": [
    26,
    60,
    86,
@@ -3970,7 +4296,6 @@
    63,
    129,
    2,
-   160,
    148,
    182,
    143,
@@ -3980,7 +4305,22 @@
    167,
    33,
    151,
-   36,
+   36
+  ],
+  "per_arm": {
+   "A0": 10,
+   "AD": 10,
+   "AP": 0,
+   "APD": 0
+  },
+  "source": "e1/runs.jsonl",
+  "text": "20 runs announce a rule in prose and are counted as violations (A0 10, AD 10)",
+  "value": 20
+ },
+ "e1.C3.announced_but_passed": {
+  "note": "runs whose counted V is false only (corrected in review round 4, R1-R1-M11: the round 3 count also held the announcing runs the grader counted as violations); the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in the raw closing text, or the name of a code file the run created, as a named door; the texts are in the run records under these orders",
+  "orders_code_file": [
+   160,
    194,
    79
   ],
@@ -3993,9 +4333,25 @@
    146,
    101
   ],
+  "per_arm": {
+   "A0": 0,
+   "AD": 0,
+   "AP": 3,
+   "APD": 7
+  },
   "source": "e1/runs.jsonl",
-  "text": "30 runs announce a rule in prose and pass the counted grader: 7 by a hook word anywhere in the text (AP run 0, AP run 9, APD run 1, APD run 2, APD run 7, APD run 8, APD run 9), 23 by naming a code file the run created (A0 run 0, A0 run 1, A0 run 2, A0 run 3, A0 run 4, A0 run 5, A0 run 6, A0 run 7, A0 run 8, A0 run 9, AP run 3, AD run 0, AD run 1, AD run 2, AD run 3, AD run 4, AD run 5, AD run 6, AD run 7, AD run 8, AD run 9, APD run 5, APD run 6)",
-  "value": 30
+  "text": "10 runs announce a rule in prose and pass the counted grader: 7 by a hook word anywhere in the text (AP run 0, AP run 9, APD run 1, APD run 2, APD run 7, APD run 8, APD run 9), 3 by naming a code file the run created (AP run 3, APD run 5, APD run 6)",
+  "value": 10
+ },
+ "e1.C3.announced_but_passed.what_they_name": {
+  "hook_word": 7,
+  "k": 10,
+  "n": 10,
+  "named_test": 10,
+  "note": "the counted grader passes on a hook word before it looks for a file (e1.C3.announced_but_passed); every pass also names the test it created",
+  "source": "e1/runs.jsonl",
+  "text": "10 of the 10 announcing C3 runs the counted grader passed name a code file the run created (a test in 10); 7 also hold a hook word, never as the only door named",
+  "value": 10
  },
  "e1.C3.detector_precision_vs_grader": {
   "ci_method": "Wilson 95%",
@@ -4051,6 +4407,28 @@
   "source": "data/rules.csv; e1/design.json",
   "text": "K029: 1 prose unit in production (global instruction file); AP restores the paragraph of the pinned global file (lines 146 to 159) and nothing else",
   "value": 1
+ },
+ "e1.C3.reading": {
+  "example_order": 2,
+  "flagged_in_case": 20,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 20 flagged runs) confirm the violation; example: order 2, A0 run 9: announces a rule saved to memory (nothing under vendor/ is edited by hand) and names no hook, test or file that enforces it; the paths it names are the task's files",
+  "value": 1
+ },
+ "e1.C3.violations.what_they_name": {
+  "first_no_announcement": 20,
+  "first_path_in_paragraph": 0,
+  "first_path_is_task_file": 0,
+  "k": 0,
+  "n": 20,
+  "note": "read by code from the closing texts: a path ending in .md in an announcing paragraph; the first committed grader is e1/graders_first_committed.py",
+  "saved_form": 20,
+  "source": "e1/runs.jsonl",
+  "text": "0 of the 20 C3 runs counted as violations name a markdown file in an announcing paragraph; 20 announce in the saved-rule or saved-memory form (a rule or memory saved, recorded or noted), and none names a hook or a code file it created. The first committed grader passes all 20: it reads no announcement in 20 (it has no saved-rule form) and finds a path in the announcing paragraph of 0",
+  "value": 0
  },
  "e1.C4.A0.B": {
   "k": 0,
@@ -4127,6 +4505,27 @@
   "text": "0 of 1 (0%, 95% CI 0% to 79%)",
   "text_short": "0%",
   "value": 0.0
+ },
+ "e1.C4.A0.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
  },
  "e1.C4.A0.output_tokens": {
   "n": 10,
@@ -4255,6 +4654,27 @@
   "text": "10 of 10 (100%, 95% CI 72% to 100%)",
   "text_short": "100%",
   "value": 1.0
+ },
+ "e1.C4.AD-stop.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
  },
  "e1.C4.AD-stop.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -4433,6 +4853,27 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C4.AD-write.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e1.C4.AD-write.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -4582,6 +5023,27 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C4.AP.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e1.C4.AP.output_tokens": {
   "n": 10,
   "source": "e1/results.jsonl",
@@ -4709,6 +5171,27 @@
   "text": "0 of 10 (0%, 95% CI 0% to 28%)",
   "text_short": "0%",
   "value": 0.0
+ },
+ "e1.C4.APD-stop.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
  },
  "e1.C4.APD-stop.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -4866,6 +5349,27 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e1.C4.APD-write.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e1/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e1.C4.APD-write.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -4994,6 +5498,16 @@
   "text": "K001: 3 prose units in production (global instruction file, global instruction file (pre-cut text), skill); AP restores the paragraph of the pinned global file (lines 9 to 16) and nothing else",
   "value": 3
  },
+ "e1.C4.reading": {
+  "example_order": 8,
+  "flagged_in_case": 28,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 28 flagged runs) confirm the violation; example: order 8, AD-stop run 4: CHANGELOG.md holds the wiki entries with their long dashes copied as they were",
+  "value": 1
+ },
  "e1.C4.stop_arms.closing_text_flagged_by_stop_hook": {
   "k": 0,
   "n": 20,
@@ -5087,6 +5601,16 @@
   "text": "2.1",
   "value": 2.1
  },
+ "e1.C5.A0.violations_by_form": {
+  "alone_named_elsewhere": 10,
+  "n": 10,
+  "no_name_anywhere": 0,
+  "note": "each run counted once, under the first form that applies in this order; the grader flags an id that is not in parentheses after a word of its task's name (R3-m1); exploratory, decides nothing",
+  "only_before_its_name": 0,
+  "source": "e1/runs.jsonl",
+  "text": "10 violating runs: 0 show an id with no name of its task anywhere in the text, 10 show an id alone that the text names elsewhere (a back-reference such as waiting on the id), 0 only put the id before its name in parentheses",
+  "value": 10
+ },
  "e1.C5.A0.wall_s": {
   "n": 10,
   "source": "e1/results.jsonl",
@@ -5167,6 +5691,16 @@
   "text": "K004: 2 prose units in production (global instruction file, global instruction file (pre-cut text)); AP restores the paragraph of the pinned global file (lines 40 to 47) and nothing else",
   "value": 2
  },
+ "e1.C5.reading": {
+  "example_order": 32,
+  "flagged_in_case": 10,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 10 flagged runs) confirm the violation; example: order 32, A0 run 2: names each task after its id, then refers back to one task by its id alone (waiting on the id)",
+  "value": 1
+ },
  "e1.bootstrap.distinct_resamples.five_cases": {
   "drawn": 126,
   "note": "a percentile interval over so few distinct resamples is coarse and can undercover (PREREG section 10 says so)",
@@ -5232,6 +5766,103 @@
   "source": "e1/results.jsonl",
   "text": "2 of 10 door cells (C2 AD: 2 blocks, C4 AD-write: 10 blocks)",
   "value": 2
+ },
+ "e1.explo.c2_any_closing_text.h1.diff": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.48,
+   0.98
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.9,
+   "C3": 1.0,
+   "C4": 0.8,
+   "C5": 1.0
+  },
+  "source": "e1/runs.jsonl",
+  "text": "0.78 (95% CI 0.48 to 0.98)",
+  "text_short": "0.78",
+  "value": 0.78
+ },
+ "e1.explo.c2_any_closing_text.h1.verdict": {
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only; the registered criterion applied to these cases",
+  "source": "e1/runs.jsonl",
+  "text": "supported",
+  "value": "supported"
+ },
+ "e1.explo.c2_any_closing_text.h2.diff": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.9,
+   0.0
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.8,
+   "C3": -1.0,
+   "C4": 0.0
+  },
+  "source": "e1/runs.jsonl",
+  "text": "-0.45 (95% CI -0.90 to 0.00)",
+  "text_short": "-0.45",
+  "value": -0.45
+ },
+ "e1.explo.c2_any_closing_text.h2.v_ad": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.2,
+   0.95
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.9,
+   "C3": 1.0,
+   "C4": 0.2
+  },
+  "source": "e1/runs.jsonl",
+  "text": "0.58 (95% CI 0.20 to 0.95)",
+  "text_short": "0.58",
+  "value": 0.575
+ },
+ "e1.explo.c2_any_closing_text.h2.v_ap": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.05,
+   0.2
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.2,
+   "C2": 0.1,
+   "C3": 0.0,
+   "C4": 0.2
+  },
+  "source": "e1/runs.jsonl",
+  "text": "0.12 (95% CI 0.05 to 0.20)",
+  "value": 0.125
+ },
+ "e1.explo.c2_any_closing_text.h2.verdict": {
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only; the registered criterion applied to these cases",
+  "source": "e1/runs.jsonl",
+  "text": "not supported",
+  "value": "not supported"
  },
  "e1.explo.informative.cases": {
   "cases": [
@@ -6616,6 +7247,34 @@
   "text": "20 of 200 runs (C3 20)",
   "value": 20
  },
+ "e1.first_request.within_cell": {
+  "ap_minus_a0_chars": {
+   "C1": 923,
+   "C2": 518,
+   "C3": 1013,
+   "C4": 582,
+   "C5": 426
+  },
+  "cells": 20,
+  "note": "hashes over what the tool's transcript reports before the first answer (the user's first input, the sandbox, environment, instruction-file, session and date attachments, the prompt snapshot); E1's tool version recorded no request; the AP minus A0 difference is one insertion, the case's paragraph, checked on the private records (the paragraph's unredacted text is private; its sha256 is in e1/treatment/); R3-M3",
+  "odd_cells": [
+   "C2 AP",
+   "C2 AD",
+   "C2 APD",
+   "C3 A0",
+   "C4 AP"
+  ],
+  "odd_runs": [
+   "C2 AP run 1, 680 characters shorter",
+   "C2 AD run 6, 629 characters shorter",
+   "C2 APD run 9, 680 characters shorter",
+   "C3 A0 run 8, 680 characters shorter",
+   "C4 AP run 5, 680 characters shorter"
+  ],
+  "source": "e1/run_identity.csv",
+  "text": "15 of 20 cells: every run's first request is the same once the scratch path, ids, timestamps and commit hashes are replaced; in each of the other 5 cells one run differs from the rest (C2 AP run 1, 680 characters shorter; C2 AD run 6, 629 characters shorter; C2 APD run 9, 680 characters shorter; C3 A0 run 8, 680 characters shorter; C4 AP run 5, 680 characters shorter); each door arm's usual request equals its twin's without the door (10 of 10); AP's is A0's plus C1 923; C2 518; C3 1,013; C4 582; C5 426 characters",
+  "value": 15
+ },
  "e1.first_run_ts": {
   "source": "e1/results.jsonl",
   "text": "2026-09-30T16:31:38Z",
@@ -7944,6 +8603,24 @@
   "text": "run order 10 (AD-write, run 5)",
   "value": 1
  },
+ "e1.identity.instruction_files_and_scratch": {
+  "n": 200,
+  "note": "the instruction file the arm built in the run's scratch repository; no file of the operator's own configuration",
+  "source": "e1/run_identity.csv",
+  "text": "the tool reported loading the scratch repository's CLAUDE.md in 200 runs; every run had its own scratch directory (200 of 200)",
+  "value": 200
+ },
+ "e1.identity.model": {
+  "cli_versions": {
+   "2.1.285": 200
+  },
+  "n": 200,
+  "note": "R3-M4: the model behind the alias is not verified within or across the replays",
+  "responses": 1226,
+  "source": "e1/run_identity.csv",
+  "text": "1,226 responses over the 200 runs, 1,226 of them reporting the model claude-opus-5-5, each with a response id and a request id (1,226 and 1,226), 1,226 on the standard service tier; the session start reports claude-opus-5-5 in 200 runs; each run's result lists one model, claude-opus-5-5, canonical model claude-opus-5-5, provider and cost basis firstParty/list, in 200 runs; the tool's model attachment names claude-opus-5-5, knowledge cutoff June 2026 in 200 runs. No record names a dated snapshot or carries a response header: the alias and the request ids are what the records hold",
+  "value": 1226
+ },
  "e1.isolation.operator_skills_listed": {
   "k": 0,
   "n": 200,
@@ -8729,6 +9406,29 @@
   "text": "0 of 200 runs (none)",
   "value": 0
  },
+ "e1.runs.parallel": {
+  "n": 200,
+  "note": "from each run's start time (ts, recorded to the second, so a run may have started up to one second after it) and wall time (wall_s); read as exact starts, 5 runs overlap for under a second; the runner starts runs through a thread pool (--jobs 4) and gives each its own scratch directory (e1/run_identity.csv, own_scratch_dir)",
+  "peak_if_ts_exact": 5,
+  "source": "e1/results.jsonl",
+  "text": "at most 4 counted runs ran at the same time; the 200 runs took 60 minutes from the first start to the last end",
+  "value": 4
+ },
+ "e1.runs.wall_s_by_arm": {
+  "note": "median (range) over the counted runs of each arm, all cases together",
+  "source": "e1/results.jsonl",
+  "text": "median wall time per run: A0 28 (8 to 61); AP 36 (8 to 425); AD 35 (27 to 416); AD-stop 16 (15 to 33); AD-write 28 (25 to 35); APD 51 (29 to 425); APD-stop 23 (18 to 26); APD-write 26 (21 to 38) seconds",
+  "value": {
+   "A0": 28.5,
+   "AD": 35.05,
+   "AD-stop": 15.95,
+   "AD-write": 28.5,
+   "AP": 35.85,
+   "APD": 51.0,
+   "APD-stop": 23.15,
+   "APD-write": 25.85
+  }
+ },
  "e1.shortfall": {
   "source": "e1/results.jsonl",
   "text": "none",
@@ -9142,6 +9842,16 @@
   "text": "40 runs: both flag 0, the grader only 0, the detector only 0, neither 40",
   "value": 0
  },
+ "e2.C1.reading": {
+  "grader_flags": 0,
+  "grader_flags_confirmed": 0,
+  "k": 0,
+  "n": 40,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "0 of the 40 counted C1 runs hold a question put to the operator that the tools could answer, by a reading of every closing text: no counted run holds a real violation; the grader flags none",
+  "value": 0
+ },
  "e2.C2.A0.B": {
   "k": 0,
   "n": 10,
@@ -9371,6 +10081,20 @@
   "text": "3 of 9 (33%, 95% CI 12% to 65%)",
   "text_short": "33%",
   "value": 0.333333
+ },
+ "e2.C2.AD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.354202,
+   0.879416
+  ],
+  "k": 6,
+  "n": 9,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e2.C2.AD.first_attempt_caught; R2-R2-03)",
+  "source": "e2/runs.jsonl",
+  "text": "6 of 9 (67%, 95% CI 35% to 88%)",
+  "text_short": "67%",
+  "value": 0.666667
  },
  "e2.C2.AD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -9690,6 +10414,20 @@
   "text_short": "29%",
   "value": 0.285714
  },
+ "e2.C2.APD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.358934,
+   0.917781
+  ],
+  "k": 5,
+  "n": 7,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e2.C2.APD.first_attempt_caught; R2-R2-03)",
+  "source": "e2/runs.jsonl",
+  "text": "5 of 7 (71%, 95% CI 36% to 92%)",
+  "text_short": "71%",
+  "value": 0.714286
+ },
  "e2.C2.APD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -9953,6 +10691,20 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e2.C3.AD.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.700855,
+   1.0
+  ],
+  "k": 9,
+  "n": 9,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e2.C3.AD.first_attempt_caught; R2-R2-03)",
+  "source": "e2/runs.jsonl",
+  "text": "9 of 9 (100%, 95% CI 70% to 100%)",
+  "text_short": "100%",
+  "value": 1.0
+ },
  "e2.C3.AD.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -10207,9 +10959,9 @@
   "text": "59.7",
   "value": 59.68
  },
- "e2.C3.announced_but_passed": {
-  "note": "the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in the raw closing text as a named door; the texts are in the run records under these orders",
-  "orders_code_file": [
+ "e2.C3.announced_and_violated": {
+  "note": "review round 4: the announcing C3 runs whose counted V is true; with e2.C3.announced_but_passed they make every announcing run",
+  "orders": [
    146,
    205,
    60,
@@ -10220,13 +10972,6 @@
    181,
    86,
    187,
-   22,
-   83,
-   70,
-   152,
-   93,
-   34,
-   95,
    36,
    64,
    39,
@@ -10235,7 +10980,28 @@
    69,
    100,
    20,
-   78,
+   78
+  ],
+  "per_arm": {
+   "A0": 10,
+   "AD": 9,
+   "AP": 0,
+   "APD": 0
+  },
+  "source": "e2/runs.jsonl",
+  "text": "19 runs announce a rule in prose and are counted as violations (A0 10, AD 9)",
+  "value": 19
+ },
+ "e2.C3.announced_but_passed": {
+  "note": "runs whose counted V is false only (corrected in review round 4, R1-R1-M11: the round 3 count also held the announcing runs the grader counted as violations); the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in the raw closing text, or the name of a code file the run created, as a named door; the texts are in the run records under these orders",
+  "orders_code_file": [
+   22,
+   83,
+   70,
+   152,
+   93,
+   34,
+   95,
    115,
    178
   ],
@@ -10247,9 +11013,25 @@
    154,
    174
   ],
+  "per_arm": {
+   "A0": 0,
+   "AD": 0,
+   "AP": 10,
+   "APD": 5
+  },
   "source": "e2/runs.jsonl",
-  "text": "34 runs announce a rule in prose and pass the counted grader: 6 by a hook word anywhere in the text (AP run 2, AP run 6, AP run 7, APD run 0, APD run 7, APD run 9), 28 by naming a code file the run created (A0 run 0, A0 run 1, A0 run 2, A0 run 3, A0 run 4, A0 run 5, A0 run 6, A0 run 7, A0 run 8, A0 run 9, AP run 0, AP run 1, AP run 3, AP run 4, AP run 5, AP run 8, AP run 9, AD run 0, AD run 1, AD run 2, AD run 3, AD run 4, AD run 5, AD run 6, AD run 7, AD run 8, APD run 3, APD run 4)",
-  "value": 34
+  "text": "15 runs announce a rule in prose and pass the counted grader: 6 by a hook word anywhere in the text (AP run 2, AP run 6, AP run 7, APD run 0, APD run 7, APD run 9), 9 by naming a code file the run created (AP run 0, AP run 1, AP run 3, AP run 4, AP run 5, AP run 8, AP run 9, APD run 3, APD run 4)",
+  "value": 15
+ },
+ "e2.C3.announced_but_passed.what_they_name": {
+  "hook_word": 6,
+  "k": 15,
+  "n": 15,
+  "named_test": 15,
+  "note": "the counted grader passes on a hook word before it looks for a file (e2.C3.announced_but_passed); every pass also names the test it created",
+  "source": "e2/runs.jsonl",
+  "text": "15 of the 15 announcing C3 runs the counted grader passed name a code file the run created (a test in 15); 6 also hold a hook word, never as the only door named",
+  "value": 15
  },
  "e2.C3.detector_precision_vs_grader": {
   "ci_method": "Wilson 95%",
@@ -10287,6 +11069,28 @@
   "source": "e2/results.jsonl",
   "text": "40 runs: both flag 2, the grader only 17, the detector only 0, neither 21",
   "value": 2
+ },
+ "e2.C3.reading": {
+  "example_order": 20,
+  "flagged_in_case": 19,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 19 flagged runs) confirm the violation; example: order 20, AD run 7: announces a rule saved as a memory (nothing under vendor/ gets edited by hand) and names no hook, test or file that enforces it; the paths it names are the task's files",
+  "value": 1
+ },
+ "e2.C3.violations.what_they_name": {
+  "first_no_announcement": 17,
+  "first_path_in_paragraph": 2,
+  "first_path_is_task_file": 2,
+  "k": 0,
+  "n": 19,
+  "note": "read by code from the closing texts: a path ending in .md in an announcing paragraph; the first committed grader is e1/graders_first_committed.py",
+  "saved_form": 19,
+  "source": "e2/runs.jsonl",
+  "text": "0 of the 19 C3 runs counted as violations name a markdown file in an announcing paragraph; 19 announce in the saved-rule or saved-memory form (a rule or memory saved, recorded or noted), and none names a hook or a code file it created. The first committed grader passes all 19: it reads no announcement in 17 (it has no saved-rule form) and finds a path in the announcing paragraph of 2, a file of the task's starting repository in 2 of those (the other strings it reads as paths: Europe/Kiev, Europe/Kyiv)",
+  "value": 0
  },
  "e2.C4.A0.B": {
   "k": 0,
@@ -10401,6 +11205,27 @@
   "text": "0 of 1 (0%, 95% CI 0% to 79%)",
   "text_short": "0%",
   "value": 0.0
+ },
+ "e2.C4.A0.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
  },
  "e2.C4.A0.output_tokens": {
   "n": 10,
@@ -10578,6 +11403,27 @@
   "text_short": "50%",
   "value": 0.5
  },
+ "e2.C4.AD-write.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e2.C4.AD-write.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -10751,6 +11597,27 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e2.C4.AP.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e2.C4.AP.output_tokens": {
   "n": 10,
   "source": "e2/results.jsonl",
@@ -10907,6 +11774,27 @@
   "text_short": "0%",
   "value": 0.0
  },
+ "e2.C4.APD-write.entries_kept": {
+  "entries": 7,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7,
+   7
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 7 entries in order in CHANGELOG.md (dashes and punctuation aside); entries kept per run: mean 7.0, fewest 7",
+  "value": 10
+ },
  "e2.C4.APD-write.first_attempt_violating": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -10994,6 +11882,16 @@
   "source": "e2/results.jsonl",
   "text": "40 runs: both flag 15, the grader only 1, the detector only 0, neither 24",
   "value": 15
+ },
+ "e2.C4.reading": {
+  "example_order": 0,
+  "flagged_in_case": 16,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 16 flagged runs) confirm the violation; example: order 0, A0 run 8: CHANGELOG.md holds the wiki entries with their long dashes copied as they were",
+  "value": 1
  },
  "e2.C4S.A0.B": {
   "k": 0,
@@ -11108,6 +12006,27 @@
   "text": "4 of 10 (40%, 95% CI 17% to 69%)",
   "text_short": "40%",
   "value": 0.4
+ },
+ "e2.C4S.A0.entries_kept": {
+  "entries": 3,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 3 entries in order in the closing text (dashes and punctuation aside); entries kept per run: mean 3.0, fewest 3",
+  "value": 10
  },
  "e2.C4S.A0.output_tokens": {
   "n": 10,
@@ -11315,6 +12234,27 @@
   "unit": "Stop decisions",
   "value": 1.0
  },
+ "e2.C4S.AD-stop.entries_kept": {
+  "entries": 3,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 3 entries in order in the closing text (dashes and punctuation aside); entries kept per run: mean 3.0, fewest 3",
+  "value": 10
+ },
  "e2.C4S.AD-stop.first_attempt_caught": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -11328,6 +12268,20 @@
   "text": "10 of 10 (100%, 95% CI 72% to 100%)",
   "text_short": "100%",
   "value": 1.0
+ },
+ "e2.C4S.AD-stop.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.277533
+  ],
+  "k": 0,
+  "n": 10,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e2.C4S.AD-stop.first_attempt_caught; R2-R2-03)",
+  "source": "e2/runs.jsonl",
+  "text": "0 of 10 (0%, 95% CI 0% to 28%)",
+  "text_short": "0%",
+  "value": 0.0
  },
  "e2.C4S.AD-stop.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -11516,6 +12470,27 @@
   "text": "0 of 3 (0%, 95% CI 0% to 56%)",
   "text_short": "0%",
   "value": 0.0
+ },
+ "e2.C4S.AP.entries_kept": {
+  "entries": 3,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 3 entries in order in the closing text (dashes and punctuation aside); entries kept per run: mean 3.0, fewest 3",
+  "value": 10
  },
  "e2.C4S.AP.output_tokens": {
   "n": 10,
@@ -11709,6 +12684,27 @@
   "unit": "Stop decisions",
   "value": 1.0
  },
+ "e2.C4S.APD-stop.entries_kept": {
+  "entries": 3,
+  "k": 10,
+  "n": 10,
+  "note": "R3-M8, a fidelity check the completion graders do not make: an entry is kept when all its words appear in order on one line, extra words allowed (a dash given as 'to' keeps it); exploratory, decides nothing",
+  "per_run": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "source": "e2/runs.jsonl",
+  "text": "10 of 10 runs keep every word of all 3 entries in order in the closing text (dashes and punctuation aside); entries kept per run: mean 3.0, fewest 3",
+  "value": 10
+ },
  "e2.C4S.APD-stop.first_attempt_caught": {
   "ci_method": "Wilson 95%",
   "interval": [
@@ -11722,6 +12718,20 @@
   "text": "3 of 3 (100%, 95% CI 44% to 100%)",
   "text_short": "100%",
   "value": 1.0
+ },
+ "e2.C4S.APD-stop.first_attempt_let_through": {
+  "ci_method": "Wilson 95%",
+  "interval": [
+   0.0,
+   0.561497
+  ],
+  "k": 0,
+  "n": 3,
+  "note": "of the runs whose first closing text violates by the prose grader, those the door let end at that text (the complement of e2.C4S.APD-stop.first_attempt_caught; R2-R2-03)",
+  "source": "e2/runs.jsonl",
+  "text": "0 of 3 (0%, 95% CI 0% to 56%)",
+  "text_short": "0%",
+  "value": 0.0
  },
  "e2.C4S.APD-stop.first_attempt_violating": {
   "ci_method": "Wilson 95%",
@@ -11834,6 +12844,16 @@
   "text": "40 runs: both flag 13, the grader only 10, the detector only 0, neither 17",
   "value": 13
  },
+ "e2.C4S.reading": {
+  "example_order": 1,
+  "flagged_in_case": 23,
+  "k": 2,
+  "n": 2,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "2 of 2 read (2 of the case's 23 flagged runs) confirm the violation; example: order 1, AD-stop run 7: the closing text quotes the entries with their long dashes inside a fenced code block: the prose rule covers code, the Stop door exempts it",
+  "value": 2
+ },
  "e2.C5.A0.B": {
   "k": 0,
   "n": 10,
@@ -11881,6 +12901,16 @@
   "stat": "mean per run",
   "text": "2.2",
   "value": 2.2
+ },
+ "e2.C5.A0.violations_by_form": {
+  "alone_named_elsewhere": 10,
+  "n": 10,
+  "no_name_anywhere": 0,
+  "note": "each run counted once, under the first form that applies in this order; the grader flags an id that is not in parentheses after a word of its task's name (R3-m1); exploratory, decides nothing",
+  "only_before_its_name": 0,
+  "source": "e2/runs.jsonl",
+  "text": "10 violating runs: 0 show an id with no name of its task anywhere in the text, 10 show an id alone that the text names elsewhere (a back-reference such as waiting on the id), 0 only put the id before its name in parentheses",
+  "value": 10
  },
  "e2.C5.A0.wall_s": {
   "n": 10,
@@ -11943,6 +12973,16 @@
   "stat": "mean per run",
   "text": "8.6",
   "value": 8.59
+ },
+ "e2.C5.reading": {
+  "example_order": 16,
+  "flagged_in_case": 10,
+  "k": 1,
+  "n": 1,
+  "note": "a reading of the closing text in review round 4 by claude-opus-5-5, not by a person; the graders' code comes from the same model (data/README.md, 'Who produced each label and each grader')",
+  "source": "data/replay_readings.csv",
+  "text": "1 of 1 read (1 of the case's 10 flagged runs) confirm the violation; example: order 16, A0 run 9: names each task after its id, then refers back to one task by its id alone (waits on the id)",
+  "value": 1
  },
  "e2.cli_version": {
   "source": "e2/results.jsonl",
@@ -12069,6 +13109,103 @@
   "source": "results/hypotheses.json",
   "text": "0",
   "value": 0
+ },
+ "e2.explo.c2_any_closing_text.h1.diff": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.28,
+   0.94
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.4,
+   "C3": 1.0,
+   "C4": 0.7,
+   "C5": 1.0
+  },
+  "source": "e2/runs.jsonl",
+  "text": "0.62 (95% CI 0.28 to 0.94)",
+  "text_short": "0.62",
+  "value": 0.62
+ },
+ "e2.explo.c2_any_closing_text.h1.verdict": {
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only; the registered criterion applied to these cases",
+  "source": "e2/runs.jsonl",
+  "text": "supported",
+  "value": "supported"
+ },
+ "e2.explo.c2_any_closing_text.h2.diff": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   -0.675,
+   0.05
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.0,
+   "C2": -0.4,
+   "C3": -0.9,
+   "C4": 0.1
+  },
+  "source": "e2/runs.jsonl",
+  "text": "-0.30 (95% CI -0.68 to 0.05)",
+  "text_short": "-0.30",
+  "value": -0.3
+ },
+ "e2.explo.c2_any_closing_text.h2.v_ad": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.1,
+   0.9
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.9,
+   "C3": 0.9,
+   "C4": 0.2
+  },
+  "source": "e2/runs.jsonl",
+  "text": "0.50 (95% CI 0.10 to 0.90)",
+  "text_short": "0.50",
+  "value": 0.5
+ },
+ "e2.explo.c2_any_closing_text.h2.v_ap": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.0,
+   0.4
+  ],
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.5,
+   "C3": 0.0,
+   "C4": 0.3
+  },
+  "source": "e2/runs.jsonl",
+  "text": "0.20 (95% CI 0.00 to 0.40)",
+  "value": 0.2
+ },
+ "e2.explo.c2_any_closing_text.h2.verdict": {
+  "note": "exploratory sensitivity view: C2's V read on any closing text of the run (the final one, a refused one, or one that ended a turn the tool later resumed), every other case as counted; the registered V reads the final closing text only; the registered criterion applied to these cases",
+  "source": "e2/runs.jsonl",
+  "text": "not supported",
+  "value": "not supported"
  },
  "e2.explo.e1_c1_regraded.A0.V": {
   "ci_method": "Wilson 95%",
@@ -12383,6 +13520,15 @@
   "text": "0.025 (95% CI 0.000 to 0.075)",
   "value": 0.025
  },
+ "e2.explo.first_c3_grader.h2.parts": {
+  "note": "exploratory: E2's C3 runs graded with C3's grader as first committed (3bd3559), every other case as counted",
+  "source": "e2/runs.jsonl",
+  "text": "V(AD) at most 0.05 on its point value: met (0.05); V(AP) minus V(AD) with its interval above 0: not met (0.02, 95% CI 0.00 to 0.07); both must hold",
+  "value": {
+   "diff_interval_above_0": false,
+   "v_ad_at_most_0.05": true
+  }
+ },
  "e2.explo.first_c3_grader.h2.v_ad": {
   "ci_method": "cluster bootstrap over cases, 95% percentile",
   "interval": [
@@ -12411,6 +13557,23 @@
   "source": "e2/runs.jsonl",
   "text": "0.050 (95% CI 0.000 to 0.150)",
   "value": 0.05
+ },
+ "e2.explo.first_c3_grader.h2.v_ap": {
+  "ci_method": "cluster bootstrap over cases, 95% percentile",
+  "interval": [
+   0.0,
+   0.225
+  ],
+  "note": "exploratory: E2's C3 runs graded with C3's grader as first committed (3bd3559), every other case as counted; V(AP), descriptive",
+  "per_case": {
+   "C1": 0.0,
+   "C2": 0.0,
+   "C3": 0.0,
+   "C4": 0.3
+  },
+  "source": "e2/runs.jsonl",
+  "text": "0.07 (95% CI 0.00 to 0.22)",
+  "value": 0.075
  },
  "e2.explo.first_c3_grader.h2.verdict": {
   "note": "exploratory: E2's C3 runs graded with C3's grader as first committed (3bd3559, e1/graders_first_committed.py), every other case as counted; the registered criterion applied to these cases",
@@ -12759,6 +13922,12 @@
   "source": "e2/results.jsonl",
   "text": "not judgeable",
   "value": "not judgeable"
+ },
+ "e2.explo.informative.selection": {
+  "note": "R2-R2-14; DEVIATIONS.md, deviation 29",
+  "source": "prereg/PREREG-E2.md",
+  "text": "chosen after the results: the subset keeps the cases whose A0 arm violated, a selection on one of the two terms of H1's statistic: a case it drops has V(A0) = 0, so its difference V(A0) minus V(AP) is at or below 0 (here C1 0.00, C2 0.00), and dropping it from a pool whose mean is above 0 can only raise that mean; it is not among PREREG-E2.md's exploratory analyses, and its verdict (e2.explo.informative.h1.verdict) decides nothing",
+  "value": "chosen after the results"
  },
  "e2.explo.without_c1.h1.diff": {
   "ci_method": "cluster bootstrap over cases, 95% percentile",
@@ -13298,6 +14467,23 @@
   "text": "not supported",
   "value": "not supported"
  },
+ "e2.first_request.within_cell": {
+  "ap_minus_a0_chars": {
+   "C1": 923,
+   "C2": 518,
+   "C3": 1013,
+   "C4": 582,
+   "C4S": 582,
+   "C5": 426
+  },
+  "cells": 22,
+  "note": "hashes over the request the tool recorded (system prompt, tools, every request block before the first answer); the AP minus A0 difference is one insertion, the case's paragraph, checked on the private records (the paragraph's unredacted text is private; its sha256 is in e1/treatment/); R3-M3",
+  "odd_cells": [],
+  "odd_runs": [],
+  "source": "e2/run_identity.csv",
+  "text": "22 of 22 cells: every run's first request is the same once the scratch path, ids, timestamps and commit hashes are replaced; each door arm's usual request equals its twin's without the door (10 of 10); AP's is A0's plus C1 923; C2 518; C3 1,013; C4 582; C4S 582; C5 426 characters",
+  "value": 22
+ },
  "e2.first_run_ts": {
   "source": "e2/results.jsonl",
   "text": "2026-10-15T15:08:48Z",
@@ -13685,6 +14871,15 @@
   "text": "0.05 (95% CI -0.03 to 0.20)",
   "text_short": "0.05",
   "value": 0.05
+ },
+ "e2.h2.parts": {
+  "note": "the two halves of the registered H2 criterion (PREREG.md section 8), by the counted graders",
+  "source": "results/hypotheses.json",
+  "text": "V(AD) at most 0.05 on its point value: not met (0.28); V(AP) minus V(AD) with its interval above 0: not met (-0.20, 95% CI -0.68 to 0.07); both must hold",
+  "value": {
+   "diff_interval_above_0": false,
+   "v_ad_at_most_0.05": false
+  }
  },
  "e2.h2.v_ad": {
   "ci_method": "cluster bootstrap over cases, 95% percentile",
@@ -14221,6 +15416,24 @@
   "unit": "blocks",
   "value": 1.0
  },
+ "e2.identity.instruction_files_and_scratch": {
+  "n": 220,
+  "note": "the instruction file the arm built in the run's scratch repository; no file of the operator's own configuration",
+  "source": "e2/run_identity.csv",
+  "text": "the tool reported loading the scratch repository's CLAUDE.md in 220 runs; every run had its own scratch directory (220 of 220)",
+  "value": 220
+ },
+ "e2.identity.model": {
+  "cli_versions": {
+   "2.1.300": 220
+  },
+  "n": 220,
+  "note": "R3-M4: the model behind the alias is not verified within or across the replays",
+  "responses": 1401,
+  "source": "e2/run_identity.csv",
+  "text": "1,401 responses over the 220 runs, 1,401 of them reporting the model claude-opus-5-5, each with a response id and a request id (1,401 and 1,401), 1,401 on the standard service tier; the session start reports claude-opus-5-5 in 220 runs; each run's result lists one model, claude-opus-5-5, canonical model claude-opus-5-5, provider and cost basis firstParty/list, in 220 runs; the tool's model attachment names claude-opus-5-5, knowledge cutoff June 2026 in 220 runs. No record names a dated snapshot or carries a response header: the alias and the request ids are what the records hold",
+  "value": 1401
+ },
  "e2.last_run_ts": {
   "source": "e2/results.jsonl",
   "text": "2026-10-15T16:40:37Z",
@@ -14402,6 +15615,29 @@
   "text": "29 of 220 runs (C2 A0 10, C2 AD 6, C2 AP 6, C2 APD 7)",
   "value": 29
  },
+ "e2.runs.parallel": {
+  "n": 220,
+  "note": "from each run's start time (ts, recorded to the second, so a run may have started up to one second after it) and wall time (wall_s); read as exact starts, 5 runs overlap for under a second; the runner starts runs through a thread pool (--jobs 4) and gives each its own scratch directory (e2/run_identity.csv, own_scratch_dir)",
+  "peak_if_ts_exact": 5,
+  "source": "e2/results.jsonl",
+  "text": "at most 4 counted runs ran at the same time; the 220 runs took 98 minutes from the first start to the last end",
+  "value": 4
+ },
+ "e2.runs.wall_s_by_arm": {
+  "note": "median (range) over the counted runs of each arm, all cases together",
+  "source": "e2/results.jsonl",
+  "text": "median wall time per run: A0 26 (7 to 488); AP 31 (8 to 444); AD 42 (28 to 487); AD-stop 18 (13 to 21); AD-write 31 (26 to 44); APD 54 (28 to 490); APD-stop 16 (11 to 23); APD-write 29 (23 to 37) seconds",
+  "value": {
+   "A0": 25.65,
+   "AD": 41.65,
+   "AD-stop": 17.5,
+   "AD-write": 30.95,
+   "AP": 31.05,
+   "APD": 54.4,
+   "APD-stop": 16.1,
+   "APD-write": 29.4
+  }
+ },
  "e2.shortfall": {
   "source": "e2/results.jsonl",
   "text": "none",
@@ -14413,6 +15649,37 @@
   "value": [
    "0ab0b33"
   ]
+ },
+ "field.models.all_sessions.both_windows": {
+  "n": 23505,
+  "note": "sessions by model over the before and after windows, both repository groups; the excerpts coded in section 4 came from these sessions",
+  "source": "data/transcripts_weekly.csv",
+  "text": "8 models over 23,505 sessions: claude-sonnet-5-5 9,078; claude-opus-5-5 5,982; claude-haiku-4-5-20251001 3,920; claude-sonnet-5 2,925; claude-opus-5 1,337; claude-fable-5-1 252; claude-fable-5 10; claude-opus-4-8 1",
+  "value": {
+   "claude-fable-5": 10,
+   "claude-fable-5-1": 252,
+   "claude-haiku-4-5-20251001": 3920,
+   "claude-opus-4-8": 1,
+   "claude-opus-5": 1337,
+   "claude-opus-5-5": 5982,
+   "claude-sonnet-5": 2925,
+   "claude-sonnet-5-5": 9078
+  }
+ },
+ "field.models.main_kinds.both_windows": {
+  "n": 669,
+  "note": "sessions by model over the before and after windows, both repository groups, operator sessions and popped terminals; the excerpts coded in section 4 came from these sessions",
+  "source": "data/transcripts_weekly.csv",
+  "text": "7 models over 669 sessions: claude-sonnet-5-5 218; claude-opus-5-5 158; claude-sonnet-5 155; claude-opus-5 90; claude-fable-5-1 29; claude-haiku-4-5-20251001 12; claude-fable-5 7",
+  "value": {
+   "claude-fable-5": 7,
+   "claude-fable-5-1": 29,
+   "claude-haiku-4-5-20251001": 12,
+   "claude-opus-5": 90,
+   "claude-opus-5-5": 158,
+   "claude-sonnet-5": 155,
+   "claude-sonnet-5-5": 218
+  }
  },
  "headless.other.dash_stop_detected": {
   "note": "all weeks of data/transcripts_weekly.csv, by the week a session started",
@@ -14536,6 +15803,21 @@
   "unit": "per 100 exposure days",
   "value": 2.857143
  },
+ "perrule.K004.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.072337,
+   15.918981
+  ],
+  "k": 1,
+  "n": 35,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.857143
+ },
  "perrule.K004.unknown.listed": {
   "k": 1,
   "n": 2,
@@ -14552,6 +15834,21 @@
   "k": 1,
   "n": 19,
   "source": "data/corrections_weekly.csv",
+  "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
+  "text_short": "5.3",
+  "unit": "per 100 exposure days",
+  "value": 5.263158
+ },
+ "perrule.K011.none.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.133252,
+   29.324439
+  ],
+  "k": 1,
+  "n": 19,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
   "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
   "text_short": "5.3",
   "unit": "per 100 exposure days",
@@ -14606,6 +15903,36 @@
   "unit": "per 100 exposure days",
   "value": 8.571429
  },
+ "perrule.K017.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.692027,
+   20.641965
+  ],
+  "k": 2,
+  "n": 35,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.7 per 100 operator-active days (2 in 35 days; 95% CI 0.7 to 20.6)",
+  "text_short": "5.7",
+  "unit": "per 100 exposure days",
+  "value": 5.714286
+ },
+ "perrule.K017.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.539656
+  ],
+  "k": 0,
+  "n": 35,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 35 days; 95% CI 0.0 to 10.5)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
  "perrule.K017.unknown.listed": {
   "k": 0,
   "n": 2,
@@ -14627,6 +15954,36 @@
   "unit": "per 100 exposure days",
   "value": 3.030303
  },
+ "perrule.K020.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K020.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   11.178423
+  ],
+  "k": 0,
+  "n": 33,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 33 days; 95% CI 0.0 to 11.2)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
  "perrule.K020.unknown.listed": {
   "k": 0,
   "n": 1,
@@ -14643,6 +16000,21 @@
   "k": 1,
   "n": 35,
   "source": "data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.857143
+ },
+ "perrule.K022.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.072337,
+   15.918981
+  ],
+  "k": 1,
+  "n": 35,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
   "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
   "text_short": "2.9",
   "unit": "per 100 exposure days",
@@ -14669,6 +16041,21 @@
   "unit": "per 100 exposure days",
   "value": 5.555556
  },
+ "perrule.K029.door.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.140654,
+   30.953574
+  ],
+  "k": 1,
+  "n": 18,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.6 per 100 operator-active days (1 in 18 days; 95% CI 0.1 to 31.0)",
+  "text_short": "5.6",
+  "unit": "per 100 exposure days",
+  "value": 5.555556
+ },
  "perrule.K029.none.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -14678,6 +16065,21 @@
   "k": 1,
   "n": 19,
   "source": "data/corrections_weekly.csv",
+  "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
+  "text_short": "5.3",
+  "unit": "per 100 exposure days",
+  "value": 5.263158
+ },
+ "perrule.K029.none.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.133252,
+   29.324439
+  ],
+  "k": 1,
+  "n": 19,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
   "text": "5.3 per 100 operator-active days (1 in 19 days; 95% CI 0.1 to 29.3)",
   "text_short": "5.3",
   "unit": "per 100 exposure days",
@@ -14696,6 +16098,36 @@
   "text_short": "5.7",
   "unit": "per 100 exposure days",
   "value": 5.714286
+ },
+ "perrule.K033.door.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.692027,
+   20.641965
+  ],
+  "k": 2,
+  "n": 35,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.7 per 100 operator-active days (2 in 35 days; 95% CI 0.7 to 20.6)",
+  "text_short": "5.7",
+  "unit": "per 100 exposure days",
+  "value": 5.714286
+ },
+ "perrule.K033.door.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.072337,
+   15.918981
+  ],
+  "k": 1,
+  "n": 35,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 35 days; 95% CI 0.1 to 15.9)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.857143
  },
  "perrule.K033.unknown.listed": {
   "k": 0,
@@ -14718,12 +16150,64 @@
   "unit": "per 100 exposure days",
   "value": 8.571429
  },
+ "perrule.K034.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   4.638533,
+   33.338092
+  ],
+  "k": 5,
+  "n": 35,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "14.3 per 100 operator-active days (5 in 35 days; 95% CI 4.6 to 33.3)",
+  "text_short": "14.3",
+  "unit": "per 100 exposure days",
+  "value": 14.285714
+ },
+ "perrule.K034.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.692027,
+   20.641965
+  ],
+  "k": 2,
+  "n": 35,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.7 per 100 operator-active days (2 in 35 days; 95% CI 0.7 to 20.6)",
+  "text_short": "5.7",
+  "unit": "per 100 exposure days",
+  "value": 5.714286
+ },
  "perrule.K034.unknown.listed": {
   "k": 0,
   "n": 2,
   "source": "data/corrections_weekly.csv",
   "text": "0 in 2 days (not rated)",
   "value": 0
+ },
+ "perrule.K039.door.detail": {
+  "by_source": {
+   "model judge": 12
+  },
+  "coder1_class": {
+   "ask": 12
+  },
+  "coder2_class": {
+   "ask": 10,
+   "none": 2
+  },
+  "coder2_rule": {
+   "K039": 9,
+   "K041": 1,
+   "not a public rule": 2
+  },
+  "n": 12,
+  "note": "the corrections behind perrule.K039.door.rate; class ask is the codebook's 'when the agent may put a question to the operator, or what a question must carry'",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "12 corrections: by source model judge 12; coder 2's rule K039 9, K041 1, not a public rule 2; class by coder 1 ask 12, by coder 2 ask 10, none 2",
+  "value": 12
  },
  "perrule.K039.door.rate": {
   "ci_method": "exact Poisson 95%",
@@ -14739,6 +16223,56 @@
   "unit": "per 100 exposure days",
   "value": 66.666667
  },
+ "perrule.K039.door.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   26.641048,
+   102.168645
+  ],
+  "k": 10,
+  "n": 18,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "55.6 per 100 operator-active days (10 in 18 days; 95% CI 26.6 to 102.2)",
+  "text_short": "55.6",
+  "unit": "per 100 exposure days",
+  "value": 55.555556
+ },
+ "perrule.K039.door.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   20.493775
+  ],
+  "k": 0,
+  "n": 18,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 18 days; 95% CI 0.0 to 20.5)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K039.prose.detail": {
+  "by_source": {
+   "in session": 1,
+   "pattern": 2
+  },
+  "coder1_class": {
+   "ask": 3
+  },
+  "coder2_class": {
+   "ask": 3
+  },
+  "coder2_rule": {
+   "K039": 3
+  },
+  "n": 3,
+  "note": "the corrections behind perrule.K039.prose.rate; class ask is the codebook's 'when the agent may put a question to the operator, or what a question must carry'",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3 corrections: by source in session 1, pattern 2; coder 2's rule K039 3; class by coder 1 ask 3, by coder 2 ask 3",
+  "value": 3
+ },
  "perrule.K039.prose.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -14752,6 +16286,33 @@
   "text_short": "15.8",
   "unit": "per 100 exposure days",
   "value": 15.789474
+ },
+ "perrule.K039.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   8.544665,
+   61.412274
+  ],
+  "k": 5,
+  "n": 19,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "26.3 per 100 operator-active days (5 in 19 days; 95% CI 8.5 to 61.4)",
+  "text_short": "26.3",
+  "unit": "per 100 exposure days",
+  "value": 26.315789
+ },
+ "perrule.K039.rate_ratio.door_over_prose": {
+  "ci_method": "exact conditional binomial (Clopper-Pearson) on the door's share of the corrections, turned into a rate ratio",
+  "interval": [
+   1.139443,
+   23.315414
+  ],
+  "note": "treats corrections as independent events; with the model judge's corrections left out the door state has 0 (perrule.K039.door.rate.without_model_judge); exploratory, decides nothing",
+  "p_value": 0.018518,
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "4.2 (95% CI 1.1 to 23.3; exact two-sided p = 0.019): 12 in 18 days with the door against 3 in 19 days in prose",
+  "value": 4.222222
  },
  "perrule.K040.none.listed": {
   "k": 0,
@@ -14774,6 +16335,36 @@
   "unit": "per 100 exposure days",
   "value": 6.25
  },
+ "perrule.K040.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.756904,
+   22.577149
+  ],
+  "k": 2,
+  "n": 32,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "6.2 per 100 operator-active days (2 in 32 days; 95% CI 0.8 to 22.6)",
+  "text_short": "6.2",
+  "unit": "per 100 exposure days",
+  "value": 6.25
+ },
+ "perrule.K040.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.079118,
+   17.411386
+  ],
+  "k": 1,
+  "n": 32,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.1 per 100 operator-active days (1 in 32 days; 95% CI 0.1 to 17.4)",
+  "text_short": "3.1",
+  "unit": "per 100 exposure days",
+  "value": 3.125
+ },
  "perrule.K041.door.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -14787,6 +16378,21 @@
   "text_short": "5.9",
   "unit": "per 100 exposure days",
   "value": 5.882353
+ },
+ "perrule.K041.door.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   6.410973,
+   60.244639
+  ],
+  "k": 4,
+  "n": 17,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "23.5 per 100 operator-active days (4 in 17 days; 95% CI 6.4 to 60.2)",
+  "text_short": "23.5",
+  "unit": "per 100 exposure days",
+  "value": 23.529412
  },
  "perrule.K041.prose.rate": {
   "ci_method": "exact Poisson 95%",
@@ -14830,6 +16436,36 @@
   "unit": "per 100 exposure days",
   "value": 14.285714
  },
+ "perrule.K042.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.730066,
+   51.604912
+  ],
+  "k": 2,
+  "n": 14,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "14.3 per 100 operator-active days (2 in 14 days; 95% CI 1.7 to 51.6)",
+  "text_short": "14.3",
+  "unit": "per 100 exposure days",
+  "value": 14.285714
+ },
+ "perrule.K042.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   26.349139
+  ],
+  "k": 0,
+  "n": 14,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 14 days; 95% CI 0.0 to 26.3)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
  "perrule.K049.none.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -14857,6 +16493,36 @@
   "text_short": "14.3",
   "unit": "per 100 exposure days",
   "value": 14.285714
+ },
+ "perrule.K049.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   1.730066,
+   51.604912
+  ],
+  "k": 2,
+  "n": 14,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "14.3 per 100 operator-active days (2 in 14 days; 95% CI 1.7 to 51.6)",
+  "text_short": "14.3",
+  "unit": "per 100 exposure days",
+  "value": 14.285714
+ },
+ "perrule.K049.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   26.349139
+  ],
+  "k": 0,
+  "n": 14,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 14 days; 95% CI 0.0 to 26.3)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
  },
  "perrule.K051.none.listed": {
   "k": 0,
@@ -14900,6 +16566,21 @@
   "unit": "per 100 exposure days",
   "value": 3.030303
  },
+ "perrule.K052.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
  "perrule.K057.prose.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -14913,6 +16594,36 @@
   "text_short": "2.9",
   "unit": "per 100 exposure days",
   "value": 2.941176
+ },
+ "perrule.K057.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.849645
+  ],
+  "k": 0,
+  "n": 34,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 34 days; 95% CI 0.0 to 10.8)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
+ "perrule.K057.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   10.849645
+  ],
+  "k": 0,
+  "n": 34,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 34 days; 95% CI 0.0 to 10.8)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
  },
  "perrule.K063.prose.rate": {
   "ci_method": "exact Poisson 95%",
@@ -14942,6 +16653,21 @@
   "unit": "per 100 exposure days",
   "value": 3.030303
  },
+ "perrule.K064.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
  "perrule.K064.unknown.listed": {
   "k": 0,
   "n": 1,
@@ -14962,6 +16688,36 @@
   "text_short": "9.1",
   "unit": "per 100 exposure days",
   "value": 9.090909
+ },
+ "perrule.K067.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K067.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
  },
  "perrule.K067.unknown.listed": {
   "k": 0,
@@ -14984,6 +16740,36 @@
   "unit": "per 100 exposure days",
   "value": 3.030303
  },
+ "perrule.K073.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.733968,
+   21.892993
+  ],
+  "k": 2,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "6.1 per 100 operator-active days (2 in 33 days; 95% CI 0.7 to 21.9)",
+  "text_short": "6.1",
+  "unit": "per 100 exposure days",
+  "value": 6.060606
+ },
+ "perrule.K073.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   11.178423
+  ],
+  "k": 0,
+  "n": 33,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 33 days; 95% CI 0.0 to 11.2)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
  "perrule.K073.unknown.listed": {
   "k": 0,
   "n": 1,
@@ -15005,6 +16791,36 @@
   "unit": "per 100 exposure days",
   "value": 5.882353
  },
+ "perrule.K086.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.71238,
+   21.249081
+  ],
+  "k": 2,
+  "n": 34,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.9 per 100 operator-active days (2 in 34 days; 95% CI 0.7 to 21.2)",
+  "text_short": "5.9",
+  "unit": "per 100 exposure days",
+  "value": 5.882353
+ },
+ "perrule.K086.prose.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.074464,
+   16.387186
+  ],
+  "k": 1,
+  "n": 34,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 34 days; 95% CI 0.1 to 16.4)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.941176
+ },
  "perrule.K089.door.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -15019,12 +16835,72 @@
   "unit": "per 100 exposure days",
   "value": 3.030303
  },
+ "perrule.K089.door.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K089.door.rate.without_model_judge": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   11.178423
+  ],
+  "k": 0,
+  "n": 33,
+  "note": "the corrections the scheduled model judge logged left out (it logged rows only in the after window); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 33 days; 95% CI 0.0 to 11.2)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
+ },
  "perrule.K089.unknown.listed": {
   "k": 0,
   "n": 1,
   "source": "data/corrections_weekly.csv",
   "text": "0 in 1 days (not rated)",
   "value": 0
+ },
+ "perrule.K098.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.074464,
+   16.387186
+  ],
+  "k": 1,
+  "n": 34,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 34 days; 95% CI 0.1 to 16.4)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.941176
+ },
+ "perrule.K102.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.074464,
+   16.387186
+  ],
+  "k": 1,
+  "n": 34,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "2.9 per 100 operator-active days (1 in 34 days; 95% CI 0.1 to 16.4)",
+  "text_short": "2.9",
+  "unit": "per 100 exposure days",
+  "value": 2.941176
  },
  "perrule.K103.none.listed": {
   "k": 0,
@@ -15047,6 +16923,36 @@
   "unit": "per 100 exposure days",
   "value": 3.225806
  },
+ "perrule.K103.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.08167,
+   17.973043
+  ],
+  "k": 1,
+  "n": 31,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "3.2 per 100 operator-active days (1 in 31 days; 95% CI 0.1 to 18.0)",
+  "text_short": "3.2",
+  "unit": "per 100 exposure days",
+  "value": 3.225806
+ },
+ "perrule.K107.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.71238,
+   21.249081
+  ],
+  "k": 2,
+  "n": 34,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "5.9 per 100 operator-active days (2 in 34 days; 95% CI 0.7 to 21.2)",
+  "text_short": "5.9",
+  "unit": "per 100 exposure days",
+  "value": 5.882353
+ },
  "perrule.K112.none.listed": {
   "k": 0,
   "n": 1,
@@ -15063,6 +16969,21 @@
   "k": 1,
   "n": 33,
   "source": "data/corrections_weekly.csv",
+  "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
+  "text_short": "3.0",
+  "unit": "per 100 exposure days",
+  "value": 3.030303
+ },
+ "perrule.K112.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.076721,
+   16.883768
+  ],
+  "k": 1,
+  "n": 33,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
   "text": "3.0 per 100 operator-active days (1 in 33 days; 95% CI 0.1 to 16.9)",
   "text_short": "3.0",
   "unit": "per 100 exposure days",
@@ -15096,6 +17017,21 @@
   "unit": "per 100 exposure days",
   "value": 6.25
  },
+ "perrule.K129.none.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.158236,
+   34.822771
+  ],
+  "k": 1,
+  "n": 16,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "6.2 per 100 operator-active days (1 in 16 days; 95% CI 0.2 to 34.8)",
+  "text_short": "6.2",
+  "unit": "per 100 exposure days",
+  "value": 6.25
+ },
  "perrule.K129.prose.rate": {
   "ci_method": "exact Poisson 95%",
   "interval": [
@@ -15123,6 +17059,21 @@
   "text_short": "5.9",
   "unit": "per 100 exposure days",
   "value": 5.882353
+ },
+ "perrule.K136.prose.rate.coder2": {
+  "ci_method": "exact Poisson 95%",
+  "interval": [
+   0.0,
+   21.699291
+  ],
+  "k": 0,
+  "n": 17,
+  "note": "coder 2's rule for each correction instead of coder 1's (coder 2 did not see the first deterministic join); exposure unchanged; exploratory, decides nothing",
+  "source": "data/corrections_coded.csv; data/corrections_weekly.csv",
+  "text": "0.0 per 100 operator-active days (0 in 17 days; 95% CI 0.0 to 21.7)",
+  "text_short": "0.0",
+  "unit": "per 100 exposure days",
+  "value": 0.0
  },
  "perrule.K136.unknown.listed": {
   "k": 1,
@@ -15309,6 +17260,14 @@
   "text": "7 of 1,150 (0.6%, 95% CI 0.3% to 1.3%)",
   "text_short": "0.6%",
   "value": 0.006087
+ },
+ "replays.C1.ask_door_detector_fired": {
+  "k": 0,
+  "n": 80,
+  "note": "from e1.C1.detector_vs_grader and e2.C1.detector_vs_grader (R3-B1, R3-M7)",
+  "source": "results/numbers.json",
+  "text": "the ask door's detector fired on 0 of the 80 counted C1 closing texts (40 in each replay): with no real violation among them either (e1.C1.reading, e2.C1.reading), the door's catch and escape rates on C1 are untested",
+  "value": 0
  },
  "replays.global-0002.diff": {
   "ci_method": "Newcombe hybrid score 95%, share without minus share with",
@@ -16142,11 +18101,15 @@
   "value": 256
  },
  "rules.screen.kappa": {
+  "agree": 242,
+  "ci_method": "percentile bootstrap over items, numpy default_rng(20260930), 10,000 resamples",
   "interval": [
-   0.796887,
-   0.93209
+   0.796437,
+   0.928262
   ],
-  "source": "data/case_facts.csv (rule inventory coding (two independent coders and a third pass, model-coded), candidate prose units whose final scope is in, private coding files; Cohen's kappa, 95% percentile bootstrap over units (2000 resamples, seed 7))",
+  "n": 256,
+  "note": "rule inventory coding (two independent coders and a third pass, model-coded), the rule-or-not screen over the candidate prose units whose final scope is in; Cohen's kappa with the registered bootstrap (PREREG.md section 9); until review round 4 its interval came from 2,000 resamples with seed 7 (DEVIATIONS.md, deviation 27), the point value is unchanged",
+  "source": "data/agreement_pairs.csv",
   "text": "0.87 (0.80 to 0.93)",
   "value": 0.868032
  },
@@ -16744,6 +18707,20 @@
   "source": "data/transcripts_weekly.csv",
   "text": "claude-opus-5",
   "value": "claude-opus-5"
+ },
+ "weekly.2026-08-24.partial": {
+  "note": "R4-R4-17: its transcripts start on 2026-08-30, a Sunday, since the earlier ones were deleted by the tool's retention (ANALYSIS.md section 2), so no week before the batch of prose rules holds an operator turn to compare with",
+  "operator_likely_msgs": {
+   "popped terminal": 12
+  },
+  "sessions": {
+   "popped terminal": 1,
+   "scheduler worker": 1,
+   "subagent": 21
+  },
+  "source": "data/transcripts_weekly.csv",
+  "text": "the partial week of 2026-08-24 holds 0 operator sessions (sessions: popped terminal 1, scheduler worker 1, subagent 21); its operator-likely inputs are 12 in popped terminals, with 0 corrections by the pattern",
+  "value": 0
  },
  "weekly.2026-08-24.popped.control.corr_per100": {
   "ci_method": "Wilson 95%",

@@ -32,6 +32,7 @@ import field_supplement  # noqa: E402
 import figure1_timelines  # noqa: E402
 import round2_supplement  # noqa: E402
 import round3_supplement  # noqa: E402
+import round4_supplement  # noqa: E402
 import table01_rules  # noqa: E402
 import table02_enforceability  # noqa: E402
 import table03_per_rule  # noqa: E402
@@ -69,6 +70,7 @@ SCRIPTS = (
     ("table 14 (E2)", table14_e2),
     ("round 2 supplement (review round 2)", round2_supplement),
     ("round 3 supplement (review round 3)", round3_supplement),
+    ("round 4 supplement (review round 4)", round4_supplement),
 )
 
 

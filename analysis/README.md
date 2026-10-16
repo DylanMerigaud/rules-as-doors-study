@@ -38,6 +38,21 @@ section 10 (`stats.py`).
 | `field_supplement.py` | field facts asked in review round 1 | `data/rules.csv`, `data/rules_coding.csv`, `data/transcripts_weekly.csv`, `data/headless_split.csv`, `data/ask_audit.csv`, `data/scheduler_weekly.csv`, `data/door_refusals_weekly.csv`, `data/door_review.csv`, `data/door_review_frame.csv` |
 | `round2_supplement.py` | facts asked in review round 2: E1 under the first committed graders, the pilot table, E1's strict K, two-stage bootstrap intervals, Table 11 per case, RQ3 without the door-only rules, the rule labels from their members, per-model ask cells, weekly correction shares, door counts without the test session, detector against grader | `e1/` (results, runs, graders, `graders_first_committed.py`, `pilot_runs.csv`), `e2/results.jsonl`, `e2/graders.py`, and `data/` (`rules.csv`, `rules_coding.csv`, `rule_members.csv`, `transcripts_weekly.csv`, `transcripts_prospective.csv`, `corrections_weekly.csv`, `replays_past.csv`, `door_refusals_weekly.csv`, `door_refusals_test_rows.csv`, `door_review.csv`, `door_review_frame.csv`) |
 | `round3_supplement.py` | facts asked in review round 3: the pilot under E2's graders and the pilot rule read with each grader version, H1 to H4 on case subsets (without C3, without C1, the informative cases), small-sample checks that do not use the bootstrap, the run texts before and after each refusal, E2 under the first committed C3 grader, run isolation facts, the ask measure's reconciliation ladder, coding agreement (Gwet's AC1), rules and corrections per state, and three-decimal twins of the bootstrap intervals | `e1/` and `e2/` (results, runs, run facts, graders, `regrade.py`, `pilot_runs.csv`, `design.json`), `data/` (`ask_reconcile.csv`, `door_review.csv`, `corrections_weekly.csv`, `transcripts_weekly.csv`, `rules.csv`) |
+| `round4_supplement.py` | facts asked in review round 4: the screen and mapping kappas with the registered bootstrap, AC1 over the codes used, corrections by ledger writer and by coder, the ask measure with the inventory's phrases over both windows and the control criterion on it, H1 and H2 with C2 on any closing text, H2's two halves, readings of closing texts, what C3's violations and passes name, C5's violations by form, C4 and C4S entry fidelity, run timing, model identity and first requests, refusals not judgeable, the sessions' models, the partial first week | `data/` (`agreement_pairs.csv`, `corrections_coded.csv`, `corrections_weekly.csv`, `ask_reconcile_after.csv`, `replay_readings.csv`, `door_review.csv`, `transcripts_weekly.csv`), `e1/` and `e2/` (results, runs, graders, `regrade.py`, `run_identity.csv`) |
+
+### Keys corrected in review round 4
+
+Every key of an earlier round keeps its value except these six, which a test now proves were
+wrong (`analysis/tests/test_round4.py`):
+
+| Key | Old | New | Why |
+|---|---|---|---|
+| `e1.C3.announced_but_passed` | 30 runs (7 by a hook word, 23 by a code file) | 10 runs (7 by a hook word, 3 by a code file the run created) | the old count also held the 20 announcing runs counted as violations (R1-R1-M11) |
+| `e2.C3.announced_but_passed` | 34 runs (6 and 28) | 15 runs (6 and 9) | the same, 19 runs |
+| `rules.screen.kappa` | 0.87 (0.80 to 0.93), interval [0.797, 0.932] | 0.87 (0.80 to 0.93), interval [0.796, 0.928] | registered bootstrap, 10,000 resamples and the study seed (deviation 27) |
+| `corrections.mapping.kappa` | 0.76 (0.66 to 0.85) | 0.76 (0.65 to 0.85) | the same |
+| `ask.reconcile.D.door.before` | `change`: "an operator prompt typed in the command line" | `change`: the reply rule of `data/README.md` | the value is unchanged (deviation 25) |
+| `ask.reconcile.F_phrases.door.before` | `change`: "followed by an operator prompt" | `change`: "answered by step D's rule" | the same |
 
 ## Input schemas the scripts read
 

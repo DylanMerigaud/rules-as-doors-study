@@ -43,6 +43,17 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
   `results.jsonl`. `python3 e1/regrade.py` prints `200 runs regraded, 0 field disagreements`.
   `stop_blocks_took_effect` and `denials_took_effect` are copied from trimwrit (MIT) at the commit
   the runs used (a098f95).
+- `run_identity.csv` (review round 4): per counted run, what the records hold about the model and
+  the first request. Columns: case, arm, run index; the tool version; the model the session start
+  reports; the run's responses and how many of them report the alias `claude-opus-5-5`, carry a
+  response id, carry a request id and ran on the standard service tier; the model, the
+  canonical model and the provider and cost basis the run's result lists; the model and knowledge
+  cutoff the tool's model attachment names; the instruction files the tool reported loading; the
+  first 16 hex digits of a sha256 of the first request as the transcript reports it (the user's
+  first input and the sandbox, environment, instruction-file, session, prompt snapshot and date
+  attachments before the first answer: this tool version recorded no request), once the scratch
+  path (and its dashed form), uuids, timestamps and commit hashes are replaced by fixed markers,
+  and its length in characters; whether the run had its own scratch directory. No text.
 
 ## What the run records show (keys in `results/numbers.json`, from `analysis/e1_supplement.py`)
 
@@ -73,7 +84,31 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
 - Doors refused in 12 of the 100 door-arm runs, all in C2 AD (2) and C4 AD-write (10); each such
   run, with its turns and output tokens, is listed under `e1.refused_runs`.
 - For each case, one counted run the grader flags and one it passes, to read in `runs.jsonl`:
-  `e1.<case>.example_flagged` and `e1.<case>.example_passed` (run orders).
+  `e1.<case>.example_flagged` and `e1.<case>.example_passed` (run orders). C1's flagged example is
+  not a real violation: no counted C1 run holds one (`e1.C1.reading`, review round 4).
+
+## The model behind the alias (review round 4)
+
+Every run requested `claude-opus-5-5`, an alias. The records hold the alias and nothing more
+specific: every response of every counted run reports `claude-opus-5-5` with a response id and a
+request id, on the standard service tier; each run's result lists one model, canonical model
+`claude-opus-5-5`, provider and cost basis `firstParty/list`; the tool's model attachment names
+`claude-opus-5-5` with a knowledge cutoff of June 2026 (`e1.identity.model`). No record names a
+dated snapshot and none carries a response header, so the model behind the alias is not verified
+within this replay or across E1 and E2; a difference between the replays can come from the tool
+version (2.1.285 here, 2.1.300 in E2) or from the model.
+
+## What each run was given (review round 4)
+
+Each run had its own scratch directory and loaded one instruction file, the scratch repository's
+`CLAUDE.md` that its arm built (`e1.identity.instruction_files_and_scratch`). Once the scratch
+path, ids, timestamps and commit hashes are replaced, the first request as the transcript reports
+it is the same for every run of a cell in 15 of the 20 cells; in each of the other five, one run
+got a shorter variant of the tool's own instructions (680 characters less, 629 in C2 AD). Each
+door arm's request equals its twin's without the door, and AP's is A0's with the case's paragraph
+inserted (`e1.first_request.within_cell`). This tool version did not record the system prompt, so
+what varies in `first_call_context_tokens` (`run_facts.csv`) within a cell beyond the replaced
+parts cannot be read from the records.
 
 ## What is not published
 

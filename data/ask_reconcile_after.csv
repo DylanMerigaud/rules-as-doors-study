@@ -1,0 +1,9 @@
+step,group,window,k,n
+F,door,before,66,1738
+F,door,after,13,2819
+F,control,before,0,220
+F,control,after,1,144
+F_phrases,door,before,42,1738
+F_phrases,door,after,0,2819
+F_phrases,control,before,7,220
+F_phrases,control,after,2,144

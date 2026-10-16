@@ -185,24 +185,38 @@ the harness and set its rules, and every step below was done by code or by Anthr
   coders called a rule (`rules.kappa_class`, `rules.kappa_enforceability`). Agreement over every
   candidate unit is not published: that pool includes the out-of-scope units, of which the study
   gives no count. The doors were listed by a script from the harness's code (registered hooks,
-  refusal sites) and coded the same way.
+  refusal sites) and coded the same way. The codebook is `codebooks/rule_inventory.md` (its scope
+  field summarised); the two coders' screen codes are `agreement_pairs.csv`.
 - **Grouping units into rules** and the public description of each rule: one pass of the same
   model, with no second coder; no agreement is measured. Each description passed the
   privacy check, and a description the check refused was rewritten by the model.
-- **Corrections**: two sources, the corrections the operator logged in the correction ledger and
-  the operator's typed inputs that the pinned correction detector (a regular expression) flagged.
-  A deterministic join gave a first rule for ledger rows (their tag, the rule it was promoted to,
-  the unit that holds it). Two coders (calls of the same model) then read each correction and
+- **Corrections**: the rows of the operator's correction ledger, which four writers filled
+  (`corrections_coded.csv`, column `source`): the operator's sessions (`in session`), the pinned
+  correction pattern on his typed inputs (`pattern`, `codebooks/correction_pattern.py`), an audit
+  that back-filled earlier corrections on 2026-09-01 (`back-fill`), and from 2026-10-02 a
+  scheduled model judge (`model judge`: a headless call of a Sonnet model that reads each typed
+  turn alone and logs the ones it judges corrections). The model judge started after the tag and
+  wrote 30 of the 36 counted corrections of the after window (`corrections.by_source.*`,
+  `DEVIATIONS.md`, deviation 28). A deterministic join gave a first rule for ledger rows (their
+  tag, the rule it was promoted to, the unit that holds it). Two coders (calls of the same model) then read each correction and
   the rule list and gave its rule or none, and whether it corrects a behaviour at all; coder 1
   saw the first join, coder 2 did not. The published table uses coder 1's rule, and leaves out a
   correction whose coders disagree on in scope or out. Agreement on the rule over the 84
   corrections that at least one coder mapped to a public rule: `corrections.mapping.agreement`,
-  `.kappa` and `.disagreements`. The detector's precision over all its hits is not published (the
+  `.kappa` and `.disagreements`; both coders' rules per correction are in `corrections_coded.csv`
+  and the per-rule rates under coder 2's are `perrule.<rule>.<state>.rate.coder2`. The codebook is
+  `codebooks/correction_mapping.md`. The detector's precision over all its hits is not published (the
   hits include out-of-scope corrections); the coders' "corrects a behaviour" code is the screen
   that removed hits that correct nothing.
 - **Door refusal review** (right, wrong, unclear) and **ask audit** (only-him, avoidable,
   not-an-ask): two coders and a third resolving call per item, all the same model; kappas `door.<rule>.review.kappa`, `audit.kappa`, and AC1
-  `door.<rule>.review.ac1`.
+  `door.<rule>.review.ac1` (over the three codebook codes) and `.ac1.used_codes` (over the codes
+  either coder used). Codebooks: `codebooks/refusal_review.md`, `codebooks/ask_audit.md`.
+- **Readings of replay closing texts** (`replay_readings.csv`, review round 4): every counted C1
+  run of both replays, every flagged C2 run of E1 and one flagged run per other case, read
+  against the registered prose definition in review round 4 by `claude-opus-5-5`, the model the
+  graders' code also comes from. They are not a person's labels and are not agreement data; they say whether
+  a flagged run holds a real violation, and give one example per case (`<exp>.<case>.reading`).
 - **Everything else** (session kinds, turn ends, the answered share, took effect, recovery,
   scheduler outcomes, the replay measures) is computed by code from the logs, with no model call.
 
@@ -298,11 +312,33 @@ the harness and set its rules, and every step below was done by code or by Anthr
   located, took effect, in the review sample, the review codes, recovery turns and output tokens,
   why it is a test row).
 - `case_facts.csv`: single facts about the case (commit counts, code size, the probe figures,
-  the recorded coding kappas, the agreement on the rule-or-not screen and on the correction
-  mapping, the tag and push times of the two preregistrations), each with its source. The push
+  the recorded class and enforceability kappas, the raw agreement on the rule-or-not screen and
+  on the correction mapping, the tag and push times of the two preregistrations), each with its
+  source. The two kappas of the screen and the mapping are computed from `agreement_pairs.csv`
+  since review round 4 (`DEVIATIONS.md`, deviation 27). The push
   times are GitHub's record of the push of the commit each tag names
   (`e1.git.prereg_v1_commit_public_push`, `e2.git.prereg_e2_commit_public_push`); GitHub keeps no
   record of the tag pushes themselves.
 - `ask_reconcile.csv`: the ask measure's before window rerun on the 2026-09-30 snapshot, one
   definition changed per step from the design inventory (A) to the final extraction (F): step,
   group, asked turn ends, turn ends, and what the step changes (`DEVIATIONS.md`, deviation 22).
+- `agreement_pairs.csv` (review round 4): the two coders' codes behind `rules.screen.kappa`
+  (coding `screen`: rule or not a rule, the 256 in-scope candidate units) and
+  `corrections.mapping.kappa` (coding `mapping`: the public rule id, or "not a public rule", for
+  the 84 corrections at least one coder mapped to a public rule). Items are numbered in an order
+  drawn with `random.Random(20260930)`; no text, no unit or correction id.
+- `corrections_coded.csv` (review round 4): one row per correction behind
+  `corrections_weekly.csv` or mapped to a public rule by coder 2: the week the table uses (the
+  ledger's logging date; `pre-2026-08-31` for a row with no day, as there), the week of the judged
+  turn for a model-judge row, the ledger writer, whether the pattern matched it, and per coder
+  the rule (or "not a public rule"), the rule's delivery state at that date and the class. Coder
+  1's in-scope rows sum to `corrections_weekly.csv` exactly. One correction coder 1 mapped to a
+  public rule while its scope was coded out is left out, as in the weekly table.
+- `ask_reconcile_after.csv` (review round 4): the final extraction's ask measure (step F) and
+  the same with the design inventory's asking phrases (step F_phrases), before and after the
+  door, per group: asked and answered turn ends, turn ends (`DEVIATIONS.md`, deviation 25).
+- `replay_readings.csv` (review round 4): see "Who produced each label and each grader". Columns:
+  experiment, case, run order, arm, run index, the counted V, the reading (violation or no
+  violation) and what it rests on, in words about the text, never a quote.
+- `codebooks/`: the codebooks and coder prompts of the field coding and the pinned correction
+  pattern, with what each withholds and why (`codebooks/README.md`).

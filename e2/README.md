@@ -49,6 +49,40 @@ change.
   (`own_config_dir`), the context size of its first model call (`first_call_context_tokens`), its
   turn results (`turn_results`) and how many of its turns a background job's notification
   resumed (`turns_resumed_by_task_notification`). No text.
+- `run_identity.csv` (review round 4): per counted run, what the records hold about the model and
+  the first request. Columns: case, arm, run index; the tool version; the model the session start
+  reports; the run's responses and how many of them report the alias `claude-opus-5-5`, carry a
+  response id, carry a request id and ran on the standard service tier; the model, the
+  canonical model and the provider and cost basis the run's result lists; the model and knowledge
+  cutoff the tool's model attachment names; the instruction files the tool reported loading; the
+  first 16 hex digits of a sha256 of the first request (the request shape the tool recorded,
+  system prompt and tools included, and every request block before the first answer), once the
+  scratch path (and its dashed form), uuids, timestamps and commit hashes are replaced by fixed
+  markers, and its length in characters; whether the run had its own scratch directory. No text.
+
+## The model behind the alias (review round 4)
+
+Every run requested `claude-opus-5-5`, an alias. The records hold the alias and nothing more
+specific: every response of every counted run reports `claude-opus-5-5` with a response id and a
+request id, on the standard service tier; each run's result lists one model, canonical model
+`claude-opus-5-5`, provider and cost basis `firstParty/list`; the tool's model attachment names
+`claude-opus-5-5` with a knowledge cutoff of June 2026 (`e2.identity.model`). No record names a
+dated snapshot and none carries a response header, so the model behind the alias is not verified
+within this replay or across E1 and E2; a difference between the replays can come from the tool
+version (2.1.300 here, 2.1.285 in E1) or from the model. `PILOT.md` calls `claude-opus-5-5` the
+"pinned model": what was pinned is the alias.
+
+## What each run was given (review round 4)
+
+Each run had its own scratch directory and loaded one instruction file, the scratch repository's
+`CLAUDE.md` that its arm built (`e2.identity.instruction_files_and_scratch`). Once the scratch
+path, ids, timestamps and commit hashes are replaced, the whole first request (system prompt,
+tools and every block before the first answer) is the same for every run of a cell in all 22
+cells; each door arm's equals its twin's without the door, and AP's is A0's with the case's
+paragraph inserted (`e2.first_request.within_cell`). So the variation of
+`first_call_context_tokens` (`run_facts.csv`) within a cell comes from the replaced parts alone: a
+random scratch path that recurs throughout the request, ids and times, which tokenize to
+different lengths.
 
 ## How the analysis reads it
 

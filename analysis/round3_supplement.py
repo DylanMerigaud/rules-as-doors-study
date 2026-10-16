@@ -467,35 +467,65 @@ def c4_text_section(reg, prefix, runs, rows, graders):
                      "did not flag (V_door false); C4S's are e2.C4S.<arm>.closing_dash_only_in_code")
 
 
-def c3_section(reg, prefix, runs, rows, graders, first):
-    """C3: announcements the counted grader passed, and why; E2 also under the first grader."""
+def c3_section(reg, prefix, runs, rows, graders, first, regrade):
+    """C3: announcements the counted grader passed, and why; the announcing runs it counted as a
+    violation. A run counts here only when its counted V is false: until review round 4 every
+    announcing run without a hook word went to the code file bucket, the violating ones included
+    (R1-R1-M11). The grader's own reading is checked against V for every run."""
     src = RUNS1 if prefix == "e1" else RUNS2
+    rec = {r["order"]: r for r in rows}
     by_word = []
     by_file = []
+    violated = []
     for r in runs:
         if r["case"] != "C3":
             continue
         ct = r["closing_text"] or ""
+        _info, state = regrade.rebuild(r)
+        v = rec[r["order"]]["V"] is True
+        if bool(graders.c3_rule_without_door(ct, state)) != v:
+            raise ValueError("%s C3 order %s: the grader's reading differs from its counted V"
+                             % (prefix, r["order"]))
         if not graders.C3_ANNOUNCE_RE.search(graders.prose_only(ct)):
+            continue
+        if v:
+            violated.append(r)
             continue
         if graders.C3_DOOR_WORD_RE.search(ct):
             by_word.append(r)
-        else:
-            by_file.append(r)
+            continue
+        named = [p for p in graders.c3_new_code_files(state) if p in ct or Path(p).name in ct]
+        if not named:
+            raise ValueError("%s C3 order %s passed with no hook word and no named code file"
+                             % (prefix, r["order"]))
+        by_file.append(r)
     arm_rank = {"A0": 0, "AP": 1, "AD": 2, "APD": 3}
-    by_word.sort(key=lambda r: (arm_rank.get(r["arm"], 9), r["run_index"]))
-    by_file.sort(key=lambda r: (arm_rank.get(r["arm"], 9), r["run_index"]))
+    for lst in (by_word, by_file, violated):
+        lst.sort(key=lambda r: (arm_rank.get(r["arm"], 9), r["run_index"]))
+
+    def runs_text(lst):
+        return ", ".join("%s run %d" % (r["arm"], r["run_index"]) for r in lst) or "none"
+
     reg.add("%s.C3.announced_but_passed" % prefix, len(by_word) + len(by_file),
             "%d runs announce a rule in prose and pass the counted grader: %d by a hook word "
             "anywhere in the text (%s), %d by naming a code file the run created (%s)" % (
-                len(by_word) + len(by_file), len(by_word),
-                ", ".join("%s run %d" % (r["arm"], r["run_index"]) for r in by_word) or "none",
-                len(by_file), ", ".join("%s run %d" % (r["arm"], r["run_index"]) for r in by_file) or "none"),
+                len(by_word) + len(by_file), len(by_word), runs_text(by_word),
+                len(by_file), runs_text(by_file)),
             src, orders_hook_word=[r["order"] for r in by_word],
             orders_code_file=[r["order"] for r in by_file],
-            note="the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in "
-                 "the raw closing text as a named door; the texts are in the run records under "
-                 "these orders")
+            per_arm={a: sum(1 for r in by_word + by_file if r["arm"] == a) for a in arm_rank},
+            note="runs whose counted V is false only (corrected in review round 4, R1-R1-M11: the "
+                 "round 3 count also held the announcing runs the grader counted as violations); "
+                 "the counted C3 grader accepts any of pre-commit, pre-push, git hook or hook(s) in "
+                 "the raw closing text, or the name of a code file the run created, as a named door; "
+                 "the texts are in the run records under these orders")
+    per_arm = Counter(r["arm"] for r in violated)
+    reg.add("%s.C3.announced_and_violated" % prefix, len(violated),
+            "%d runs announce a rule in prose and are counted as violations (%s)" % (
+                len(violated), ", ".join("%s %d" % (a, per_arm[a]) for a in arm_rank if per_arm[a]) or "none"),
+            src, orders=[r["order"] for r in violated], per_arm={a: per_arm[a] for a in arm_rank},
+            note="review round 4: the announcing C3 runs whose counted V is true; with "
+                 "%s.C3.announced_but_passed they make every announcing run" % prefix)
 
 
 def e2_first_c3_section(reg, e2_rows, runs2, regrade2, first):
@@ -806,13 +836,13 @@ def run(ctx):
     runs1 = _read_jsonl(ctx.e1 / "runs.jsonl")
     runs_section(ctx, reg, "e1", e1_rows, runs1, g1, regrade1, g1)
     c4_text_section(reg, "e1", runs1, e1_rows, g1)
-    c3_section(reg, "e1", runs1, e1_rows, g1, first)
+    c3_section(reg, "e1", runs1, e1_rows, g1, first, regrade1)
     if e2_rows is not None and (ctx.e2 / "runs.jsonl").exists():
         regrade2 = _load_module(ctx.e2 / "regrade.py", "e2_regrade_r3")
         runs2 = _read_jsonl(ctx.e2 / "runs.jsonl")
         runs_section(ctx, reg, "e2", e2_rows, runs2, regrade2.graders, regrade2, regrade2.graders.e1)
         c4_text_section(reg, "e2", runs2, e2_rows, regrade2.graders.e1)
-        c3_section(reg, "e2", runs2, e2_rows, regrade2.graders.e1, first)
+        c3_section(reg, "e2", runs2, e2_rows, regrade2.graders.e1, first, regrade2)
         e4 = [r for r in e2_rows if r["case"] == "C4S" and "stop" in r["arm"]]
         k = sum(1 for r in e4 for x in (r.get("K_stop") or []) if x is True)
         n = sum(len(r.get("K_stop") or []) for r in e4)

@@ -1,0 +1,341 @@
+coding,item,coder1,coder2
+screen,1,not a rule,not a rule
+screen,2,rule,rule
+screen,3,rule,rule
+screen,4,rule,rule
+screen,5,rule,rule
+screen,6,rule,rule
+screen,7,rule,rule
+screen,8,rule,rule
+screen,9,not a rule,rule
+screen,10,rule,rule
+screen,11,rule,rule
+screen,12,not a rule,not a rule
+screen,13,rule,rule
+screen,14,rule,rule
+screen,15,not a rule,not a rule
+screen,16,rule,rule
+screen,17,rule,rule
+screen,18,rule,rule
+screen,19,rule,not a rule
+screen,20,not a rule,not a rule
+screen,21,not a rule,not a rule
+screen,22,rule,rule
+screen,23,not a rule,not a rule
+screen,24,rule,rule
+screen,25,rule,rule
+screen,26,not a rule,rule
+screen,27,rule,rule
+screen,28,rule,rule
+screen,29,rule,rule
+screen,30,rule,rule
+screen,31,rule,rule
+screen,32,rule,rule
+screen,33,rule,rule
+screen,34,rule,rule
+screen,35,not a rule,not a rule
+screen,36,rule,rule
+screen,37,rule,rule
+screen,38,rule,rule
+screen,39,rule,rule
+screen,40,rule,rule
+screen,41,not a rule,not a rule
+screen,42,rule,rule
+screen,43,rule,rule
+screen,44,rule,rule
+screen,45,not a rule,not a rule
+screen,46,not a rule,not a rule
+screen,47,rule,rule
+screen,48,not a rule,not a rule
+screen,49,rule,rule
+screen,50,rule,rule
+screen,51,rule,rule
+screen,52,rule,rule
+screen,53,rule,rule
+screen,54,rule,rule
+screen,55,rule,rule
+screen,56,not a rule,not a rule
+screen,57,not a rule,not a rule
+screen,58,not a rule,not a rule
+screen,59,rule,not a rule
+screen,60,rule,rule
+screen,61,not a rule,not a rule
+screen,62,rule,rule
+screen,63,rule,rule
+screen,64,rule,not a rule
+screen,65,not a rule,not a rule
+screen,66,rule,rule
+screen,67,not a rule,not a rule
+screen,68,not a rule,not a rule
+screen,69,rule,rule
+screen,70,not a rule,not a rule
+screen,71,rule,rule
+screen,72,not a rule,not a rule
+screen,73,rule,rule
+screen,74,rule,rule
+screen,75,rule,rule
+screen,76,rule,rule
+screen,77,rule,rule
+screen,78,not a rule,not a rule
+screen,79,not a rule,not a rule
+screen,80,rule,rule
+screen,81,rule,rule
+screen,82,rule,rule
+screen,83,rule,rule
+screen,84,not a rule,not a rule
+screen,85,rule,rule
+screen,86,not a rule,not a rule
+screen,87,rule,rule
+screen,88,rule,rule
+screen,89,rule,rule
+screen,90,not a rule,not a rule
+screen,91,rule,rule
+screen,92,rule,rule
+screen,93,rule,rule
+screen,94,rule,rule
+screen,95,rule,rule
+screen,96,not a rule,rule
+screen,97,not a rule,not a rule
+screen,98,rule,rule
+screen,99,rule,rule
+screen,100,rule,rule
+screen,101,rule,rule
+screen,102,rule,rule
+screen,103,rule,not a rule
+screen,104,not a rule,not a rule
+screen,105,rule,rule
+screen,106,rule,rule
+screen,107,rule,rule
+screen,108,rule,rule
+screen,109,rule,rule
+screen,110,rule,rule
+screen,111,rule,rule
+screen,112,rule,rule
+screen,113,rule,rule
+screen,114,rule,rule
+screen,115,not a rule,not a rule
+screen,116,rule,rule
+screen,117,rule,rule
+screen,118,rule,rule
+screen,119,rule,rule
+screen,120,rule,rule
+screen,121,not a rule,not a rule
+screen,122,rule,rule
+screen,123,not a rule,not a rule
+screen,124,not a rule,not a rule
+screen,125,not a rule,not a rule
+screen,126,rule,rule
+screen,127,rule,rule
+screen,128,not a rule,not a rule
+screen,129,rule,rule
+screen,130,rule,rule
+screen,131,not a rule,not a rule
+screen,132,rule,rule
+screen,133,rule,rule
+screen,134,not a rule,not a rule
+screen,135,rule,rule
+screen,136,not a rule,not a rule
+screen,137,rule,rule
+screen,138,rule,rule
+screen,139,rule,rule
+screen,140,not a rule,not a rule
+screen,141,not a rule,not a rule
+screen,142,rule,rule
+screen,143,rule,rule
+screen,144,rule,rule
+screen,145,rule,rule
+screen,146,rule,rule
+screen,147,not a rule,not a rule
+screen,148,rule,rule
+screen,149,rule,rule
+screen,150,rule,rule
+screen,151,rule,rule
+screen,152,rule,rule
+screen,153,rule,rule
+screen,154,rule,not a rule
+screen,155,rule,rule
+screen,156,rule,not a rule
+screen,157,rule,rule
+screen,158,not a rule,rule
+screen,159,not a rule,not a rule
+screen,160,not a rule,not a rule
+screen,161,rule,rule
+screen,162,not a rule,not a rule
+screen,163,rule,rule
+screen,164,rule,rule
+screen,165,rule,rule
+screen,166,rule,rule
+screen,167,rule,rule
+screen,168,rule,not a rule
+screen,169,rule,rule
+screen,170,rule,rule
+screen,171,rule,rule
+screen,172,not a rule,not a rule
+screen,173,rule,rule
+screen,174,not a rule,not a rule
+screen,175,rule,rule
+screen,176,rule,rule
+screen,177,rule,rule
+screen,178,rule,rule
+screen,179,rule,rule
+screen,180,rule,rule
+screen,181,not a rule,not a rule
+screen,182,rule,rule
+screen,183,rule,rule
+screen,184,rule,rule
+screen,185,rule,rule
+screen,186,rule,rule
+screen,187,not a rule,not a rule
+screen,188,rule,not a rule
+screen,189,not a rule,not a rule
+screen,190,not a rule,not a rule
+screen,191,not a rule,not a rule
+screen,192,not a rule,not a rule
+screen,193,rule,rule
+screen,194,rule,rule
+screen,195,rule,rule
+screen,196,not a rule,not a rule
+screen,197,rule,rule
+screen,198,rule,rule
+screen,199,not a rule,not a rule
+screen,200,not a rule,not a rule
+screen,201,rule,rule
+screen,202,rule,rule
+screen,203,not a rule,rule
+screen,204,not a rule,not a rule
+screen,205,rule,rule
+screen,206,not a rule,not a rule
+screen,207,rule,rule
+screen,208,not a rule,not a rule
+screen,209,rule,rule
+screen,210,rule,rule
+screen,211,rule,rule
+screen,212,rule,rule
+screen,213,rule,rule
+screen,214,not a rule,not a rule
+screen,215,rule,rule
+screen,216,not a rule,not a rule
+screen,217,not a rule,not a rule
+screen,218,rule,rule
+screen,219,not a rule,not a rule
+screen,220,rule,rule
+screen,221,rule,rule
+screen,222,not a rule,not a rule
+screen,223,rule,rule
+screen,224,rule,rule
+screen,225,rule,rule
+screen,226,rule,rule
+screen,227,rule,rule
+screen,228,rule,rule
+screen,229,rule,rule
+screen,230,rule,rule
+screen,231,rule,rule
+screen,232,rule,rule
+screen,233,rule,rule
+screen,234,rule,rule
+screen,235,not a rule,not a rule
+screen,236,rule,rule
+screen,237,rule,not a rule
+screen,238,rule,rule
+screen,239,not a rule,not a rule
+screen,240,rule,rule
+screen,241,rule,rule
+screen,242,rule,rule
+screen,243,rule,rule
+screen,244,not a rule,not a rule
+screen,245,rule,rule
+screen,246,rule,rule
+screen,247,rule,rule
+screen,248,not a rule,not a rule
+screen,249,not a rule,not a rule
+screen,250,rule,rule
+screen,251,not a rule,not a rule
+screen,252,rule,rule
+screen,253,rule,rule
+screen,254,rule,rule
+screen,255,not a rule,not a rule
+screen,256,rule,rule
+mapping,1,K086,K086
+mapping,2,K039,K039
+mapping,3,K004,K004
+mapping,4,K017,K017
+mapping,5,K004,K004
+mapping,6,not a public rule,K039
+mapping,7,K051,K051
+mapping,8,K004,K004
+mapping,9,K033,K033
+mapping,10,K041,K041
+mapping,11,K039,K039
+mapping,12,K049,K049
+mapping,13,K067,K067
+mapping,14,K049,K049
+mapping,15,K039,K039
+mapping,16,not a public rule,K039
+mapping,17,K039,K039
+mapping,18,K120,K120
+mapping,19,K039,K039
+mapping,20,K039,K039
+mapping,21,not a public rule,K041
+mapping,22,K034,K034
+mapping,23,K041,K041
+mapping,24,K039,K039
+mapping,25,K022,K022
+mapping,26,K034,K034
+mapping,27,not a public rule,K041
+mapping,28,K052,K052
+mapping,29,K017,not a public rule
+mapping,30,K013,K009
+mapping,31,K011,K011
+mapping,32,K042,K042
+mapping,33,K136,K102
+mapping,34,K052,K052
+mapping,35,K063,K063
+mapping,36,K039,K039
+mapping,37,K089,K089
+mapping,38,K020,K020
+mapping,39,K086,K086
+mapping,40,K029,K029
+mapping,41,K073,K073
+mapping,42,K039,K039
+mapping,43,not a public rule,K073
+mapping,44,K039,K039
+mapping,45,K034,K034
+mapping,46,K013,K013
+mapping,47,K033,K033
+mapping,48,K039,not a public rule
+mapping,49,not a public rule,K107
+mapping,50,K034,K034
+mapping,51,K034,K034
+mapping,52,K042,K042
+mapping,53,K112,K112
+mapping,54,K051,K051
+mapping,55,K129,K129
+mapping,56,K064,K064
+mapping,57,K039,K039
+mapping,58,not a public rule,K039
+mapping,59,K033,K033
+mapping,60,K039,K039
+mapping,61,K039,K041
+mapping,62,K039,K039
+mapping,63,K067,K034
+mapping,64,K034,K034
+mapping,65,K034,K034
+mapping,66,K067,K034
+mapping,67,K041,K041
+mapping,68,K052,K052
+mapping,69,K017,K017
+mapping,70,not a public rule,K033
+mapping,71,K033,K033
+mapping,72,K057,K098
+mapping,73,not a public rule,K107
+mapping,74,K033,K033
+mapping,75,K103,K103
+mapping,76,K033,K033
+mapping,77,K017,K017
+mapping,78,K041,not a public rule
+mapping,79,K039,not a public rule
+mapping,80,K136,K136
+mapping,81,K029,K029
+mapping,82,K040,K040
+mapping,83,K039,K039
+mapping,84,K040,K040

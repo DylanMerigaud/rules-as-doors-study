@@ -1,0 +1,84 @@
+week,turn_week,source,pattern_hit,coder1_rule,coder1_state,coder1_turn_state,coder1_class,coder2_rule,coder2_state,coder2_class
+2026-08-31,,back-fill,1,K004,unknown,,other,K004,unknown,other
+2026-08-31,,pattern,1,K011,none,,other,K011,none,other
+2026-08-31,,pattern,1,K022,prose,,other,K022,prose,other
+2026-08-31,,pattern,1,K029,none,,other,K029,none,other
+2026-08-31,,pattern,1,K033,door,,stop,K033,door,stop
+2026-08-31,,pattern,1,K039,prose,,ask,K039,prose,ask
+2026-08-31,,pattern,1,K039,prose,,ask,K039,prose,ask
+2026-08-31,,in session,0,K064,prose,,sequence,K064,prose,sequence
+2026-08-31,,pattern,1,K103,prose,,sequence,K103,prose,sequence
+2026-08-31,,in session,0,K112,prose,,other,K112,prose,other
+2026-08-31,,pattern,1,K129,none,,stop,K129,none,stop
+2026-08-31,,pattern,1,K136,prose,,other,K102,prose,never
+2026-08-31,,pattern,1,not a public rule,,,none,K039,prose,ask
+2026-08-31,,pattern,1,not a public rule,,,none,K039,prose,ask
+2026-09-07,,pattern,1,K034,prose,,never,K034,prose,never
+2026-09-14,,in session,0,K039,prose,,ask,K039,prose,ask
+2026-09-14,,pattern,1,K040,prose,,ask,K040,prose,ask
+2026-09-14,,in session,0,K086,prose,,sequence,K086,prose,sequence
+2026-09-21,,in session,0,K004,prose,,other,K004,prose,other
+2026-09-21,,in session,0,K029,door,,other,K029,door,other
+2026-09-28,2026-09-21,model judge,0,K020,prose,prose,other,K020,prose,other
+2026-09-28,2026-09-21,model judge,0,K033,door,door,stop,K033,door,stop
+2026-09-28,2026-09-28,model judge,1,K034,prose,prose,never,K034,prose,never
+2026-09-28,,pattern,1,K034,prose,,never,K034,prose,never
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,1,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-09-28,2026-09-28,model judge,0,K039,door,door,ask,K041,door,ask
+2026-09-28,2026-09-21,model judge,0,K039,door,door,ask,not a public rule,,none
+2026-09-28,,in session,0,K041,door,,ask,K041,door,ask
+2026-09-28,2026-09-21,model judge,0,K042,prose,prose,other,K042,prose,other
+2026-09-28,2026-09-28,model judge,0,K042,prose,prose,ask,K042,prose,ask
+2026-09-28,2026-09-21,model judge,0,K049,prose,prose,stop,K049,prose,stop
+2026-09-28,,in session,0,K067,prose,,never,K067,prose,never
+2026-09-28,2026-09-28,model judge,0,K067,prose,prose,never,K034,prose,never
+2026-09-28,2026-09-28,model judge,0,K067,prose,prose,never,K034,prose,never
+2026-09-28,2026-09-28,model judge,0,K086,prose,prose,sequence,K086,prose,sequence
+2026-09-28,2026-09-28,model judge,0,K089,door,door,write-path,K089,door,write-path
+2026-09-28,2026-09-28,model judge,0,K136,unknown,unknown,other,K136,unknown,other
+2026-09-28,2026-09-28,model judge,0,not a public rule,,,ask,K041,door,ask
+2026-09-28,2026-09-28,model judge,0,not a public rule,,,other,K041,door,ask
+2026-09-28,,pattern,1,not a public rule,,,none,K107,prose,other
+2026-09-28,,pattern,1,not a public rule,,,none,K107,prose,other
+2026-10-05,2026-09-28,model judge,0,K017,prose,prose,stop,K017,prose,stop
+2026-10-05,2026-09-28,model judge,0,K017,prose,prose,stop,K017,prose,stop
+2026-10-05,2026-09-28,model judge,0,K017,prose,prose,stop,not a public rule,,none
+2026-10-05,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-10-05,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-10-05,2026-09-28,model judge,0,K039,door,door,ask,K039,door,ask
+2026-10-05,2026-10-05,model judge,1,K039,door,door,ask,not a public rule,,none
+2026-10-05,2026-09-28,model judge,0,K040,prose,prose,ask,K040,prose,ask
+2026-10-05,2026-10-05,model judge,0,K049,prose,prose,stop,K049,prose,stop
+2026-10-05,,in session,0,K052,prose,,stop,K052,prose,stop
+2026-10-05,2026-09-28,model judge,0,K057,prose,prose,never,K098,prose,sequence
+2026-10-05,2026-10-05,model judge,0,K073,prose,prose,never,K073,prose,never
+2026-10-05,2026-09-28,model judge,0,not a public rule,,,none,K039,door,ask
+2026-10-05,2026-10-05,model judge,0,not a public rule,,,none,K073,prose,never
+pre-2026-08-31,,back-fill,0,K004,none,,other,K004,none,other
+pre-2026-08-31,,back-fill,0,K013,none,,other,K009,none,sequence
+pre-2026-08-31,,back-fill,0,K013,none,,other,K013,none,other
+pre-2026-08-31,,back-fill,0,K017,unknown,,stop,K017,unknown,stop
+pre-2026-08-31,,back-fill,0,K033,none,,stop,K033,none,stop
+pre-2026-08-31,,back-fill,0,K033,none,,stop,K033,none,stop
+pre-2026-08-31,,back-fill,0,K033,none,,stop,K033,none,stop
+pre-2026-08-31,,back-fill,0,K033,none,,stop,K033,none,stop
+pre-2026-08-31,,back-fill,0,K034,none,,never,K034,none,never
+pre-2026-08-31,,back-fill,0,K034,none,,never,K034,none,never
+pre-2026-08-31,,back-fill,0,K034,none,,never,K034,none,never
+pre-2026-08-31,,back-fill,0,K034,none,,never,K034,none,never
+pre-2026-08-31,,back-fill,0,K039,none,,ask,K039,none,ask
+pre-2026-08-31,,back-fill,0,K039,none,,ask,K039,none,ask
+pre-2026-08-31,,back-fill,0,K041,none,,ask,K041,none,ask
+pre-2026-08-31,,back-fill,0,K041,none,,ask,K041,none,ask
+pre-2026-08-31,,back-fill,0,K051,none,,other,K051,none,other
+pre-2026-08-31,,back-fill,0,K051,none,,other,K051,none,other
+pre-2026-08-31,,back-fill,0,K052,none,,stop,K052,none,stop
+pre-2026-08-31,,back-fill,0,K052,none,,stop,K052,none,stop
+pre-2026-08-31,,back-fill,0,K063,unknown,,gate,K063,unknown,gate
+pre-2026-08-31,,back-fill,0,K120,unknown,,sequence,K120,unknown,sequence
+pre-2026-08-31,,back-fill,0,not a public rule,,,cap,K033,none,stop

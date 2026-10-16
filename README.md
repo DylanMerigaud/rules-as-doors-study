@@ -42,8 +42,8 @@ is not needed to reproduce the numbers.
 
 - `prereg/`: the preregistrations of experiments E1 (`PREREG.md`, tag `prereg-v1`) and E2
   (`PREREG-E2.md`, tag `prereg-e2`), the field analysis plan and the deviations.
-- `data/`: derived tables only (one row per in-scope rule, weekly counts); `data/README.md` is the
-  data dictionary.
+- `data/`: derived tables only (one row per in-scope rule, weekly counts) and the field coding's
+  codebooks (`data/codebooks/`); `data/README.md` is the data dictionary.
 - `e1/`: the E1 cases, the five ablated paragraphs (`e1/treatment/`), the pinned hooks
   (`e1/hooks/`, redacted with visible markers, `e1/REDACTIONS.md`), the graders, the runner, the
   per-run results (`e1/results.jsonl`) and run records (`e1/runs.jsonl`); see `e1/README.md`.
