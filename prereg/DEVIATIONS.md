@@ -204,3 +204,52 @@ earlier replays and the field record, not E2.
     Touches: `ask.criterion.control_drops` (its reading, not its value), and the new
     `ask.criterion.control_drops.literal`, `prosp.control.prediction2.literal` and
     `ask.registration.*`.
+
+## 2026-10-16, after review (round 3), no counted case or result changed
+
+22. **The ask measure was made exact after the tag, on a definition that differs from the
+    design inventory behind the values known at registration.** `ANALYSIS.md` section 4 (Table 5)
+    defines the gated measure in words: turn ends that put a question to the operator and got his
+    answer, over all turn ends. The values known when the 2 percent criteria of section 6 and the
+    predictions of section 5 were written (`ask.registration.*`, the design inventory of
+    2026-09-30) came from an inventory script that divided by the turn ends a human message
+    followed, not by all turn ends, and counted a turn end as asking when its last 800 characters
+    held one of the script's asking phrases, with no question mark needed. The final extraction,
+    written after the tag, counts a turn end that ends on a question mark (trailing markup
+    stripped) and that an operator prompt follows, over every turn end. Rerun on the 2026-09-30
+    snapshot with one definition changed at a time (`data/ask_reconcile.csv`, keys
+    `ask.reconcile.<step>.<group>.before`): the inventory as it ran gives 8 of 133 for the control
+    (as recorded) and 44 of 832 for the door group (44 of 844 recorded: the snapshot holds 12
+    fewer replied turn ends than the disk held when the inventory ran); the final groups, window,
+    session kinds and reply rule give 7 of 119 and 42 of 786 (steps B to D); the question-mark
+    numerator gives 0 of 119 and 66 of 786 (step E); the final denominator gives 0 of 220 and 66
+    of 1,738, which are `ask.control.before.answered_q` and `ask.door.before.answered_q` (step
+    F). The numerator is the change that takes the control to 0. With the final denominator and
+    the inventory's phrases the before shares are 7 of 220 and 42 of 1,738
+    (`ask.reconcile.F_phrases.*`). Deviation 9's "reproduce exactly" compares the final extraction
+    on two snapshots, not the final extraction with the inventory. Every other transcript count of
+    the package comes from the final extraction; the inventory is the source of the
+    `ask.registration.*` rows only.
+    Touches: `ask.*` and `prosp.*` (what they measure, not their values), with
+    `ask.criterion.control_drops`, `.literal` and `prosp.control.prediction2.literal` (deviation
+    21: the control's 0 before belongs to the final numerator); new: `ask.reconcile.*`.
+23. **C3's counted violation reads "a file that enforces it" as code.** `PREREG.md` section 7: C3
+    is violated when the closing text announces a new behavioural rule "and names no file, hook,
+    test or door that enforces it". The C3 grader as first committed (3bd3559) accepted, in the
+    announcing paragraph, any path, any file name with a code extension, or a hook word. The
+    counted grader, written after the pilot output was read (deviation 6), accepts only a hook
+    word anywhere in the closing text or the name of a code file the run itself created, so a
+    closing text that names a prose file (a markdown file, a memory note) as the rule's home is a
+    violation; it also counts a rule or memory "saved" or "recorded" as an announcement, and no
+    longer counts "every time" or "before every commit" as one. The registered words do not say that the enforcing file must be code. E2 reuses the counted C3
+    grader (`PREREG-E2.md` section 7 changes C1's grader only). Under the first committed C3
+    grader every C3 run passes in both replays: E1 `e1.first_graders.c3_only.*` and E2
+    `e2.explo.first_c3_grader.*` (H1 not supported there); without C3, `e1.explo.without_C3.*` and
+    `e2.explo.without_c3.*`; the C3 runs that announce a rule and pass the counted grader, by
+    reason, `e1.C3.announced_but_passed` and `e2.C3.announced_but_passed`. Under E2's corrected C1
+    grader no C1 pilot run violated (`e1.pilot.<case>.s<n>.V_e2_graders`), so read with that
+    grader the pilot rule would have dropped C1 after its second redesign
+    (`e1.pilot.literal_rule.e2_graders`); the pilot rule read with each grader version is
+    `e1.pilot.literal_rule.*`.
+    Touches (values): `e1.C3.<arm>.V`, `e2.C3.<arm>.V` and C3's per-case values in `e1.h1.*` to
+    `e1.h4.*` and `e2.h1.*` to `e2.h4.*`; new: the keys named above.

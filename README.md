@@ -21,12 +21,13 @@ Archive: DOI 10.5281/zenodo.23347509 (Zenodo, reserved; the record becomes publi
 Python 3.12; `pip install -r env/requirements.txt`. From the repository root:
 
 ```
-python3 -m pytest -q                                   # 243 tests, all green
+python3 -m pytest -q                                   # every test green (the count is printed, not pinned here)
 python3 analysis/numbers.py                            # rebuilds every table, figure and results/numbers.json
 git diff --exit-code results/numbers.json              # exit 0: the committed numbers are what the code produces
 python3 e1/run_e1.py status                            # the E1 replay: runs present per case and arm (10 of 10 each)
 python3 e1/regrade.py                                  # regrades the 200 runs from e1/runs.jsonl: 0 disagreements
 python3 e2/run_e2.py status                            # the E2 replay: runs present per case and arm
+python3 e2/regrade.py                                  # regrades the 220 runs from e2/runs.jsonl: 0 disagreements
 ```
 
 `analysis/numbers.py` is byte-deterministic: two runs give identical `results/numbers.json`,
@@ -48,7 +49,8 @@ is not needed to reproduce the numbers.
   per-run results (`e1/results.jsonl`) and run records (`e1/runs.jsonl`); see `e1/README.md`.
 - `e2/`: the second replay, with the doors as repaired: its one new situation, the public copies
   of the repaired hooks (`e2/REDACTIONS.md`), the graders it changes, the planted runs, the
-  driver and the per-run results (`e2/results.jsonl`); see `e2/README.md`.
+  driver, the per-run results (`e2/results.jsonl`) and run records (`e2/runs.jsonl`); see
+  `e2/README.md`.
 - `analysis/`: analysis code that produces the numbers.
 - `results/`: `numbers.json`, `hypotheses.json`, `manifest.json` (what ran), the tables and figures.
 - `tools/`: manuscript checks (render, check_numbers, wordcount, check_refs) and their tests.

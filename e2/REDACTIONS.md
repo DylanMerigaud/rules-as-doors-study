@@ -44,3 +44,15 @@ same answer as the pinned E2 hook and as E1's public copy: 0 differences (the fi
 needs the private pins; the second is `tests/test_hooks_e2.py`). Run as hooks on planted Stop and
 PreToolUse payloads (a violating and a clean one per hook, first answer and re-answer), the public
 copies and the pins return the same exit code and the same decision in 18 of 18 cases.
+
+## The run records (`runs.jsonl`, R60)
+
+Built with E1's rules (`e1/REDACTIONS.md`, R60): a word of a run's text, file, commit or write
+call that matches the private list of third-party names would be replaced by `[REDACTED R60]`.
+No word of the 220 E2 records matched, so `runs.jsonl` carries no R60 marker. One substitution
+is new for E2: the machine's temporary-directory prefix in front of each run's scratch
+directory is written as `/tmp/`, so paths read `/tmp/e2-scratch/...` as E1's read
+`/tmp/e1-scratch/...`; the builder refuses to write a string that still holds another absolute
+path of the machine, and `e2/tests/test_regrade_e2.py` checks the file for one. It also refuses
+a string that shares a passage of eight words with the unpublished part of the instruction file
+(none did). The regrade reads the same records and agrees with `results.jsonl` on every field.

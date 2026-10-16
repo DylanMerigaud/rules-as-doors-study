@@ -25,14 +25,19 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
   write hook inspects, denied or not).
 - `run_facts.csv`: per run, the hook events of its raw stream: hooks registered, Stop and
   PreToolUse hook runs, empty Stop outputs, blocks and denials, prompt hook runs, operator skills
-  listed (0 everywhere: isolation held), the model reported.
+  listed (0 everywhere: isolation held), the model reported, and since review round 3 whether
+  the run had its own empty configuration directory (`own_config_dir`, 200 of 200), the context
+  size of its first model call (`first_call_context_tokens`), its turn results (`turn_results`, 1
+  in every run, so each run's closing text is its one turn end) and how many turns a background
+  job's notification resumed (`turns_resumed_by_task_notification`, 0 in every run).
 - `graders_first_committed.py`: the graders as first committed (3bd3559, 2026-09-30 18:24 +0200),
   byte for byte, before the refinements of deviation 6 (`prereg/DEVIATIONS.md`).
   `analysis/round2_supplement.py` grades the 200 counted runs with it (`e1.first_graders.*`) and
   `analysis/tests/test_round2.py` checks it against the commit.
 - `pilot_runs.csv`: the 30 pilot runs, one row each: case, situation, run index, batch start
   (UTC), trimwrit commit, and V as recorded at the end of the run, under the first committed
-  graders and under the counted graders. No text (`PILOT.md`, keys `e1.pilot.*`).
+  graders, under the counted graders and (review round 3) under E2's graders, which differ only
+  in C1 (`V_e2_graders`). No text (`PILOT.md`, keys `e1.pilot.*`).
 - `regrade.py`: rebuilds each run's final state from `runs.jsonl` and the case's setup, grades it
   with `graders.py` and the public hooks, and compares V, V_door, C, B, K_stop and K_deny with
   `results.jsonl`. `python3 e1/regrade.py` prints `200 runs regraded, 0 field disagreements`.
@@ -58,9 +63,11 @@ pilot in `PILOT.md`. This page lists what the folder holds and what a reader can
   (`e1.C4.write_arms.E`); all 6 hold the dash in their closing text, which the write hook does not
   see, and the one that also reached a file did so through write calls whose inspected text was
   clean (`e1.C4.write_arms.file_escapes_through_calls_the_hook_saw_clean`, 1 of 1).
-- **C3 depends on the refined grader.** The C3 grader as first committed (3bd3559, before the
-  pilot) flags 0 of 10 runs in every arm (`e1.C3.<arm>.V_first_committed_grader`); the counted
-  grader, refined after the pilot (`DEVIATIONS.md`, deviation 6), flags 10 of 10 in A0 and AD.
+- **C3 depends on the refined grader.** The C3 grader as first committed (3bd3559, committed
+  at 18:24 +0200, after the first pilot batches started at 18:19 and before the redesigned
+  situations ran from 18:26; the V the driver recorded equals it in 30 of 30 pilot runs) flags
+  0 of 10 runs in every arm (`e1.C3.<arm>.V_first_committed_grader`); the counted grader,
+  refined after the pilot (`DEVIATIONS.md`, deviation 6), flags 10 of 10 in A0 and AD.
 - Every door arm registered and ran its hooks (100 of 100), no arm without a door had a hook event
   (0 of 100), and the question-tool hook never ran (0 of 20, deviation 1).
 - Doors refused in 12 of the 100 door-arm runs, all in C2 AD (2) and C4 AD-write (10); each such

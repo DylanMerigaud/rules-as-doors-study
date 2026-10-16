@@ -118,6 +118,13 @@ not given.
   popped terminals from Monday 2026-09-28, so including the days before the repair of 2026-09-30
   17:27 +0200, when the hook's block did not stop the turn, judged as "followed by a new closing
   text before the next operator turn". No counted ledger refusal precedes the repair.
+- **The ask shares known at registration and the published ones.** `ask.registration.*` come
+  from the design inventory of 2026-09-30, `ask.<group>.<window>.*` from the final extraction;
+  they differ in the denominator (turn ends a human message followed, against every turn end) and
+  in what counts as asking (an asking phrase, against a turn end that ends on a question mark).
+  `ask_reconcile.csv` changes one definition at a time on the same snapshot (`DEVIATIONS.md`,
+  deviation 22): the question-mark rule takes the control's before share from 7 of 119 to 0 of
+  119.
 - **Test rows.** `door_refusals_test_rows.csv` lists the one counted ledger refusal that came
   from a planted test session (`DEVIATIONS.md`, deviation 20), with its recovery turns and
   output tokens. The published counts keep it. The K001 counts, took-effect shares, recovery
@@ -126,6 +133,107 @@ not given.
   every door in `door.refusals.not_located` (9 of 192), and `door.K001.review.kappa` and
   `.n_unclear`, whose values do not change without it (the item was coded right by both
   coders).
+
+## What an interval treats as independent
+
+- **Field shares** (`ask.*`, `prosp.*`, `dashstop.*`, `dashwrite.*`, `weekly.*`, `sched.*`,
+  `door.<rule>.*.took_effect`, `door.<rule>.wrong_share`, `audit.*`): Wilson intervals that treat
+  each counted event as one independent trial: a turn end, a refusal, a write call, a review or
+  audit item, a due row-day. The events are nested in sessions (for the ask shares,
+  `ask.<group>.<window>.sessions`: 141 and 555 door-group sessions, 9 and 20 control sessions),
+  in days and in rules, and the events of one session are not independent, so these intervals are
+  narrower than intervals that modelled that nesting; no field interval models it. The Newcombe
+  intervals of differences (`ask.*.diff`, `rules.rq3.diff.*`, `replays.*.diff`) use the same unit.
+- **Rates per 100 operator-active days** (`perrule.*.rate`): exact Poisson intervals that treat
+  each correction as an independent event over the exposure days.
+- **Agreement**: kappas and Gwet's AC1 resample items (units, refusals, audit items, corrections);
+  `rules.kappa_*.rule_cluster` resamples rules.
+- **Replays**: a cell's share (Wilson) treats each of its 10 runs as independent. A pooled
+  hypothesis value is a mean over 4 or 5 cases, with the registered cluster bootstrap over cases
+  (10,000 resamples, `default_rng(20260930)`), which has only 35 (4 cases) or 126 (5 cases)
+  distinct resamples. When cases sit at exactly 0, the draws made of them alone give 0, and a
+  percentile bound lands on 0 once they pass 2.5 percent of the draws
+  (`<key>.draws_from_zero_cases`). Exploratory checks that do not use the bootstrap: the Student t
+  interval over the per-case values (`.t95`, and `.t95.clipped` cut at the statistic's range), the
+  sign count over cases (`.n_cases_positive`), the smallest level an exact sign test over 4 or 5
+  cases can reach (`small_sample.exact_sign_test.<n>_cases`: 1 of 16 and 1 of 32, so with 4 cases
+  no exact test over cases reaches the 2.5 percent of one tail), and the Wilson bound of a zero
+  (`small_sample.wilson.*`). They decide nothing; the registered criteria do.
+
+## Who produced each label and each grader
+
+No label, grader decision or code in this package was checked by a person; the author operated
+the harness and set its rules, and every step below was done by code or by Anthropic's
+`claude-opus-5-5`, the model whose turns the study judges.
+
+- **Replay graders** (`e1/graders.py`, `e2/graders.py`): written by the model through Claude
+  Code. E1's were first committed at 3bd3559 and refined after the model read the pilot output
+  (`prereg/DEVIATIONS.md`, deviations 6 and 23); E2's changes were committed before any E2 run.
+  Their proofs (`proof.json`) and tests were written by the same model; each completion grader
+  is shown to fail on a copy of a real complete run with one item of the task broken
+  (`e1/tests/test_completion_can_fail.py`). The door detectors in `e1/hooks/` and `e2/hooks/` are
+  the harness's own hooks, part of the harness code the model wrote most of.
+- **Rule inventory**: a script split every prose source into units (a paragraph or list item
+  outside code fences; a memory note is one unit) and kept the units its normative-word pattern
+  matched; units whose path marks them out of scope were not coded. Two coders, separate calls of
+  the model with the codebook and no access to each other's output, gave each unit five labels
+  (is a rule, class, enforceability, scope, the doors that enforce it); a third call of the same
+  model saw both codes and resolved each disagreement, and both original codes are kept.
+  Agreement: on the rule-or-not screen over the 256 candidate units whose final scope is in
+  (`rules.screen.agreement`, `rules.screen.kappa`, `rules.screen.cells`: 177 end as rules, the
+  published units, and 79 as not a rule), and on class and enforceability over the units both
+  coders called a rule (`rules.kappa_class`, `rules.kappa_enforceability`). Agreement over every
+  candidate unit is not published: that pool includes the out-of-scope units, of which the study
+  gives no count. The doors were listed by a script from the harness's code (registered hooks,
+  refusal sites) and coded the same way.
+- **Grouping units into rules** and the public description of each rule: one pass of the same
+  model, with no second coder; no agreement is measured. Each description passed the
+  privacy check, and a description the check refused was rewritten by the model.
+- **Corrections**: two sources, the corrections the operator logged in the correction ledger and
+  the operator's typed inputs that the pinned correction detector (a regular expression) flagged.
+  A deterministic join gave a first rule for ledger rows (their tag, the rule it was promoted to,
+  the unit that holds it). Two coders (calls of the same model) then read each correction and
+  the rule list and gave its rule or none, and whether it corrects a behaviour at all; coder 1
+  saw the first join, coder 2 did not. The published table uses coder 1's rule, and leaves out a
+  correction whose coders disagree on in scope or out. Agreement on the rule over the 84
+  corrections that at least one coder mapped to a public rule: `corrections.mapping.agreement`,
+  `.kappa` and `.disagreements`. The detector's precision over all its hits is not published (the
+  hits include out-of-scope corrections); the coders' "corrects a behaviour" code is the screen
+  that removed hits that correct nothing.
+- **Door refusal review** (right, wrong, unclear) and **ask audit** (only-him, avoidable,
+  not-an-ask): two coders and a third resolving call per item, all the same model; kappas `door.<rule>.review.kappa`, `audit.kappa`, and AC1
+  `door.<rule>.review.ac1`.
+- **Everything else** (session kinds, turn ends, the answered share, took effect, recovery,
+  scheduler outcomes, the replay measures) is computed by code from the logs, with no model call.
+
+## What the raw logs can hold, and what left the machine for coding
+
+- **The raw logs.** Session transcripts, the harness's ledgers and the replay's raw runs. A
+  transcript can hold other people's personal data wherever it appeared in what a session read
+  or wrote: names, contact details, account names and text other people wrote. The replay runs
+  work in scratch repositories on the published prompts; one word of one E1 run text matched the
+  list of third-party names and is redacted, and no word of E2's did (`e1/REDACTIONS.md`,
+  `e2/REDACTIONS.md`, R60). Nothing in this package holds a transcript's text: the field files are
+  counts and ids, and every published file passes the privacy check before a push.
+- **The coding calls.** Every coder above was a headless call of `claude-opus-5-5`, Anthropic's
+  hosted model, through Claude Code under the author's own subscription, with the provider the
+  sessions themselves ran on; every recorded answer names that model (the ask audit rejected and
+  coded again the answers another model gave, `DEVIATIONS.md`, deviation 11). Each call had no tool (`--tools ""`), no instruction file, hook
+  or skill (`--bare`), ran from a scratch directory outside every repository and got its input on
+  standard input; the rule, correction and ask coders also kept no local session record.
+- **What each coder saw**, at most: a rule unit's text (1,400 characters) with its source kind
+  and section heading; a door's refusal text (400) and description (900); a correction message
+  (900) and the consequence the ledger recorded (400), with the rule list (id, heading, 110
+  characters of text); for a refused end of turn, the operator's last message before it (its last
+  1,500 characters) and the refused closing text (its last 6,000); for a refused tool or write
+  call, the tool, the target file and windows of 300 characters around each forbidden character
+  (at most 6), or the first 4,000 characters; for an ask, the last 1,200 characters of each of
+  the operator's last two messages and the last 3,000 characters of the closing text or of the
+  question tool's input.
+- **Screening.** None: the excerpts were not screened for other people's data before coding.
+  The rule coders saw candidate units later coded out of scope, which is how those were found.
+  The coders' outputs kept on the machine are ids and codes; the item texts stay in private files
+  there, and none is published.
 
 ## Files
 
@@ -190,4 +298,11 @@ not given.
   located, took effect, in the review sample, the review codes, recovery turns and output tokens,
   why it is a test row).
 - `case_facts.csv`: single facts about the case (commit counts, code size, the probe figures,
-  the recorded coding kappas), each with its source.
+  the recorded coding kappas, the agreement on the rule-or-not screen and on the correction
+  mapping, the tag and push times of the two preregistrations), each with its source. The push
+  times are GitHub's record of the push of the commit each tag names
+  (`e1.git.prereg_v1_commit_public_push`, `e2.git.prereg_e2_commit_public_push`); GitHub keeps no
+  record of the tag pushes themselves.
+- `ask_reconcile.csv`: the ask measure's before window rerun on the 2026-09-30 snapshot, one
+  definition changed per step from the design inventory (A) to the final extraction (F): step,
+  group, asked turn ends, turn ends, and what the step changes (`DEVIATIONS.md`, deviation 22).

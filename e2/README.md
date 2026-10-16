@@ -24,6 +24,31 @@ change.
   (`order`, `prove`, `planted`, `planted-report`, `pilot`, `run`, `status`).
 - `results.jsonl`: one row per run attempt with the measures of `PREREG-E2.md` section 7, no
   text. A voided attempt keeps its reason and its order row is run again.
+- `runs.jsonl` (review round 3): per counted run, what the run left, built from the raw runs the
+  way `e1/runs.jsonl` was: every assistant text in order (`texts`, with `closing_text` and its
+  index), each stop attempt with the index of the text the Stop hooks judged and their decisions
+  (`stops`), the index in `texts` of the text that ended each turn (`turn_end_text_indexes`: a run
+  whose session resumed when a background job reported back has more than one turn), the
+  PreToolUse denials (`n_denials`) and tool calls (`n_tool_calls`), the files it wrote
+  (`output_files`, full content), the paths it created and deleted, its commits (text, paths,
+  whether they touched the situation files), its branches, in a door arm the counts of the
+  hooks' own health rows (`hook_health`: caps, crashes, timeouts), and for C4 every write call
+  (tool, target, the text the write hook inspects, denied or not, error or not). A closing text
+  a Stop door refused is in `texts`: the stream records it before the hook answers, so the texts
+  before each refusal and the re-answers after it can be read. Redactions: `REDACTIONS.md`, R60.
+- `regrade.py`, `tests/test_regrade_e2.py`: rebuilds each run's final state from `runs.jsonl` and
+  the case's setup (E1's case files, C4S's prompt), grades it with `graders.py` and the public
+  hook copies, and compares 23 fields with `results.jsonl` (V, V_door, V_text, V_files,
+  V_commits, C, B, B_stop, B_deny, K_stop, K_deny, K_deny_strict, K_stop_door, E, the delivery
+  check, the hooks' health rows, stop attempts and tool calls). `python3 e2/regrade.py` prints
+  `220 runs regraded, 0 field disagreements`; the test pins it and shows that a changed record
+  makes it disagree.
+- `run_facts.csv`: per run, from its raw stream: hooks registered, Stop and PreToolUse hook runs,
+  empty Stop outputs, blocks and denials, prompt hook runs, operator skills listed (0
+  everywhere), the model reported, whether the run had its own empty configuration directory
+  (`own_config_dir`), the context size of its first model call (`first_call_context_tokens`), its
+  turn results (`turn_results`) and how many of its turns a background job's notification
+  resumed (`turns_resumed_by_task_notification`). No text.
 
 ## How the analysis reads it
 
@@ -33,9 +58,13 @@ are judged by E1's own code with E1's criteria; H5's Stop half reads C4S's Stop 
 
 ## What needs the private files
 
-The raw runs (streams, transcripts, the scratch repository after each run, each run's hook health
-ledger) and the unredacted pinned hooks stay private, as E1's did. With them, `run_e2.py
-planted-report` regrades every planted run from its raw files.
+The raw runs (streams, session records, the scratch repository after each run, each run's hook
+health ledger) and the unredacted pinned hooks stay private, as E1's did; `runs.jsonl` and
+`run_facts.csv` are what is derived from them, and they are enough to regrade every counted run.
+Not published: the pilot and planted runs' texts (`PILOT.md` gives their outcomes), the
+instruction file beyond the five paragraphs, the hooks' unredacted bytes (`REDACTIONS.md`), and
+the hook trace each run wrote (its decisions are in `stops`, its health counts in
+`hook_health`). With the raw files, `run_e2.py planted-report` regrades every planted run.
 
 ## Running it again
 
