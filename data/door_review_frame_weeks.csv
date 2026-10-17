@@ -1,0 +1,13 @@
+rule_id,door_type,week,located_refusals
+K001,PreToolUse hook,2026-09-28,72
+K001,PreToolUse hook,2026-10-05,35
+K001,Stop hook,2026-09-28,3
+K001,Stop hook,2026-10-05,1
+K001,write refusal,2026-09-28,2
+K001,write refusal,2026-10-05,4
+K029,Stop hook,2026-09-28,19
+K029,Stop hook,2026-10-05,11
+K033,Stop hook,2026-09-28,4
+K033,Stop hook,2026-10-05,15
+K039,Stop hook,2026-09-28,9
+K039,Stop hook,2026-10-05,8

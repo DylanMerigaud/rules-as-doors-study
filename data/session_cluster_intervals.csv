@@ -1,0 +1,70 @@
+key,cluster_unit,clusters,k,n,lo,hi,resamples_used,note
+ask.control.after.answered_q,session,19,1,144,0.000000,0.030303,10000,
+ask.control.after.qmark400,session,19,8,144,0.013886,0.123460,10000,
+ask.control.before.answered_q,session,10,0,220,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+ask.control.before.qmark400,session,10,11,220,0.015385,0.073914,10000,
+ask.control.diff,session,29,,,0.000000,0.030769,10000,after minus before; a session with turn ends in both windows is resampled once
+ask.control.diff.qmark400,session,29,,,-0.043843,0.087094,10000,after minus before; a session with turn ends in both windows is resampled once
+ask.door.after.answered_q,session,547,13,2819,0.001507,0.008980,10000,
+ask.door.after.by_model.claude-fable-5-1.answered_q,session,6,0,276,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+ask.door.after.by_model.claude-opus-5-5.answered_q,session,155,0,899,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+ask.door.after.by_model.claude-opus-5.answered_q,session,67,0,229,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+ask.door.after.by_model.claude-sonnet-5-5.answered_q,session,211,2,960,0.000000,0.005258,10000,
+ask.door.after.by_model.claude-sonnet-5.answered_q,session,70,2,321,0.000000,0.016878,10000,
+ask.door.after.qmark400,session,547,62,2819,0.012062,0.032647,10000,
+ask.door.before.answered_q,session,133,66,1738,0.017192,0.059871,10000,
+ask.door.before.by_model.claude-fable-5-1.answered_q,session,22,1,273,0.000000,0.012448,10000,
+ask.door.before.by_model.claude-opus-5.answered_q,session,28,1,321,0.000000,0.009288,10000,
+ask.door.before.by_model.claude-sonnet-5.answered_q,session,84,64,988,0.028766,0.105759,10000,
+ask.door.before.qmark400,session,133,108,1738,0.037676,0.086375,10000,
+ask.door.diff,session,680,,,-0.055264,-0.011794,10000,after minus before; a session with turn ends in both windows is resampled once
+ask.door.diff.qmark400,session,680,,,-0.066473,-0.013554,10000,after minus before; a session with turn ends in both windows is resampled once
+ask.reconcile.F_phrases.control.after,session,19,2,144,0.000000,0.047253,10000,
+ask.reconcile.F_phrases.control.before,session,10,7,220,0.000000,0.059830,10000,
+ask.reconcile.F_phrases.door.after,session,547,0,2819,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+ask.reconcile.F_phrases.door.before,session,133,42,1738,0.013542,0.034634,10000,
+ask.registration.control.after.answered_q,session,4,2,39,0.000000,0.166667,10000,"the design inventory's values are not recomputable from any file; this interval is for its reproduction (step A of data/ask_reconcile.csv on the snapshot of 2026-09-30), whose k and n are given here and differ from the registered ones for the harness repository"
+ask.registration.control.before.answered_q,session,8,8,133,0.011236,0.081967,10000,"the design inventory's values are not recomputable from any file; this interval is for its reproduction (step A of data/ask_reconcile.csv on the snapshot of 2026-09-30), whose k and n are given here and differ from the registered ones for the harness repository"
+ask.registration.door.after.answered_q,session,56,0,371,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point; the design inventory's values are not recomputable from any file; this interval is for its reproduction (step A of data/ask_reconcile.csv on the snapshot of 2026-09-30), whose k and n are given here and differ from the registered ones for the harness repository"
+ask.registration.door.before.answered_q,session,101,44,832,0.032953,0.071506,10000,"the design inventory's values are not recomputable from any file; this interval is for its reproduction (step A of data/ask_reconcile.csv on the snapshot of 2026-09-30), whose k and n are given here and differ from the registered ones for the harness repository"
+audit.after.avoidable,session,60,55,194,0.194444,0.387500,10000,
+audit.before.avoidable,session,59,110,263,0.282685,0.552943,10000,
+audit.kappa,session,132,,559,0.783261,0.884711,10000,"Cohen's kappa of the two original codes, sessions resampled"
+dashstop.followed,session,59,26,288,0.045916,0.144634,10000,
+dashstop.repair_week_and_after.followed,session,4,3,4,0.250000,1.000000,10000,
+dashstop.repair_week_and_after.still_violating,session,3,0,3,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+dashstop.still_violating,session,12,19,26,0.562438,0.894737,10000,
+door.K001.took_effect,session,48,117,117,1.000000,1.000000,10000,"degenerate: every unit is a success, every resample gives the point"
+door.K001.wrong_share,session,23,0,30,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K001.wrong_share.coder1,session,23,0,30,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K001.wrong_share.coder2,session,23,0,30,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K029.took_effect,session,22,30,30,1.000000,1.000000,10000,"degenerate: every unit is a success, every resample gives the point"
+door.K029.wrong_share,session,14,18,20,0.714286,1.000000,10000,
+door.K029.wrong_share.coder1,session,14,18,20,0.714286,1.000000,10000,
+door.K029.wrong_share.coder2,session,14,18,20,0.714286,1.000000,10000,
+door.K033.took_effect,session,15,19,19,1.000000,1.000000,10000,"degenerate: every unit is a success, every resample gives the point"
+door.K033.wrong_share,session,15,0,18,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K033.wrong_share.coder1,session,15,0,19,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K033.wrong_share.coder2,session,15,0,18,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+door.K039.took_effect,session,14,17,17,1.000000,1.000000,10000,"degenerate: every unit is a success, every resample gives the point"
+door.K039.wrong_share,session,14,9,17,0.333333,0.750000,10000,
+door.K039.wrong_share.coder1,session,14,9,17,0.333333,0.750000,10000,
+door.K039.wrong_share.coder2,session,14,9,17,0.294118,0.764706,10000,
+perrule.K039.door.rate,operator-active day,18,12,18,0.000000,166.666667,10000,per 100 operator-active days; corrections on 3 distinct days
+perrule.K039.door.rate.coder2,operator-active day,18,10,18,0.000000,144.444444,10000,per 100 operator-active days; corrections on 2 distinct days
+perrule.K039.door.rate.without_model_judge,operator-active day,18,0,18,0.000000,0.000000,10000,"degenerate: no correction on any day, every resample gives 0"
+perrule.K039.prose.rate,operator-active day,19,3,19,0.000000,42.105263,10000,per 100 operator-active days; corrections on 2 distinct days; 1 correction logged on a day with no operator turn in the rule's repositories is attached to the last exposure day before it
+perrule.K039.prose.rate.coder2,operator-active day,19,5,19,0.000000,57.894737,10000,per 100 operator-active days; corrections on 3 distinct days; 1 correction logged on a day with no operator turn in the rule's repositories is attached to the last exposure day before it
+perrule.K039.rate_ratio.door_over_prose,operator-active day,37,,,0.000000,inf,9955,"door-state rate over prose-state rate, days resampled within each state; 1169 of 9955 resamples have no prose-state correction and an infinite ratio"
+perrule.K039.rate_ratio.door_over_prose.coder2,operator-active day,37,,,0.000000,inf,9951,"door-state rate over prose-state rate, days resampled within each state; 324 of 9951 resamples have no prose-state correction and an infinite ratio"
+prosp.control.answered_q,session,10,1,81,0.000000,0.071429,10000,
+prosp.door.answered_q,session,316,6,1669,0.000556,0.007688,10000,
+prosp.promise.continued,session,15,19,19,1.000000,1.000000,10000,"degenerate: every unit is a success, every resample gives the point"
+prosp.retrospective.control.answered_q,session,9,0,63,0.000000,0.000000,10000,"degenerate: every unit is a failure, every resample gives the point"
+prosp.retrospective.door.answered_q,session,234,7,1150,0.000716,0.016011,10000,
+weekly.2026-08-31.operator.door.corr_per100,session,59,38,603,0.036017,0.086170,10000,
+weekly.2026-09-07.operator.door.corr_per100,session,11,4,90,0.014286,0.067573,10000,
+weekly.2026-09-14.operator.door.corr_per100,session,26,5,178,0.000000,0.055838,10000,
+weekly.2026-09-21.operator.door.corr_per100,session,28,8,291,0.000000,0.050361,10000,
+weekly.2026-09-28.operator.door.corr_per100,session,45,15,363,0.012657,0.068721,10000,
+weekly.2026-10-05.operator.door.corr_per100,session,19,7,145,0.007576,0.097561,10000,

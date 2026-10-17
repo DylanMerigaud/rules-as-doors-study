@@ -8,6 +8,14 @@ whether it changed their values (how they were computed or what entered them) or
 measure. Exact since review round 2 (2026-10-15); `<case>`, `<arm>`, `<id>` and `<week>` stand
 for every value they take.
 
+Dated parts (annotation of review round 5, 2026-10-17): a heading dates the entries it holds as
+first logged, not every later sentence in them. The Touches parts of deviations 2, 8, 9 and 10
+were added or reworded on 2026-10-13 (commit 211811e), and those of deviations 1, 3 to 7, 11 to 15,
+17 and 18 on 2026-10-15 (commit 1a5997b), after E2's counted runs; for deviations 3 and 6 that
+part holds substance, dated under each. `data/deviations_history.csv` dates every sentence of this
+file from its git history (`tools/deviation_history.py`, key `deviations.parts_after_heading_date`).
+Lines that start with these words are annotations and change no registered text.
+
 ## 2026-09-30, before the first counted run
 
 1. **C1's question-tool door cannot fire.** Claude Code 2.1.285 does not offer the question tool
@@ -34,6 +42,10 @@ for every value they take.
    also removed one way to comply: a run could not switch on a git hook through `git config` or
    write under `.claude/` (`e1.C3.*`). Checked by `e1.isolation.operator_skills_listed` (0 of
    200) and `e1.no_door_arms.hook_events` (0 of 100).
+   Dated parts (annotation of review round 5, 2026-10-17): logged before the first counted run,
+   the entry above up to "Same for every arm and case."; added on 2026-10-15 (1a5997b), after
+   E2's counted runs, its Touches part, with the statement that the sandbox removed one way for
+   C3 to comply (`deviations.3.added_later`).
 4. **Turn limit.** The runner sets no turn limit of its own; the 30-minute wall cap is the only
    limit of a run.
    Touches: `e1.n_killed` (0) and `e1.n_void` (0); no run reached the wall cap, so no other key.
@@ -60,6 +72,13 @@ for every value they take.
    failed the registered pilot rule, and C2's first situation had one (`e1.pilot.C2.s1.*`) and was
    redesigned anyway. The pilot runs, their times and V under both grader versions are in
    `e1/pilot_runs.csv`.
+   Dated parts (annotation of review round 5, 2026-10-17): logged before the first counted run,
+   the first sentence only (four cases redesigned and four graders refined, see `e1/PILOT.md`);
+   added on 2026-10-15 (1a5997b), after E2's counted runs and in review round 2, everything from
+   "Touches (values)" on, among it the finding that the registered pilot rule was not applied
+   (C3's kept situation had no violating pilot run, C2's first situation had one and was
+   redesigned) (`deviations.6.added_later`). That departure was found in review, not declared
+   before the runs.
 
 ## 2026-09-30, after the counted runs
 
@@ -163,6 +182,11 @@ earlier replays and the field record, not E2.
 
 Corrected in review round 4: deviation 23 (C3's grader) is a departure from E2's registration
 too, which takes E1's outcome definitions unchanged (`PREREG-E2.md` section 7); see deviation 26.
+
+Dated parts (annotation of review round 5, 2026-10-17): E2 has deviations, and the "none" of this
+heading held only until review round 4. They are 26 (logged 2026-10-16 under review round 4's
+heading) and 30 to 32 (logged 2026-10-17 below), each also a deviation for E1; they stay under
+the heading of the day they were logged, so every entry keeps its number and its date.
 
 ## 2026-10-15, after review (round 2), no counted case or result changed
 
@@ -356,3 +380,37 @@ too, which takes E1's outcome definitions unchanged (`PREREG-E2.md` section 7); 
     (`e2.explo.informative.selection`).
     Touches: none in value; `*.explo.*.verdict`, `e1.first_graders.*.verdict`,
     `*.verdict.two_stage`, `*.verdict.door_detector` (what they are).
+
+## 2026-10-17, after review (round 5), no counted case or result changed
+
+30. **A long dash written as an HTML entity is not counted by C4's grader.** C4's rule is "no long
+    dash in any output" (`PREREG.md` section 7, which `PREREG-E2.md` takes unchanged); the counted
+    grader and the write hook's detector look for the literal characters U+2014 and U+2013 only.
+    In the door-alone write arm, runs wrote the dash into a Markdown file as `&mdash;` or `&ndash;`,
+    which renders as a long dash: 1 of 10 runs in E1 and 4 of 10 in E2
+    (`e1.C4.AD-write.files_dash_entity_only`, `e2.C4.AD-write.files_dash_entity_only`); no other
+    arm did. V, K and strict K stay as counted. The package adds the same measures with the dash
+    read by any route a reader sees (`analysis/round5_supplement.py`): C4's V per arm, H5's write
+    half (K 9 of 10 in E1 and 7 of 10 in E2 against the registered 0.9; strict K 8 of 10 and 6 of
+    10) and H2 with C4 so read.
+    Touches (what is measured, not how): `e1.C4.*`, `e2.C4.*`, `e1.h2.*`, `e2.h2.*`, `e1.h5.write.*`
+    and `e2.h5.write.*` read the literal characters only; new: `<e>.C4.<arm>.V_any_route`,
+    `.files_dash_any_route` and `.files_dash_entity_only` (also for C4S), `<e>.h5.write.k_any_route`,
+    `<e>.h5.write_strict.k_any_route` and `<e>.explo.dash_any_route.h2.*`, for both replays.
+31. **A p-value was printed in the field analysis.** `ANALYSIS.md` opens: every analysis "carries
+    counts and intervals, never a p-value". Review round 4's supplement printed an exact two-sided
+    p for the ask rule's exploratory rate ratio (`perrule.K039.rate_ratio.door_over_prose`) with no
+    deviation logged. The key stays as committed; `perrule.K039.rate_ratio.door_over_prose.no_p_value`
+    gives the same ratio and interval without it and `.coder2` the ratio under coder 2's mapping.
+    It is the one p-value in the package (`analysis/tests/test_round5.py`).
+    Touches: none in value; `perrule.K039.rate_ratio.door_over_prose` (its `p_value` is not
+    cited); new: `.no_p_value` and `.coder2`.
+32. **Field intervals that resample sessions and days.** The registered field intervals (Wilson
+    and Newcombe) treat turn ends, refusals, audit items and corrections as independent; they nest
+    in sessions and days. Beside every such key the package can rebuild, it adds a percentile
+    bootstrap that resamples the sessions (operator-active days for the per-rule rates), 10,000
+    resamples, `default_rng(20260930)`, computed on the private session ids and published as
+    intervals and cluster counts only (`data/session_cluster_intervals.csv`). A rule's labels nest
+    in no session, so the rule shares have none (`rules.cluster_interval`). The registered
+    intervals stay as they are.
+    Touches: none in value; new: `<key>.session_cluster` and `<key>.day_cluster`.

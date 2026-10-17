@@ -30,11 +30,12 @@ def test_twice_gives_byte_identical_outputs(tmp_path):
             "figures/figure4_e1.svg", "figures/figure2_weekly.svg"} <= names
     manifest = json.loads((out / "manifest.json").read_text())
     # The fixture E1 folder holds no per-run records (e1/runs.jsonl), which only the review-round
-    # supplements of rounds 1, 3 and 4 read; test_supplements_on_the_published_files runs them on the
-    # real ones.
+    # supplements of rounds 1, 3, 4 and 5 read (round 5 also reads data files the fixture does not
+    # build); test_supplements_on_the_published_files runs them on the real ones.
     assert set(manifest["skipped"]) <= {"E1 supplement (review round 1)",
                                         "round 3 supplement (review round 3)",
-                                        "round 4 supplement (review round 4)"}
+                                        "round 4 supplement (review round 4)",
+                                        "round 5 supplement (review round 5)"}
     assert "table 14 (E2)" in manifest["ran"]
     hyp = json.loads((out / "hypotheses.json").read_text())
     assert "H1" in hyp and "e2" in hyp

@@ -77,4 +77,9 @@ Descriptions: on 2026-10-13, after review, every row was checked against the dom
 the top of `README.md`, and the 26 descriptions that named an activity beyond it were rewritten in
 generic terms (K035, K036, K037, K042, K048, K050, K051,
 K076 to K083, K113, K122, K125, K126, K128, K130, K133, K137 to K140). Only the `description`
-column changed; no analysis reads it, and every number is unchanged.
+column changed; no analysis reads it, and every number is unchanged. On 2026-10-17, after review
+round 5, the check was repeated and 16 more were made generic: the ones that named a browser and
+its tabs (K022, K023, K056, K057, K098 to K103, now "the operator's desktop application" and its
+views), a phone (K048, K128), an analytics project (K125), the language of the source material
+(K134) or an action outside the session (K039, K109). Only the `description` column changed again
+(`analysis/tests/test_round5.py` checks that no description names these).

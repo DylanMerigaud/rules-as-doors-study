@@ -1,0 +1,6 @@
+experiment,case,arm,run_index,order,twin_run_index,parts_that_differ,chars_minus_twin,chars_only_in_this_run,chars_only_in_twin,first_user_message_same,instruction_files_same,has_tool_settings_flags,twin_has_tool_settings_flags,has_pasted_content_guidance,twin_has_pasted_content_guidance,has_review_command_guidance,twin_has_review_command_guidance,has_act_when_informed_sentence,twin_has_act_when_informed_sentence
+E1,C2,AP,1,161,0,prompt_snapshot,-680,281,961,1,1,0,1,0,1,0,1,1,0
+E1,C2,AD,6,158,0,prompt_snapshot,-629,281,910,1,1,1,1,0,1,0,1,1,0
+E1,C2,APD,9,9,0,prompt_snapshot,-680,281,961,1,1,0,1,0,1,0,1,1,0
+E1,C3,A0,8,129,0,prompt_snapshot,-680,281,961,1,1,0,1,0,1,0,1,1,0
+E1,C4,AP,5,117,0,prompt_snapshot,-680,281,961,1,1,0,1,0,1,0,1,1,0

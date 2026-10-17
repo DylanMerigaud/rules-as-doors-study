@@ -146,6 +146,20 @@ not given.
   intervals of differences (`ask.*.diff`, `rules.rq3.diff.*`, `replays.*.diff`) use the same unit.
 - **Rates per 100 operator-active days** (`perrule.*.rate`): exact Poisson intervals that treat
   each correction as an independent event over the exposure days.
+- **Cluster intervals** (review round 5, `session_cluster_intervals.csv`, keys `<key>.session_cluster`
+  and `<key>.day_cluster`; `DEVIATIONS.md`, deviation 32): beside each field share, difference and
+  kappa above that the package can rebuild, a percentile bootstrap that resamples the sessions the
+  events nest in (for a difference, a session with turn ends in both windows is resampled once),
+  10,000 resamples, `default_rng(20260930)`. The ask rule's per-rule rates and their ratio resample
+  operator-active days within each state instead (a correction has no session); a correction
+  logged on a day with no operator turn counts on the last exposure day of its state before it.
+  The session ids and days stay private: the file gives each interval and its number of clusters,
+  and a cell whose events are all successes or all failures gives an interval at its point
+  (column `note`). The design inventory's registered shares (`ask.registration.*`) cannot be
+  recomputed from any file; their `.reproduction.session_cluster` keys resample its step
+  reproduced on the 2026-09-30 snapshot (step A of `ask_reconcile.csv`), whose k and n are given.
+  A rule's labels nest in no session, so the rule shares and the RQ3 contrasts have no cluster
+  interval (`rules.cluster_interval`).
 - **Agreement**: kappas and Gwet's AC1 resample items (units, refusals, audit items, corrections);
   `rules.kappa_*.rule_cluster` resamples rules.
 - **Replays**: a cell's share (Wilson) treats each of its 10 runs as independent. A pooled
@@ -164,7 +178,8 @@ not given.
 
 No label, grader decision or code in this package was checked by a person; the author operated
 the harness and set its rules, and every step below was done by code or by Anthropic's
-`claude-opus-5-5`, the model whose turns the study judges.
+`claude-opus-5-5`, the model whose turns the study judges, except one writer of the corrections
+ledger, the model judge (`claude-sonnet-5-5`).
 
 - **Replay graders** (`e1/graders.py`, `e2/graders.py`): written by the model through Claude
   Code. E1's were first committed at 3bd3559 and refined after the model read the pilot output
@@ -188,16 +203,24 @@ the harness and set its rules, and every step below was done by code or by Anthr
   refusal sites) and coded the same way. The codebook is `codebooks/rule_inventory.md` (its scope
   field summarised); the two coders' screen codes are `agreement_pairs.csv`.
 - **Grouping units into rules** and the public description of each rule: one pass of the same
-  model, with no second coder; no agreement is measured. Each description passed the
-  privacy check, and a description the check refused was rewritten by the model.
+  model. In review round 5 a second, blind pass of the same model grouped all 216 in-scope units
+  again (prose units and doors, from their text, class and enforceability, with the first pass's
+  prompt and not its groups; `rule_grouping_pass2.csv`): `rules.grouping.pass2.exact_rules` and
+  `rules.grouping.pass2.pairs`. Each description passed the privacy check, and a description the
+  check refused was rewritten by the model.
 - **Corrections**: the rows of the operator's correction ledger, which four writers filled
   (`corrections_coded.csv`, column `source`): the operator's sessions (`in session`), the pinned
   correction pattern on his typed inputs (`pattern`, `codebooks/correction_pattern.py`), an audit
   that back-filled earlier corrections on 2026-09-01 (`back-fill`), and from 2026-10-02 a
-  scheduled model judge (`model judge`: a headless call of a Sonnet model that reads each typed
-  turn alone and logs the ones it judges corrections). The model judge started after the tag and
-  wrote 30 of the 36 counted corrections of the after window (`corrections.by_source.*`,
-  `DEVIATIONS.md`, deviation 28). A deterministic join gave a first rule for ledger rows (their
+  scheduled model judge (`model judge`: a headless call of `claude-sonnet-5-5` that reads each
+  typed turn alone and logs the ones it judges corrections; its two runs, 2026-10-02 and
+  2026-10-09, are in `model_judge_runs.csv`, key `corrections.model_judge.model`). The model judge
+  started after the tag and wrote 30 of the 36 counted corrections of the after window
+  (`corrections.by_source.*`, `corrections.model_judge.share_after_window`, `DEVIATIONS.md`,
+  deviation 28). In review round 5 a blind pass of `claude-opus-5-5`, with the judge's own
+  codebook, read the 30 corrections the judge wrote mixed with 30 turns of the same runs it did
+  not flag (`model_judge_check.csv`, `corrections.model_judge.pass2_agrees`); those 30 other turns
+  were not screened for scope, so their labels stay private. A deterministic join gave a first rule for ledger rows (their
   tag, the rule it was promoted to, the unit that holds it). Two coders (calls of the same model) then read each correction and
   the rule list and gave its rule or none, and whether it corrects a behaviour at all; coder 1
   saw the first join, coder 2 did not. The published table uses coder 1's rule, and leaves out a
@@ -217,6 +240,10 @@ the harness and set its rules, and every step below was done by code or by Anthr
   against the registered prose definition in review round 4 by `claude-opus-5-5`, the model the
   graders' code also comes from. They are not a person's labels and are not agreement data; they say whether
   a flagged run holds a real violation, and give one example per case (`<exp>.<case>.reading`).
+  In review round 5 a second, blind pass of the same model read the same 108 runs
+  (`replay_readings_pass2.csv`; `readings.pass2.agreement` and `<exp>.<case>.reading.pass2.agreement`),
+  and two more blind passes, in different orders and batches, read E2's 40 first closing texts of
+  C2 (`c2_first_text_state.csv`, `e2.C2.first_text.pass2.agreement`). These are model labels too.
 - **Everything else** (session kinds, turn ends, the answered share, took effect, recovery,
   scheduler outcomes, the replay measures) is computed by code from the logs, with no model call.
 
@@ -234,7 +261,10 @@ the harness and set its rules, and every step below was done by code or by Anthr
   sessions themselves ran on; every recorded answer names that model (the ask audit rejected and
   coded again the answers another model gave, `DEVIATIONS.md`, deviation 11). Each call had no tool (`--tools ""`), no instruction file, hook
   or skill (`--bare`), ran from a scratch directory outside every repository and got its input on
-  standard input; the rule, correction and ask coders also kept no local session record.
+  standard input; the rule, correction and ask coders and the round 5 passes also kept no local
+  session record. The model judge of the corrections ledger is not a coder of the study but one of
+  the ledger's writers: a call of `claude-sonnet-5-5` on the same subscription, which kept its
+  session records.
 - **What each coder saw**, at most: a rule unit's text (1,400 characters) with its source kind
   and section heading; a door's refusal text (400) and description (900); a correction message
   (900) and the consequence the ledger recorded (400), with the rule list (id, heading, 110
@@ -243,7 +273,10 @@ the harness and set its rules, and every step below was done by code or by Anthr
   call, the tool, the target file and windows of 300 characters around each forbidden character
   (at most 6), or the first 4,000 characters; for an ask, the last 1,200 characters of each of
   the operator's last two messages and the last 3,000 characters of the closing text or of the
-  question tool's input.
+  question tool's input. In review round 5: a replay closing text with the files of its run and the
+  text of its commits (the replay runs work on the published prompts); a rule unit's text (500
+  characters) or a door's name, refusal text (250) and description (300); a typed operator turn
+  (its first 2,500 characters) for the check of the model judge, which read the same turns.
 - **Screening.** None: the excerpts were not screened for other people's data before coding.
   The rule coders saw candidate units later coded out of scope, which is how those were found.
   The coders' outputs kept on the machine are ids and codes; the item texts stay in private files
@@ -252,7 +285,7 @@ the harness and set its rules, and every step below was done by code or by Anthr
 ## Files
 
 - `rules.csv`, `rules.md`: one row per in-scope rule; `rules.md` documents the columns, the
-  coding and the descriptions rewritten on 2026-10-13.
+  coding and the descriptions rewritten on 2026-10-13 and 2026-10-17.
 - `rules_coding.csv`: both coders' labels for the 177 text units behind the public rules (unit,
   rule id, per coder: is a rule 1 or 0, class, enforceability). See `rules.md`.
 - `corrections_weekly.csv`: week, rule id, delivery state (prose, door), corrections and
@@ -340,5 +373,44 @@ the harness and set its rules, and every step below was done by code or by Anthr
 - `replay_readings.csv` (review round 4): see "Who produced each label and each grader". Columns:
   experiment, case, run order, arm, run index, the counted V, the reading (violation or no
   violation) and what it rests on, in words about the text, never a quote.
+- `session_cluster_intervals.csv` (review round 5): one row per field key with a cluster
+  interval (see "What an interval treats as independent"): the key, the cluster unit (session or
+  operator-active day), the number of clusters, k and n where the key is a share or a rate, the
+  interval, the resamples used (a ratio leaves out the resamples with no correction in either
+  state, and its upper bound is `inf` when more than 2.5 percent of the rest have corrections in
+  the door state and none in the prose state) and a note. No session id, no day.
+- `door_review_draw.csv` (review round 5): the door review sample, one row per sampled refusal,
+  in the row order of `door_review.csv`: rule, door type, the size of its frame (located
+  refusals), the refusal's position in the frame in time order (the registered draw: 20 positions
+  from a fresh `default_rng(20260930)` per door type when the frame is larger, all of them
+  otherwise; `door.review.draw_reproduced`), its week, a session label and, for an end-of-turn
+  refusal, a stop chain label (both numbered in order of first appearance, valid in this file
+  only), the two codes and the final code, and the turns and output tokens until the next
+  accepted action. `door_review_frame_weeks.csv`: each frame's located refusals per week.
+- `c2_first_text_state.csv` (review round 5): every counted C2 run of both replays: the index of
+  its first closing text (the first text that ended a turn or a stop attempt), whether it was the
+  last, where REPORT.md at that text comes from (the case's starting file, the run's own Write and
+  Edit calls, or the final files), the task grader on it and on the final files, and for E2 the
+  two blind passes' labels (announces work still to do or not; waits on a job still running).
+- `e1_first_request_variants.csv` (review round 5): the 5 E1 runs whose first request differs
+  within their cell, against a twin run of the same cell: which part differs (the tool's own
+  system prompt), its size in characters, whether the operator's first message and the
+  instruction files are the twin's, and four features of the tool's prompt present or absent.
+  Codes and counts only.
+- `replay_readings_pass2.csv` (review round 5): the second pass's reading of each run of
+  `replay_readings.csv`, same rows.
+- `rule_grouping_pass2.csv` (review round 5): for every member of `rule_members.csv`, in its
+  order, the group the second pass put it in (`g<n>`, numbered in order of first appearance) and
+  whether the pass returned it.
+- `model_judge_runs.csv` (review round 5): the model judge's two runs: start and end (Paris
+  time), the judge's code commit in the harness and the model its code named, turns judged and
+  turns it judged corrections, the counted corrections of the run and the model of the persisted
+  call each matches, every persisted call of the run by model, and the tool version.
+- `model_judge_check.csv` (review round 5): the 30 counted corrections the model judge wrote:
+  week, rule, the judge's label and the blind second pass's.
+- `deviations_history.csv` (review round 5): every sentence of each deviation in
+  `prereg/DEVIATIONS.md` as of 779ca40, its part (main or Touches), word count and first eight words (" ..." when cut),
+  the first commit holding it and that commit's time, the time its heading dates it to, and
+  whether it came later (`tools/deviation_history.py`; key `deviations.parts_after_heading_date`).
 - `codebooks/`: the codebooks and coder prompts of the field coding and the pinned correction
   pattern, with what each withholds and why (`codebooks/README.md`).

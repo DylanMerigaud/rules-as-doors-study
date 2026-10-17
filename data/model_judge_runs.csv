@@ -1,0 +1,3 @@
+run,started_paris,ended_paris,judge_code_commit,model_named_in_code,turns_judged,turns_judged_corrections,counted_corrections,counted_corrections_by_model_of_their_call,counted_corrections_without_a_persisted_call,persisted_calls_in_the_run_by_model,tool_versions_of_the_run
+1,2026-10-02 18:42:00,2026-10-02 18:47:02,9a028a1a,sonnet (alias),376,109,19,claude-sonnet-5-5 19,0,claude-sonnet-5-5 670,2.1.287
+2,2026-10-09 08:37:19,2026-10-09 08:42:21,7cb17b77,claude-sonnet-5-5 (full id),230,60,11,claude-sonnet-5-5 11,0,claude-sonnet-5-5 453;none 2,2.1.294

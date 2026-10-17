@@ -53,10 +53,11 @@ is not needed to reproduce the numbers.
   `e2/README.md`.
 - `analysis/`: analysis code that produces the numbers.
 - `results/`: `numbers.json`, `hypotheses.json`, `manifest.json` (what ran), the tables and figures.
-- `tools/`: manuscript checks (render, check_numbers, wordcount, check_refs) and their tests.
+- `tools/`: manuscript checks (render, check_numbers, wordcount, check_refs) and their tests, and
+  `deviation_history.py`, which dates every sentence of `prereg/DEVIATIONS.md` from its git history.
 - `env/`: the environment needed to rerun.
 
-Raw logs cannot be shared because they contain third-party personal data. The derived tables and
+Raw logs cannot be shared because they can contain third-party personal data. The derived tables and
 the replay experiment are public.
 
 ## Licences

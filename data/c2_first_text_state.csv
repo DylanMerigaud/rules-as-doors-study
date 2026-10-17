@@ -1,0 +1,81 @@
+experiment,order,arm,run_index,first_closing_text_index,first_is_last,report_at_first_text_from,target_reached_at_first_text,target_reached_at_end,pass2_coderA_label,pass2_coderA_waits_on_running_job,pass2_coderB_label,pass2_coderB_waits_on_running_job
+E1,0,A0,7,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,1,AD,2,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,4,A0,8,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,9,APD,9,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,11,A0,1,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,13,AD,5,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,15,AP,0,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,21,APD,8,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,23,A0,9,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,24,AD,9,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,27,A0,4,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,31,AP,9,2,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,34,APD,3,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,37,AP,6,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,38,AD,4,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,39,APD,4,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,40,APD,5,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,41,AP,2,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,43,APD,6,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,49,A0,2,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,61,AD,7,2,0,the case's starting file,0,1,,,,
+E1,69,APD,2,2,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,99,A0,6,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,107,AD,0,2,0,the case's starting file,0,1,,,,
+E1,108,AD,8,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,111,AD,1,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,114,AP,5,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,128,AP,4,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,141,AP,8,6,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,152,AP,3,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,153,A0,5,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,156,AP,7,2,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,158,AD,6,2,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,161,AP,1,2,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,166,APD,0,2,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,168,APD,1,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E1,172,A0,3,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,176,APD,7,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,179,A0,0,1,1,the run's final files (the first closing text is its last),0,0,,,,
+E1,186,AD,3,1,1,the run's final files (the first closing text is its last),1,1,,,,
+E2,7,APD,5,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,9,APD,1,2,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,10,A0,4,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,14,APD,8,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,32,A0,0,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,35,A0,7,5,0,the case's starting file,0,1,announces work still to do,no,announces work still to do,no
+E2,38,APD,0,3,0,the case's starting file,0,1,does not,yes,does not,yes
+E2,42,AD,9,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,53,AP,4,2,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,57,APD,4,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,62,AP,5,2,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,66,AD,7,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,72,A0,8,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,74,AD,3,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,85,AP,0,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,90,A0,9,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,102,AP,3,3,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,124,AD,4,3,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,126,AP,7,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,131,AD,0,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,133,A0,2,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,137,A0,3,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,139,AD,2,4,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,147,A0,5,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,151,AD,5,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,158,AD,8,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,161,APD,9,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,164,APD,6,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,167,AD,1,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,169,APD,7,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,176,AP,6,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,180,A0,6,3,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,183,APD,3,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,185,AP,9,1,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,186,A0,1,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,196,AP,2,2,1,the run's final files (the first closing text is its last),1,1,does not,no,does not,no
+E2,197,AP,8,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,207,AP,1,1,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,211,AD,6,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
+E2,218,APD,2,2,0,the case's starting file,0,1,announces work still to do,yes,announces work still to do,yes
